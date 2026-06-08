@@ -552,7 +552,7 @@ section{padding:100px 0;position:relative}
 
 /* ── RESULTS ────────────────────────────────────── */
 #results{background:var(--bg0)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:56px}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:56px}
 .stat-card{
   background:var(--bg2);border:1px solid var(--border);
   border-radius:var(--r);padding:26px 22px;text-align:center;
@@ -566,7 +566,7 @@ section{padding:100px 0;position:relative}
   background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 .stat-lbl{font-size:13px;color:var(--t3);font-weight:500}
-.charts-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:20px}
+.charts-grid{display:grid;grid-template-columns:1fr;gap:20px}
 .chart-card{background:var(--bg2);border:1px solid var(--borderS);border-radius:var(--r);padding:26px}
 .chart-title{font-size:14px;font-weight:800;margin-bottom:4px}
 .chart-sub{font-size:12px;color:var(--t3);margin-bottom:22px}
@@ -2014,16 +2014,12 @@ nav .lang-btn:not(.active):hover{
     </div>
     <div class="stats-grid">
       <div class="stat-card reveal" data-tilt>
-        <div class="stat-num" data-target="50" data-suffix="+">0+</div>
+        <div class="stat-num" data-target="20" data-suffix="+">0+</div>
         <div class="stat-lbl i18n" data-es="Proyectos completados" data-en="Completed projects">Proyectos completados</div>
       </div>
       <div class="stat-card reveal rd1">
-        <div class="stat-num" data-target="98" data-suffix="%">0%</div>
+        <div class="stat-num" data-target="90" data-suffix="%">0%</div>
         <div class="stat-lbl i18n" data-es="Satisfacción de clientes" data-en="Client satisfaction">Satisfacción de clientes</div>
-      </div>
-      <div class="stat-card reveal rd2">
-        <div class="stat-num" data-target="300" data-suffix="%">0%</div>
-        <div class="stat-lbl i18n" data-es="ROI promedio en 90 días" data-en="Avg. ROI in 90 days">ROI promedio en 90 días</div>
       </div>
       <div class="stat-card reveal rd3">
         <div class="stat-num" data-suffix="/7">24</div>
@@ -2035,11 +2031,6 @@ nav .lang-btn:not(.active):hover{
         <div class="chart-title i18n" data-es="Consultas atendidas: Antes vs Después de Zepai IA" data-en="Queries handled: Before vs After Zepai AI">Consultas atendidas: Antes vs Después de Zepai IA</div>
         <div class="chart-sub i18n" data-es="Consultas mensuales por cliente (promedio 4 meses)" data-en="Monthly queries per client (4-month average)">Consultas mensuales por cliente (promedio 4 meses)</div>
         <canvas id="barChart" height="200"></canvas>
-      </div>
-      <div class="chart-card reveal rd1">
-        <div class="chart-title i18n" data-es="Crecimiento de Leads — Últimos 6 Meses" data-en="Lead Growth — Last 6 Months">Crecimiento de Leads — Últimos 6 Meses</div>
-        <div class="chart-sub i18n" data-es="Índice de leads calificados (base 100 = inicio)" data-en="Qualified lead index (base 100 = start)">Índice de leads calificados (base 100 = inicio)</div>
-        <canvas id="lineChart" height="200"></canvas>
       </div>
     </div>
   </div>
@@ -2254,7 +2245,7 @@ nav .lang-btn:not(.active):hover{
           <span class="i18n" data-es="¿Cómo solicito una cotización?" data-en="How do I request a quote?">¿Cómo solicito una cotización?</span>
           <div class="faq-ico">+</div>
         </div>
-        <div class="faq-a"><div class="faq-ai i18n" data-es="Muy fácil. Completa el formulario de contacto en esta página o escríbenos directamente al email zecuenin@gmail.com. En menos de 24 horas te respondemos con una propuesta personalizada según las necesidades específicas de tu negocio. ¡Sin compromisos!" data-en="Very easy. Fill out the contact form on this page or write directly to zecuenin@gmail.com. Within 24 hours we'll respond with a personalized proposal based on your specific business needs. No strings attached!">Muy fácil. Completa el formulario de contacto o escríbenos a zecuenin@gmail.com. En menos de 24 horas te respondemos con una propuesta personalizada. ¡Sin compromisos!</div></div>
+        <div class="faq-a"><div class="faq-ai i18n" data-es="Muy fácil. Completa el formulario de contacto en esta página o escríbenos directamente al email info@zepaiagency.com. En menos de 24 horas te respondemos con una propuesta personalizada según las necesidades específicas de tu negocio. ¡Sin compromisos!" data-en="Very easy. Fill out the contact form on this page or write directly to info@zepaiagency.com. Within 24 hours we'll respond with a personalized proposal based on your specific business needs. No strings attached!">Muy fácil. Completa el formulario de contacto o escríbenos a info@zepaiagency.com. En menos de 24 horas te respondemos con una propuesta personalizada. ¡Sin compromisos!</div></div>
       </div>
 
     </div>
@@ -2330,7 +2321,7 @@ nav .lang-btn:not(.active):hover{
           <li><div class="sched-check">✓</div><span class="i18n" data-es="Diagnóstico personalizado de tu negocio" data-en="Personalized business diagnosis">Diagnóstico personalizado de tu negocio</span></li>
           <li><div class="sched-check">✓</div><span class="i18n" data-es="Propuesta lista en menos de 24 horas" data-en="Proposal ready in under 24 hours">Propuesta lista en menos de 24 horas</span></li>
         </ul>
-        <div class="c-detail"><div class="c-ico">📧</div><span>zecuenin@gmail.com</span></div>
+        <div class="c-detail"><div class="c-ico">📧</div><span>info@zepaiagency.com</span></div>
         <div class="c-detail"><div class="c-ico">⏱️</div><span class="i18n" data-es="Respuesta en menos de 24 horas" data-en="Response in less than 24 hours">Respuesta en menos de 24 horas</span></div>
         <div class="c-detail"><div class="c-ico">🌎</div><span class="i18n" data-es="Servicio para toda Latinoamérica" data-en="Service across Latin America">Servicio para toda Latinoamérica</span></div>
       </div>
@@ -2511,7 +2502,7 @@ nav .lang-btn:not(.active):hover{
     <p class="i18n" data-es="Tienes derecho a acceder, corregir o eliminar tu información, así como a retirar tu consentimiento para que te contactemos, cuando lo desees. Para ejercer cualquiera de estos derechos, simplemente escríbenos." data-en="You have the right to access, correct, or delete your information, as well as to withdraw your consent for us to contact you, whenever you wish. To exercise any of these rights, just write to us.">Tienes derecho a acceder, corregir o eliminar tu información, así como a retirar tu consentimiento para que te contactemos, cuando lo desees. Para ejercer cualquiera de estos derechos, simplemente escríbenos.</p>
 
     <h4 class="i18n" data-es="7. Contacto" data-en="7. Contact">7. Contacto</h4>
-    <p><span class="i18n" data-es="¿Dudas sobre esta política o sobre cómo manejamos tu información? Escríbenos a " data-en="Questions about this policy or how we handle your information? Write to us at ">¿Dudas sobre esta política o sobre cómo manejamos tu información? Escríbenos a </span><a class="pm-mail" href="mailto:zecuenin@gmail.com">zecuenin@gmail.com</a></p>
+    <p><span class="i18n" data-es="¿Dudas sobre esta política o sobre cómo manejamos tu información? Escríbenos a " data-en="Questions about this policy or how we handle your information? Write to us at ">¿Dudas sobre esta política o sobre cómo manejamos tu información? Escríbenos a </span><a class="pm-mail" href="mailto:info@zepaiagency.com">info@zepaiagency.com</a></p>
   </div>
 </div>
 
@@ -2758,44 +2749,11 @@ if (barCtx) {
   });
 }
 
-// Line Chart
-const lineCtx = document.getElementById('lineChart');
-if (lineCtx) {
-  const monthsEs = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'];
-  const monthsEn = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
-  new Chart(lineCtx, {
-    type: 'line',
-    data: {
-      labels: currentLang === 'es' ? monthsEs : monthsEn,
-      datasets: [{
-        label: currentLang === 'es' ? 'Índice de Leads' : 'Lead Index',
-        data: [100, 148, 210, 298, 382, 490],
-        borderColor: '#8B5CF6',
-        backgroundColor: 'rgba(139,92,246,0.08)',
-        borderWidth: 2.5,
-        pointBackgroundColor: '#8B5CF6',
-        pointRadius: 4,
-        pointHoverRadius: 7,
-        fill: true,
-        tension: 0.45
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: { legend: { labels: { color: 'rgba(10,10,20,0.65)', font: { family: 'Inter', size: 12 } } } },
-      scales: {
-        x: { grid: { color: 'rgba(10,10,20,0.07)' }, ticks: { color: 'rgba(10,10,20,0.55)', font: { family: 'Inter', size: 12 } } },
-        y: { grid: { color: 'rgba(10,10,20,0.07)' }, ticks: { color: 'rgba(10,10,20,0.55)', font: { family: 'Inter', size: 12 } } }
-      }
-    }
-  });
-}
-
 /* ══ NOTIFICACIONES POR CORREO (EmailJS) ══════════════════════════════
    Configurado: cada llamada agendada o cotización se envía directo a tu
    correo vía EmailJS, con respaldo automático a mailto: si algo falla. */
 const EMAILJS_PUBLIC_KEY  = 'GGgDb2RkPqUEnDFgt';
-const EMAILJS_SERVICE_ID  = 'service_8z5p2cv';
+const EMAILJS_SERVICE_ID  = 'service_jyombda';
 const EMAILJS_TEMPLATE_ID = 'template_e96cb38';
 const EMAILJS_READY = (typeof emailjs !== 'undefined') &&
   EMAILJS_PUBLIC_KEY !== 'TU_PUBLIC_KEY' && EMAILJS_SERVICE_ID !== 'TU_SERVICE_ID' && EMAILJS_TEMPLATE_ID !== 'TU_TEMPLATE_ID';
@@ -2823,7 +2781,7 @@ function sendNotification(subject, body, formEl, btnEl, mailtoFallback, okMsg, i
     const visitorEmail = formEl.querySelector('input[type="email"]')?.value || '';
     const visitorName  = formEl.querySelector('input[type="text"]')?.value || '';
     emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-      to_email: 'zecuenin@gmail.com',
+      to_email: 'info@zepaiagency.com',
       subject: subject,
       message: body,
       from_name: visitorName,
@@ -2838,7 +2796,7 @@ function sendNotification(subject, body, formEl, btnEl, mailtoFallback, okMsg, i
     }).catch((err) => {
       console.error('[EmailJS] send failed — status:', err && err.status, '| text:', err && err.text, '| raw:', err);
       showToast(false, isEs ? 'No se pudo enviar' : 'Could not send',
-        isEs ? 'Intenta de nuevo o escríbenos directo a zecuenin@gmail.com.' : 'Please try again or email us at zecuenin@gmail.com.');
+        isEs ? 'Intenta de nuevo o escríbenos directo a info@zepaiagency.com.' : 'Please try again or email us at info@zepaiagency.com.');
     }).finally(() => {
       btnEl.disabled = false;
       btnEl.style.opacity = '';
@@ -2876,7 +2834,7 @@ function handleScheduleSubmit(e) {
     `¿Qué quiere lograr?`,
     goal || 'Sin comentarios adicionales.',
   ].join('\n');
-  const mailtoFallback = 'mailto:zecuenin@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  const mailtoFallback = 'mailto:info@zepaiagency.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   sendNotification(subject, body, e.target, e.target.querySelector('button[type="submit"]'), mailtoFallback,
     isEs ? 'Te confirmaremos tu llamada en menos de 24 horas.' : "We'll confirm your call within 24 hours.", isEs);
 }
@@ -2902,7 +2860,7 @@ function handleSubmit(e) {
     `Mensaje:`,
     msg
   ].join('\n');
-  const mailtoFallback = 'mailto:zecuenin@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  const mailtoFallback = 'mailto:info@zepaiagency.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   sendNotification(subject, body, e.target, e.target.querySelector('button[type="submit"]'), mailtoFallback,
     isEs ? 'Responderemos tu solicitud en menos de 24 horas.' : "We'll respond to your request within 24 hours.", isEs);
 }
