@@ -16,8 +16,11 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 class CleanUrlHandler(SimpleHTTPRequestHandler):
     def translate_path(self, path):
         local = super().translate_path(path)
-        # Si no existe pero si existe el .html equivalente, sirve ese.
-        if not os.path.exists(local) and not os.path.splitext(local)[1]:
+        # Sin extension: el .html equivalente gana, incluso si existe un
+        # directorio con ese nombre (/blog sirve blog.html, no el listado de
+        # blog/). Asi se evita la redireccion 301 a /blog/, que chocaria con
+        # trailingSlash:false y con el canonical.
+        if not os.path.splitext(local)[1]:
             html = local.rstrip("/\\") + ".html"
             if os.path.isfile(html):
                 return html
