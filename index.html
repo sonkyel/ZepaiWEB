@@ -424,169 +424,40 @@ document.head.appendChild(o)}initApollo();</script>
         Nos especializamos en implementar agentes IA adaptados a las necesidades únicas de cada tipo de negocio.
       </p>
     </div>
-    <div class="ind-tabs">
-      <button class="ind-tab active" onclick="switchTab(0)" id="tab0">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/><path d="M18 2l-7 7"/></svg>
-        <span class="i18n" data-es="Restaurantes" data-en="Restaurants">Restaurantes</span>
-      </button>
-      <button class="ind-tab" onclick="switchTab(1)" id="tab1">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        <span class="i18n" data-es="Inmobiliarias" data-en="Real Estate">Inmobiliarias</span>
-      </button>
-      <button class="ind-tab" onclick="switchTab(2)" id="tab2">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-        <span class="i18n" data-es="E-Commerce" data-en="E-Commerce">E-Commerce</span>
-      </button>
-      <button class="ind-tab" onclick="switchTab(3)" id="tab3">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        <span class="i18n" data-es="Blockchain / Web3" data-en="Blockchain / Web3">Blockchain / Web3</span>
-      </button>
+    <div class="ind-grid">
+      <a class="srv-card ind-card reveal" href="/agencia-ia-restaurantes">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
+        </div>
+        <div class="srv-name i18n" data-es="Restaurantes y Cafeterías" data-en="Restaurants & Cafés">Restaurantes y Cafeterías</div>
+        <div class="srv-desc i18n" data-es="Reservas y llamadas atendidas a cualquier hora, para que tu equipo esté en la sala y no al teléfono." data-en="Bookings and calls handled at any hour, so your team stays on the floor instead of on the phone.">Reservas y llamadas atendidas a cualquier hora, para que tu equipo esté en la sala y no al teléfono.</div>
+        <span class="ind-more i18n" data-es="Ver cómo funciona →" data-en="See how it works →">Ver cómo funciona →</span>
+      </a>
+      <a class="srv-card ind-card reveal rd1" href="/agencia-ia-inmobiliarias">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="srv-name i18n" data-es="Inmobiliarias" data-en="Real Estate">Inmobiliarias</div>
+        <div class="srv-desc i18n" data-es="Cada interesado recibe respuesta en segundos, queda cualificado y llega al agente con la visita ya agendada." data-en="Every lead gets an answer in seconds, arrives qualified, and reaches the agent with the viewing already booked.">Cada interesado recibe respuesta en segundos, queda cualificado y llega al agente con la visita ya agendada.</div>
+        <span class="ind-more i18n" data-es="Ver cómo funciona →" data-en="See how it works →">Ver cómo funciona →</span>
+      </a>
+      <a class="srv-card ind-card reveal rd2" href="#contact">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </div>
+        <div class="srv-name i18n" data-es="E-Commerce" data-en="E-Commerce">E-Commerce</div>
+        <div class="srv-desc i18n" data-es="Soporte que no cierra, carritos abandonados que se recuperan solos y recomendaciones que suben el ticket." data-en="Support that never closes, abandoned carts that recover themselves, and recommendations that raise the basket.">Soporte que no cierra, carritos abandonados que se recuperan solos y recomendaciones que suben el ticket.</div>
+        <span class="ind-more i18n" data-es="Hablar de tu tienda →" data-en="Talk about your store →">Hablar de tu tienda →</span>
+      </a>
+      <a class="srv-card ind-card reveal rd3" href="#testimonials">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </div>
+        <div class="srv-name i18n" data-es="Blockchain / Web3" data-en="Blockchain / Web3">Blockchain / Web3</div>
+        <div class="srv-desc i18n" data-es="Crecimiento orgánico de comunidad en X y presencia real en el ecosistema. Hoy lo hacemos con KiiChain." data-en="Organic community growth on X and real presence in the ecosystem. We do it today with KiiChain.">Crecimiento orgánico de comunidad en X y presencia real en el ecosistema. Hoy lo hacemos con KiiChain.</div>
+        <span class="ind-more i18n" data-es="Ver el caso KiiChain →" data-en="See the KiiChain case →">Ver el caso KiiChain →</span>
+      </a>
     </div>
-
-    <!-- Panel 0: Restaurantes -->
-    <div class="ind-panel active reveal" id="panel0">
-      <div class="ind-info">
-        <div class="ind-icon">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg>
-        </div>
-        <h3 class="ind-title i18n" data-es="Restaurantes y Cafeterías" data-en="Restaurants & Cafés">Restaurantes y Cafeterías</h3>
-        <p class="ind-desc i18n" data-es="Tu agente IA atiende clientes en WhatsApp, toma reservas automáticamente, responde preguntas del menú y envía promociones. Tu equipo se enfoca en cocinar, no en contestar mensajes." data-en="Your AI agent handles customers on WhatsApp, takes reservations automatically, answers menu questions, and sends promotions. Your team focuses on cooking, not answering messages.">
-          Tu agente IA atiende clientes en WhatsApp, toma reservas automáticamente, responde preguntas del menú y envía promociones. Tu equipo se enfoca en cocinar, no en contestar mensajes.
-        </p>
-        <ul class="ind-bens">
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Reservas automáticas 24/7 sin llamadas" data-en="Automatic reservations 24/7 with no phone calls">Reservas automáticas 24/7 sin llamadas</span></li>
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Responde preguntas del menú instantáneamente" data-en="Answers menu questions instantly">Responde preguntas del menú instantáneamente</span></li>
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Envío de promos y recordatorios a clientes" data-en="Sends promos and reminders to customers">Envío de promos y recordatorios a clientes</span></li>
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Integración con WhatsApp e Instagram" data-en="Integration with WhatsApp and Instagram">Integración con WhatsApp e Instagram</span></li>
-        </ul>
-      </div>
-      <div class="ind-chat">
-        <div class="chat-hdr">
-          <div class="chat-av">🤖</div>
-          <div>
-            <div class="chat-nm">Zepai AI — Restaurante</div>
-            <div class="chat-st"><div class="pulse-green"></div><span class="i18n" data-es="En línea ahora" data-en="Online now">En línea ahora</span></div>
-          </div>
-        </div>
-        <div class="chat-body">
-          <div class="cmsg u"><span class="i18n" data-es="¿Tienen opción vegana en el menú?" data-en="Do you have vegan options on the menu?">¿Tienen opción vegana en el menú?</span></div>
-          <div class="cmsg b"><div class="mhdr">Zepai AI</div><span class="i18n" data-es="¡Hola! Sí, contamos con 8 platos veganos incluyendo nuestra pasta de verduras y el bowl de quinoa. ¿Te gustaría ver el menú completo o hacer una reserva?" data-en="Hello! Yes, we have 8 vegan dishes including our veggie pasta and quinoa bowl. Would you like to see the full menu or make a reservation?">¡Hola! Sí, contamos con 8 platos veganos incluyendo nuestra pasta de verduras y el bowl de quinoa. ¿Te gustaría ver el menú completo o hacer una reserva?</span></div>
-          <div class="cmsg u"><span class="i18n" data-es="Quiero reservar para 2 personas mañana." data-en="I'd like to book for 2 people tomorrow.">Quiero reservar para 2 personas mañana.</span></div>
-          <div class="cmsg b"><div class="mhdr">Zepai AI</div><span class="i18n" data-es="Perfecto! Tenemos mesas a las 7pm, 8pm y 9pm para mañana. ¿Cuál prefieres y a nombre de quién?" data-en="Perfect! We have tables at 7pm, 8pm, and 9pm tomorrow. Which do you prefer and what name?">Perfecto! Tenemos mesas a las 7pm, 8pm y 9pm para mañana. ¿Cuál prefieres y a nombre de quién?</span></div>
-          <div class="cmsg u">8pm ✓</div>
-          <div class="cmsg b"><div class="mhdr">Zepai AI</div><span class="i18n" data-es="¡Reserva confirmada para 2 personas mañana a las 8pm! Te enviaré un recordatorio 2 horas antes. 🎉" data-en="Reservation confirmed for 2 people tomorrow at 8pm! I'll send you a reminder 2 hours before. 🎉">¡Reserva confirmada para 2 personas mañana a las 8pm! Te enviaré un recordatorio 2 horas antes. 🎉</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Panel 1: Inmobiliarias -->
-    <div class="ind-panel" id="panel1">
-      <div class="ind-info">
-        <div class="ind-icon">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <h3 class="ind-title i18n" data-es="Inmobiliarias" data-en="Real Estate">Inmobiliarias</h3>
-        <p class="ind-desc i18n" data-es="Tu agente IA califica leads automáticamente, agenda visitas a propiedades y mantiene a los prospectos enganchados hasta que estén listos para comprar — sin perder ninguno." data-en="Your AI agent automatically qualifies leads, schedules property visits, and keeps prospects engaged until they're ready to buy — without losing a single one.">
-          Tu agente IA califica leads automáticamente, agenda visitas a propiedades y mantiene a los prospectos enganchados hasta que estén listos para comprar.
-        </p>
-        <ul class="ind-bens">
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Califica leads 24/7 sin intervención humana" data-en="Qualifies leads 24/7 without human intervention">Califica leads 24/7 sin intervención humana</span></li>
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Agenda visitas a propiedades automáticamente" data-en="Schedules property visits automatically">Agenda visitas a propiedades automáticamente</span></li>
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Envía información de propiedades por WhatsApp" data-en="Sends property info via WhatsApp">Envía información de propiedades por WhatsApp</span></li>
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Seguimiento automatizado a prospectos fríos" data-en="Automated follow-up on cold prospects">Seguimiento automatizado a prospectos fríos</span></li>
-        </ul>
-      </div>
-      <div class="ind-chat">
-        <div class="chat-hdr">
-          <div class="chat-av">🤖</div>
-          <div>
-            <div class="chat-nm">Zepai AI — Inmobiliaria</div>
-            <div class="chat-st"><div class="pulse-green"></div><span class="i18n" data-es="En línea ahora" data-en="Online now">En línea ahora</span></div>
-          </div>
-        </div>
-        <div class="chat-body">
-          <div class="cmsg u"><span class="i18n" data-es="Busco apartamento de 2 hab en Chapinero, presupuesto $400M" data-en="Looking for 2BR apartment in Chapinero, budget $400M">Busco apartamento de 2 hab en Chapinero, presupuesto $400M</span></div>
-          <div class="cmsg b"><div class="mhdr">Zepai AI</div><span class="i18n" data-es="¡Excelente elección! Tenemos 3 opciones en Chapinero que se ajustan a tu presupuesto. ¿Prefieres con parqueadero?" data-en="Excellent choice! We have 3 options in Chapinero within your budget. Do you prefer parking included?">¡Excelente elección! Tenemos 3 opciones en Chapinero que se ajustan a tu presupuesto. ¿Prefieres con parqueadero?</span></div>
-          <div class="cmsg u"><span class="i18n" data-es="Sí, con parqueadero y si tiene vista mejor" data-en="Yes, with parking and a view if possible">Sí, con parqueadero y si tiene vista mejor</span></div>
-          <div class="cmsg b"><div class="mhdr">Zepai AI</div><span class="i18n" data-es="Perfecto, tengo un apartamento en Cra 13 #67-42 que cumple todo. ¿Te agendo una visita esta semana?" data-en="Perfect, I have an apartment at Cra 13 #67-42 that checks all boxes. Can I book you a visit this week?">Perfecto, tengo un apartamento en Cra 13 #67-42 que cumple todo. ¿Te agendo una visita esta semana?</span></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Panel 2: E-Commerce -->
-    <div class="ind-panel" id="panel2">
-      <div class="ind-info">
-        <div class="ind-icon">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-        </div>
-        <h3 class="ind-title i18n" data-es="E-Commerce" data-en="E-Commerce">E-Commerce</h3>
-        <p class="ind-desc i18n" data-es="Tu tienda online nunca duerme. El agente IA brinda soporte al cliente, recupera carritos abandonados y genera recomendaciones personalizadas que aumentan el ticket promedio." data-en="Your online store never sleeps. The AI agent provides customer support, recovers abandoned carts, and generates personalized recommendations that increase the average ticket.">
-          Tu tienda online nunca duerme. El agente IA brinda soporte, recupera carritos abandonados y genera recomendaciones que aumentan el ticket promedio.
-        </p>
-        <ul class="ind-bens">
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Soporte al cliente 24/7 en segundos" data-en="24/7 customer support in seconds">Soporte al cliente 24/7 en segundos</span></li>
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Recuperación automática de carritos abandonados" data-en="Automatic abandoned cart recovery">Recuperación automática de carritos abandonados</span></li>
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Recomendaciones personalizadas por comportamiento" data-en="Behavior-based personalized recommendations">Recomendaciones personalizadas por comportamiento</span></li>
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Seguimiento de pedidos en tiempo real" data-en="Real-time order tracking">Seguimiento de pedidos en tiempo real</span></li>
-        </ul>
-      </div>
-      <div class="ind-chat">
-        <div class="chat-hdr">
-          <div class="chat-av">🤖</div>
-          <div>
-            <div class="chat-nm">Zepai AI — TiendaFit</div>
-            <div class="chat-st"><div class="pulse-green"></div><span class="i18n" data-es="En línea ahora" data-en="Online now">En línea ahora</span></div>
-          </div>
-        </div>
-        <div class="chat-body">
-          <div class="cmsg u"><span class="i18n" data-es="¿Cuándo llega mi pedido #TF-2847?" data-en="When will my order #TF-2847 arrive?">¿Cuándo llega mi pedido #TF-2847?</span></div>
-          <div class="cmsg b"><div class="mhdr">Zepai AI</div><span class="i18n" data-es="Tu pedido #TF-2847 está en camino y llegará mañana entre 9am-1pm. ¿Quieres activar notificaciones de entrega?" data-en="Your order #TF-2847 is on its way and will arrive tomorrow between 9am-1pm. Want to activate delivery notifications?">Tu pedido #TF-2847 está en camino y llegará mañana entre 9am-1pm. ¿Quieres activar notificaciones de entrega?</span></div>
-          <div class="cmsg u"><span class="i18n" data-es="Sí por favor. También busco unas mallas de gym" data-en="Yes please. I'm also looking for gym leggings">Sí por favor. También busco unas mallas de gym</span></div>
-          <div class="cmsg b"><div class="mhdr">Zepai AI</div><span class="i18n" data-es="Basado en tu compra anterior, creo que te encantarán las ThermoFlex Pro. Están con 20% OFF hoy. 💪" data-en="Based on your previous purchase, I think you'll love the ThermoFlex Pro. They're 20% OFF today. 💪">Basado en tu compra anterior, creo que te encantarán las ThermoFlex Pro. Están con 20% OFF hoy. 💪</span></div>
-        </div>
-      </div>
-    </div>
-    <!-- Panel 3: Blockchain / Web3 -->
-    <div class="ind-panel" id="panel3">
-      <div class="ind-info">
-        <div class="ind-icon">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        </div>
-        <h3 class="ind-title i18n" data-es="Blockchain / Web3" data-en="Blockchain / Web3">Blockchain / Web3</h3>
-        <p class="ind-desc i18n"
-          data-es="Los proyectos crypto y blockchain necesitan comunidades activas. Gestionamos el crecimiento orgánico de tu audiencia en X (Twitter), aumentamos tu visibilidad en el ecosistema Web3 y generamos engagement real."
-          data-en="Crypto and blockchain projects need active communities. We manage organic growth of your X (Twitter) audience, increase your visibility in the Web3 ecosystem, and generate real engagement.">
-          Los proyectos crypto y blockchain necesitan comunidades activas. Gestionamos el crecimiento orgánico de tu audiencia en X (Twitter), aumentamos tu visibilidad en el ecosistema Web3 y generamos engagement real.
-        </p>
-        <ul class="ind-bens">
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Crecimiento orgánico de audiencia en X (Twitter)" data-en="Organic audience growth on X (Twitter)">Crecimiento orgánico de audiencia en X (Twitter)</span></li>
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Estrategia de contenido para comunidades crypto" data-en="Content strategy for crypto communities">Estrategia de contenido para comunidades crypto</span></li>
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Gestión de reputación y presencia en Web3" data-en="Reputation management and Web3 presence">Gestión de reputación y presencia en Web3</span></li>
-          <li><div class="bcheck">✓</div><span class="i18n" data-es="Clipping y clips virales para TikTok / Reels" data-en="Clipping and viral clips for TikTok / Reels">Clipping y clips virales para TikTok / Reels</span></li>
-        </ul>
-        <div style="margin-top:20px;padding:14px 18px;background:rgba(139,92,246,.06);border:1px solid rgba(139,92,246,.2);border-radius:12px">
-          <div style="font-size:11px;font-weight:700;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px">● Cliente Activo</div>
-          <div style="font-size:14px;color:var(--t2)">Actualmente trabajando con <strong style="color:var(--cyan)">KiiChain</strong> — plataforma de FX onchain para mercados emergentes.</div>
-          <a href="https://x.com/KiiChainio" target="_blank" style="display:inline-flex;align-items:center;gap:5px;color:var(--cyan);font-size:13px;font-weight:600;margin-top:8px;border-bottom:1px solid rgba(139,92,246,.3);padding-bottom:1px">𝕏 @KiiChainio ↗</a>
-        </div>
-      </div>
-      <div class="ind-chat">
-        <div class="chat-hdr">
-          <div class="chat-av" style="font-size:13px;letter-spacing:-.5px">WEB3</div>
-          <div>
-            <div class="chat-nm">Zepai — KiiChain X Growth</div>
-            <div class="chat-st"><div class="pulse-green"></div><span class="i18n" data-es="Proyecto activo" data-en="Active project">Proyecto activo</span></div>
-          </div>
-        </div>
-        <div class="chat-body">
-          <div class="cmsg u"><span class="i18n" data-es="Necesitamos crecer en X. Somos un proyecto blockchain de FX onchain." data-en="We need to grow on X. We're a blockchain FX onchain project.">Necesitamos crecer en X. Somos un proyecto blockchain de FX onchain.</span></div>
-          <div class="cmsg b"><div class="mhdr">Zepai Agency</div><span class="i18n" data-es="Perfecto. Para proyectos Web3 trabajamos crecimiento orgánico en X con contenido educativo, threads de alto engagement y estrategia de presencia en el ecosistema. ¿Cuántos seguidores tienen actualmente?" data-en="Perfect. For Web3 projects we work on organic X growth with educational content, high-engagement threads, and ecosystem presence strategy. How many followers do you currently have?">Perfecto. Para proyectos Web3 trabajamos crecimiento orgánico en X con contenido educativo, threads y estrategia de ecosistema. ¿Cuántos seguidores tienen ahora?</span></div>
-          <div class="cmsg u"><span class="i18n" data-es="Alrededor de 15K. Queremos llegar a 50K este trimestre." data-en="Around 15K. We want to reach 50K this quarter.">Alrededor de 15K. Queremos llegar a 50K este trimestre.</span></div>
-          <div class="cmsg b"><div class="mhdr">Zepai Agency</div><span class="i18n" data-es="Ese crecimiento es alcanzable. Ya trabajamos con KiiChain en este mismo objetivo. ¿Coordinamos una llamada esta semana?" data-en="That growth is achievable. We're already working with KiiChain on this same goal. Should we coordinate a call this week?">Ese crecimiento es alcanzable. Ya trabajamos con KiiChain en este mismo objetivo. ¿Coordinamos una llamada esta semana?</span></div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -1493,12 +1364,6 @@ function scrollToSection(id) {
   if (!el) return;
   const offset = el.getBoundingClientRect().top + window.pageYOffset - 80;
   window.scrollTo({ top: offset, behavior: 'smooth' });
-}
-
-/* ── INDUSTRY TABS ── */
-function switchTab(idx) {
-  document.querySelectorAll('.ind-tab').forEach((t, i) => t.classList.toggle('active', i === idx));
-  document.querySelectorAll('.ind-panel').forEach((p, i) => p.classList.toggle('active', i === idx));
 }
 
 /* ── CURSOR SPOTLIGHT + SMOOTH DOT ── */
