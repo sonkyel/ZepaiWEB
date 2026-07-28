@@ -16,10 +16,11 @@
   <meta property="og:url" content="https://zepaiagency.com/">
   <meta property="og:image" content="https://zepaiagency.com/logo.png">
   <meta property="og:site_name" content="Zepai Agency">
-  <meta property="og:locale" content="es_LA">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_US">
   <link rel="canonical" href="https://zepaiagency.com/">
   <meta name="robots" content="index, follow">
-  <meta name="keywords" content="agentes IA, agencia digital, marketing digital, automatización negocios, diseño web, clipping de contenido, restaurantes, inmobiliarias, ecommerce, Latinoamérica">
+  <meta name="keywords" content="agencia de IA, consultora de IA, automatización de procesos con IA, agentes IA, inteligencia artificial para empresas, chatbot IA, asistente de voz IA, marketing digital, diseño web, restaurantes, inmobiliarias, ecommerce">
   <meta name="theme-color" content="#0a0a0a">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1290,17 +1291,31 @@ document.head.appendChild(o)}initApollo();</script>
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "ProfessionalService"],
+      "@id": "https://zepaiagency.com/#organization",
       "name": "Zepai Agency",
       "url": "https://zepaiagency.com",
       "logo": "https://zepaiagency.com/logo.png",
+      "image": "https://zepaiagency.com/logo.png",
       "email": "info@zepaiagency.com",
-      "description": "Agencia de inteligencia artificial y marketing digital para negocios latinoamericanos. Especializados en Agentes IA, Marketing Digital, Clipping de Contenido y Diseño Web.",
-      "areaServed": "Latinoamérica",
+      "description": "Agencia y consultora de inteligencia artificial. Automatizamos los procesos de las empresas con IA: atención al cliente, ventas, reservas, soporte y operaciones.",
+      "additionalType": "https://en.wikipedia.org/wiki/Artificial_intelligence",
+      "knowsAbout": ["Inteligencia artificial", "Automatización de procesos", "Agentes de IA", "Chatbots", "Asistentes de voz"],
+      "areaServed": {"@type": "Place", "name": "Worldwide"},
+      "availableLanguage": ["es", "en"],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "info@zepaiagency.com",
+        "areaServed": "Worldwide",
+        "availableLanguage": ["Spanish", "English"]
+      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Servicios Zepai Agency",
         "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Automatización de procesos con IA"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Consultoría de IA"}},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Agentes IA"}},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Marketing Digital"}},
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Clipping de Contenido"}},
@@ -2421,7 +2436,7 @@ document.head.appendChild(o)}initApollo();</script>
         </ul>
         <div class="c-detail"><div class="c-ico">📧</div><span>info@zepaiagency.com</span></div>
         <div class="c-detail"><div class="c-ico">⏱️</div><span class="i18n" data-es="Respuesta en menos de 24 horas" data-en="Response in less than 24 hours">Respuesta en menos de 24 horas</span></div>
-        <div class="c-detail"><div class="c-ico">🌎</div><span class="i18n" data-es="Servicio para toda Latinoamérica" data-en="Service across Latin America">Servicio para toda Latinoamérica</span></div>
+        <div class="c-detail"><div class="c-ico">🌎</div><span class="i18n" data-es="Servicio internacional — trabajamos en remoto" data-en="Worldwide service — we work remotely">Servicio internacional — trabajamos en remoto</span></div>
       </div>
 
       <!-- Right column: tabbed forms -->
