@@ -431,6 +431,9 @@ section{padding:100px 0;position:relative}
 .sec-hdr{text-align:center;max-width:640px;margin:0 auto 60px}
 .sec-title{font-size:clamp(30px,3.5vw,46px);font-weight:900;line-height:1.15;letter-spacing:-1px;margin-bottom:14px}
 .sec-sub{font-size:16px;color:var(--t3);line-height:1.75}
+/* Subtitulo interno de la seccion fusionada Resultados + Testimonios */
+.sec-sub-title{font-size:clamp(20px,2.2vw,28px);font-weight:800;letter-spacing:-.6px;text-align:center;margin:64px 0 32px;color:#0A0A14}
+.test-anchor{position:relative;top:-100px;height:0;visibility:hidden}
 
 /* ── SERVICES ───────────────────────────────────── */
 #services{background:var(--bg1)}
