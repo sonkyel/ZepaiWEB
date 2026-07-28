@@ -1123,7 +1123,10 @@ nav .lang-btn:not(.active):hover{
   background:radial-gradient(ellipse at center,var(--cyan-glow2) 0%,transparent 68%);
   filter:blur(30px);
 }
-.sp-hero-in{position:relative;z-index:2;max-width:760px}
+.sp-hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.sp-hero-txt{max-width:640px}
+.sp-hero-art{display:flex;justify-content:center;align-items:center}
+.sp-hero-art svg{width:100%;max-width:420px;height:auto}
 .sp-h1{font-size:clamp(32px,4vw,54px);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin-bottom:18px;color:#0A0A14}
 .sp-lead{font-size:18px;line-height:1.75;color:var(--t2);max-width:640px;margin-bottom:32px}
 .sp-body{padding:8px 0 64px}
@@ -1167,6 +1170,11 @@ nav .lang-btn:not(.active):hover{
 .sp-post:hover{transform:translateY(-3px);border-color:var(--cyan);box-shadow:0 10px 34px rgba(139,92,246,.14)}
 .sp-post h3{font-size:20px;font-weight:800;letter-spacing:-.4px;margin-bottom:8px;color:#0A0A14}
 .sp-post p{font-size:15px;margin:0}
+@media(max-width:900px){
+  .sp-hero-in{grid-template-columns:1fr;gap:28px}
+  .sp-hero-art{order:-1}
+  .sp-hero-art svg{max-width:300px}
+}
 @media(max-width:768px){
   .sp-hero{padding:calc(var(--nav-h) + 28px) 0 40px}
   .sp-lead{font-size:16px}
