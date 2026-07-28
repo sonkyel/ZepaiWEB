@@ -26,7 +26,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@900&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <link rel="stylesheet" href="/styles.css">
@@ -636,13 +635,6 @@ document.head.appendChild(o)}initApollo();</script>
       <div class="stat-card reveal rd3">
         <div class="stat-num">24/7</div>
         <div class="stat-lbl i18n" data-es="Soporte incluido" data-en="Support included">Soporte incluido</div>
-      </div>
-    </div>
-    <div class="charts-grid">
-      <div class="chart-card reveal" data-tilt>
-        <div class="chart-title i18n" data-es="Consultas atendidas: Antes vs Después de Zepai IA" data-en="Queries handled: Before vs After Zepai AI">Consultas atendidas: Antes vs Después de Zepai IA</div>
-        <div class="chart-sub i18n" data-es="Consultas mensuales por cliente (promedio 4 meses)" data-en="Monthly queries per client (4-month average)">Consultas mensuales por cliente (promedio 4 meses)</div>
-        <canvas id="barChart" height="200"></canvas>
       </div>
     </div>
   </div>
@@ -1294,50 +1286,6 @@ const counterObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 const statsEl = document.querySelector('.stats-grid');
 if (statsEl) counterObs.observe(statsEl);
-
-/* ── CHARTS ── */
-const chartDefaults = {
-  color: 'rgba(10,10,20,0.65)',
-  plugins: { legend: { labels: { color: 'rgba(10,10,20,0.65)', font: { family: 'Inter', size: 12 } } } }
-};
-Chart.defaults.color = 'rgba(10,10,20,0.65)';
-
-// Bar Chart
-const barCtx = document.getElementById('barChart');
-if (barCtx) {
-  new Chart(barCtx, {
-    type: 'bar',
-    data: {
-      labels: ['El Rincón Gourmet', 'Horizonte Plus', 'TiendaFit.co'],
-      datasets: [
-        {
-          label: currentLang === 'es' ? 'Antes de Zepai' : 'Before Zepai',
-          data: [42, 35, 58],
-          backgroundColor: 'rgba(15,23,42,0.10)',
-          borderColor: 'rgba(15,23,42,0.35)',
-          borderWidth: 1,
-          borderRadius: 6,
-        },
-        {
-          label: currentLang === 'es' ? 'Con Zepai IA' : 'With Zepai AI',
-          data: [218, 182, 295],
-          backgroundColor: 'rgba(139,92,246,0.22)',
-          borderColor: '#8B5CF6',
-          borderWidth: 1,
-          borderRadius: 6,
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      plugins: { legend: { labels: { color: 'rgba(10,10,20,0.65)', font: { family: 'Inter', size: 12 } } } },
-      scales: {
-        x: { grid: { color: 'rgba(10,10,20,0.07)' }, ticks: { color: 'rgba(10,10,20,0.55)', font: { family: 'Inter', size: 11 } } },
-        y: { grid: { color: 'rgba(10,10,20,0.07)' }, ticks: { color: 'rgba(10,10,20,0.55)', font: { family: 'Inter', size: 11 } } }
-      }
-    }
-  });
-}
 
 /* ══ NOTIFICACIONES POR CORREO (EmailJS) ══════════════════════════════
    Configurado: cada llamada agendada o cotización se envía directo a tu
