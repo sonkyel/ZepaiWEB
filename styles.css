@@ -262,7 +262,9 @@ nav.scrolled{
 }
 .nav-logo-sub{font-size:9px;font-weight:500;letter-spacing:3px;color:var(--t3);text-transform:uppercase;margin-top:2px}
 .nav-links{display:flex;align-items:center;gap:30px;list-style:none}
-.nav-links a{font-size:14px;font-weight:500;color:var(--t3);transition:color .2s;cursor:pointer}
+/* nowrap: sin esto, un item de dos palabras ("Consultoría IA") se parte en
+   dos lineas cuando la barra va justa y descuadra toda la nav */
+.nav-links a{font-size:14px;font-weight:500;color:var(--t3);transition:color .2s;cursor:pointer;white-space:nowrap}
 .nav-links a:hover{color:var(--t1)}
 .nav-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
 .lang-toggle{
