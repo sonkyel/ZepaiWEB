@@ -348,11 +348,6 @@ nav.scrolled{
   animation:pdot 2s infinite;
 }
 @keyframes pdot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(139,92,246,.6)}50%{opacity:.7;box-shadow:0 0 0 7px rgba(139,92,246,0)}}
-.hero-h1{
-  font-size:clamp(17px,1.9vw,23px);font-weight:700;
-  line-height:1.35;letter-spacing:-.3px;margin-bottom:12px;
-  color:var(--t2);
-}
 .hero-title{
   font-size:clamp(38px,4.8vw,66px);font-weight:900;
   line-height:1.1;letter-spacing:-2px;margin-bottom:22px;
@@ -728,7 +723,6 @@ footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 
   /* Reducir padding de how section sin canvas */
   #how .sec-hdr{margin-bottom:28px}
   .hero-title{font-size:clamp(30px,8vw,48px)}
-  .hero-h1{font-size:16px;margin-bottom:10px}
   .hero-sub{font-size:15px}
   .srv-grid{grid-template-columns:1fr 1fr}
   .ind-grid{grid-template-columns:1fr 1fr}
@@ -788,7 +782,6 @@ footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 
 .sec-title{color:#0A0A14!important}
 .sec-sub{color:rgba(10,10,20,.6)!important}
 .hero-title{color:#0A0A14!important}
-.hero-h1{color:rgba(10,10,20,.66)!important}
 .hero-sub{color:rgba(10,10,20,.65)!important}
 .step-title,.step-desc{color:#0A0A14}
 .stat-lbl{color:rgba(10,10,20,.55)}
