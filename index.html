@@ -145,15 +145,18 @@ document.head.appendChild(o)}initApollo();</script>
 <!-- ═══ NAVIGATION ═══════════════════════════════ -->
 <nav id="mainNav">
   <div class="nav-in">
-    <div class="nav-logo" onclick="scrollTo(0,0)" style="cursor:pointer">
+    <a class="nav-logo" href="/" aria-label="Zepai Agency — Inicio">
       <img src="logo.png" alt="ZEPAI Agency" class="logo-nav">
-    </div>
+    </a>
     <ul class="nav-links">
-      <li><a onclick="scrollToSection('services')" class="i18n" data-es="Servicios" data-en="Services">Servicios</a></li>
-      <li><a onclick="scrollToSection('industries')" class="i18n" data-es="Industrias" data-en="Industries">Industrias</a></li>
-      <li><a onclick="scrollToSection('results')" class="i18n" data-es="Resultados" data-en="Results">Resultados</a></li>
-      <li><a onclick="scrollToSection('testimonials')" class="i18n" data-es="Testimonios" data-en="Testimonials">Testimonios</a></li>
-      <li><a onclick="scrollToSection('contact')" class="i18n" data-es="Contacto" data-en="Contact">Contacto</a></li>
+      <li><a href="#services" class="i18n" data-es="Servicios" data-en="Services">Servicios</a></li>
+      <li><a href="/consultoria-ia" class="i18n" data-es="Consultoría IA" data-en="AI Consulting">Consultoría IA</a></li>
+      <li><a href="#industries" class="i18n" data-es="Industrias" data-en="Industries">Industrias</a></li>
+      <li><a href="/blog" class="i18n" data-es="Blog" data-en="Blog">Blog</a></li>
+      <li><a href="/blog" class="i18n" data-es="Blog" data-en="Blog">Blog</a></li>
+          <li><a href="#results" class="i18n" data-es="Resultados" data-en="Results">Resultados</a></li>
+      <li><a href="#testimonials" class="i18n" data-es="Testimonios" data-en="Testimonials">Testimonios</a></li>
+      <li><a href="#contact" class="i18n" data-es="Contacto" data-en="Contact">Contacto</a></li>
     </ul>
     <div class="nav-right">
       <div class="lang-toggle">
@@ -172,11 +175,13 @@ document.head.appendChild(o)}initApollo();</script>
 
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <a onclick="scrollToSection('services');closeMenu()" class="i18n" data-es="Servicios" data-en="Services">Servicios</a>
-  <a onclick="scrollToSection('industries');closeMenu()" class="i18n" data-es="Industrias" data-en="Industries">Industrias</a>
-  <a onclick="scrollToSection('results');closeMenu()" class="i18n" data-es="Resultados" data-en="Results">Resultados</a>
-  <a onclick="scrollToSection('testimonials');closeMenu()" class="i18n" data-es="Testimonios" data-en="Testimonials">Testimonios</a>
-  <a onclick="scrollToSection('contact');closeMenu()" class="i18n" data-es="Contacto" data-en="Contact">Contacto</a>
+  <a href="#services" onclick="closeMenu()" class="i18n" data-es="Servicios" data-en="Services">Servicios</a>
+  <a href="/consultoria-ia" class="i18n" data-es="Consultoría IA" data-en="AI Consulting">Consultoría IA</a>
+  <a href="#industries" onclick="closeMenu()" class="i18n" data-es="Industrias" data-en="Industries">Industrias</a>
+  <a href="/blog" class="i18n" data-es="Blog" data-en="Blog">Blog</a>
+  <a href="#results" onclick="closeMenu()" class="i18n" data-es="Resultados" data-en="Results">Resultados</a>
+  <a href="#testimonials" onclick="closeMenu()" class="i18n" data-es="Testimonios" data-en="Testimonials">Testimonios</a>
+  <a href="#contact" onclick="closeMenu()" class="i18n" data-es="Contacto" data-en="Contact">Contacto</a>
   <div class="lang-toggle" style="margin-top:4px">
     <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
     <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
@@ -1409,29 +1414,30 @@ document.head.appendChild(o)}initApollo();</script>
       <div class="fcol">
         <h4 class="i18n" data-es="Servicios" data-en="Services">Servicios</h4>
         <ul>
-          <li><a onclick="scrollToSection('services')" class="i18n" data-es="Agentes IA" data-en="AI Agents">Agentes IA</a></li>
-          <li><a onclick="scrollToSection('services')" class="i18n" data-es="Marketing Digital" data-en="Digital Marketing">Marketing Digital</a></li>
-          <li><a onclick="scrollToSection('services')" class="i18n" data-es="Clipping" data-en="Clipping">Clipping</a></li>
-          <li><a onclick="scrollToSection('services')" class="i18n" data-es="Tráfico en Redes" data-en="Social Media Traffic">Tráfico en Redes</a></li>
-          <li><a onclick="scrollToSection('services')" class="i18n" data-es="Diseño Web" data-en="Web Design">Diseño Web</a></li>
+          <li><a href="/consultoria-ia" class="i18n" data-es="Consultoría de IA" data-en="AI Consulting">Consultoría de IA</a></li>
+          <li><a href="#services" class="i18n" data-es="Agentes IA" data-en="AI Agents">Agentes IA</a></li>
+          <li><a href="#services" class="i18n" data-es="Marketing Digital" data-en="Digital Marketing">Marketing Digital</a></li>
+          <li><a href="#services" class="i18n" data-es="Clipping" data-en="Clipping">Clipping</a></li>
+          <li><a href="#services" class="i18n" data-es="Tráfico en Redes" data-en="Social Media Traffic">Tráfico en Redes</a></li>
+          <li><a href="#services" class="i18n" data-es="Diseño Web" data-en="Web Design">Diseño Web</a></li>
         </ul>
       </div>
       <div class="fcol">
         <h4 class="i18n" data-es="Industrias" data-en="Industries">Industrias</h4>
         <ul>
-          <li><a onclick="scrollToSection('industries')" class="i18n" data-es="Restaurantes" data-en="Restaurants">Restaurantes</a></li>
-          <li><a onclick="scrollToSection('industries')" class="i18n" data-es="Cafeterías" data-en="Cafés">Cafeterías</a></li>
-          <li><a onclick="scrollToSection('industries')" class="i18n" data-es="Inmobiliarias" data-en="Real Estate">Inmobiliarias</a></li>
-          <li><a onclick="scrollToSection('industries')" class="i18n" data-es="E-Commerce" data-en="E-Commerce">E-Commerce</a></li>
+          <li><a href="/agencia-ia-restaurantes" class="i18n" data-es="Restaurantes" data-en="Restaurants">Restaurantes</a></li>
+          <li><a href="#industries" class="i18n" data-es="Cafeterías" data-en="Cafés">Cafeterías</a></li>
+          <li><a href="/agencia-ia-inmobiliarias" class="i18n" data-es="Inmobiliarias" data-en="Real Estate">Inmobiliarias</a></li>
+          <li><a href="#industries" class="i18n" data-es="E-Commerce" data-en="E-Commerce">E-Commerce</a></li>
         </ul>
       </div>
       <div class="fcol">
         <h4 class="i18n" data-es="Empresa" data-en="Company">Empresa</h4>
         <ul>
-          <li><a onclick="scrollToSection('results')" class="i18n" data-es="Resultados" data-en="Results">Resultados</a></li>
-          <li><a onclick="scrollToSection('testimonials')" class="i18n" data-es="Testimonios" data-en="Testimonials">Testimonios</a></li>
-          <li><a onclick="scrollToSection('faq')" class="i18n" data-es="Preguntas Frecuentes" data-en="FAQ">Preguntas Frecuentes</a></li>
-          <li><a onclick="scrollToSection('contact')" class="i18n" data-es="Contacto" data-en="Contact">Contacto</a></li>
+          <li><a href="#results" class="i18n" data-es="Resultados" data-en="Results">Resultados</a></li>
+          <li><a href="#testimonials" class="i18n" data-es="Testimonios" data-en="Testimonials">Testimonios</a></li>
+          <li><a href="#faq" class="i18n" data-es="Preguntas Frecuentes" data-en="FAQ">Preguntas Frecuentes</a></li>
+          <li><a href="#contact" class="i18n" data-es="Contacto" data-en="Contact">Contacto</a></li>
           <li><a onclick="openPrivacyModal(event)" class="i18n" data-es="Política de Privacidad" data-en="Privacy Policy">Política de Privacidad</a></li>
         </ul>
       </div>

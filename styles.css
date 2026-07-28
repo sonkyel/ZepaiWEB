@@ -1,6 +1,8 @@
 /* ── RESET ─────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+/* Compensa la nav fija al saltar a un ancla desde un enlace real */
+section[id]{scroll-margin-top:100px}
 body{color:#0A0A14;font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#FFFFFF;color:#0A0A14;line-height:1.6;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
