@@ -377,6 +377,11 @@ nav.scrolled{
   animation:pdot 2s infinite;
 }
 @keyframes pdot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(139,92,246,.6)}50%{opacity:.7;box-shadow:0 0 0 7px rgba(139,92,246,0)}}
+.hero-h1{
+  font-size:clamp(17px,1.9vw,23px);font-weight:700;
+  line-height:1.35;letter-spacing:-.3px;margin-bottom:12px;
+  color:var(--t2);
+}
 .hero-title{
   font-size:clamp(38px,4.8vw,66px);font-weight:900;
   line-height:1.1;letter-spacing:-2px;margin-bottom:22px;
@@ -811,6 +816,7 @@ footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 
   /* Reducir padding de how section sin canvas */
   #how .sec-hdr{margin-bottom:28px}
   .hero-title{font-size:clamp(30px,8vw,48px)}
+  .hero-h1{font-size:16px;margin-bottom:10px}
   .hero-sub{font-size:15px}
   .srv-grid{grid-template-columns:1fr 1fr}
   .steps-wrap{grid-template-columns:1fr;gap:36px}
@@ -870,6 +876,7 @@ footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 
 .sec-title{color:#0A0A14!important}
 .sec-sub{color:rgba(10,10,20,.6)!important}
 .hero-title{color:#0A0A14!important}
+.hero-h1{color:rgba(10,10,20,.66)!important}
 .hero-sub{color:rgba(10,10,20,.65)!important}
 .step-title,.step-desc{color:#0A0A14}
 .stat-lbl{color:rgba(10,10,20,.55)}
@@ -1313,8 +1320,8 @@ document.head.appendChild(o)}initApollo();</script>
 <body>
 <noscript>
   <div style="display:none">
-    <h1>Zepai Agency — Agentes IA para tu Negocio</h1>
-    <p>Somos una agencia digital en Latinoamérica especializada en Agentes de Inteligencia Artificial, Marketing Digital, Clipping de Contenido y Diseño Web para restaurantes, inmobiliarias, e-commerce y más.</p>
+    <div>Zepai Agency — Agencia y Consultora de IA para Empresas</div>
+    <p>Somos una agencia y consultora de inteligencia artificial que automatiza los procesos de tu empresa: atención al cliente, ventas, reservas, soporte y operaciones. Trabajamos con restaurantes, inmobiliarias, e-commerce y más, a nivel internacional.</p>
     <p>Automatizamos tu negocio con IA para que atiendas clientes 24/7, generes más leads y escales sin contratar más personal.</p>
     <p>Contacto: info@zepaiagency.com | Web: https://zepaiagency.com</p>
   </div>
@@ -1409,12 +1416,15 @@ document.head.appendChild(o)}initApollo();</script>
       <div class="hero-top reveal">
         <div class="hero-badge">
           <div class="pulse-dot"></div>
-          <span class="i18n" data-es="Agencia de Inteligencia Artificial" data-en="Artificial Intelligence Agency">Agencia de Inteligencia Artificial</span>
+          <span class="i18n" data-es="Automatización de Procesos con IA" data-en="AI Process Automation">Automatización de Procesos con IA</span>
         </div>
-        <h1 class="hero-title">
+        <h1 class="hero-h1">
+          <span class="i18n" data-es="Agencia de Inteligencia Artificial para tu Empresa" data-en="Artificial Intelligence Agency for Your Business">Agencia de Inteligencia Artificial para tu Empresa</span>
+        </h1>
+        <h2 class="hero-title">
           <span class="i18n" data-es="Automatiza tu negocio" data-en="Automate your business">Automatiza tu negocio</span><br>
           <span class="gt i18n" data-es="con IA que trabaja 24/7" data-en="with AI that works 24/7">con IA que trabaja 24/7</span>
-        </h1>
+        </h2>
       </div>
 
       <!-- ROBOT CENTRADO EN EL MEDIO -->
