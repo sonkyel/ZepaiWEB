@@ -674,16 +674,6 @@ section{padding:100px 0;position:relative}
 @media(max-width:768px){.schedule-wrap{grid-template-columns:1fr}.time-grid{grid-template-columns:1fr}}
 
 /* ── 3D END SCENE ───────────────────────────────── */
-#cta3d{
-  position:relative;height:560px;overflow:hidden;
-  background:radial-gradient(ellipse at center,#040A18 0%,#000 70%);
-  display:flex;align-items:center;justify-content:center;
-  /* On mobile canvas is not rendered — show gradient only */
-}
-#endCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
-.cta3d-content{
-  position:relative;z-index:1;text-align:center;padding:0 24px;
-}
 
 /* ── FOOTER ─────────────────────────────────────── */
 footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 28px}
@@ -736,8 +726,7 @@ footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 
   /* Ocultar fondo Three.js pesado en móvil */
   #robotCanvas{display:none!important}
   /* End scene más compacta */
-  #cta3d{height:340px}
-  /* How canvas oculto en móvil (no hay renderer) */
+    /* How canvas oculto en móvil (no hay renderer) */
   /* Reducir padding de how section sin canvas */
   #how .sec-hdr{margin-bottom:28px}
   .hero-title{font-size:clamp(30px,8vw,48px)}
@@ -838,7 +827,6 @@ footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 
 .time-btn{color:rgba(10,10,20,.7)!important;background:rgba(139,92,246,.06)!important}
 .time-btn.active{color:#fff!important}
 .time-btn.booked{color:rgba(10,10,20,.3)!important}
-.cta3d-content p{color:rgba(10,10,20,.65)!important}
 .btn-p,.btn-p span,.btn-p *{color:#fff!important}
 .step-num{color:#fff!important}
 .f-badge{color:#8B5CF6!important}
@@ -902,16 +890,6 @@ nav.scrolled{background:rgba(255,255,255,.96)!important;border-bottom:1px solid 
 .btn-s{color:#0A0A14!important;border:1.5px solid rgba(10,10,20,.3)!important;background:transparent!important}
 .btn-s:hover{background:rgba(139,92,246,.08)!important;border-color:#8B5CF6!important;color:#8B5CF6!important}
 .btn-s *{color:inherit!important}
-
-/* FIX: Sección #cta3d — texto blanco sobre fondo oscuro (tiene orbital 3D) */
-#cta3d{background:radial-gradient(ellipse at center,#1A0832 0%,#07060E 70%)!important}
-#cta3d .section-label{color:#8B5CF6!important;background:rgba(139,92,246,.15)!important;border-color:rgba(139,92,246,.3)!important}
-#cta3d .sec-title{color:#FFFFFF!important;text-shadow:none!important}
-#cta3d .sec-title span{color:#FFFFFF!important}
-#cta3d .gt{background:linear-gradient(135deg,#8B5CF6,#4F46E5);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-#cta3d p{color:rgba(255,255,255,.72)!important}
-#cta3d .btn-p{color:#fff!important}
-#cta3d .btn-p *{color:#fff!important}
 
 /* ── LIGHT MODE SECTION BACKGROUNDS ── */
 #services{background:#F5F4FF}
