@@ -1,0 +1,438 @@
+/* ── HERO DE MARCA ───────────────────────────────────────────
+   Fondo propio, no una escena alquilada. Todos los valores de
+   color de este fichero están validados en check-contrast.py:
+   si se tocan, hay que volver a pasarlo.
+   ───────────────────────────────────────────────────────── */
+
+:root {
+  --hero-base: #06050f;
+  --hero-neb: #241a4a; /* lo más claro que puede haber tras el texto */
+  --grad-btn: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+}
+
+.galaxy-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--hero-base);
+  padding-top: var(--nav-h);
+}
+
+/* ── Fondo ───────────────────────────────────────────────── */
+.brand-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.brand-nebula {
+  position: absolute;
+  inset: -15%;
+  background:
+    radial-gradient(ellipse 60% 50% at 26% 36%, rgba(139, 92, 246, 0.30), transparent 64%),
+    radial-gradient(ellipse 50% 44% at 74% 60%, rgba(79, 70, 229, 0.26), transparent 62%),
+    radial-gradient(ellipse 85% 60% at 50% 4%, rgba(168, 85, 247, 0.14), transparent 66%);
+  filter: blur(40px);
+  animation: brand-drift 26s ease-in-out infinite alternate;
+}
+@keyframes brand-drift {
+  from { transform: translate3d(-1.5%, -1%, 0) scale(1); }
+  to { transform: translate3d(1.5%, 1.5%, 0) scale(1.06); }
+}
+
+.brand-stars,
+.brand-stars::before,
+.brand-stars::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+}
+.brand-stars {
+  background-image:
+    radial-gradient(1.4px 1.4px at 20% 30%, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(1.2px 1.2px at 70% 18%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1.5px 1.5px at 44% 72%, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1.1px 1.1px at 88% 54%, rgba(214, 199, 255, 0.75), transparent);
+  background-size: 320px 320px;
+  animation: brand-twinkle 5s ease-in-out infinite;
+}
+.brand-stars::before {
+  background-image:
+    radial-gradient(1px 1px at 12% 62%, rgba(255, 255, 255, 0.62), transparent),
+    radial-gradient(1.3px 1.3px at 58% 40%, rgba(196, 181, 253, 0.68), transparent),
+    radial-gradient(1px 1px at 82% 82%, rgba(255, 255, 255, 0.55), transparent);
+  background-size: 210px 210px;
+  animation: brand-twinkle 7s ease-in-out infinite reverse;
+}
+.brand-stars::after {
+  background-image:
+    radial-gradient(0.9px 0.9px at 33% 15%, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(0.9px 0.9px at 92% 28%, rgba(255, 255, 255, 0.4), transparent);
+  background-size: 140px 140px;
+  animation: brand-twinkle 9s ease-in-out infinite;
+}
+@keyframes brand-twinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Red de nodos: el motivo propio, "automatización" en vez de "espacio" */
+.brand-net {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+.brand-edge {
+  stroke-dasharray: 5 7;
+  animation: brand-flow 7s linear infinite;
+}
+@keyframes brand-flow {
+  to { stroke-dashoffset: -48; }
+}
+.brand-node {
+  filter: drop-shadow(0 0 7px rgba(139, 92, 246, 0.85));
+  animation: brand-node-pulse 4.5s ease-in-out infinite;
+}
+@keyframes brand-node-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+/* La escena de Spline se pinta encima del fondo de marca */
+.galaxy-scene-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.galaxy-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* El velo es lo que hace el contraste predecible: garantiza que tras la
+   columna de texto nunca haya nada más claro que --hero-neb. */
+.brand-scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(6, 5, 15, 0.42), transparent 34%, rgba(6, 5, 15, 0.86));
+}
+
+/* Velo sobre la escena. Con el texto centrado hay que oscurecer el centro,
+   no un lateral: es lo que garantiza que tras las letras nunca haya nada
+   mas claro que #241A4A, el fondo contra el que valida check-contrast.py. */
+.galaxy-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 76% 66% at 50% 50%,
+      rgba(6, 5, 15, 0.45) 0%,
+      rgba(6, 5, 15, 0.34) 48%,
+      rgba(6, 5, 15, 0.14) 74%,
+      transparent 100%
+    ),
+    linear-gradient(to bottom, rgba(6, 5, 15, 0.5), rgba(6, 5, 15, 0.12) 30%, rgba(6, 5, 15, 0.86));
+}
+
+/* ── Contenido ───────────────────────────────────────────── */
+.galaxy-inner {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  transition: opacity 0.15s linear;
+}
+.galaxy-copy {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px 0;
+}
+
+.galaxy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 15px;
+  margin-bottom: 22px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ede4ff;
+  background: rgba(139, 92, 246, 0.18);
+  border: 1px solid rgba(139, 92, 246, 0.38);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.galaxy-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a855f7;
+  box-shadow: 0 0 9px #a855f7;
+  animation: galaxy-pulse 2s ease-in-out infinite;
+}
+@keyframes galaxy-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.galaxy-title {
+  font-size: clamp(34px, 5vw, 68px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  color: #fff;
+  margin-bottom: 22px;
+  text-shadow: 0 2px 26px rgba(0, 0, 0, 0.55);
+}
+/* Era #C4B5FD -> #8B5CF6 -> #6366F1: el tramo final caía a 4,8 sobre la base
+   y a 1,2 sobre las zonas claras. Ahora ningún tramo baja de #A78BFA (7,2). */
+.galaxy-title-grad {
+  background: linear-gradient(135deg, #f3e8ff 0%, #ddd1ff 50%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.galaxy-sub {
+  font-size: 17px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 620px;
+  margin: 0 auto 34px;
+}
+
+.galaxy-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+/* El degradado arranca en #7C3AED y no en #8B5CF6: sobre el morado de marca
+   el texto blanco daba 4,2 y no llegaba a AA. */
+.galaxy-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 15px 30px;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--grad-btn);
+  border: 1px solid rgba(196, 181, 253, 0.35);
+  box-shadow: 0 8px 34px rgba(79, 70, 229, 0.45);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.galaxy-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 46px rgba(139, 92, 246, 0.6);
+}
+.galaxy-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.galaxy-link:hover {
+  color: #fff;
+  border-color: #c4b5fd;
+}
+
+.galaxy-trust {
+  margin-top: 46px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+/* Estaba al 42%: daba 4,0 y ya fallaba sin escena de por medio. */
+.galaxy-trust-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 14px;
+}
+.galaxy-channels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+}
+.galaxy-channel {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.94);
+  padding: 7px 14px;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+@media (max-width: 900px) {
+  .galaxy-hero {
+    min-height: auto;
+    padding-top: calc(var(--nav-h) + 24px);
+    padding-bottom: 56px;
+  }
+  .galaxy-copy { max-width: 100%; padding: 24px 0; }
+  /* En móvil el texto ocupa todo el ancho: el velo cubre por igual */
+  .brand-scrim {
+    background:
+      linear-gradient(to bottom, rgba(6, 5, 15, 0.72), rgba(6, 5, 15, 0.82) 40%, rgba(6, 5, 15, 0.95));
+  }
+  .brand-net { opacity: 0.5; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-nebula,
+  .brand-stars,
+  .brand-stars::before,
+  .brand-stars::after,
+  .brand-edge,
+  .brand-node,
+  .galaxy-badge-dot {
+    animation: none !important;
+  }
+  .galaxy-inner { transition: none !important; }
+}
+
+/* ── SECCIONES OSCURAS ───────────────────────────────────────
+   #results entera y el marco de #contact. El CSS heredado fuerza
+   colores con !important en 111 selectores, así que aquí hay que
+   ganar por especificidad. Los valores están validados en
+   check-contrast.py contra #0B0A18.
+   ───────────────────────────────────────────────────────── */
+#results,
+#contact {
+  background: #0b0a18 !important;
+  position: relative;
+}
+#results::before,
+#contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 18% 0%, rgba(139, 92, 246, 0.13), transparent 62%),
+    radial-gradient(ellipse 55% 45% at 82% 100%, rgba(79, 70, 229, 0.11), transparent 60%);
+}
+#results > .container,
+#contact > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Texto de #results sobre oscuro */
+#results .sec-title,
+#results .sec-title span,
+#results .sec-sub-title,
+#results .t-name,
+#results .test-author .t-name {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+#results .sec-title .gt {
+  background: linear-gradient(135deg, #e9d5ff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+}
+#results .sec-sub { color: rgba(255, 255, 255, 0.78) !important; }
+#results .stat-lbl { color: rgba(255, 255, 255, 0.74) !important; }
+#results .test-quote { color: rgba(255, 255, 255, 0.86) !important; -webkit-text-fill-color: rgba(255, 255, 255, 0.86) !important; }
+#results .t-role { color: rgba(255, 255, 255, 0.68) !important; -webkit-text-fill-color: rgba(255, 255, 255, 0.68) !important; }
+#results .stat-num { color: #c4b5fd !important; -webkit-text-fill-color: #c4b5fd !important; }
+#results .section-label,
+#results .kii-tag,
+#results .kii-link,
+#results .live-badge {
+  color: #ddd1ff !important;
+  -webkit-text-fill-color: #ddd1ff !important;
+}
+
+/* Tarjetas de #results: cristal oscuro en vez de blanco */
+#results .stat-card,
+#results .test-card {
+  background: rgba(255, 255, 255, 0.045) !important;
+  border-color: rgba(196, 181, 253, 0.18) !important;
+  box-shadow: none !important;
+}
+#results .stat-card:hover,
+#results .test-card:hover {
+  background: rgba(255, 255, 255, 0.075) !important;
+  border-color: rgba(196, 181, 253, 0.34) !important;
+}
+#results .kii-tag { background: rgba(139, 92, 246, 0.16) !important; border-color: rgba(139, 92, 246, 0.3) !important; }
+#results .section-label { background: rgba(139, 92, 246, 0.16) !important; border-color: rgba(139, 92, 246, 0.32) !important; }
+#results .sec-robot { opacity: 0.35; }
+
+/* #contact: SOLO el marco va oscuro. El formulario se queda en claro.
+   Son 28 reglas con !important sobre campos, fechas y franjas horarias, y
+   es donde entra el dinero: un campo ilegible cuesta clientes. */
+#contact .contact-info .section-label {
+  color: #ddd1ff !important;
+  background: rgba(139, 92, 246, 0.16) !important;
+  border-color: rgba(139, 92, 246, 0.32) !important;
+}
+#contact .contact-info h2,
+#contact .contact-info h2 span {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+#contact .contact-info h2 .gt {
+  background: linear-gradient(135deg, #e9d5ff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+}
+#contact .contact-info p,
+#contact .contact-info li,
+#contact .contact-info .c-detail,
+#contact .contact-info .c-detail span,
+#contact .contact-info .c-detail a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+}
+#contact .contact-info .sched-check,
+#contact .contact-info .c-ico {
+  background: rgba(139, 92, 246, 0.18) !important;
+  border-color: rgba(139, 92, 246, 0.34) !important;
+  color: #ddd1ff !important;
+}
+#contact .sec-robot { opacity: 0.35; }
+
+/* La tarjeta del formulario mantiene su fondo claro: dentro no se toca nada */
+#contact .contact-form {
+  background: #fff !important;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* El botón principal, en toda la web: sobre #8B5CF6 el texto blanco daba 4,2
+   y el oscuro 3,1 en el extremo índigo. Ninguno llegaba a AA. */
+.btn-p {
+  background: var(--grad-btn) !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+.btn-p * {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}

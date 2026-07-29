@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* El diseño de la web (62 KB de CSS escritos a mano) se conserva tal cual.
+   Reescribirlo en Tailwind habría sido semanas de trabajo y un riesgo alto
+   de romper el aspecto; Tailwind queda para lo nuevo. */
+@import "./legacy.css";
+@import "./galaxy.css";
+
+/* Las fuentes ahora las sirve next/font desde el propio dominio en vez de
+   Google Fonts por CDN: una petición externa menos y sin salto de texto. */
+:root {
+  --font-body: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+}

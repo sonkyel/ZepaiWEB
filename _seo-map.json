@@ -1,0 +1,787 @@
+{
+ "/agencia-ia-ecommerce": {
+  "file": "agencia-ia-ecommerce.html",
+  "title": "IA para Tiendas Online | Atención y Recuperación de Carritos | Zepai",
+  "description": "Inteligencia artificial para e-commerce: resuelve dudas antes de la compra, responde el estado de los pedidos, gestiona devoluciones y recupera carritos abandonados.",
+  "canonical": "https://zepaiagency.com/agencia-ia-ecommerce",
+  "h1_es": "Inteligencia Artificial para Tiendas Online",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Inteligencia artificial para tiendas online",
+    "serviceType": "Inteligencia artificial para tiendas online",
+    "description": "Agentes de IA para e-commerce: resolución de dudas previas a la compra, consulta del estado de pedidos, gestión de devoluciones y recuperación de carritos abandonados.",
+    "url": "https://zepaiagency.com/agencia-ia-ecommerce",
+    "provider": {
+     "@id": "https://zepaiagency.com/#organization"
+    },
+    "areaServed": {
+     "@type": "Place",
+     "name": "Worldwide"
+    },
+    "audience": {
+     "@type": "BusinessAudience",
+     "audienceType": "Tiendas online y e-commerce"
+    },
+    "availableLanguage": [
+     "es",
+     "en"
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://zepaiagency.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "E-Commerce",
+      "item": "https://zepaiagency.com/agencia-ia-ecommerce"
+     }
+    ]
+   }
+  ]
+ },
+ "/agencia-ia-inmobiliarias": {
+  "file": "agencia-ia-inmobiliarias.html",
+  "title": "Chatbot de IA por WhatsApp para Inmobiliarias | Capta y Filtra Leads | Zepai",
+  "description": "Chatbot de IA por WhatsApp para inmobiliarias: responde en segundos, cualifica leads, envía fichas de inmuebles y agenda visitas automáticamente. Implementación a medida.",
+  "canonical": "https://zepaiagency.com/agencia-ia-inmobiliarias",
+  "h1_es": "Chatbot de IA por WhatsApp para Inmobiliarias",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Chatbot de IA por WhatsApp para inmobiliarias",
+    "serviceType": "Chatbot de IA por WhatsApp para inmobiliarias",
+    "description": "Agente de inteligencia artificial en WhatsApp que responde, cualifica y agenda visitas para agencias inmobiliarias de forma automática.",
+    "url": "https://zepaiagency.com/agencia-ia-inmobiliarias",
+    "provider": {
+     "@id": "https://zepaiagency.com/#organization"
+    },
+    "areaServed": {
+     "@type": "Place",
+     "name": "Worldwide"
+    },
+    "audience": {
+     "@type": "BusinessAudience",
+     "audienceType": "Agencias inmobiliarias y promotoras"
+    },
+    "availableLanguage": [
+     "es",
+     "en"
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://zepaiagency.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Inmobiliarias",
+      "item": "https://zepaiagency.com/agencia-ia-inmobiliarias"
+     }
+    ]
+   }
+  ]
+ },
+ "/agencia-ia-restaurantes": {
+  "file": "agencia-ia-restaurantes.html",
+  "title": "Asistente de Voz con IA para Restaurantes | Reservas 24/7 | Zepai",
+  "description": "Asistente de voz con IA para restaurantes: contesta el teléfono, toma reservas y responde dudas 24/7. Deja de perder mesas por llamadas sin atender. Implementación a medida.",
+  "canonical": "https://zepaiagency.com/agencia-ia-restaurantes",
+  "h1_es": "Asistente de Voz con IA para Restaurantes",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Asistente de voz con IA para restaurantes",
+    "serviceType": "Asistente de voz con IA para restaurantes",
+    "description": "Asistente de voz con inteligencia artificial que atiende llamadas, gestiona reservas y responde consultas de clientes en restaurantes, 24 horas al día.",
+    "url": "https://zepaiagency.com/agencia-ia-restaurantes",
+    "provider": {
+     "@id": "https://zepaiagency.com/#organization"
+    },
+    "areaServed": {
+     "@type": "Place",
+     "name": "Worldwide"
+    },
+    "audience": {
+     "@type": "BusinessAudience",
+     "audienceType": "Restaurantes, bares y cafeterías"
+    },
+    "availableLanguage": [
+     "es",
+     "en"
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://zepaiagency.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Restaurantes",
+      "item": "https://zepaiagency.com/agencia-ia-restaurantes"
+     }
+    ]
+   }
+  ]
+ },
+ "/automatizacion-de-llamadas": {
+  "file": "automatizacion-de-llamadas.html",
+  "title": "Automatización de Llamadas con IA | Agente de Voz 24/7 | Zepai",
+  "description": "Automatización de llamadas con IA: un agente de voz contesta el teléfono, toma reservas y citas, filtra la llamada y deriva a una persona cuando hace falta.",
+  "canonical": "https://zepaiagency.com/automatizacion-de-llamadas",
+  "h1_es": "Automatización de Llamadas con IA",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Automatización de llamadas con IA",
+    "serviceType": "Automatización de llamadas con IA",
+    "description": "Agente de voz con inteligencia artificial que atiende llamadas entrantes, gestiona reservas y citas, filtra y deriva llamadas y realiza llamadas de salida rutinarias.",
+    "url": "https://zepaiagency.com/automatizacion-de-llamadas",
+    "provider": {
+     "@id": "https://zepaiagency.com/#organization"
+    },
+    "areaServed": {
+     "@type": "Place",
+     "name": "Worldwide"
+    },
+    "audience": {
+     "@type": "BusinessAudience",
+     "audienceType": "Empresas que reciben llamadas de clientes"
+    },
+    "availableLanguage": [
+     "es",
+     "en"
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://zepaiagency.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Llamadas con IA",
+      "item": "https://zepaiagency.com/automatizacion-de-llamadas"
+     }
+    ]
+   }
+  ]
+ },
+ "/automatizaciones-n8n-make": {
+  "file": "automatizaciones-n8n-make.html",
+  "title": "Automatizaciones con n8n y Make | Procesos Internos con IA | Zepai",
+  "description": "Automatizaciones con n8n y Make: conectamos las herramientas que ya usas y automatizamos procesos internos completos, con IA donde aporta. Diseño, montaje y mantenimiento.",
+  "canonical": "https://zepaiagency.com/automatizaciones-n8n-make",
+  "h1_es": "Automatizaciones con n8n y Make",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Automatizaciones con n8n y Make",
+    "serviceType": "Automatizaciones con n8n y Make",
+    "description": "Diseño, implementación y mantenimiento de flujos de automatización con n8n y Make para procesos internos empresariales, con integración de modelos de IA.",
+    "url": "https://zepaiagency.com/automatizaciones-n8n-make",
+    "provider": {
+     "@id": "https://zepaiagency.com/#organization"
+    },
+    "areaServed": {
+     "@type": "Place",
+     "name": "Worldwide"
+    },
+    "audience": {
+     "@type": "BusinessAudience",
+     "audienceType": "Empresas con procesos internos repetitivos"
+    },
+    "availableLanguage": [
+     "es",
+     "en"
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://zepaiagency.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "n8n y Make",
+      "item": "https://zepaiagency.com/automatizaciones-n8n-make"
+     }
+    ]
+   }
+  ]
+ },
+ "/blog": {
+  "file": "blog.html",
+  "title": "Blog de Automatización e IA para Negocios | Zepai",
+  "description": "Artículos prácticos sobre automatización de procesos e inteligencia artificial aplicada a empresas: qué funciona, qué no y por dónde empezar.",
+  "canonical": "https://zepaiagency.com/blog",
+  "h1_es": "Blog de Automatización e IA para Negocios",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog de Automatización e IA para Negocios",
+    "description": "Artículos sobre automatización de procesos e inteligencia artificial aplicada a empresas.",
+    "url": "https://zepaiagency.com/blog",
+    "inLanguage": "es",
+    "publisher": {
+     "@id": "https://zepaiagency.com/#organization"
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://zepaiagency.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://zepaiagency.com/blog"
+     }
+    ]
+   }
+  ]
+ },
+ "/chatbot-whatsapp": {
+  "file": "chatbot-whatsapp.html",
+  "title": "Chatbot de IA para WhatsApp | Atiende y Vende 24/7 | Zepai",
+  "description": "Chatbot de inteligencia artificial para WhatsApp: responde en segundos, toma reservas y pedidos, cualifica clientes y deriva a una persona cuando hace falta. API oficial.",
+  "canonical": "https://zepaiagency.com/chatbot-whatsapp",
+  "h1_es": "Chatbot de IA para WhatsApp",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Chatbot de IA para WhatsApp",
+    "serviceType": "Chatbot de IA para WhatsApp",
+    "description": "Chatbot de inteligencia artificial sobre la API oficial de WhatsApp Business que atiende consultas, toma reservas y pedidos y cualifica clientes.",
+    "url": "https://zepaiagency.com/chatbot-whatsapp",
+    "provider": {
+     "@id": "https://zepaiagency.com/#organization"
+    },
+    "areaServed": {
+     "@type": "Place",
+     "name": "Worldwide"
+    },
+    "audience": {
+     "@type": "BusinessAudience",
+     "audienceType": "Empresas que atienden clientes por WhatsApp"
+    },
+    "availableLanguage": [
+     "es",
+     "en"
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://zepaiagency.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Chatbot de WhatsApp",
+      "item": "https://zepaiagency.com/chatbot-whatsapp"
+     }
+    ]
+   }
+  ]
+ },
+ "/como-trabajamos": {
+  "file": "como-trabajamos.html",
+  "title": "Cómo Trabajamos | Nuestra Forma de Automatizar con IA | Zepai",
+  "description": "Seis creencias sobre cómo se automatiza un negocio de verdad: revisar el proceso antes que la tecnología, cerrar los límites antes de lanzar, la API oficial frente al atajo, y decirte cuándo no automatizar.",
+  "canonical": "https://zepaiagency.com/como-trabajamos",
+  "h1_es": "Primero decidimos qué. Después lo montamos. Y te lo dejamos funcionando.",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Cómo trabajamos",
+    "description": "Seis creencias sobre cómo se automatiza un negocio de verdad: revisar el proceso antes que la tecnología, cerrar los límites antes de lanzar, la API oficial frente al atajo, y decirte cuándo no automatizar.",
+    "url": "https://zepaiagency.com/como-trabajamos",
+    "inLanguage": "es",
+    "isPartOf": {
+     "@id": "https://zepaiagency.com/#organization"
+    },
+    "about": {
+     "@id": "https://zepaiagency.com/#organization"
+    },
+    "mainEntity": {
+     "@type": "ItemList",
+     "numberOfItems": 6,
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "position": 1,
+       "name": "Automatizar un proceso malo solo hace que el desorden vaya más rápido"
+      },
+      {
+       "@type": "ListItem",
+       "position": 2,
+       "name": "Lo que el agente no debe contestar se decide antes de lanzar"
+      },
+      {
+       "@type": "ListItem",
+       "position": 3,
+       "name": "El agente se queda lo repetitivo. El criterio sigue siendo de tu equipo"
+      },
+      {
+       "@type": "ListItem",
+       "position": 4,
+       "name": "Sobre la API oficial, no sobre un móvil con una app encima"
+      },
+      {
+       "@type": "ListItem",
+       "position": 5,
+       "name": "Te formamos para que no dependas de nosotros"
+      },
+      {
+       "@type": "ListItem",
+       "position": 6,
+       "name": "A veces la respuesta es que no automatices"
+      }
+     ]
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://zepaiagency.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cómo trabajamos",
+      "item": "https://zepaiagency.com/como-trabajamos"
+     }
+    ]
+   }
+  ]
+ },
+ "/consultoria-ia": {
+  "file": "consultoria-ia.html",
+  "title": "Consultoría de IA para Empresas | Automatización de Procesos | Zepai",
+  "description": "Consultoría de IA para empresas: diagnosticamos tus procesos, priorizamos qué automatizar con inteligencia artificial y lo implementamos de principio a fin.",
+  "canonical": "https://zepaiagency.com/consultoria-ia",
+  "h1_es": "Consultoría de IA para Empresas",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Consultoría de IA para empresas",
+    "serviceType": "Consultoría de IA para empresas",
+    "description": "Consultoría de inteligencia artificial: diagnóstico de procesos, priorización de oportunidades, prueba piloto e implementación de automatizaciones a medida.",
+    "url": "https://zepaiagency.com/consultoria-ia",
+    "provider": {
+     "@id": "https://zepaiagency.com/#organization"
+    },
+    "areaServed": {
+     "@type": "Place",
+     "name": "Worldwide"
+    },
+    "audience": {
+     "@type": "BusinessAudience",
+     "audienceType": "Empresas de cualquier sector"
+    },
+    "availableLanguage": [
+     "es",
+     "en"
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://zepaiagency.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Consultoría de IA",
+      "item": "https://zepaiagency.com/consultoria-ia"
+     }
+    ]
+   }
+  ]
+ },
+ "/": {
+  "file": "index.html",
+  "title": "Agencia y Consultora de IA | Automatización de Procesos con IA para Empresas | Zepai",
+  "description": "Agencia y consultora de IA. Automatizamos los procesos de tu empresa con inteligencia artificial: atención al cliente, ventas, reservas, soporte y operaciones. Consultoría e implementación a medida.",
+  "canonical": "https://zepaiagency.com/",
+  "h1_es": null,
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@graph": [
+     {
+      "@type": [
+       "Organization",
+       "ProfessionalService"
+      ],
+      "@id": "https://zepaiagency.com/#organization",
+      "name": "Zepai Agency",
+      "url": "https://zepaiagency.com",
+      "logo": "https://zepaiagency.com/logo.png",
+      "image": "https://zepaiagency.com/logo.png",
+      "email": "info@zepaiagency.com",
+      "telephone": "+34604140997",
+      "description": "Agencia y consultora de inteligencia artificial. Automatizamos los procesos de las empresas con IA: atención al cliente, ventas, reservas, soporte y operaciones.",
+      "additionalType": "https://en.wikipedia.org/wiki/Artificial_intelligence",
+      "knowsAbout": [
+       "Inteligencia artificial",
+       "Automatización de procesos",
+       "Agentes de IA",
+       "Chatbots",
+       "Asistentes de voz"
+      ],
+      "areaServed": {
+       "@type": "Place",
+       "name": "Worldwide"
+      },
+      "availableLanguage": [
+       "es",
+       "en"
+      ],
+      "contactPoint": {
+       "@type": "ContactPoint",
+       "contactType": "sales",
+       "email": "info@zepaiagency.com",
+       "telephone": "+34604140997",
+       "areaServed": "Worldwide",
+       "availableLanguage": [
+        "Spanish",
+        "English"
+       ]
+      },
+      "hasOfferCatalog": {
+       "@type": "OfferCatalog",
+       "name": "Servicios Zepai Agency",
+       "itemListElement": [
+        {
+         "@type": "Offer",
+         "itemOffered": {
+          "@type": "Service",
+          "name": "Automatización de procesos con IA"
+         }
+        },
+        {
+         "@type": "Offer",
+         "itemOffered": {
+          "@type": "Service",
+          "name": "Consultoría de IA"
+         }
+        },
+        {
+         "@type": "Offer",
+         "itemOffered": {
+          "@type": "Service",
+          "name": "Agentes IA"
+         }
+        },
+        {
+         "@type": "Offer",
+         "itemOffered": {
+          "@type": "Service",
+          "name": "Marketing Digital"
+         }
+        },
+        {
+         "@type": "Offer",
+         "itemOffered": {
+          "@type": "Service",
+          "name": "Clipping de Contenido"
+         }
+        },
+        {
+         "@type": "Offer",
+         "itemOffered": {
+          "@type": "Service",
+          "name": "Diseño Web"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "@type": "WebSite",
+      "name": "Zepai Agency",
+      "url": "https://zepaiagency.com"
+     }
+    ]
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://zepaiagency.com/#faq",
+    "inLanguage": "es",
+    "mainEntity": [
+     {
+      "@type": "Question",
+      "name": "¿Qué es exactamente un agente de inteligencia artificial?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Un agente IA es un asistente virtual inteligente que puede conversar con tus clientes de forma natural, responder preguntas, tomar reservas, calificar leads y realizar tareas específicas de tu negocio — todo de forma automática, 24 horas al día, 7 días a la semana."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo tarda la implementación?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "La mayoría de los proyectos se implementan en 5 a 7 días hábiles. Comenzamos con una llamada de diagnóstico, luego configuramos y entrenamos el agente con la información de tu negocio, y finalmente lo integramos en tus canales preferidos (WhatsApp, web, Instagram)."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta un agente de IA?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "No trabajamos con precios de catálogo, porque el coste depende de qué canales quieras cubrir, del volumen de conversaciones y de con qué sistemas hay que integrarse. En la llamada de diagnóstico revisamos tu caso concreto y te enviamos una cotización cerrada en menos de 24 horas. Sin costes ocultos y sin permanencia."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "¿Funciona para cualquier tipo de negocio?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Sí. Hemos implementado soluciones para restaurantes, cafeterías, inmobiliarias, tiendas online, clínicas, salones de belleza y más. Si tu negocio recibe consultas de clientes, el agente IA puede ayudarte. Agenda una llamada gratuita y evaluamos tu caso específico."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "¿Necesito conocimientos técnicos para manejar el agente?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Para nada. Nosotros nos encargamos de todo el aspecto técnico. Tú solo necesitas darnos información sobre tu negocio (menú, servicios, horarios, etc.) y nosotros configuramos el agente. Además, incluimos capacitación para que puedas hacer ajustes básicos cuando lo necesites."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "¿Y si el agente le responde mal a un cliente?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Es la duda más razonable, y se resuelve antes de lanzar. Definimos contigo qué puede responder el agente y qué no: las reclamaciones, las incidencias con dinero de por medio y los casos fuera de lo normal se derivan siempre a una persona. Además puedes revisar las conversaciones cuando quieras, y ajustamos las respuestas con lo que veas."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "¿Qué pasa con los datos de mis clientes?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Solo se guarda lo necesario para atender la conversación, viaja siempre por conexión cifrada y no se vende ni se comparte con terceros para marketing. Puedes pedirnos que eliminemos cualquier dato cuando quieras. Lo tienes detallado en nuestra Política de Privacidad."
+      }
+     },
+     {
+      "@type": "Question",
+      "name": "¿Cómo solicito una cotización?",
+      "acceptedAnswer": {
+       "@type": "Answer",
+       "text": "Muy fácil. Completa el formulario de contacto en esta página o escríbenos directamente al email info@zepaiagency.com. En menos de 24 horas te respondemos con una propuesta personalizada según las necesidades específicas de tu negocio. ¡Sin compromisos!"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ "/soluciones": {
+  "file": "soluciones.html",
+  "title": "Soluciones de Automatización con IA para Empresas | Zepai",
+  "description": "Todas las soluciones de inteligencia artificial de Zepai: consultoría, chatbot de WhatsApp, automatización de llamadas y de procesos, y soluciones por sector para restaurantes, inmobiliarias y e-commerce.",
+  "canonical": "https://zepaiagency.com/soluciones",
+  "h1_es": "Soluciones de automatización con IA para empresas",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Soluciones de automatización con IA para empresas",
+    "description": "Catálogo de soluciones de inteligencia artificial de Zepai Agency, por tipo de automatización y por sector.",
+    "url": "https://zepaiagency.com/soluciones",
+    "inLanguage": "es",
+    "isPartOf": {
+     "@id": "https://zepaiagency.com/#organization"
+    },
+    "mainEntity": {
+     "@type": "ItemList",
+     "numberOfItems": 7,
+     "itemListElement": [
+      {
+       "@type": "ListItem",
+       "position": 1,
+       "name": "Consultoría de IA",
+       "url": "https://zepaiagency.com/consultoria-ia"
+      },
+      {
+       "@type": "ListItem",
+       "position": 2,
+       "name": "Chatbot de WhatsApp",
+       "url": "https://zepaiagency.com/chatbot-whatsapp"
+      },
+      {
+       "@type": "ListItem",
+       "position": 3,
+       "name": "Automatización de llamadas",
+       "url": "https://zepaiagency.com/automatizacion-de-llamadas"
+      },
+      {
+       "@type": "ListItem",
+       "position": 4,
+       "name": "Automatizaciones con n8n y Make",
+       "url": "https://zepaiagency.com/automatizaciones-n8n-make"
+      },
+      {
+       "@type": "ListItem",
+       "position": 5,
+       "name": "Restaurantes y cafeterías",
+       "url": "https://zepaiagency.com/agencia-ia-restaurantes"
+      },
+      {
+       "@type": "ListItem",
+       "position": 6,
+       "name": "Inmobiliarias",
+       "url": "https://zepaiagency.com/agencia-ia-inmobiliarias"
+      },
+      {
+       "@type": "ListItem",
+       "position": 7,
+       "name": "Tiendas online",
+       "url": "https://zepaiagency.com/agencia-ia-ecommerce"
+      }
+     ]
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://zepaiagency.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Soluciones",
+      "item": "https://zepaiagency.com/soluciones"
+     }
+    ]
+   }
+  ]
+ },
+ "/blog/como-automatizar-la-atencion-al-cliente-con-ia": {
+  "file": "blog/como-automatizar-la-atencion-al-cliente-con-ia.html",
+  "title": "Cómo automatizar la atención al cliente con IA: por dónde empezar | Zepai",
+  "description": "Guía práctica para automatizar la atención al cliente con inteligencia artificial: por dónde empezar, qué no debe contestar la máquina y qué medir antes de lanzar.",
+  "canonical": "https://zepaiagency.com/blog/como-automatizar-la-atencion-al-cliente-con-ia",
+  "h1_es": "Cómo automatizar la atención al cliente con IA: por dónde empezar",
+  "jsonld": [
+   {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Cómo automatizar la atención al cliente con IA: por dónde empezar",
+    "description": "Guía práctica para automatizar la atención al cliente con inteligencia artificial: por dónde empezar, qué no debe contestar la máquina y qué medir antes de lanzar.",
+    "url": "https://zepaiagency.com/blog/como-automatizar-la-atencion-al-cliente-con-ia",
+    "mainEntityOfPage": {
+     "@type": "WebPage",
+     "@id": "https://zepaiagency.com/blog/como-automatizar-la-atencion-al-cliente-con-ia"
+    },
+    "inLanguage": "es",
+    "datePublished": "2026-07-28",
+    "dateModified": "2026-07-28",
+    "image": "https://zepaiagency.com/og-image.png",
+    "author": {
+     "@id": "https://zepaiagency.com/#organization"
+    },
+    "publisher": {
+     "@id": "https://zepaiagency.com/#organization"
+    }
+   },
+   {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+     {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://zepaiagency.com/"
+     },
+     {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://zepaiagency.com/blog"
+     },
+     {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Cómo automatizar la atención al cliente con IA: por dónde empezar",
+      "item": "https://zepaiagency.com/blog/como-automatizar-la-atencion-al-cliente-con-ia"
+     }
+    ]
+   }
+  ]
+ }
+}
