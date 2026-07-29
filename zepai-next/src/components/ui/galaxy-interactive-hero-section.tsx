@@ -3,13 +3,11 @@
 /**
  * Hero a dos columnas: mensaje a la izquierda, mascota a la derecha.
  *
- * Tres capas de fondo a fondo:
- *  1. hero.webp (20 KB): la imagen generada por el cliente. Se ve siempre,
- *     tambien en movil. Es la base.
- *  2. La escena de Spline (1.972 KB): 3D interactivo, solo escritorio y solo
- *     cuando el hero entra en pantalla.
- *  3. Un velo suave, que ahora solo funde con la nav y con la seccion
- *     siguiente.
+ * Dos capas de fondo a fondo: hero.webp (20 KB) y un velo que oscurece la
+ * columna del texto. La escena de Spline se ha quitado: hacia caer la
+ * pestana del navegador. El 3D lo pone el robot, que es un render -- igual
+ * que en el Instagram, donde tampoco hay nada interactivo -- y cuesta 47 KB
+ * en vez de 2 MB.
  *
  * Lo importante de esta composicion: al pasar el texto a SU PROPIA COLUMNA,
  * la escena deja de estar detras de las letras. El problema de contraste que
@@ -20,47 +18,9 @@
  * publicaciones del feed llevan uno) y aqui no habia ninguno.
  */
 
-import { Suspense, lazy, useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { T } from "@/lib/i18n";
-
-const Spline = lazy(() => import("@splinetool/react-spline"));
-
-const SCENE = "https://prod.spline.design/us3ALejTXl6usHZ7/scene.splinecode";
-
-/** Decide si merece la pena descargar 2 MB de escena. */
-function useShouldLoadScene(target: React.RefObject<HTMLElement | null>) {
-  const [load, setLoad] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const coarse = window.matchMedia("(max-width: 980px)").matches;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    // @ts-expect-error -- connection es experimental y no esta en los tipos
-    const conn = navigator.connection;
-    const saveData = Boolean(conn?.saveData);
-    const slow = /(^|-)2g$/.test(String(conn?.effectiveType ?? ""));
-    if (coarse || reduced || saveData || slow) return;
-
-    const el = target.current;
-    if (!el) return;
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          setLoad(true);
-          io.disconnect();
-        }
-      },
-      { rootMargin: "200px" },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [target]);
-
-  return load;
-}
 
 function HeroContent() {
   return (
@@ -126,7 +86,6 @@ export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const robotRef = useRef<HTMLDivElement>(null);
-  const showScene = useShouldLoadScene(sectionRef);
 
   // Parallax del robot con el raton: unos pocos pixeles, lo justo para dar
   // profundidad. Sin libreria y sin coste apreciable.
@@ -192,14 +151,6 @@ export function HeroSection() {
         fetchPriority="high"
         decoding="async"
       />
-
-      {showScene && (
-        <Suspense fallback={null}>
-          <div className="galaxy-scene-wrap" aria-hidden="true">
-            <Spline className="galaxy-scene" scene={SCENE} />
-          </div>
-        </Suspense>
-      )}
 
       <div className="galaxy-scrim" aria-hidden="true" />
 

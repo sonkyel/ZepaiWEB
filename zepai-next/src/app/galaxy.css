@@ -325,18 +325,6 @@
   z-index: var(--z-base);
 }
 
-.galaxy-scene-wrap {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-.galaxy-scene,
-.galaxy-scene canvas {
-  width: 100% !important;
-  height: 100% !important;
-}
-
 /* ── NEÓN DE MARCA ───────────────────────────────────────────
    Sale del feed de Instagram: la "Z" en tubo de neón, el contorno
    del robot, los bordes que brillan como un rótulo. La web no tenía
