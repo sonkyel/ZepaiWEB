@@ -118,6 +118,79 @@ body::after{
 
 /* 8. Title glow — static, no infinite animation (avoids distraction) */
 .sec-title{text-shadow:0 0 30px rgba(139,92,246,.1),0 0 60px rgba(139,92,246,.05)}
+/* ── HERO: dos columnas, mensaje a la izquierda y producto a la derecha ── */
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
+  width:100%;padding:40px 0;position:relative;z-index:2;
+}
+.hero-copy{text-align:left}
+.hero-link{
+  font-size:14px;font-weight:600;color:#4F46E5;
+  border-bottom:1px solid rgba(139,92,246,.3);padding-bottom:2px;transition:color .2s,border-color .2s;
+}
+.hero-link:hover{color:#8B5CF6;border-color:#8B5CF6}
+
+/* Maqueta de conversacion: ensena el producto, pesa 0 KB */
+.hero-demo{display:flex;justify-content:center}
+.chat{
+  width:100%;max-width:400px;background:#fff;border:1px solid var(--border);
+  border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(139,92,246,.16);
+}
+.chat-top{display:flex;align-items:center;gap:11px;padding:15px 18px;border-bottom:1px solid var(--borderS)}
+.chat-avatar{
+  width:36px;height:36px;border-radius:12px;flex-shrink:0;background:var(--grad);
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:15px;
+}
+.chat-who{flex:1;min-width:0}
+.chat-name{font-size:14px;font-weight:700;color:#0A0A14}
+.chat-state{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--t3)}
+.chat-dot{width:6px;height:6px;border-radius:50%;background:#22C55E;box-shadow:0 0 6px #22C55E;animation:chat-pulse 1.8s ease-in-out infinite}
+@keyframes chat-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.chat-clock{font-size:12px;font-weight:600;color:var(--t3);font-variant-numeric:tabular-nums}
+.chat-thread{padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--bg1)}
+.msg{
+  max-width:86%;padding:10px 13px 16px;border-radius:14px;font-size:13.5px;line-height:1.55;position:relative;
+  animation:msg-in .5s cubic-bezier(.16,1,.3,1) both;
+}
+.msg.in{align-self:flex-start;background:#fff;border:1px solid var(--borderS);color:#1A1A2E;border-bottom-left-radius:5px}
+.msg.out{align-self:flex-end;background:var(--grad);color:#fff;border-bottom-right-radius:5px}
+.msg:nth-child(1){animation-delay:.15s}
+.msg:nth-child(2){animation-delay:.55s}
+.msg:nth-child(3){animation-delay:.95s}
+.msg:nth-child(4){animation-delay:1.35s}
+.msg:nth-child(5){animation-delay:1.85s}
+@keyframes msg-in{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.msg-time{
+  position:absolute;right:11px;bottom:5px;font-size:9.5px;font-style:normal;opacity:.55;
+  font-variant-numeric:tabular-nums;
+}
+.msg.typing{
+  align-self:flex-start;display:flex;gap:4px;padding:13px;background:#fff;
+  border:1px solid var(--borderS);border-bottom-left-radius:5px;
+}
+.msg.typing i{width:6px;height:6px;border-radius:50%;background:var(--cyan);opacity:.45;animation:typ 1.3s infinite}
+.msg.typing i:nth-child(2){animation-delay:.18s}
+.msg.typing i:nth-child(3){animation-delay:.36s}
+@keyframes typ{0%,60%,100%{transform:translateY(0);opacity:.35}30%{transform:translateY(-4px);opacity:1}}
+.chat-foot{
+  display:flex;align-items:center;gap:9px;padding:13px 18px;
+  border-top:1px solid var(--borderS);font-size:12px;color:var(--t2);line-height:1.45;
+}
+.chat-check{
+  width:19px;height:19px;border-radius:50%;flex-shrink:0;background:var(--grad);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;
+}
+@media(prefers-reduced-motion:reduce){
+  .msg,.msg.typing i,.chat-dot{animation:none!important}
+}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-copy{text-align:center}
+  .hero-copy .hero-title{text-align:center}
+  .hero-sub{margin-left:auto;margin-right:auto;text-align:center}
+  .hero-ctas{justify-content:center}
+  .hero-trust{text-align:center}
+}
 .hero-title{text-shadow:0 0 50px rgba(139,92,246,.1)}
 
 /* ── SECTION ROBOTS ────────────────────────────── */
@@ -314,31 +387,8 @@ nav.scrolled{
   background:radial-gradient(ellipse,rgba(79,70,229,.18) 0%,transparent 70%);
   z-index:0;pointer-events:none;
 }
-.hero-content{
-  position:relative;z-index:1;
-  display:flex;flex-direction:column;align-items:center;
-  max-width:860px;
-  padding:60px 0 70px;
-  margin:0 auto;
-  text-align:center;
-  gap:0;
-}
-.hero-top{width:100%;text-align:center}
-.hero-bottom{width:100%;text-align:center}
-.hero-fade-right{display:none}
-.hero-fade-bottom{display:none}
 /* Hero Avatar (central 3D robot — between title and subtitle) */
-.hero-avatar-wrap{
-  display:flex;justify-content:center;
-  margin:-24px 0;position:relative;z-index:2;
-  pointer-events:none;width:100%;
-}
-#avatarCanvas{
-  width:460px;height:460px;
-  display:block;background:transparent;
-}
-@media(max-width:768px){#avatarCanvas{width:300px;height:300px}}
-@media(max-width:480px){#avatarCanvas{width:240px;height:240px}}
+.hero-copy .hero-title,.hero-copy .hero-h1{text-align:left}
 .hero-badge{
   display:inline-flex;align-items:center;gap:8px;
   background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.28);
@@ -354,9 +404,9 @@ nav.scrolled{
   font-size:clamp(38px,4.8vw,66px);font-weight:900;
   line-height:1.1;letter-spacing:-2px;margin-bottom:22px;
 }
-.hero-sub{font-size:17px;color:var(--t2);line-height:1.75;max-width:490px;margin:0 auto 34px;text-align:center}
-.hero-ctas{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
-.hero-trust{margin-top:52px;padding-top:30px;border-top:1px solid var(--borderS);text-align:center}
+.hero-sub{font-size:17px;color:var(--t2);line-height:1.75;max-width:520px;margin:0 0 32px;text-align:left}
+.hero-ctas{display:flex;align-items:center;justify-content:flex-start;gap:20px;flex-wrap:wrap}
+.hero-trust{margin-top:40px;padding-top:26px;border-top:1px solid var(--borderS);text-align:left}
 .trust-label{font-size:11px;font-weight:600;color:var(--t3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
 .trust-logos{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
 .trust-logo{
@@ -366,12 +416,6 @@ nav.scrolled{
 
 /* Hero Visual */
 .hero-visual{display:flex;justify-content:center;align-items:center;position:relative}
-#robotCanvas{
-  position:absolute;inset:0;
-  width:100%!important;height:100%!important;
-  display:block;background:transparent;
-  border-radius:0;z-index:0;
-}
 /* SVG robot mascot wrapper */
 .robot-mascot-wrap{
   display:flex;justify-content:center;align-items:center;
@@ -717,10 +761,8 @@ footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 
   section{padding:72px 0}
   .nav-links,.nav-right>.btn-p{display:none}
   .hamburger{display:flex}
-  .hero-content{max-width:100%;padding:80px 0 50px}
-  /* Ocultar fondo Three.js pesado en móvil */
-  #robotCanvas{display:none!important}
-  /* End scene más compacta */
+    /* Ocultar fondo Three.js pesado en móvil */
+    /* End scene más compacta */
     /* How canvas oculto en móvil (no hay renderer) */
   /* Reducir padding de how section sin canvas */
   #how .sec-hdr{margin-bottom:28px}
@@ -765,8 +807,7 @@ footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 
   .hero-ctas .btn-p,.hero-ctas .btn-s{width:100%}
   .stats-grid{grid-template-columns:1fr 1fr}
   /* Casco/avatar más pequeño */
-  #avatarCanvas{width:240px!important;height:240px!important}
-  /* FAQ preguntas texto más pequeño */
+    /* FAQ preguntas texto más pequeño */
   .faq-q{font-size:14px;padding:16px 18px}
   /* Testimonios: quote más pequeño */
   .test-quote{font-size:14px}
@@ -865,9 +906,6 @@ footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 
 .lang-btn{color:rgba(255,255,255,.65)!important;-webkit-text-fill-color:rgba(255,255,255,.65)!important}
 .lang-btn.active{color:#fff!important;-webkit-text-fill-color:#fff!important;background:var(--grad)!important}
 /* FIX TEXTO HERO POR DELANTE DEL ROBOT */
-.hero-top{position:relative!important;z-index:3!important}
-.hero-bottom{position:relative!important;z-index:3!important}
-.hero-avatar-wrap{z-index:1!important}
 .schedule-info h2{color:#0A0A14!important}
 .schedule-info p{color:rgba(10,10,20,.65)!important}
 
@@ -914,9 +952,6 @@ footer{background:#F5F4FF;border-top:1px solid rgba(139,92,246,.12)}
 /* ── HERO SECTION LIGHT ── */
 #hero{background:#FFFFFF}
 #hero::before{background-image:linear-gradient(rgba(139,92,246,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.05) 1px,transparent 1px)}
-#robotCanvas{display:none!important}
-.hero-fade-bottom{background:linear-gradient(to bottom,transparent,#FFFFFF)}
-.hero-fade-right{background:linear-gradient(90deg,transparent,rgba(245,244,255,.5))}
 .orbit{background:#FFFFFF!important;border-color:rgba(139,92,246,.2)!important;color:#0A0A14!important}
 
 /* ── LIVE BADGE ── */
@@ -950,8 +985,6 @@ footer{background:#F5F4FF;border-top:1px solid rgba(139,92,246,.12)}
 .sched-check{color:#8B5CF6!important;background:rgba(139,92,246,.1)!important;border-color:rgba(139,92,246,.2)!important}
 
 /* FIX FINAL: elementos con texto aún invisible */
-#robotCanvas{display:none!important}
-.hero-fade-right,.hero-fade-bottom{display:none!important}
 /* Date buttons texto oscuro siempre visible */
 .date-btn,.date-day,.date-num,.date-month{color:#0A0A14!important;-webkit-text-fill-color:#0A0A14!important}
 .date-btn.active,.date-btn.active .date-day,.date-btn.active .date-num,.date-btn.active .date-month{color:#fff!important;-webkit-text-fill-color:#fff!important}
@@ -969,7 +1002,6 @@ footer{background:#F5F4FF;border-top:1px solid rgba(139,92,246,.12)}
 /* Hero background white clean */
 #hero{background:#FFFFFF!important}
 /* Avatar canvas bg transparent */
-#avatarCanvas{background:transparent!important}
 /* Section robots in light mode — make them lighter */
 .sec-robot{filter:drop-shadow(0 0 10px rgba(139,92,246,.2))!important;opacity:.65!important}
 
@@ -987,7 +1019,6 @@ nav.scrolled{background:rgba(10,10,20,.97)!important;border-bottom:1px solid rgb
 .mobile-menu a:hover{color:#8B5CF6!important;-webkit-text-fill-color:#8B5CF6!important}
 
 /* ══ ROBOTCANVAS RE-HABILITADO ══ */
-#robotCanvas{display:block!important;opacity:.72!important}
 
 /* ══ FIX LETRAS INVISIBLES ══ */
 .srv-name{color:#0A0A14!important;-webkit-text-fill-color:#0A0A14!important}

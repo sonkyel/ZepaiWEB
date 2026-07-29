@@ -26,7 +26,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Nunito:wght@900&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <link rel="stylesheet" href="/styles.css">
 <!-- Meta Pixel -->
@@ -262,16 +261,11 @@ document.head.appendChild(o)}initApollo();</script>
 
 <!-- ═══ HERO ══════════════════════════════════════ -->
 <section id="hero">
-  <!-- 3D Robot background canvas -->
-  <canvas id="robotCanvas"></canvas>
-  <!-- Atmospheric overlays -->
-  <div class="hero-fade-right"></div>
-  <div class="hero-fade-bottom"></div>
   <div class="container">
-    <div class="hero-content">
+    <div class="hero-grid">
 
-      <!-- TOP: badge + title only -->
-      <div class="hero-top reveal">
+      <!-- IZQUIERDA: mensaje y una sola llamada a la accion -->
+      <div class="hero-copy reveal">
         <div class="hero-badge">
           <div class="pulse-dot"></div>
           <span class="i18n" data-es="Automatización de Procesos con IA" data-en="AI Process Automation">Automatización de Procesos con IA</span>
@@ -280,44 +274,72 @@ document.head.appendChild(o)}initApollo();</script>
           <span class="i18n" data-es="Deja de perder clientes fuera de horario" data-en="Stop losing customers after hours">Deja de perder clientes fuera de horario</span><br>
           <span class="gt i18n" data-es="con agentes de IA que atienden 24/7" data-en="with AI agents that answer 24/7">con agentes de IA que atienden 24/7</span>
         </h1>
-      </div>
-
-      <!-- ROBOT CENTRADO EN EL MEDIO -->
-      <div class="hero-avatar-wrap">
-        <canvas id="avatarCanvas"></canvas>
-      </div>
-
-      <!-- BOTTOM: sub + CTAs + trust -->
-      <div class="hero-bottom reveal">
-        <p class="hero-sub i18n" data-es="Somos una agencia y consultora de inteligencia artificial: automatizamos la atención al cliente, las ventas y las reservas de tu empresa." data-en="We are an artificial intelligence agency and consultancy: we automate your company's customer service, sales and bookings.">
+        <p class="hero-sub i18n" data-es="Somos una agencia y consultora de inteligencia artificial: automatizamos la atención al cliente, las ventas y las reservas de tu empresa." data-en="We are an artificial intelligence agency and consultancy: we automate your company&#39;s customer service, sales and bookings.">
           Somos una agencia y consultora de inteligencia artificial: automatizamos la atención al cliente, las ventas y las reservas de tu empresa.
         </p>
         <div class="hero-ctas">
-          <button class="btn-p" onclick="scrollToSection('contact')">
-            <span class="i18n" data-es="Pedir Cotización Gratis" data-en="Get a Free Quote">Pedir Cotización Gratis</span>
-            <span>→</span>
-          </button>
-          <button class="btn-s" onclick="scrollToSection('services')">
-            <span class="i18n" data-es="Ver Servicios" data-en="See Services">Ver Servicios</span>
-          </button>
+          <a class="btn-p" href="#contact">
+            <span class="i18n" data-es="Pedir cotización gratis" data-en="Get a free quote">Pedir cotización gratis</span>
+            <span>&rarr;</span>
+          </a>
+          <a class="hero-link" href="/soluciones">
+            <span class="i18n" data-es="o mira qué automatizamos" data-en="or see what we automate">o mira qué automatizamos</span>
+          </a>
         </div>
         <div class="hero-trust">
           <div class="trust-label i18n" data-es="Se integra en los canales que ya usas" data-en="Integrates into the channels you already use">Se integra en los canales que ya usas</div>
           <div class="marquee-wrap">
             <div class="marquee-track">
-              <span class="marquee-item">WhatsApp</span><span class="marquee-dot">✦</span>
-              <span class="marquee-item">Instagram</span><span class="marquee-dot">✦</span>
-              <span class="marquee-item">Facebook Messenger</span><span class="marquee-dot">✦</span>
-              <span class="marquee-item">Tu sitio web</span><span class="marquee-dot">✦</span>
-              <span class="marquee-item">Teléfono</span><span class="marquee-dot">✦</span>
-              <span class="marquee-item">Email</span><span class="marquee-dot">✦</span>
-              <span class="marquee-item">WhatsApp</span><span class="marquee-dot">✦</span>
-              <span class="marquee-item">Instagram</span><span class="marquee-dot">✦</span>
-              <span class="marquee-item">Facebook Messenger</span><span class="marquee-dot">✦</span>
-              <span class="marquee-item">Tu sitio web</span><span class="marquee-dot">✦</span>
-              <span class="marquee-item">Teléfono</span><span class="marquee-dot">✦</span>
-              <span class="marquee-item">Email</span><span class="marquee-dot">✦</span>
+              <span class="marquee-item">WhatsApp</span><span class="marquee-dot">&#10022;</span>
+              <span class="marquee-item">Instagram</span><span class="marquee-dot">&#10022;</span>
+              <span class="marquee-item">Facebook Messenger</span><span class="marquee-dot">&#10022;</span>
+              <span class="marquee-item">Tu sitio web</span><span class="marquee-dot">&#10022;</span>
+              <span class="marquee-item">Teléfono</span><span class="marquee-dot">&#10022;</span>
+              <span class="marquee-item">Email</span><span class="marquee-dot">&#10022;</span>
+              <span class="marquee-item">WhatsApp</span><span class="marquee-dot">&#10022;</span>
+              <span class="marquee-item">Instagram</span><span class="marquee-dot">&#10022;</span>
+              <span class="marquee-item">Facebook Messenger</span><span class="marquee-dot">&#10022;</span>
+              <span class="marquee-item">Tu sitio web</span><span class="marquee-dot">&#10022;</span>
+              <span class="marquee-item">Teléfono</span><span class="marquee-dot">&#10022;</span>
+              <span class="marquee-item">Email</span><span class="marquee-dot">&#10022;</span>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DERECHA: el producto funcionando. La hora demuestra el titular. -->
+      <div class="hero-demo reveal rd1">
+        <div class="chat">
+          <div class="chat-top">
+            <div class="chat-avatar">Z</div>
+            <div class="chat-who">
+              <div class="chat-name i18n" data-es="Agente Zepai" data-en="Zepai Agent">Agente Zepai</div>
+              <div class="chat-state"><span class="chat-dot"></span><span class="i18n" data-es="respondiendo ahora" data-en="replying now">respondiendo ahora</span></div>
+            </div>
+            <div class="chat-clock">23:40</div>
+          </div>
+          <div class="chat-thread">
+            <div class="msg in">
+              <span class="i18n" data-es="Hola, ¿tenéis mesa para 4 el sábado a las 21h?" data-en="Hi, do you have a table for 4 on Saturday at 9pm?">Hola, ¿tenéis mesa para 4 el sábado a las 21h?</span>
+              <em class="msg-time">23:40</em>
+            </div>
+            <div class="msg out">
+              <span class="i18n" data-es="¡Hola! Sí, nos queda mesa para 4 a las 21:00. ¿La reservo a tu nombre?" data-en="Hi! Yes, we have a table for 4 at 9:00 pm. Shall I book it under your name?">¡Hola! Sí, nos queda mesa para 4 a las 21:00. ¿La reservo a tu nombre?</span>
+              <em class="msg-time">23:40</em>
+            </div>
+            <div class="msg in">
+              <span class="i18n" data-es="Perfecto, a nombre de Marta. Una alergia al marisco." data-en="Perfect, under Marta. One shellfish allergy.">Perfecto, a nombre de Marta. Una alergia al marisco.</span>
+              <em class="msg-time">23:41</em>
+            </div>
+            <div class="msg out">
+              <span class="i18n" data-es="Reservado: sábado 21:00, 4 personas, alergia al marisco anotada. Te llega la confirmación por aquí." data-en="Booked: Saturday 9:00 pm, 4 people, shellfish allergy noted. Your confirmation will arrive here.">Reservado: sábado 21:00, 4 personas, alergia al marisco anotada. Te llega la confirmación por aquí.</span>
+              <em class="msg-time">23:41</em>
+            </div>
+            <div class="msg typing" aria-hidden="true"><i></i><i></i><i></i></div>
+          </div>
+          <div class="chat-foot">
+            <span class="chat-check">&#10003;</span>
+            <span class="i18n" data-es="Reserva registrada sin que nadie del equipo estuviera despierto" data-en="Booking recorded without anyone on the team being awake">Reserva registrada sin que nadie del equipo estuviera despierto</span>
           </div>
         </div>
       </div>
@@ -758,7 +780,6 @@ document.head.appendChild(o)}initApollo();</script>
     </div>
   </div>
 </section>
-
 
 <!-- ═══ FAQ ═══════════════════════════════════════ -->
 <section id="faq">
@@ -1619,574 +1640,6 @@ function selectTime(slot, btn) {
   update();
 })();
 
-/* ── SHARED 3D HELPER — fake-bloom glow sprite (radial gradient, additive) ── */
-function makeGlowSprite(hexColor, worldSize) {
-  if (typeof THREE === 'undefined') return null;
-  const c = document.createElement('canvas');
-  c.width = c.height = 128;
-  const ctx = c.getContext('2d');
-  const col = '#' + hexColor.toString(16).padStart(6, '0');
-  const grad = ctx.createRadialGradient(64, 64, 0, 64, 64, 64);
-  grad.addColorStop(0, col + 'FF');
-  grad.addColorStop(0.35, col + '88');
-  grad.addColorStop(1, col + '00');
-  ctx.fillStyle = grad;
-  ctx.fillRect(0, 0, 128, 128);
-  const tex = new THREE.CanvasTexture(c);
-  const mat = new THREE.SpriteMaterial({ map: tex, color: 0xFFFFFF, transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending, depthWrite: false });
-  const sprite = new THREE.Sprite(mat);
-  sprite.scale.set(worldSize, worldSize, 1);
-  return sprite;
-}
-
-/* ── HERO AVATAR — Zepai Robot PREMIUM (galaxy visor + orbital rings) ── */
-(function initAvatarScene() {
-  if (typeof THREE === 'undefined') return;
-  const canvas = document.getElementById('avatarCanvas');
-  if (!canvas) return;
-
-  const SZ = 460;
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-  renderer.setSize(SZ, SZ);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-  renderer.setClearColor(0x000000, 0);
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.3;
-
-  const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x0A0518, 0.045);
-  const camera = new THREE.PerspectiveCamera(44, 1, 0.1, 100);
-  camera.position.set(0, 0.4, 6.8);
-
-  /* ── DRAMATIC LIGHTING ── */
-  scene.add(new THREE.HemisphereLight(0x0D0520,0x000000,1.5));
-  const keyL=new THREE.DirectionalLight(0xFFFFFF,3.5); keyL.position.set(0,6,4); scene.add(keyL);
-  const cyanL=new THREE.PointLight(0x8B5CF6,8,12); cyanL.position.set(-5,2,2); scene.add(cyanL);
-  const purpL=new THREE.PointLight(0xA855F7,6,12); purpL.position.set(5,0,-2); scene.add(purpL);
-  const botL=new THREE.PointLight(0x4F46E5,3,8); botL.position.set(0,-4,2); scene.add(botL);
-
-  /* ── GALAXY VISOR SHADER ── */
-  const visorMat=new THREE.ShaderMaterial({
-    uniforms:{uTime:{value:0}},
-    vertexShader:`varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
-    fragmentShader:`
-      uniform float uTime;varying vec2 vUv;
-      float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5);}
-      float noise(vec2 p){vec2 i=floor(p);vec2 f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x),f.y);}
-      float fbm(vec2 p){float v=0.;float a=0.5;for(int i=0;i<5;i++){v+=a*noise(p);p=p*2.+vec2(1.7,9.2);a*=.5;}return v;}
-      void main(){
-        float n1=fbm(vUv*3.+uTime*.05),n2=fbm(vUv*6.-uTime*.03+vec2(n1)),n3=fbm(vUv*1.5+n2*.5);
-        vec3 col=mix(vec3(.01,.02,.12),vec3(.5,.05,.92),n1*.85);
-        col=mix(col,vec3(.0,.82,1.),n2*.5);col=mix(col,vec3(.9,.15,.65),n3*.22);
-        col+=vec3(.9,.85,1.)*exp(-length(vUv-.5)*4.5)*.7;
-        col+=step(.978,hash(floor(vUv*160.)))*vec3(.7,.9,1.)*2.;
-        gl_FragColor=vec4(col,1.);
-      }
-    `
-  });
-
-  /* ── MATERIALS ── */
-  const mShell=new THREE.MeshStandardMaterial({color:0xDDD0FF,metalness:0.88,roughness:0.08});
-  const mCyan=new THREE.MeshStandardMaterial({color:0x8B5CF6,emissive:0x7C3AED,emissiveIntensity:3.0});
-  const mPurp=new THREE.MeshStandardMaterial({color:0xA855F7,emissive:0xA855F7,emissiveIntensity:2.5});
-  const mAccent=new THREE.MeshStandardMaterial({color:0x8B5CF6,metalness:0.98,roughness:0.02,emissive:0x2D1B69,emissiveIntensity:0.6});
-  const mChest=new THREE.MeshStandardMaterial({color:0x8B5CF6,emissive:0x8B5CF6,emissiveIntensity:0.7,metalness:0.85});
-  const mBody=new THREE.MeshStandardMaterial({color:0x12061E,metalness:0.92,roughness:0.05});
-
-  const avatar=new THREE.Group();
-
-  /* Antenna */
-  const antS=new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.05,0.68,10),mShell); antS.position.set(0,2.52,0); avatar.add(antS);
-  const antB=new THREE.Mesh(new THREE.SphereGeometry(0.14,16,16),mPurp); antB.position.set(0,2.9,0); avatar.add(antB);
-  const antGl=new THREE.PointLight(0xA855F7,3.0,3.5); antGl.position.set(0,2.9,0); scene.add(antGl);
-  const antGlowSprite=makeGlowSprite(0xA855F7,1.1); antGlowSprite.position.set(0,2.9,0); avatar.add(antGlowSprite);
-
-  /* Head */
-  const head=new THREE.Mesh(new THREE.BoxGeometry(2.2,1.75,1.45),mShell); head.position.set(0,1.0,0); avatar.add(head);
-  const topSheen=new THREE.Mesh(new THREE.BoxGeometry(2.2,0.45,1.45),new THREE.MeshStandardMaterial({color:0xEDE0FF,metalness:0.72,roughness:0.12})); topSheen.position.set(0,1.7,0); avatar.add(topSheen);
-  [[-1.2,1.0,0],[1.2,1.0,0]].forEach(([x,y,z])=>{const e=new THREE.Mesh(new THREE.BoxGeometry(0.22,0.62,0.44),mShell);e.position.set(x,y,z);avatar.add(e);});
-  [[-1.08,1.45,0.64],[1.08,1.45,0.64],[-1.08,0.55,0.64],[1.08,0.55,0.64]].forEach(p=>{const d=new THREE.Mesh(new THREE.SphereGeometry(0.05,8,8),mCyan);d.position.set(...p);avatar.add(d);});
-
-  /* Galaxy Visor */
-  const visor=new THREE.Mesh(new THREE.BoxGeometry(1.85,0.78,0.07),visorMat); visor.position.set(0,0.9,0.74); avatar.add(visor);
-  const vFrame=new THREE.Mesh(new THREE.BoxGeometry(1.95,0.88,0.04),new THREE.MeshBasicMaterial({color:0x8B5CF6,transparent:true,opacity:0.5})); vFrame.position.set(0,0.9,0.71); avatar.add(vFrame);
-
-  /* Eyes */
-  const eyeGeo=new THREE.SphereGeometry(0.18,16,16); eyeGeo.scale(1.5,1,0.45);
-  const eyeL=new THREE.Mesh(eyeGeo,mCyan); eyeL.position.set(-0.5,0.9,0.79); avatar.add(eyeL);
-  const eyeR=new THREE.Mesh(eyeGeo.clone(),mCyan); eyeR.position.set(0.5,0.9,0.79); avatar.add(eyeR);
-  const egL=new THREE.PointLight(0x8B5CF6,3.5,4); egL.position.set(-0.5,0.9,0.79); scene.add(egL);
-  const egR=new THREE.PointLight(0x8B5CF6,3.5,4); egR.position.set(0.5,0.9,0.79); scene.add(egR);
-  const eyeGlowL=makeGlowSprite(0x8B5CF6,0.85); eyeGlowL.position.set(-0.5,0.9,0.84); avatar.add(eyeGlowL);
-  const eyeGlowR=makeGlowSprite(0x8B5CF6,0.85); eyeGlowR.position.set(0.5,0.9,0.84); avatar.add(eyeGlowR);
-
-  /* Neck + Body */
-  const neck=new THREE.Mesh(new THREE.CylinderGeometry(0.3,0.36,0.42,16),mShell); neck.position.set(0,-0.13,0); avatar.add(neck);
-  const body=new THREE.Mesh(new THREE.BoxGeometry(1.9,1.12,1.05),mBody); body.position.set(0,-0.95,0); avatar.add(body);
-  [[-0.8,-0.95,0],[0.8,-0.95,0]].forEach(([x,y,z])=>{const p=new THREE.Mesh(new THREE.BoxGeometry(0.32,0.9,1.07),mShell);p.position.set(x,y,z);avatar.add(p);});
-  const chest=new THREE.Mesh(new THREE.BoxGeometry(0.88,0.52,0.09),mChest); chest.position.set(0,-0.9,0.53); avatar.add(chest);
-  const lM=new THREE.LineBasicMaterial({color:0x8B5CF6,transparent:true,opacity:0.7});
-  [[-0.32,-0.78,0.58],[0,-0.78,0.58],[0.32,-0.78,0.58]].forEach(([x,y,z],i)=>{const pts=[new THREE.Vector3(x-.28+i*.28,y,z),new THREE.Vector3(x-.28+i*.28,y-.18,z)];avatar.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),lM.clone()));});
-  const chestLeds=[];
-  [-0.26,0,0.26].forEach((x,i)=>{
-    const l=new THREE.Mesh(new THREE.SphereGeometry(0.08,10,10),i===1?mPurp:mCyan);l.position.set(x,-1.14,0.54);avatar.add(l);
-    const gs=makeGlowSprite(i===1?0xA855F7:0x8B5CF6,0.5); gs.position.set(x,-1.14,0.58); avatar.add(gs);
-    chestLeds.push(gs);
-  });
-  const bStrip=new THREE.Mesh(new THREE.BoxGeometry(1.4,0.06,0.08),mCyan); bStrip.position.set(0,-1.5,0.5); avatar.add(bStrip);
-
-  /* Shoulders */
-  [[-1.42,-0.6,0],[1.42,-0.6,0]].forEach(([x,y,z])=>{const pad=new THREE.Mesh(new THREE.BoxGeometry(0.38,0.14,0.5),mAccent);pad.position.set(x,y,z);avatar.add(pad);});
-  const shGeo=new THREE.SphereGeometry(0.34,18,18);
-  const shL=new THREE.Mesh(shGeo,mAccent); shL.position.set(-1.42,-0.72,0); avatar.add(shL);
-  const shR=new THREE.Mesh(shGeo.clone(),mAccent); shR.position.set(1.42,-0.72,0); avatar.add(shR);
-
-  /* Left arm */
-  const aLP=new THREE.Group(); aLP.position.set(-1.42,-0.72,0); aLP.rotation.z=Math.PI/5.5;
-  [new THREE.Mesh(new THREE.CapsuleGeometry(0.2,0.55,8,14),mShell),new THREE.Mesh(new THREE.SphereGeometry(0.23,14,14),mShell),new THREE.Mesh(new THREE.CapsuleGeometry(0.17,0.48,8,12),mShell),new THREE.Mesh(new THREE.SphereGeometry(0.25,14,14),mShell)].forEach((m,i)=>{m.position.set([0,0,0.06,0.08][i],[-0.42,-0.8,-1.16,-1.48][i],[0,0,0.05,0.07][i]);aLP.add(m);});
-  avatar.add(aLP);
-
-  /* Right arm (waving) */
-  const aRP=new THREE.Group(); aRP.position.set(1.42,-0.72,0); aRP.rotation.z=-Math.PI/3;
-  [new THREE.Mesh(new THREE.CapsuleGeometry(0.2,0.55,8,14),mShell),new THREE.Mesh(new THREE.SphereGeometry(0.23,14,14),mShell),new THREE.Mesh(new THREE.CapsuleGeometry(0.17,0.48,8,12),mShell),new THREE.Mesh(new THREE.SphereGeometry(0.25,14,14),mShell)].forEach((m,i)=>{m.position.set(0,[-0.42,-0.8,-1.16,-1.48][i],0);aRP.add(m);});
-  avatar.add(aRP);
-
-  scene.add(avatar);
-
-  /* Aura + rings */
-  const auraMeshes=[];
-  [2.4,2.75,3.1].forEach((r,i)=>{const a=new THREE.Mesh(new THREE.SphereGeometry(r,32,32),new THREE.MeshBasicMaterial({color:0x8B5CF6,transparent:true,opacity:0.022-i*0.006,side:THREE.BackSide}));scene.add(a);auraMeshes.push(a);});
-  const wf=new THREE.Mesh(new THREE.SphereGeometry(2.6,22,22),new THREE.MeshBasicMaterial({color:0x8B5CF6,wireframe:true,transparent:true,opacity:0.055})); scene.add(wf);
-  const ring1=new THREE.Mesh(new THREE.TorusGeometry(2.3,0.018,8,130),new THREE.MeshBasicMaterial({color:0x8B5CF6,transparent:true,opacity:0.65})); ring1.rotation.x=Math.PI/3.2;ring1.rotation.y=Math.PI/8;scene.add(ring1);
-  const ring2=new THREE.Mesh(new THREE.TorusGeometry(2.85,0.012,8,110),new THREE.MeshBasicMaterial({color:0xA855F7,transparent:true,opacity:0.45})); ring2.rotation.x=Math.PI/1.85;ring2.rotation.z=Math.PI/5;scene.add(ring2);
-
-  /* Particles */
-  const pGeo=new THREE.BufferGeometry(),pPos=new Float32Array(80*3);
-  for(let i=0;i<80;i++){const r=2+Math.random()*1.5,th=Math.random()*Math.PI*2,ph=Math.random()*Math.PI;pPos[i*3]=r*Math.sin(ph)*Math.cos(th);pPos[i*3+1]=r*Math.cos(ph);pPos[i*3+2]=r*Math.sin(ph)*Math.sin(th);}
-  pGeo.setAttribute('position',new THREE.BufferAttribute(pPos,3));
-  const partMat=new THREE.PointsMaterial({color:0x8B5CF6,size:0.06,transparent:true,opacity:0.55});
-  const partMesh=new THREE.Points(pGeo,partMat);scene.add(partMesh);
-
-  /* Drone compañero — llena el espacio vacío al lado derecho del robot */
-  const droneGroup=new THREE.Group(); droneGroup.position.set(2.15,0.2,0.5);
-  const droneCore=new THREE.Mesh(new THREE.IcosahedronGeometry(0.16,1),new THREE.MeshStandardMaterial({color:0x8B5CF6,emissive:0x8B5CF6,emissiveIntensity:1.6,metalness:0.6,roughness:0.2}));
-  droneGroup.add(droneCore);
-  const droneShell=new THREE.Mesh(new THREE.IcosahedronGeometry(0.27,1),new THREE.MeshBasicMaterial({color:0xA855F7,wireframe:true,transparent:true,opacity:0.55}));
-  droneGroup.add(droneShell);
-  const droneRing=new THREE.Mesh(new THREE.TorusGeometry(0.4,0.012,8,64),new THREE.MeshBasicMaterial({color:0x8B5CF6,transparent:true,opacity:0.5}));
-  droneRing.rotation.x=Math.PI/2.4; droneGroup.add(droneRing);
-  const droneGlow=makeGlowSprite(0xA855F7,1.0); droneGroup.add(droneGlow);
-  const droneLight=new THREE.PointLight(0xA855F7,2.2,4); droneGroup.add(droneLight);
-  scene.add(droneGroup);
-
-  /* Mouse */
-  let tRX=0,tRZ=0;
-  document.addEventListener('mousemove',e=>{tRX=(e.clientY/window.innerHeight-0.5)*0.38;tRZ=(e.clientX/window.innerWidth-0.5)*0.24;});
-
-  /* Resize */
-  const ro=new ResizeObserver(()=>{const s=canvas.offsetWidth||SZ;renderer.setSize(s,s);}); ro.observe(canvas);
-
-  /* Animate */
-  const lMeshes=avatar.children.filter(c=>c.isLine);
-  let avFrame=0;
-  function animAvatar(){
-    requestAnimationFrame(animAvatar);
-    if(_pagePaused) return;
-    avFrame++;
-    const t=Date.now()*.001;
-    avatar.position.y=Math.sin(t*.85)*.22;
-    avatar.rotation.y+=.003*(1+Math.sin(t*.3)*.35);
-    avatar.rotation.x=THREE.MathUtils.lerp(avatar.rotation.x,tRX,.06);
-    avatar.rotation.z=THREE.MathUtils.lerp(avatar.rotation.z,tRZ,.06);
-    aRP.rotation.z=-Math.PI/3+Math.sin(t*1.5)*.3;
-    ring1.rotation.z+=.005;ring2.rotation.y+=.003;wf.rotation.y+=.002;
-    auraMeshes.forEach((a,i)=>{a.material.opacity=(0.022-i*.006)*(.75+Math.sin(t*1.4+i)*.25);});
-    partMesh.rotation.y+=.003;
-    droneGroup.position.y=0.2+Math.sin(t*1.3)*.18;
-    droneGroup.position.x=2.15+Math.sin(t*.6)*.12;
-    droneGroup.rotation.y+=.012;
-    droneShell.rotation.x+=.006;
-    droneRing.rotation.z+=.01;
-    const p=3+Math.sin(t*2.5);egL.intensity=p;egR.intensity=p;
-    antGl.intensity=2.5+Math.sin(t*3.2)*.9;
-    /* Glow sprites + particle twinkle — throttled to every other frame (cheap, avoids scroll jank) */
-    if(avFrame%2===0){
-      partMat.opacity=.4+Math.sin(t*1.8)*.2;
-      partMat.size=.05+Math.abs(Math.sin(t*2.2))*.025;
-      eyeGlowL.material.opacity=.6+Math.sin(t*2.5)*.25;eyeGlowR.material.opacity=eyeGlowL.material.opacity;
-      antGlowSprite.material.opacity=.55+Math.sin(t*3.2)*.25;
-      chestLeds.forEach((gs,i)=>{gs.material.opacity=.5+Math.sin(t*3+i*1.6)*.3;});
-      droneGlow.material.opacity=.5+Math.sin(t*2.8)*.25;
-      droneLight.intensity=1.8+Math.sin(t*2.2)*.6;
-    }
-    cyanL.intensity=7+Math.sin(t*.8)*1.5;purpL.intensity=5.5+Math.sin(t*1.1)*1.2;
-    lMeshes.forEach((l,i)=>{if(l.material)l.material.opacity=.35+Math.sin(t*3+i*1.4)*.35;});
-    visorMat.uniforms.uTime.value=t;
-    renderer.render(scene,camera);
-  }
-  animAvatar();
-})();
-
-/* ── THREE.JS ROBOT 3D — Brand-accurate compact head robot ── */
-(function initRobot3D() {
-  if (typeof THREE === 'undefined') return;
-  const canvas = document.getElementById('robotCanvas');
-  if (!canvas) return;
-
-  const W = canvas.offsetWidth || window.innerWidth;
-  const H = canvas.offsetHeight || window.innerHeight;
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-  renderer.setSize(W, H);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-  renderer.setClearColor(0x000000, 0);
-
-  const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x000000, 0.028);
-  const camera = new THREE.PerspectiveCamera(62, W / H, 0.1, 100);
-  camera.position.set(0, 0.8, 10.5);
-
-  /* Premium lighting — metallic look */
-  scene.add(new THREE.HemisphereLight(0x1A0A38, 0x000000, 1.2));
-  const key = new THREE.DirectionalLight(0xFFFFFF, 3.0); key.position.set(2, 4, 3); scene.add(key);
-  const fill= new THREE.DirectionalLight(0x8B5CF6, 2.0); fill.position.set(-3, 1, 2); scene.add(fill);
-  const rim = new THREE.DirectionalLight(0x4F46E5, 1.5); rim.position.set(0,-2,-3); scene.add(rim);
-
-  /* Materials */
-  const mShell = new THREE.MeshStandardMaterial({ color:0xDDEEFF, metalness:0.78, roughness:0.15 });
-  const mDark  = new THREE.MeshStandardMaterial({ color:0x080616, metalness:0.5,  roughness:0.15 });
-  const mEye   = new THREE.MeshStandardMaterial({ color:0x8B5CF6, emissive:0x7C3AED, emissiveIntensity:3.0 });
-  const mAccent= new THREE.MeshStandardMaterial({ color:0x8B5CF6, metalness:0.92, roughness:0.06, emissive:0x003344, emissiveIntensity:0.5 });
-  const mChest = new THREE.MeshStandardMaterial({ color:0x8B5CF6, emissive:0x8B5CF6, emissiveIntensity:0.4, metalness:0.8, roughness:0.1 });
-
-  const robot = new THREE.Group();
-
-  /* ── Antenna ── */
-  const antS = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.55, 10), mShell);
-  antS.position.set(0, 2.0, 0); robot.add(antS);
-  const antB = new THREE.Mesh(new THREE.SphereGeometry(0.12, 16, 16), mAccent);
-  antB.position.set(0, 2.3, 0); robot.add(antB);
-  const antGlow = new THREE.PointLight(0x8B5CF6, 2.5, 3); antGlow.position.set(0, 2.3, 0); scene.add(antGlow);
-
-  /* ── Head — wide & heavily rounded, like the logo ── */
-  // Main head box (wide: 2.2 × 1.6 × 1.4)
-  const headMesh = new THREE.Mesh(new THREE.BoxGeometry(2.2, 1.6, 1.4), mShell);
-  headMesh.position.set(0, 0.8, 0); robot.add(headMesh);
-
-  // Ear notch left
-  const earL = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.55, 0.38), mShell);
-  earL.position.set(-1.15, 0.85, 0); robot.add(earL);
-  // Ear notch right
-  const earR = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.55, 0.38), mShell);
-  earR.position.set( 1.15, 0.85, 0); robot.add(earR);
-
-  /* ── Visor band — dark horizontal strip, lower 55% of head ── */
-  const visor = new THREE.Mesh(new THREE.BoxGeometry(1.85, 0.7, 0.08), mDark);
-  visor.position.set(0, 0.6, 0.72); robot.add(visor);
-
-  /* ── Eyes (oval, cyan, emissive) ── */
-  const eyeGeo = new THREE.SphereGeometry(0.2, 20, 20);
-  eyeGeo.scale(1, 0.85, 0.55);
-  const eyeL2 = new THREE.Mesh(eyeGeo, mEye); eyeL2.position.set(-0.5, 0.64, 0.75); robot.add(eyeL2);
-  const eyeR2 = new THREE.Mesh(eyeGeo.clone(), mEye); eyeR2.position.set( 0.5, 0.64, 0.75); robot.add(eyeR2);
-
-  /* Eye glow lights */
-  const egL = new THREE.PointLight(0x8B5CF6, 2.5, 3); egL.position.set(-0.5, 0.64, 0.75); scene.add(egL);
-  const egR = new THREE.PointLight(0x8B5CF6, 2.5, 3); egR.position.set( 0.5, 0.64, 0.75); scene.add(egR);
-
-  /* ── Neck ── */
-  const neck = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.35, 0.35, 16), mShell);
-  neck.position.set(0, -0.1, 0); robot.add(neck);
-
-  /* ── Body — compact, same width as head ── */
-  const body = new THREE.Mesh(new THREE.BoxGeometry(1.9, 1.1, 1.1), mShell);
-  body.position.set(0, -0.85, 0); robot.add(body);
-
-  /* Chest panel — emissive cyan */
-  const chest = new THREE.Mesh(new THREE.BoxGeometry(0.9, 0.5, 0.08), mChest);
-  chest.position.set(0, -0.82, 0.56); robot.add(chest);
-
-  /* Chest LED dots */
-  [-0.24, 0, 0.24].forEach((x, i) => {
-    const led = new THREE.Mesh(new THREE.SphereGeometry(0.065, 10, 10), mEye);
-    led.position.set(x, -1.0, 0.57); robot.add(led);
-  });
-
-  /* ── Shoulders ── */
-  const shGeo = new THREE.SphereGeometry(0.32, 18, 18);
-  const shL = new THREE.Mesh(shGeo, mAccent); shL.position.set(-1.1, -0.55, 0); robot.add(shL);
-  const shR = new THREE.Mesh(shGeo.clone(), mAccent); shR.position.set( 1.1, -0.55, 0); robot.add(shR);
-
-  /* ── Left arm (down, relaxed) — uses pivot like right arm ── */
-  const armLPivot = new THREE.Group();
-  armLPivot.position.set(-1.1, -0.55, 0);
-  armLPivot.rotation.z = Math.PI / 14;
-  const armLMesh = new THREE.Mesh(new THREE.CapsuleGeometry(0.2, 0.7, 8, 16), mShell);
-  armLMesh.position.set(0, -0.62, 0);
-  armLPivot.add(armLMesh);
-  const handL = new THREE.Mesh(new THREE.SphereGeometry(0.24, 14, 14), mShell);
-  handL.position.set(0, -1.2, 0);
-  armLPivot.add(handL);
-  robot.add(armLPivot);
-
-  /* ── Right arm (raised / waving) ── */
-  const armRPivot = new THREE.Group();
-  armRPivot.position.set(1.1, -0.55, 0);
-  armRPivot.rotation.z = -Math.PI / 3;
-  const armRMesh = new THREE.Mesh(new THREE.CapsuleGeometry(0.2, 0.7, 8, 16), mShell);
-  armRMesh.position.set(0, -0.6, 0);
-  armRPivot.add(armRMesh);
-  const handR = new THREE.Mesh(new THREE.SphereGeometry(0.24, 14, 14), mShell);
-  handR.position.set(0, -1.18, 0);
-  armRPivot.add(handR);
-  robot.add(armRPivot);
-
-  /* Robot removed from background — only planet, debris and particles remain */
-  // scene.add(robot);  ← removed per user request
-
-  /* ═══ PLANET (LEFT SIDE) — animated gas-giant shader (cheap 3-octave fbm bands) ═══ */
-  const planetMat = new THREE.ShaderMaterial({
-    uniforms:{ uTime:{ value:0 } },
-    vertexShader:`varying vec3 vN;varying vec2 vUv;void main(){vN=normalize(normalMatrix*normal);vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
-    fragmentShader:`
-      uniform float uTime;varying vec3 vN;varying vec2 vUv;
-      float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5);}
-      float noise(vec2 p){vec2 i=floor(p);vec2 f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x),f.y);}
-      float fbm(vec2 p){float v=0.;float a=0.5;for(int i=0;i<3;i++){v+=a*noise(p);p=p*2.+vec2(4.2,1.1);a*=.5;}return v;}
-      void main(){
-        float bands=vUv.y*6.+fbm(vec2(vUv.x*2.+uTime*.025,vUv.y*5.))*1.6;
-        float n=fbm(vec2(bands,vUv.y*3.-uTime*.02));
-        vec3 col=mix(vec3(.04,.02,.14),vec3(.34,.13,.62),n);
-        col=mix(col,vec3(.0,.42,.66),smoothstep(.55,.95,n));
-        float fres=pow(1.-max(dot(vN,vec3(0.,0.,1.)),0.),2.4);
-        col+=vec3(.2,.5,.9)*fres*.9;
-        gl_FragColor=vec4(col,1.);
-      }
-    `
-  });
-  const planetMesh = new THREE.Mesh(new THREE.SphereGeometry(2.2, 48, 48), planetMat);
-  planetMesh.position.set(-7, 0.5, -5);
-  scene.add(planetMesh);
-
-  /* Planet atmosphere shells */
-  [2.32, 2.5].forEach((r, i) => {
-    const atm = new THREE.Mesh(new THREE.SphereGeometry(r,32,32),
-      new THREE.MeshBasicMaterial({ color:0x3B9FE8, transparent:true, opacity:0.045-i*0.016, side:THREE.BackSide }));
-    atm.position.copy(planetMesh.position);
-    scene.add(atm);
-  });
-
-  /* Planet ring — gradient texture (Saturn-like banding, generated once, no per-frame cost) */
-  const ringCanvas = document.createElement('canvas');
-  ringCanvas.width = 256; ringCanvas.height = 32;
-  const ringCtx = ringCanvas.getContext('2d');
-  const ringGrad = ringCtx.createLinearGradient(0, 0, 256, 0);
-  ringGrad.addColorStop(0.00, 'rgba(139,92,246,0)');
-  ringGrad.addColorStop(0.18, 'rgba(139,92,246,0.55)');
-  ringGrad.addColorStop(0.40, 'rgba(0,136,204,0.75)');
-  ringGrad.addColorStop(0.62, 'rgba(168,85,247,0.4)');
-  ringGrad.addColorStop(0.80, 'rgba(0,136,204,0.6)');
-  ringGrad.addColorStop(1.00, 'rgba(139,92,246,0)');
-  ringCtx.fillStyle = ringGrad;
-  ringCtx.fillRect(0, 0, 256, 32);
-  const ringTex = new THREE.CanvasTexture(ringCanvas);
-  const planetRing = new THREE.Mesh(
-    new THREE.RingGeometry(2.7, 3.7, 96),
-    new THREE.MeshBasicMaterial({ map: ringTex, transparent:true, opacity:0.85, side:THREE.DoubleSide, depthWrite:false })
-  );
-  /* Map the gradient radially across the ring's UVs */
-  { const uv = planetRing.geometry.attributes.uv; const pos = planetRing.geometry.attributes.position;
-    for (let i=0;i<uv.count;i++){ const x=pos.getX(i), y=pos.getY(i); const r=Math.sqrt(x*x+y*y); uv.setXY(i, (r-2.7)/(3.7-2.7), 0.5); }
-    uv.needsUpdate = true; }
-  planetRing.position.copy(planetMesh.position);
-  planetRing.rotation.x = Math.PI / 2.6;
-  planetRing.rotation.y = Math.PI / 6;
-  scene.add(planetRing);
-
-  /* Moon orbiting planet */
-  const moonPivot = new THREE.Group();
-  moonPivot.position.copy(planetMesh.position);
-  const moonMesh = new THREE.Mesh(new THREE.SphereGeometry(0.4, 24, 24),
-    new THREE.MeshStandardMaterial({ color:0x334455, metalness:0.5, roughness:0.5 }));
-  moonMesh.position.set(3.5, 0, 0);
-  moonPivot.add(moonMesh);
-  const moonGlow = makeGlowSprite(0x8B9BFF, 1.4);
-  moonGlow.position.set(3.5, 0, 0);
-  moonPivot.add(moonGlow);
-  scene.add(moonPivot);
-
-  /* Planet point light */
-  const planetLight = new THREE.PointLight(0x0088CC, 2.5, 12);
-  planetLight.position.set(-6.5, 1, -2);
-  scene.add(planetLight);
-  const planetGlow = makeGlowSprite(0x4F8FE0, 6.5);
-  planetGlow.position.copy(planetMesh.position);
-  scene.add(planetGlow);
-
-  /* ═══ HOLOGRAPHIC PANELS ════════════════════════ */
-  const screenDefs = [
-    { pos:[-4.5, 2.5, 0.5],  rot:[0.12, 0.35, 0.06],  w:1.8, h:1.1 },
-    { pos:[ 5.5, 2.3, -0.8], rot:[-0.1,-0.4, 0.08],   w:1.4, h:0.9 },
-    { pos:[-2.2,-2.0, 0.8],  rot:[0.22,-0.22,-0.1],   w:1.2, h:0.75},
-    { pos:[ 0.2, 3.2, -1.2], rot:[0.05, 0.15, 0.18],  w:1.0, h:0.65},
-  ];
-  const screens = screenDefs.map(({ pos, rot, w, h }) => {
-    const s = new THREE.Mesh(
-      new THREE.PlaneGeometry(w, h, 8, 5),
-      new THREE.MeshBasicMaterial({ color:0x8B5CF6, wireframe:true, transparent:true, opacity:0.38 })
-    );
-    s.position.set(...pos); s.rotation.set(...rot);
-    scene.add(s); return s;
-  });
-
-  /* ═══ TECH DEBRIS ═══════════════════════════════ */
-  const debrisDefs = [
-    { pos:[-5.5, 1.5, 1.0],  type:'box',   size:0.22, col:0x8B5CF6 },
-    { pos:[-3.5,-1.2, 0.5],  type:'oct',   size:0.28, col:0x4F46E5 },
-    { pos:[-1.5, 2.8,-1.0],  type:'torus', size:0.35, col:0x8B5CF6 },
-    { pos:[ 0.5,-2.2, 0.0],  type:'box',   size:0.18, col:0x4F46E5 },
-    { pos:[ 4.2, 1.8, 0.5],  type:'oct',   size:0.22, col:0x8B5CF6 },
-    { pos:[ 6.8,-1.0,-1.0],  type:'box',   size:0.20, col:0x4F46E5 },
-    { pos:[-6.2,-1.5, 0.2],  type:'torus', size:0.30, col:0x8B5CF6 },
-    { pos:[ 1.8, 3.2,-0.5],  type:'oct',   size:0.25, col:0x8B5CF6 },
-    { pos:[-8.0, 0.5, 0.0],  type:'box',   size:0.32, col:0x4F46E5 },
-    { pos:[ 7.5, 0.8,-0.5],  type:'oct',   size:0.28, col:0x8B5CF6 },
-  ];
-  const debrisMeshes = debrisDefs.map(({ pos, type, size, col }) => {
-    let geo;
-    if (type === 'box')   geo = new THREE.BoxGeometry(size, size, size);
-    else if (type === 'oct')  geo = new THREE.OctahedronGeometry(size);
-    else geo = new THREE.TorusGeometry(size, size*0.28, 6, 20);
-    const mat = new THREE.MeshBasicMaterial({ color:col, wireframe:true, transparent:true, opacity:0.6 });
-    const m = new THREE.Mesh(geo, mat);
-    m.position.set(...pos);
-    scene.add(m);
-    /* Small glow light near each debris */
-    const dL = new THREE.PointLight(col, 0.6, 2.2);
-    dL.position.set(...pos);
-    scene.add(dL);
-    return m;
-  });
-
-  /* ═══ CONNECTION LINES ══════════════════════════ */
-  const linePairs = [
-    [[-5.5,1.5,1],[-3.5,-1.2,0.5]],
-    [[-3.5,-1.2,0.5],[-1.5,2.8,-1]],
-    [[ 0.5,-2.2,0],[ 4.2,1.8,0.5]],
-    [[ 4.2,1.8,0.5],[6.8,-1,-1]],
-    [[-6.2,-1.5,0.2],[-5.5,1.5,1]],
-  ];
-  linePairs.forEach(([a, b]) => {
-    const lg = new THREE.BufferGeometry().setFromPoints([
-      new THREE.Vector3(...a), new THREE.Vector3(...b)
-    ]);
-    scene.add(new THREE.Line(lg,
-      new THREE.LineBasicMaterial({ color:0x8B5CF6, transparent:true, opacity:0.16 })));
-  });
-
-  /* ═══ DATA STREAMS ══════════════════════════════ */
-  const streamXs = [-8, -4.5, 4.5, 8.5];
-  const streamPtsArray = [];
-  streamXs.forEach(sx => {
-    const pts = [];
-    for (let i = 0; i < 32; i++) {
-      pts.push({ x: sx + (Math.random()-0.5)*0.5, y: (Math.random()-0.5)*14, z: (Math.random()-0.5)*2 });
-    }
-    streamPtsArray.push(pts);
-    const sg = new THREE.BufferGeometry();
-    const sArr = new Float32Array(pts.length * 3);
-    pts.forEach((p, j) => { sArr[j*3]=p.x; sArr[j*3+1]=p.y; sArr[j*3+2]=p.z; });
-    sg.setAttribute('position', new THREE.BufferAttribute(sArr, 3));
-    const sPoints = new THREE.Points(sg,
-      new THREE.PointsMaterial({ color:0xFFFFFF, size:0.03, transparent:true, opacity:0.28 }));
-    scene.add(sPoints);
-    streamPtsArray[streamPtsArray.length-1]._geo = sg;
-    streamPtsArray[streamPtsArray.length-1]._arr = sArr;
-  });
-
-  /* ── Floating particles (180, wide spread) ── */
-  const pGeo = new THREE.BufferGeometry();
-  const pPos = new Float32Array(180 * 3);
-  for (let i = 0; i < 350; i++) {
-    pPos[i*3]   = (Math.random()-0.5)*24;
-    pPos[i*3+1] = (Math.random()-0.5)*14;
-    pPos[i*3+2] = (Math.random()-0.5)*8-1;
-  }
-  pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
-  const particlesMat = new THREE.PointsMaterial({ color:0x8B5CF6, size:0.05, transparent:true, opacity:0.42 });
-  const particles = new THREE.Points(pGeo, particlesMat);
-  scene.add(particles);
-
-  /* Scroll reaction */
-  let scrollProg = 0;
-  window.addEventListener('scroll', () => {
-    const hero = document.getElementById('hero');
-    if (hero) scrollProg = Math.min(window.pageYOffset / hero.offsetHeight, 1);
-  });
-
-  /* Resize — canvas fills hero section */
-  window.addEventListener('resize', () => {
-    const w = canvas.offsetWidth || window.innerWidth;
-    const h = canvas.offsetHeight || window.innerHeight;
-    camera.aspect = w / h; camera.updateProjectionMatrix(); renderer.setSize(w, h);
-  });
-
-  /* Skip entirely on mobile — canvas is hidden via CSS */
-  if(_isMobile) return;
-
-  /* Animate */
-  let rbFrame = 0;
-  function animate() {
-    requestAnimationFrame(animate);
-    if (_pagePaused) return;
-    rbFrame++;
-    const t = Date.now() * 0.001;
-    /* Robot */
-    robot.position.y = Math.sin(t) * 0.26 - 0.5;
-    robot.rotation.y += 0.004;
-    robot.rotation.x = scrollProg * 0.5;
-    robot.rotation.z = scrollProg * 0.18;
-    camera.position.z = 10.5 - scrollProg * 1.4;
-    armRPivot.rotation.z = -Math.PI/3 + Math.sin(t * 1.5) * 0.28;
-    const p = 2.0 + Math.sin(t * 2.5) * 0.9;
-    egL.intensity = p; egR.intensity = p;
-    antGlow.intensity = 1.5 + Math.sin(t * 3.2) * 0.7;
-    /* Planet */
-    planetMesh.rotation.y += 0.0014;
-    planetMesh.rotation.x = Math.sin(t * 0.3) * 0.04;
-    planetMat.uniforms.uTime.value = t;
-    moonPivot.rotation.y += 0.007;
-    planetRing.rotation.z += 0.0008;
-    if (rbFrame % 2 === 0) {
-      planetLight.intensity = 2 + Math.sin(t * 1.2) * 0.6;
-      planetGlow.material.opacity = 0.4 + Math.sin(t * 0.9) * 0.15;
-      moonGlow.material.opacity = 0.5 + Math.sin(t * 1.6) * 0.2;
-    }
-    /* Holographic screens — float and sway */
-    screens.forEach((s, i) => {
-      s.position.y += Math.sin(t * 0.55 + i * 1.3) * 0.002;
-      s.rotation.z = Math.sin(t * 0.38 + i) * 0.05;
-    });
-    /* Tech debris — spin on own axis */
-    debrisMeshes.forEach((d, i) => {
-      d.rotation.x += 0.009 + i * 0.0015;
-      d.rotation.y += 0.007 + i * 0.001;
-      d.position.y += Math.sin(t * 0.5 + i * 0.7) * 0.001;
-    });
-    /* Data streams — particles fall down, reset at top */
-    streamPtsArray.forEach(pts => {
-      if (!pts._geo) return;
-      pts.forEach(p => { p.y -= 0.014; if (p.y < -7) p.y = 7; });
-      const arr = pts._arr;
-      pts.forEach((p, j) => { arr[j*3+1] = p.y; });
-      pts._geo.attributes.position.needsUpdate = true;
-    });
-    /* Particles */
-    particles.rotation.y = t * 0.028;
-    particlesMat.opacity = 0.32 + Math.sin(t * 1.6) * 0.12;
-    renderer.render(scene, camera);
-  }
-  animate();
-})();
 </script>
 </body>
 </html>
