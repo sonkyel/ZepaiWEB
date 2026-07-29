@@ -10,7 +10,7 @@
 
 .galaxy-hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -101,10 +101,8 @@
 /* Era #C4B5FD -> #8B5CF6 -> #6366F1: el tramo final caía a 4,8 sobre la base
    y a 1,2 sobre las zonas claras. Ahora ningún tramo baja de #A78BFA (7,2). */
 .galaxy-title-grad {
-  background: linear-gradient(135deg, #f3e8ff 0%, #ddd1ff 50%, #c4b5fd 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--purple);
+  -webkit-text-fill-color: var(--purple);
 }
 
 .galaxy-sub {
@@ -255,4 +253,138 @@
 #contact > .container {
   position: relative;
   z-index: var(--z-base);
+}
+
+/* ── NEÓN DE MARCA ───────────────────────────────────────────
+   Sale del feed de Instagram: la "Z" en tubo de neón, el contorno
+   del robot, los bordes que brillan como un rótulo. La web no tenía
+   nada emisivo y es justo lo que la hacía parecer "otra web oscura
+   de SaaS" en vez de Zepai.
+
+   Con moderación: el neón funciona por contraste con el negro. Si
+   todo brilla, no brilla nada.
+   ───────────────────────────────────────────────────────── */
+
+/* 1. La palabra destacada del titular lleva bloom, como en los posts */
+.gt,
+.galaxy-title-grad {
+  text-shadow:
+    0 0 18px rgba(168, 85, 247, 0.45),
+    0 0 44px rgba(168, 85, 247, 0.22);
+}
+
+/* 2. Borde de neón. Se aplica solo a lo destacado, no a todas las tarjetas */
+.neon {
+  border: 1px solid rgba(168, 85, 247, 0.55);
+  box-shadow:
+    inset 0 0 22px rgba(168, 85, 247, 0.12),
+    0 0 0 1px rgba(168, 85, 247, 0.12),
+    0 0 26px rgba(168, 85, 247, 0.22);
+}
+.neon:hover {
+  border-color: rgba(192, 132, 252, 0.85);
+  box-shadow:
+    inset 0 0 28px rgba(168, 85, 247, 0.18),
+    0 0 0 1px rgba(168, 85, 247, 0.2),
+    0 0 42px rgba(168, 85, 247, 0.38);
+}
+
+/* 3. Insignias numeradas, al estilo del post "5 señales de que necesitas
+      un agente de IA": número en cuadro violeta con brillo. */
+.num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 10px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.5px;
+  color: #fff;
+  background: linear-gradient(150deg, rgba(168, 85, 247, 0.3), rgba(124, 58, 237, 0.14));
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 0 20px rgba(168, 85, 247, 0.25);
+}
+
+/* 4. Los robots dibujados a mano ganan glow: conectan con la mascota
+      del feed, y sin brillo se veían apagados sobre el negro. */
+.sec-robot svg {
+  filter: drop-shadow(0 0 14px rgba(168, 85, 247, 0.35));
+}
+
+/* 5. El punto vivo del badge: tubo de neón en pequeño */
+.galaxy-badge {
+  box-shadow:
+    inset 0 0 18px rgba(168, 85, 247, 0.1),
+    0 0 22px rgba(168, 85, 247, 0.16);
+}
+
+/* 6. El botón principal, con el halo del rótulo */
+.btn-p,
+.galaxy-cta {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 6px 26px rgba(124, 58, 237, 0.45),
+    0 0 34px rgba(168, 85, 247, 0.28);
+}
+.btn-p:hover,
+.galaxy-cta:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 10px 38px rgba(124, 58, 237, 0.55),
+    0 0 52px rgba(168, 85, 247, 0.42);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neon,
+  .neon:hover { transition: none; }
+}
+
+/* ── ESTADOS Y REMATES ───────────────────────────────────────
+   Lo que señalaba la auditoría: no había realimentación al pulsar,
+   los radios eran todos iguales y las transiciones no cubrían todo.
+   ───────────────────────────────────────────────────────── */
+
+/* Realimentación al pulsar. Antes no existía: el botón no "bajaba". */
+.btn-p:active,
+.galaxy-cta:active,
+.ctab-btn:active,
+.date-btn:active,
+.time-btn:active,
+.lang-btn:active,
+.srv-card:active,
+.sp-card:active,
+.wa-float:active {
+  transform: scale(0.98);
+}
+.galaxy-cta:active,
+.btn-p:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+/* Radios variados: casi todo era 100px. Más apretado por dentro,
+   más suave en los contenedores. */
+.srv-card,
+.sp-card,
+.test-card,
+.stat-card { border-radius: 18px; }
+.faq-item,
+.chat,
+.contact-form { border-radius: 20px; }
+.num-badge,
+.f-ci,
+.c-ico { border-radius: 12px; }
+.date-btn,
+.time-btn { border-radius: 10px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-p:active,
+  .galaxy-cta:active,
+  .srv-card:active,
+  .sp-card:active { transform: none; }
 }

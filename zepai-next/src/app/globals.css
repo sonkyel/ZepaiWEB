@@ -10,8 +10,41 @@
    Google Fonts por CDN: una petición externa menos y sin salto de texto. */
 :root {
   --font-body: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: var(--font-satoshi), var(--font-inter), sans-serif;
+
+  /* Escala tipográfica. Antes eran clamp() sueltos repartidos por el CSS,
+     sin relación entre sí. */
+  --fs-1: 12px;
+  --fs-2: 14px;
+  --fs-3: clamp(15px, 1.1vw, 17px);
+  --fs-4: clamp(19px, 1.6vw, 22px);
+  --fs-5: clamp(24px, 2.4vw, 32px);
+  --fs-6: clamp(30px, 3.6vw, 46px);
+  --fs-7: clamp(34px, 5vw, 68px);
 }
 
 body {
   font-family: var(--font-body);
+}
+
+/* Los titulares llevan Satoshi; el texto corrido sigue en Inter, que se lee
+   mejor en párrafo largo. Es el contraste editorial que pedía la skill. */
+h1, h2, h3, h4,
+.sec-title, .galaxy-title, .sp-h1, .sp-h2, .sp-h3,
+.belief-h, .stat-num, .num-badge, .belief-num, .step-title {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Contra las palabras huérfanas al final del titular */
+h1, h2, h3, .sec-title, .galaxy-title, .sp-h1, .sp-h2, .belief-h {
+  text-wrap: balance;
+}
+p, .sec-sub, .galaxy-sub, .sp-lead {
+  text-wrap: pretty;
+}
+
+/* Cifras alineadas en columna: los contadores bailaban al animarse */
+.stat-num, .num-badge, .belief-num, .msg-time, .chat-clock, .f-copy {
+  font-variant-numeric: tabular-nums;
 }

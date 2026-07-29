@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Nunito } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 
 import "./globals.css";
 import { LangProvider } from "@/lib/i18n";
@@ -8,16 +9,23 @@ import { Footer } from "@/components/site/Footer";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
 import { ORGANIZATION_LD, SITE } from "@/lib/site";
 
+// Satoshi (Fontshare, libre para uso comercial) autoalojada: una peticion
+// externa menos y sin salto de texto. Sustituye a Nunito, que se descargaba
+// y no se usaba en ninguna parte.
+const satoshi = localFont({
+  src: [
+    { path: "./fonts/Satoshi-500.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/Satoshi-700.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/Satoshi-900.woff2", weight: "900", style: "normal" },
+  ],
+  variable: "--font-satoshi",
+  display: "swap",
+});
+
 const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-inter",
-  display: "swap",
-});
-const nunito = Nunito({
-  subsets: ["latin"],
-  weight: ["900"],
-  variable: "--font-nunito",
   display: "swap",
 });
 
@@ -48,7 +56,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${inter.variable} ${nunito.variable}`}>
+    <html lang="es" className={`${inter.variable} ${satoshi.variable}`}>
       <body>
         <script
           type="application/ld+json"
