@@ -5,8 +5,6 @@
    ───────────────────────────────────────────────────────── */
 
 :root {
-  --hero-base: #06050f;
-  --hero-neb: #241a4a; /* lo más claro que puede haber tras el texto */
   --grad-btn: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
 }
 
@@ -16,27 +14,8 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--hero-base);
+  background: var(--bg0);
   padding-top: var(--nav-h);
-}
-
-/* Velo sobre la escena. Con el texto centrado hay que oscurecer el centro,
-   no un lateral: es lo que garantiza que tras las letras nunca haya nada
-   mas claro que #241A4A, el fondo contra el que valida check-contrast.py. */
-.galaxy-scrim {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background:
-    radial-gradient(
-      ellipse 76% 66% at 50% 50%,
-      rgba(6, 5, 15, 0.48) 0%,
-      rgba(6, 5, 15, 0.36) 48%,
-      rgba(6, 5, 15, 0.15) 74%,
-      transparent 100%
-    ),
-    linear-gradient(to bottom, rgba(6, 5, 15, 0.5), rgba(6, 5, 15, 0.12) 30%, rgba(6, 5, 15, 0.86));
 }
 
 /* El fondo es una imagen fija generada por el cliente. Al ser fija, el
@@ -59,10 +38,10 @@
   pointer-events: none;
   background: linear-gradient(
     to bottom,
-    rgba(6, 5, 15, 0.55),
+    rgba(8, 7, 13, 0.6),
     transparent 28%,
     transparent 70%,
-    rgba(6, 5, 15, 0.88)
+    rgba(8, 7, 13, 0.94)
   );
 }
 
@@ -222,130 +201,6 @@
   .galaxy-inner { transition: none !important; }
 }
 
-/* ── SECCIONES OSCURAS ───────────────────────────────────────
-   #results entera y el marco de #contact. El CSS heredado fuerza
-   colores con !important en 111 selectores, así que aquí hay que
-   ganar por especificidad. Los valores están validados en
-   check-contrast.py contra #0B0A18.
-   ───────────────────────────────────────────────────────── */
-#results,
-#contact {
-  background: #0b0a18 !important;
-  position: relative;
-}
-#results::before,
-#contact::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 60% 50% at 18% 0%, rgba(139, 92, 246, 0.13), transparent 62%),
-    radial-gradient(ellipse 55% 45% at 82% 100%, rgba(79, 70, 229, 0.11), transparent 60%);
-}
-#results > .container,
-#contact > .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* Texto de #results sobre oscuro */
-#results .sec-title,
-#results .sec-title span,
-#results .sec-sub-title,
-#results .t-name,
-#results .test-author .t-name {
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-}
-#results .sec-title .gt {
-  background: linear-gradient(135deg, #e9d5ff 0%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent !important;
-}
-#results .sec-sub { color: rgba(255, 255, 255, 0.78) !important; }
-#results .stat-lbl { color: rgba(255, 255, 255, 0.74) !important; }
-#results .test-quote { color: rgba(255, 255, 255, 0.86) !important; -webkit-text-fill-color: rgba(255, 255, 255, 0.86) !important; }
-#results .t-role { color: rgba(255, 255, 255, 0.68) !important; -webkit-text-fill-color: rgba(255, 255, 255, 0.68) !important; }
-#results .stat-num { color: #c4b5fd !important; -webkit-text-fill-color: #c4b5fd !important; }
-#results .section-label,
-#results .kii-tag,
-#results .kii-link,
-#results .live-badge {
-  color: #ddd1ff !important;
-  -webkit-text-fill-color: #ddd1ff !important;
-}
-
-/* Tarjetas de #results: cristal oscuro en vez de blanco */
-#results .stat-card,
-#results .test-card {
-  background: rgba(255, 255, 255, 0.045) !important;
-  border-color: rgba(196, 181, 253, 0.18) !important;
-  box-shadow: none !important;
-}
-#results .stat-card:hover,
-#results .test-card:hover {
-  background: rgba(255, 255, 255, 0.075) !important;
-  border-color: rgba(196, 181, 253, 0.34) !important;
-}
-#results .kii-tag { background: rgba(139, 92, 246, 0.16) !important; border-color: rgba(139, 92, 246, 0.3) !important; }
-#results .section-label { background: rgba(139, 92, 246, 0.16) !important; border-color: rgba(139, 92, 246, 0.32) !important; }
-#results .sec-robot { opacity: 0.35; }
-
-/* #contact: SOLO el marco va oscuro. El formulario se queda en claro.
-   Son 28 reglas con !important sobre campos, fechas y franjas horarias, y
-   es donde entra el dinero: un campo ilegible cuesta clientes. */
-#contact .contact-info .section-label {
-  color: #ddd1ff !important;
-  background: rgba(139, 92, 246, 0.16) !important;
-  border-color: rgba(139, 92, 246, 0.32) !important;
-}
-#contact .contact-info h2,
-#contact .contact-info h2 span {
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-}
-#contact .contact-info h2 .gt {
-  background: linear-gradient(135deg, #e9d5ff 0%, #a78bfa 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent !important;
-}
-#contact .contact-info p,
-#contact .contact-info li,
-#contact .contact-info .c-detail,
-#contact .contact-info .c-detail span,
-#contact .contact-info .c-detail a {
-  color: rgba(255, 255, 255, 0.8) !important;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
-}
-#contact .contact-info .sched-check,
-#contact .contact-info .c-ico {
-  background: rgba(139, 92, 246, 0.18) !important;
-  border-color: rgba(139, 92, 246, 0.34) !important;
-  color: #ddd1ff !important;
-}
-#contact .sec-robot { opacity: 0.35; }
-
-/* La tarjeta del formulario mantiene su fondo claro: dentro no se toca nada */
-#contact .contact-form {
-  background: #fff !important;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45) !important;
-}
-
-/* El botón principal, en toda la web: sobre #8B5CF6 el texto blanco daba 4,2
-   y el oscuro 3,1 en el extremo índigo. Ninguno llegaba a AA. */
-.btn-p {
-  background: var(--grad-btn) !important;
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-}
-.btn-p * {
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-}
-
 /* ── ICONOS ──────────────────────────────────────────────────
    Los emojis se dibujaban distinto en cada sistema operativo y no
    heredaban el color del texto. Los SVG de Lucide sí: usan
@@ -376,24 +231,28 @@
    Texturas generadas por el cliente. Son deliberadamente casi
    invisibles: deben leerse como papel con un matiz, no como imagen.
    ───────────────────────────────────────────────────────── */
+/* La textura clara ya no sirve: toda la web es oscura. Se usa la
+   atmosférica, muy tenue, para que las secciones no sean negro plano. */
 #services,
-#faq {
-  background-color: #f5f4ff;
-  background-image: url("/secciones/claro.webp");
-  background-size: cover;
-  background-position: center;
+#results,
+#contact {
+  position: relative;
 }
-#results::after,
-#contact::after {
+#services::before,
+#results::before,
+#contact::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   background: url("/secciones/oscuro.webp") center / cover no-repeat;
-  opacity: 0.5;
+  opacity: 0.28;
 }
+#results::before { transform: scaleX(-1); }
+#contact::before { transform: scaleY(-1); }
+#services > .container,
 #results > .container,
 #contact > .container {
   position: relative;
-  z-index: 2;
+  z-index: var(--z-base);
 }
