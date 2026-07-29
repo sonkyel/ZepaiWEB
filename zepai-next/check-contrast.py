@@ -47,9 +47,9 @@ def sobre(fg, alpha, bg):
 # comprueban dos casos: una partícula brillante y la saturación total a
 # blanco. Los valores salen de acotar el canvas al 62 % y el velo al 48 %.
 FONDOS_HERO = {
-    "hero, base sin partículas": hexa("#06050F"),
-    "hero, partícula brillante": hexa("#5F5F65"),
-    "hero, saturación aditiva a blanco (extremo)": hexa("#56565C"),
+    # Medido sobre la imagen real: el pixel mas claro de la banda del texto
+    # en public/hero/hero.webp. Ya no es una estimacion, es el valor exacto.
+    "hero, pixel más claro de la imagen": hexa("#1A1F3F"),
 }
 
 # Las secciones oscuras tienen su propio fondo sólido: ahí no hay vórtice.

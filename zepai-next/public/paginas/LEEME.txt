@@ -1,0 +1,18 @@
+CABECERAS DE SUBPAGINAS  ·  formato 4:3
+========================================
+Un fichero por pagina, con EXACTAMENTE estos nombres para que pueda
+colocarlas automaticamente:
+
+  chatbot-whatsapp.png
+  automatizacion-de-llamadas.png
+  automatizaciones-n8n-make.png
+  consultoria-ia.png
+  agencia-ia-restaurantes.png
+  agencia-ia-inmobiliarias.png
+  agencia-ia-ecommerce.png
+  soluciones.png
+  como-trabajamos.png
+  blog.png
+
+No hace falta que esten todas para empezar: las que falten se quedan con
+el SVG que ya dibuje, y se van sustituyendo segun las tengas.

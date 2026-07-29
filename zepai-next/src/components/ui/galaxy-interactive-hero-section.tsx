@@ -1,67 +1,25 @@
 "use client";
 
 /**
- * Hero de marca con escena Spline.
+ * Hero de marca.
  *
- * La escena es la que le gusta al cliente, asi que se queda. Lo que NO se
- * queda es el problema que traia: al moverse hacia impredecible el contraste
- * y la segunda linea del titular llegaba a 1,2 (WCAG AA pide 4,5).
+ * Historia corta de por que es una imagen y no otra cosa:
+ *  - Escena Spline: 1.972 KB por visita, alquilada (alojada en su servidor,
+ *    imposible de recolorear) y, al moverse, hacia impredecible el contraste.
+ *  - Vortex sobre canvas: ligero, pero animacion constante y el brillo
+ *    aditivo volvia a comprometer la legibilidad. Se conserva en vortex.tsx.
+ *  - Imagen generada por el cliente: 20 KB, es suya, y sobre todo es FIJA,
+ *    asi que el contraste se puede medir leyendo sus pixeles en vez de
+ *    estimarlo. El pixel mas claro de la banda del texto es #1A1F3F, que da
+ *    16,0 con texto blanco. Por eso el velo aqui es minimo.
  *
- * La solucion no es quitar la escena, es garantizar el fondo tras el texto:
- *  - BrandBackdrop debajo, siempre. Es lo que se ve en movil y mientras (o
- *    si) la escena no carga, con la paleta de Zepai y su red de nodos.
- *  - Un velo centrado encima de la escena que asegura que detras de las
- *    letras nunca haya nada mas claro que #241A4A, que es el fondo contra el
- *    que se valida en check-contrast.py.
- *
- * La escena pesa ~2 MB: no se descarga en movil, ni con ahorro de datos, ni
- * en 2G, ni si se pidio reducir movimiento, ni hasta que el hero entra en
- * pantalla.
+ * Tambien se probo el video (200 KB, contraste 8,8): descartado porque a
+ * 720p se notaba la falta de definicion.
  */
 
-import { Suspense, lazy, useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { T } from "@/lib/i18n";
-import { BrandBackdrop } from "@/components/site/BrandBackdrop";
-
-const Spline = lazy(() => import("@splinetool/react-spline"));
-
-const SCENE = "https://prod.spline.design/us3ALejTXl6usHZ7/scene.splinecode";
-
-/** Decide si merece la pena descargar 2 MB de escena. */
-function useShouldLoadScene(target: React.RefObject<HTMLElement | null>) {
-  const [load, setLoad] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const coarse = window.matchMedia("(max-width: 900px)").matches;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    // @ts-expect-error -- connection es experimental y no esta en los tipos
-    const conn = navigator.connection;
-    const saveData = Boolean(conn?.saveData);
-    const slow = /(^|-)2g$/.test(String(conn?.effectiveType ?? ""));
-
-    if (coarse || reduced || saveData || slow) return;
-
-    const el = target.current;
-    if (!el) return;
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          setLoad(true);
-          io.disconnect();
-        }
-      },
-      { rootMargin: "200px" },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [target]);
-
-  return load;
-}
 
 function HeroContent() {
   return (
@@ -126,21 +84,16 @@ function HeroContent() {
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const showScene = useShouldLoadScene(sectionRef);
 
-  // Desvanecido del contenido al hacer scroll.
-  //
-  // Antes usaba `1 - scrollY / 420`: con un hero de una pantalla completa el
-  // titular llegaba a opacidad 0 con medio hero todavia a la vista, y parecia
-  // que el texto faltaba. Ahora se ata a la ALTURA REAL del hero: no empieza
-  // hasta haber recorrido el 45 % y nunca baja de 0,25, asi que el titular
-  // sigue legible mientras el hero este en pantalla.
+  // Desvanecido atado a la ALTURA REAL del hero. Con el calculo anterior
+  // (1 - scrollY/420) el titular llegaba a cero con medio hero aun visible y
+  // parecia que el texto faltaba.
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) return;
 
-    const INICIO = 0.45; // no se desvanece hasta este % del hero recorrido
-    const MINIMA = 0.25; // nunca desaparece del todo
+    const INICIO = 0.45;
+    const MINIMA = 0.25;
 
     let raf = 0;
     const onScroll = () => {
@@ -149,10 +102,8 @@ export function HeroSection() {
         const el = contentRef.current;
         const sec = sectionRef.current;
         if (!el || !sec) return;
-
         const alto = sec.offsetHeight || window.innerHeight;
-        const avance = window.scrollY / alto; // 0 arriba, 1 al final del hero
-        const t = Math.min(Math.max((avance - INICIO) / (1 - INICIO), 0), 1);
+        const t = Math.min(Math.max((window.scrollY / alto - INICIO) / (1 - INICIO), 0), 1);
         el.style.opacity = String(1 - (1 - MINIMA) * t);
       });
     };
@@ -169,22 +120,15 @@ export function HeroSection() {
 
   return (
     <section id="hero" className="galaxy-hero" ref={sectionRef}>
-      {/* Debajo siempre: es lo que se ve en movil y si la escena no carga */}
-      <BrandBackdrop />
-
-      {showScene && (
-        <Suspense fallback={null}>
-          <div className="galaxy-scene-wrap">
-            <Spline
-              className="galaxy-scene"
-              scene={SCENE}
-              style={{ width: "100%", height: "100%", pointerEvents: "auto" }}
-            />
-          </div>
-        </Suspense>
-      )}
-
-      {/* Encima de la escena: lo que hace predecible el contraste */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        className="galaxy-bg-img"
+        src="/hero/hero.webp"
+        alt=""
+        aria-hidden="true"
+        fetchPriority="high"
+        decoding="async"
+      />
       <div className="galaxy-scrim" aria-hidden="true" />
 
       <div className="container galaxy-inner" ref={contentRef}>
