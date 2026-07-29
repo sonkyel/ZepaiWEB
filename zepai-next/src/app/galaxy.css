@@ -469,3 +469,29 @@
 @media (prefers-reduced-motion: reduce) {
   .vortex-canvas { animation: none; }
 }
+
+/* ── ICONOS ──────────────────────────────────────────────────
+   Los emojis se dibujaban distinto en cada sistema operativo y no
+   heredaban el color del texto. Los SVG de Lucide sí: usan
+   currentColor, así que se tiñen solos según el contexto.
+   ───────────────────────────────────────────────────────── */
+.ico {
+  display: inline-block;
+  vertical-align: -0.18em;
+  flex-shrink: 0;
+}
+.c-ico,
+.f-ci,
+.sched-check,
+.step-node,
+.ft-ico,
+.ctab-btn,
+.privacy-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.ctab-btn { gap: 8px; }
+.sched-check .ico { width: 13px; height: 13px; }
+/* El paso numerado del proceso: el icono va centrado dentro del círculo */
+.step-node .ico { width: 22px; height: 22px; }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Mail, MessageCircle, Phone } from "lucide-react";
 import { T } from "@/lib/i18n";
 import {
   FOOTER_EMPRESA,
@@ -57,15 +58,21 @@ export function Footer() {
             </p>
             <div className="f-contact">
               <a className="f-contact-link" href={WHATSAPP} target="_blank" rel="noopener">
-                <span className="f-ci">💬</span>
+                <span className="f-ci">
+                  <MessageCircle size={15} strokeWidth={2} aria-hidden />
+                </span>
                 <span>WhatsApp {SITE.telPretty}</span>
               </a>
               <a className="f-contact-link" href={`tel:${SITE.tel}`}>
-                <span className="f-ci">📞</span>
+                <span className="f-ci">
+                  <Phone size={15} strokeWidth={2} aria-hidden />
+                </span>
                 <span>{SITE.telPretty}</span>
               </a>
               <a className="f-contact-link" href={`mailto:${SITE.email}`}>
-                <span className="f-ci">📧</span>
+                <span className="f-ci">
+                  <Mail size={15} strokeWidth={2} aria-hidden />
+                </span>
                 <span>{SITE.email}</span>
               </a>
             </div>
