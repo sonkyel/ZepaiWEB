@@ -4,9 +4,14 @@ Vercel tiene "cleanUrls": true, asi que /consultoria-ia sirve
 consultoria-ia.html. El servidor de Python no hace eso por su cuenta, y por
 eso los enlaces de las paginas nuevas daban 404 en local.
 
+Sirve zepai-next/out, que es lo que se publica. Antes servia la carpeta del
+propio script (la web antigua de la raiz), asi que las comprobaciones de
+rutas daban 200 sin llegar a tocar la version nueva.
+
 Uso:
-    python serve.py          -> http://localhost:8000
-    python serve.py 8765     -> http://localhost:8765
+    python serve.py               -> http://localhost:8000
+    python serve.py 8765          -> http://localhost:8765
+    python serve.py 8765 ruta/    -> sirve otra carpeta
 """
 import os
 import sys
@@ -33,6 +38,14 @@ class CleanUrlHandler(SimpleHTTPRequestHandler):
 
 if __name__ == "__main__":
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    raiz = os.path.dirname(os.path.abspath(__file__))
+    if len(sys.argv) > 2:
+        destino = os.path.abspath(sys.argv[2])
+    else:
+        destino = os.path.join(raiz, "zepai-next", "out")
+        if not os.path.isdir(destino):
+            destino = raiz
+    os.chdir(destino)
+    print("Carpeta: %s" % destino)
     print("Sirviendo en http://localhost:%d  (Ctrl+C para parar)" % port)
     ThreadingHTTPServer(("", port), CleanUrlHandler).serve_forever()

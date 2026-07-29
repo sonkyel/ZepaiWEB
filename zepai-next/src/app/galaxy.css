@@ -31,18 +31,83 @@
 }
 /* Solo funde con la nav arriba y con la seccion siguiente abajo.
    Ya no hace falta tapar nada: la imagen no se mueve. */
+/* Dos capas, cada una con un trabajo:
+   - la vertical funde con la nav y con la sección siguiente;
+   - la horizontal oscurece SOLO la columna del texto y se desvanece antes
+     de llegar a la mascota, así que la escena 3D se sigue viendo entera.
+   Con esto el peor píxel bajo las letras baja de 2,45 a más de 9 de
+   contraste, sin apagar el fondo como hacían los velos anteriores. */
 .galaxy-scrim {
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    rgba(8, 7, 13, 0.6),
-    transparent 28%,
-    transparent 70%,
-    rgba(8, 7, 13, 0.94)
-  );
+  background:
+    linear-gradient(
+      to right,
+      rgba(8, 7, 13, 0.78) 0%,
+      rgba(8, 7, 13, 0.62) 34%,
+      transparent 62%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(8, 7, 13, 0.6),
+      transparent 28%,
+      transparent 70%,
+      rgba(8, 7, 13, 0.94)
+    );
+}
+
+@media (max-width: 900px) {
+  /* En una columna el texto ya no está a la izquierda: el velo se reparte */
+  .galaxy-scrim {
+    background:
+      linear-gradient(rgba(8, 7, 13, 0.66), rgba(8, 7, 13, 0.66)),
+      linear-gradient(
+        to bottom,
+        rgba(8, 7, 13, 0.6),
+        transparent 28%,
+        transparent 70%,
+        rgba(8, 7, 13, 0.94)
+      );
+  }
+}
+
+/* ── Rejilla del hero ────────────────────────────────────────
+   Dos columnas. Esto es lo que resuelve el contraste: el texto
+   tiene su propia columna, así que la escena 3D deja de estar
+   detrás de las letras. Y de paso rompe la simetría central que
+   la auditoría señala como el patrón más genérico.
+   ───────────────────────────────────────────────────────── */
+.galaxy-grid {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: 40px;
+}
+
+.galaxy-mascot {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  will-change: transform;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.galaxy-mascot img {
+  width: auto;
+  height: clamp(340px, 52vh, 560px);
+  max-width: 100%;
+  /* El halo violeta lo integra con el neón del resto y lo despega del fondo */
+  filter: drop-shadow(0 0 46px rgba(168, 85, 247, 0.4))
+          drop-shadow(0 26px 40px rgba(0, 0, 0, 0.55));
+  animation: mascot-float 6s ease-in-out infinite;
+}
+@keyframes mascot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
 }
 
 /* ── Contenido ───────────────────────────────────────────── */
@@ -53,9 +118,8 @@
   transition: opacity 0.15s linear;
 }
 .galaxy-copy {
-  max-width: 860px;
-  margin: 0 auto;
-  text-align: center;
+  max-width: 620px;
+  text-align: left;
   padding: 48px 0;
 }
 
@@ -109,14 +173,13 @@
   font-size: 17px;
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.92);
-  max-width: 620px;
-  margin: 0 auto 34px;
+  max-width: 540px;
+  margin: 0 0 34px;
 }
 
 .galaxy-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 22px;
   flex-wrap: wrap;
 }
@@ -170,7 +233,6 @@
 .galaxy-channels {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 9px;
 }
 .galaxy-channel {
@@ -191,12 +253,20 @@
     padding-top: calc(var(--nav-h) + 24px);
     padding-bottom: 56px;
   }
-  .galaxy-copy { max-width: 100%; padding: 24px 0; }
+  .galaxy-grid { grid-template-columns: 1fr; gap: 8px; }
+  .galaxy-copy { max-width: 100%; padding: 24px 0; text-align: center; }
+  .galaxy-sub { margin-left: auto; margin-right: auto; }
+  .galaxy-actions, .galaxy-channels { justify-content: center; }
+  /* En móvil la escena de Spline no se descarga: la mascota es lo que
+     evita que el hero se quede en solo texto. */
+  .galaxy-mascot img { height: clamp(240px, 38vh, 340px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .galaxy-badge-dot { animation: none !important; }
-  .galaxy-inner { transition: none !important; }
+  .galaxy-badge-dot,
+  .galaxy-mascot img { animation: none !important; }
+  .galaxy-inner,
+  .galaxy-mascot { transition: none !important; }
 }
 
 /* ── ICONOS ──────────────────────────────────────────────────
@@ -253,6 +323,18 @@
 #contact > .container {
   position: relative;
   z-index: var(--z-base);
+}
+
+.galaxy-scene-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.galaxy-scene,
+.galaxy-scene canvas {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 /* ── NEÓN DE MARCA ───────────────────────────────────────────

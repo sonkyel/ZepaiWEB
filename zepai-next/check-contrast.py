@@ -47,9 +47,11 @@ def sobre(fg, alpha, bg):
 # comprueban dos casos: una partícula brillante y la saturación total a
 # blanco. Los valores salen de acotar el canvas al 62 % y el velo al 48 %.
 FONDOS_HERO = {
-    # Medido sobre la imagen real: el pixel mas claro de la banda del texto
-    # en public/hero/hero.webp. Ya no es una estimacion, es el valor exacto.
-    "hero, pixel más claro de la imagen": hexa("#1A1F3F"),
+    # Medido sobre la imagen real, pero ya solo sobre la COLUMNA IZQUIERDA:
+    # desde que el texto tiene su propia columna, el resto del hero no puede
+    # quedar debajo de las letras. El peor pixel de esa franja es #A79EF3;
+    # aqui va compuesto con la parte mas debil del velo lateral (62 %).
+    "hero, peor pixel de la columna del texto": hexa("#444064"),
 }
 
 # Las secciones oscuras tienen su propio fondo sólido: ahí no hay vórtice.
