@@ -1204,3 +1204,32 @@ nav .lang-btn:not(.active):hover{
   background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.15);
 }
 @media(max-width:768px){.f-contact{align-items:center}}
+
+/* ── MANIFIESTO "CÓMO TRABAJAMOS" ────────────────────────────
+   Formato editorial: numero grande + etiqueta + titular + parrafo.
+   Sin tarjetas ni iconos: el peso lo lleva la tipografia.
+   ───────────────────────────────────────────────────────── */
+.beliefs{max-width:840px;margin:0 auto}
+.belief{
+  display:grid;grid-template-columns:96px 1fr;gap:26px;
+  padding:46px 0;border-top:1px solid var(--borderS);
+}
+.belief:first-child{border-top:0;padding-top:8px}
+.belief-num{
+  font-size:46px;font-weight:900;line-height:.9;letter-spacing:-2px;
+  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.belief-tag{
+  font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;
+  color:#8B5CF6;margin-bottom:12px;
+}
+.belief-h{
+  font-size:clamp(21px,2.4vw,30px);font-weight:800;letter-spacing:-.7px;line-height:1.25;
+  margin-bottom:14px;color:#0A0A14;
+}
+.belief p{font-size:16px;line-height:1.85;color:var(--t2);margin:0;max-width:640px}
+@media(max-width:768px){
+  .belief{grid-template-columns:1fr;gap:6px;padding:34px 0}
+  .belief-num{font-size:32px}
+  .belief p{font-size:15px}
+}
