@@ -82,6 +82,20 @@ export const ORGANIZATION_LD = {
         jobTitle: "Fundador",
         image: `${SITE.url}/equipo/fundador.webp`,
         worksFor: { "@id": `${SITE.url}/#organization` },
+        alumniOf: {
+          "@type": "CollegeOrUniversity",
+          name: "Universidad Europea de Madrid",
+        },
+        hasCredential: {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "degree",
+          name: "Grado en Business and Analytics",
+          educationalLevel: "Bachelor",
+          recognizedBy: {
+            "@type": "CollegeOrUniversity",
+            name: "Universidad Europea de Madrid",
+          },
+        },
       },
       sameAs: [SITE.instagram],
       contactPoint: {
