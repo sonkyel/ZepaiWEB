@@ -165,7 +165,7 @@ export function HeroSection() {
             src="/hero/robot.webp"
             alt="Agente de IA de Zepai"
             width={400}
-            height={1005}
+            height={1018}
             decoding="async"
           />
         </div>
