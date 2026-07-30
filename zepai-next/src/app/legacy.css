@@ -725,10 +725,9 @@ button:focus-visible,a:focus-visible{outline-offset:4px}
 }
 .founder-name{font-size:26px;font-weight:800;color:var(--t1);margin:0 0 4px;line-height:1.15}
 .founder-role{font-size:14px;color:var(--cyan);font-weight:600;margin-bottom:14px}
-.founder-txt p{color:var(--t2);line-height:1.75;margin-bottom:16px;max-width:56ch}
 /* Dos enlaces en fila: el caso del cliente y el perfil. Con flex-wrap
    porque en movil no caben en una linea. */
-.founder-links{display:flex;flex-wrap:wrap;gap:12px 24px}
+.founder-links{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:20px}
 .founder-link{
   display:inline-flex;align-items:center;gap:7px;
   font-size:14px;font-weight:600;color:var(--t2);
