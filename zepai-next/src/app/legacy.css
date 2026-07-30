@@ -54,6 +54,9 @@ input,select,textarea{font-family:inherit}
   --z-modal:400;
   --z-toast:500;
 
+  /* Medida de lectura. 68 caracteres: por encima de 75 el ojo
+     pierde el salto de linea y el texto cansa. */
+  --medida:68ch;
   --nav-h:110px;
   --r:16px;
   --rs:10px;
@@ -625,13 +628,13 @@ button:focus-visible,a:focus-visible{outline-offset:4px}
 .sp-hero-art{display:flex;justify-content:center;align-items:center}
 .sp-hero-art svg{width:100%;max-width:420px;height:auto}
 .sp-h1{font-size:clamp(32px,4vw,54px);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin-bottom:18px;color:var(--t1)}
-.sp-lead{font-size:18px;line-height:1.75;color:var(--t2);max-width:640px;margin-bottom:32px}
+.sp-lead{font-size:18px;line-height:1.75;color:var(--t2);max-width:var(--medida);margin-bottom:32px}
 .sp-body{padding:8px 0 64px}
-.sp-body p{font-size:16px;line-height:1.85;color:var(--t2);margin-bottom:20px;max-width:720px}
-.sp-h2{font-size:clamp(24px,2.6vw,34px);font-weight:800;line-height:1.2;letter-spacing:-.8px;margin:48px 0 18px;color:var(--t1)}
+.sp-body p{font-size:16px;line-height:1.85;color:var(--t2);margin-bottom:20px;max-width:var(--medida)}
+.sp-h2{font-size:clamp(24px,2.6vw,34px);font-weight:800;line-height:1.2;letter-spacing:-.8px;margin:48px 0 18px;color:var(--t1);max-width:var(--medida)}
 .sp-h3{font-size:19px;font-weight:700;margin-bottom:8px;color:var(--t1)}
 .sp-list{list-style:none;max-width:720px;margin:0 0 24px}
-.sp-list li{position:relative;padding:0 0 0 30px;margin-bottom:14px;font-size:16px;line-height:1.7;color:var(--t2)}
+.sp-list li{position:relative;padding:0 0 0 30px;margin-bottom:14px;font-size:16px;line-height:1.7;color:var(--t2);max-width:var(--medida)}
 .sp-list li::before{
   content:'';position:absolute;left:0;top:9px;width:11px;height:11px;border-radius:50%;
   background:var(--cyan);box-shadow:0 0 12px var(--cyan-glow2);
@@ -657,9 +660,14 @@ button:focus-visible,a:focus-visible{outline-offset:4px}
   border:1px solid var(--border);border-radius:100px;padding:9px 18px;transition:all .25s;
 }
 .sp-related a:hover{background:var(--cyan-glow);border-color:var(--cyan)}
-.sp-crumbs{font-size:13px;color:var(--t3);margin-bottom:18px}
-.sp-crumbs a{color:var(--t2);font-weight:500}
-.sp-crumbs a:hover{color:var(--t1);text-decoration:underline}
+/* Se lee como metadato, no como una frase suelta encima del titular:
+   pequena, en versalitas y con el mismo gris que el resto de apoyos. */
+.sp-crumbs{
+  font-size:11px;letter-spacing:.9px;text-transform:uppercase;
+  font-weight:600;color:var(--t3);margin-bottom:20px;
+}
+.sp-crumbs a{color:var(--t3);transition:color .2s}
+.sp-crumbs a:hover{color:var(--t2)}
 .sp-post{
   display:block;background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);
   padding:26px;margin-bottom:16px;transition:transform .3s,border-color .3s,box-shadow .3s;
