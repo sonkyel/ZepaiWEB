@@ -627,6 +627,14 @@ button:focus-visible,a:focus-visible{outline-offset:4px}
 .sp-hero-txt{max-width:640px}
 .sp-hero-art{display:flex;justify-content:center;align-items:center}
 .sp-hero-art svg{width:100%;max-width:420px;height:auto}
+/* Las imagenes generadas traen el fondo casi identico al de la web
+   (7,7,17 contra 8,7,13), asi que basta con desvanecer los bordes
+   para que no se vea el recuadro. */
+.sp-hero-art img{
+  width:100%;max-width:520px;height:auto;display:block;
+  -webkit-mask-image:radial-gradient(ellipse 78% 78% at 50% 50%,#000 58%,transparent 100%);
+  mask-image:radial-gradient(ellipse 78% 78% at 50% 50%,#000 58%,transparent 100%);
+}
 .sp-h1{font-size:clamp(32px,4vw,54px);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin-bottom:18px;color:var(--t1)}
 .sp-lead{font-size:18px;line-height:1.75;color:var(--t2);max-width:var(--medida);margin-bottom:32px}
 .sp-body{padding:8px 0 64px}
