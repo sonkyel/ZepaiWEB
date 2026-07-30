@@ -180,11 +180,14 @@ body::after{
 }
 
 /* ── NAV ────────────────────────────────────────── */
-nav{
+/* Por ID, no por elemento: la miga de pan de las subpaginas tambien es un
+   <nav> y heredaba position:fixed, asi que aparecia clavada en la esquina
+   superior izquierda encima de la cabecera, en las 8 paginas. */
+#mainNav{
   position:fixed;top:0;left:0;right:0;z-index:var(--z-nav);
   height:var(--nav-h);transition:all .3s;
 }
-nav.scrolled{
+#mainNav.scrolled{
   background:rgba(0,0,0,.88);
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
@@ -655,8 +658,8 @@ button:focus-visible,a:focus-visible{outline-offset:4px}
 }
 .sp-related a:hover{background:var(--cyan-glow);border-color:var(--cyan)}
 .sp-crumbs{font-size:13px;color:var(--t3);margin-bottom:18px}
-.sp-crumbs a{color:#4F46E5;font-weight:600}
-.sp-crumbs a:hover{text-decoration:underline}
+.sp-crumbs a{color:var(--t2);font-weight:500}
+.sp-crumbs a:hover{color:var(--t1);text-decoration:underline}
 .sp-post{
   display:block;background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);
   padding:26px;margin-bottom:16px;transition:transform .3s,border-color .3s,box-shadow .3s;
