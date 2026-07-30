@@ -7,6 +7,8 @@ export const SITE = {
   tel: "+34604140997",
   telPretty: "+34 604 14 09 97",
   ogImage: "https://zepaiagency.com/og-image.png",
+  instagram: "https://www.instagram.com/zepaiagency/",
+  fundador: "Zecuenin Soto",
 } as const;
 
 export const WHATSAPP =
@@ -71,6 +73,17 @@ export const ORGANIZATION_LD = {
       ],
       areaServed: { "@type": "Place", name: "Worldwide" },
       availableLanguage: ["es", "en"],
+      // Una persona con nombre detras de la marca. Google lo usa para el
+      // panel de conocimiento y es la senal de "empresa real" que faltaba.
+      founder: {
+        "@type": "Person",
+        "@id": `${SITE.url}/#fundador`,
+        name: "Zecuenin Soto",
+        jobTitle: "Fundador",
+        image: `${SITE.url}/equipo/fundador.webp`,
+        worksFor: { "@id": `${SITE.url}/#organization` },
+      },
+      sameAs: [SITE.instagram],
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "sales",

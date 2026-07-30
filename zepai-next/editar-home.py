@@ -32,6 +32,18 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 RUTA = os.path.join(BASE, "src", "app", "page.tsx")
 
 
+def esc(html):
+    """Convierte HTML legible al escapado que lleva el literal.
+
+    Escribir a mano \\" y \\n dentro de un string de Python es exactamente la
+    fuente de errores que este modulo existe para evitar: json.dumps hace la
+    misma conversion que necesita el literal y no se equivoca.
+
+        esc('<div class="x">\\n  hola\\n</div>')  ->  '<div class=\\"x\\">\\n  hola\\n</div>'
+    """
+    return json.dumps(html, ensure_ascii=False)[1:-1]
+
+
 def _contar(s):
     return {
         "div": len(re.findall(r"<div\b", s)),
@@ -49,30 +61,38 @@ class Home(object):
     def __init__(self, ruta=RUTA):
         self.ruta = ruta
         self.s = io.open(ruta, encoding="utf-8").read()
+        # inicio apunta a la comilla de apertura; fin, a la de cierre. Las dos
+        # se calculan siempre con este metodo: cuando cambia() lo hacia de otra
+        # forma, una de las dos se colaba dentro del corte y json.loads fallaba
+        # con un error que no tenia nada que ver.
         self.inicio = self.s.index('const HTML = "') + len('const HTML = ')
-        fin = self.s.index('\n', self.inicio)
-        # La linea acaba en `";`
-        assert self.s[fin - 2:fin] == '";', repr(self.s[fin - 6:fin])
-        self.fin = fin - 1
+        self.fin = self._fin()
         self.antes = _contar(self.html)
         self.cambios = []
 
+    def _fin(self):
+        fin = self.s.index("\n", self.inicio)
+        assert self.s[fin - 2:fin] == '";', repr(self.s[fin - 8:fin])
+        return fin - 2
+
     @property
     def html(self):
-        return self.s[self.inicio:self.fin]
+        """El contenido, sin las comillas que lo envuelven."""
+        return self.s[self.inicio + 1:self.fin]
 
     def cambia(self, viejo, nuevo, veces=1, nota=""):
         n = self.html.count(viejo)
         if n != veces:
             raise SystemExit("esperaba %d de %r y hay %d" % (veces, viejo[:80], n))
-        self.s = self.s[:self.inicio] + self.html.replace(viejo, nuevo) + self.s[self.fin:]
-        self.fin = self.s.index('";\n', self.inicio) + 1
+        self.s = (self.s[:self.inicio + 1] + self.html.replace(viejo, nuevo)
+                  + self.s[self.fin:])
+        self.fin = self._fin()
         self.cambios.append(nota or (viejo[:56] + " -> " + nuevo[:40]))
         return self
 
     def guarda(self, **deltas):
-        # 1) el literal sigue siendo un string valido
-        json.loads(self.s[self.inicio:self.fin])
+        # 1) el literal sigue siendo un string valido, comillas incluidas
+        json.loads(self.s[self.inicio:self.fin + 1])
 
         # 2) las etiquetas cuadran
         ahora = _contar(self.html)

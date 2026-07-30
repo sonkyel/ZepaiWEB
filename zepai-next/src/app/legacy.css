@@ -709,6 +709,36 @@ button:focus-visible,a:focus-visible{outline-offset:4px}
 }
 @media(max-width:768px){.f-contact{align-items:center}}
 
+/* ── QUIÉN ESTÁ DETRÁS ───────────────────────────────────────
+   Una cara y un nombre. Es la señal de "empresa real" que más
+   pesaba en la auditoría y la única que no se puede fabricar.
+   Rejilla asimétrica a propósito: el retrato no manda, acompaña.
+   ───────────────────────────────────────────────────────── */
+.founder{
+  display:grid;grid-template-columns:220px 1fr;gap:36px;align-items:center;
+  margin:72px 0 0;padding:32px;
+  background:var(--bg1);border:1px solid var(--borderS);border-radius:20px;
+}
+.founder-foto{
+  width:100%;height:auto;display:block;border-radius:16px;
+  aspect-ratio:4/5;object-fit:cover;object-position:center 22%;
+}
+.founder-name{font-size:26px;font-weight:800;color:var(--t1);margin:0 0 4px;line-height:1.15}
+.founder-role{font-size:14px;color:var(--cyan);font-weight:600;margin-bottom:14px}
+.founder-txt p{color:var(--t2);line-height:1.75;margin-bottom:16px;max-width:56ch}
+.founder-link{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:14px;font-weight:600;color:var(--t2);
+  border-bottom:1px solid currentColor;padding-bottom:2px;transition:color .2s;
+}
+.founder-link:hover{color:var(--t1)}
+@media(max-width:720px){
+  .founder{grid-template-columns:1fr;gap:22px;padding:22px;text-align:center}
+  .founder-foto{max-width:200px;margin:0 auto}
+  .founder-txt p{margin-left:auto;margin-right:auto}
+  .founder-link{justify-content:center}
+}
+
 /* ── MANIFIESTO "CÓMO TRABAJAMOS" ────────────────────────────
    Formato editorial: numero grande + etiqueta + titular + parrafo.
    Sin tarjetas ni iconos: el peso lo lleva la tipografia.
