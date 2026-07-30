@@ -19,39 +19,9 @@ function scrollToSection(id) {
   window.scrollTo({ top: offset, behavior: 'smooth' });
 }
 
-/* ── CURSOR SPOTLIGHT + SMOOTH DOT ── */
-let mx=0,my=0,gx=0,gy=0;
-document.addEventListener('mousemove', e=>{
-  mx=e.clientX; my=e.clientY;
-  document.documentElement.style.setProperty('--mx', mx+'px');
-  document.documentElement.style.setProperty('--my', my+'px');
-});
-const cg=document.getElementById('cursor-glow');
-if(cg){
-  (function moveCursor(){
-    gx+=(mx-gx)*0.12; gy+=(my-gy)*0.12;
-    cg.style.left=gx+'px'; cg.style.top=gy+'px';
-    requestAnimationFrame(moveCursor);
-  })();
-}
-
-/* ── 3D CARD TILT ── */
-document.querySelectorAll('[data-tilt]').forEach(el=>{
-  el.addEventListener('mousemove', e=>{
-    const r=el.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width-.5;
-    const y=(e.clientY-r.top)/r.height-.5;
-    el.style.transform=`perspective(900px) rotateX(${y*-11}deg) rotateY(${x*11}deg) translateZ(6px)`;
-    el.style.transition='transform .07s ease';
-    el.style.boxShadow=`0 22px 55px rgba(0,0,0,.55),0 0 ${28+Math.abs(x*30)}px rgba(139,92,246,${.08+Math.abs(x)*.08})`;
-    el.style.background=`radial-gradient(circle at ${(x+.5)*100}% ${(y+.5)*100}%,rgba(139,92,246,.07),transparent 55%),var(--bg2)`;
-  });
-  el.addEventListener('mouseleave', ()=>{
-    el.style.transform='perspective(900px) rotateX(0) rotateY(0) translateZ(0)';
-    el.style.transition='transform .5s ease,box-shadow .5s,background .5s';
-    el.style.boxShadow=''; el.style.background='';
-  });
-});
+/* El tilt 3D se retiro con el rediseno sobrio: pintaba un degradado y una
+   sombra violetas al mover el raton, y solo lo llevaba una de las tres
+   tarjetas de cifras. */
 
 /* ── FAQ ACCORDION ── */
 function toggleFaq(qEl) {
@@ -230,9 +200,6 @@ document.addEventListener('visibilitychange', () => {
 
 /* Disable cursor effects on touch devices */
 if(_isMobile || 'ontouchstart' in window) {
-  document.getElementById('cursor-glow') && (document.getElementById('cursor-glow').style.display='none');
-  document.documentElement.style.setProperty('--mx','50%');
-  document.documentElement.style.setProperty('--my','50%');
   /* Disable magnetic buttons on touch */
   document.querySelectorAll('.btn-p').forEach(b=>{
     b.onmousemove=null; b.onmouseleave=null;

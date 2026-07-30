@@ -195,12 +195,12 @@
   color: #fff;
   background: var(--grad-btn);
   border: 1px solid rgba(196, 181, 253, 0.35);
-  box-shadow: 0 8px 34px rgba(79, 70, 229, 0.45);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.30);
   transition: transform 0.25s, box-shadow 0.25s;
 }
 .galaxy-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 46px rgba(139, 92, 246, 0.6);
+  box-shadow: 0 10px 26px rgba(79, 70, 229, 0.40);
 }
 .galaxy-link {
   font-size: 14px;
@@ -311,7 +311,7 @@
   inset: 0;
   pointer-events: none;
   background: url("/secciones/oscuro.webp") center / cover no-repeat;
-  opacity: 0.28;
+  opacity: 0.12;
 }
 #results::before { transform: scaleX(-1); }
 #contact::before { transform: scaleY(-1); }
@@ -332,8 +332,9 @@
    todo brilla, no brilla nada.
    ───────────────────────────────────────────────────────── */
 
-/* 1. La palabra destacada del titular lleva bloom, como en los posts */
-.gt,
+/* 1. El bloom se queda en el titular del hero y en ningun sitio mas.
+      Estaba tambien en .gt, que son seis palabras repartidas por la
+      pagina: con eso el neon dejaba de destacar nada. */
 .galaxy-title-grad {
   text-shadow:
     0 0 18px rgba(168, 85, 247, 0.45),
@@ -348,30 +349,21 @@
 /* 4. Los robots dibujados a mano ganan glow: conectan con la mascota
       del feed, y sin brillo se veían apagados sobre el negro. */
 .sec-robot svg {
-  filter: drop-shadow(0 0 14px rgba(168, 85, 247, 0.35));
-}
-
-/* 5. El punto vivo del badge: tubo de neón en pequeño */
-.galaxy-badge {
-  box-shadow:
-    inset 0 0 18px rgba(168, 85, 247, 0.1),
-    0 0 22px rgba(168, 85, 247, 0.16);
+  filter: drop-shadow(0 0 12px rgba(168, 85, 247, 0.16));
 }
 
 /* 6. El botón principal, con el halo del rótulo */
 .btn-p,
 .galaxy-cta {
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 6px 26px rgba(124, 58, 237, 0.45),
-    0 0 34px rgba(168, 85, 247, 0.28);
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 6px 18px rgba(79, 70, 229, 0.30);
 }
 .btn-p:hover,
 .galaxy-cta:hover {
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.22),
-    0 10px 38px rgba(124, 58, 237, 0.55),
-    0 0 52px rgba(168, 85, 247, 0.42);
+    inset 0 1px 0 rgba(255, 255, 255, 0.20),
+    0 10px 26px rgba(79, 70, 229, 0.40);
 }
 
 /* ── ESTADOS Y REMATES ───────────────────────────────────────

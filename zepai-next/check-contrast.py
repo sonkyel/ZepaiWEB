@@ -56,7 +56,10 @@ FONDOS_HERO = {
 
 # Las secciones oscuras tienen su propio fondo sólido: ahí no hay vórtice.
 FONDOS_SECCION = {
-    "sección oscura (#results / marco de #contact)": hexa("#0B0A18"),
+    # Ya no hay rayado: todas las secciones van sobre --bg0 (#08070D). El peor
+    # caso es el pixel mas claro de secciones/oscuro.webp (#826CAF) compuesto
+    # al 12 %, que es la opacidad a la que quedo la textura.
+    "sección oscura, textura al 12 % sobre --bg0": hexa("#171320"),
 }
 
 # (elemento, color, opacidad, ¿texto grande?)
