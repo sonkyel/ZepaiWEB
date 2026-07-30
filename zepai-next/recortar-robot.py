@@ -38,7 +38,7 @@ from PIL import Image, ImageFilter
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 ORIGEN = os.path.join(BASE, "_fuentes", "robot", "B-brazos-cruzados.png")
-DESTINO = os.path.join(BASE, "public", "hero", "robot.webp")
+DESTINO = os.path.join(BASE, "public", "hero", "robot-v2.webp")
 ANCHO = 400
 
 

@@ -162,7 +162,7 @@ export function HeroSection() {
         <div className="galaxy-mascot" ref={robotRef}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/hero/robot.webp"
+            src="/hero/robot-v2.webp"
             alt="Agente de IA de Zepai"
             width={400}
             height={1018}
