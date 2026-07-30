@@ -29,9 +29,7 @@ body {
 
 /* Los titulares llevan Satoshi; el texto corrido sigue en Inter, que se lee
    mejor en párrafo largo. Es el contraste editorial que pedía la skill. */
-h1, h2, h3, h4,
-.sec-title, .galaxy-title, .sp-h1, .sp-h2, .sp-h3,
-.belief-h, .stat-num, .num-badge, .belief-num, .step-title {
+h1,h2,h3,h4,.sec-title,.galaxy-title,.sp-h1,.sp-h2,.sp-h3,.belief-h,.stat-num,.belief-num,.step-title{
   font-family: var(--font-display);
   letter-spacing: -0.02em;
 }
@@ -45,6 +43,6 @@ p, .sec-sub, .galaxy-sub, .sp-lead {
 }
 
 /* Cifras alineadas en columna: los contadores bailaban al animarse */
-.stat-num, .num-badge, .belief-num, .msg-time, .chat-clock, .f-copy {
+.stat-num,.belief-num,.f-copy{
   font-variant-numeric: tabular-nums;
 }

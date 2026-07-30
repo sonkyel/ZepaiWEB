@@ -70,8 +70,7 @@
         transparent 70%,
         rgba(8, 7, 13, 0.94)
       );
-  }
-}
+  }}
 
 /* ── Rejilla del hero ────────────────────────────────────────
    Dos columnas. Esto es lo que resuelve el contraste: el texto
@@ -259,15 +258,13 @@
   .galaxy-actions, .galaxy-channels { justify-content: center; }
   /* En móvil la escena de Spline no se descarga: la mascota es lo que
      evita que el hero se quede en solo texto. */
-  .galaxy-mascot img { height: clamp(240px, 38vh, 340px); }
-}
+  .galaxy-mascot img { height: clamp(240px, 38vh, 340px); }}
 
 @media (prefers-reduced-motion: reduce) {
   .galaxy-badge-dot,
   .galaxy-mascot img { animation: none !important; }
   .galaxy-inner,
-  .galaxy-mascot { transition: none !important; }
-}
+  .galaxy-mascot { transition: none !important; }}
 
 /* ── ICONOS ──────────────────────────────────────────────────
    Los emojis se dibujaban distinto en cada sistema operativo y no
@@ -344,42 +341,9 @@
 }
 
 /* 2. Borde de neón. Se aplica solo a lo destacado, no a todas las tarjetas */
-.neon {
-  border: 1px solid rgba(168, 85, 247, 0.55);
-  box-shadow:
-    inset 0 0 22px rgba(168, 85, 247, 0.12),
-    0 0 0 1px rgba(168, 85, 247, 0.12),
-    0 0 26px rgba(168, 85, 247, 0.22);
-}
-.neon:hover {
-  border-color: rgba(192, 132, 252, 0.85);
-  box-shadow:
-    inset 0 0 28px rgba(168, 85, 247, 0.18),
-    0 0 0 1px rgba(168, 85, 247, 0.2),
-    0 0 42px rgba(168, 85, 247, 0.38);
-}
 
 /* 3. Insignias numeradas, al estilo del post "5 señales de que necesitas
       un agente de IA": número en cuadro violeta con brillo. */
-.num-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  height: 44px;
-  padding: 0 10px;
-  border-radius: 12px;
-  font-size: 17px;
-  font-weight: 900;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.5px;
-  color: #fff;
-  background: linear-gradient(150deg, rgba(168, 85, 247, 0.3), rgba(124, 58, 237, 0.14));
-  border: 1px solid rgba(168, 85, 247, 0.5);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 0 20px rgba(168, 85, 247, 0.25);
-}
 
 /* 4. Los robots dibujados a mano ganan glow: conectan con la mascota
       del feed, y sin brillo se veían apagados sobre el negro. */
@@ -408,11 +372,6 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.22),
     0 10px 38px rgba(124, 58, 237, 0.55),
     0 0 52px rgba(168, 85, 247, 0.42);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .neon,
-  .neon:hover { transition: none; }
 }
 
 /* ── ESTADOS Y REMATES ───────────────────────────────────────
@@ -446,9 +405,7 @@
 .faq-item,
 .chat,
 .contact-form { border-radius: 20px; }
-.num-badge,
-.f-ci,
-.c-ico { border-radius: 12px; }
+.f-ci,.c-ico{ border-radius: 12px; }
 .date-btn,
 .time-btn { border-radius: 10px; }
 
@@ -456,5 +413,4 @@
   .btn-p:active,
   .galaxy-cta:active,
   .srv-card:active,
-  .sp-card:active { transform: none; }
-}
+  .sp-card:active { transform: none; }}
