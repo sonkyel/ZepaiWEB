@@ -726,12 +726,25 @@ button:focus-visible,a:focus-visible{outline-offset:4px}
 .founder-name{font-size:26px;font-weight:800;color:var(--t1);margin:0 0 4px;line-height:1.15}
 .founder-role{font-size:14px;color:var(--cyan);font-weight:600;margin-bottom:14px}
 .founder-txt p{color:var(--t2);line-height:1.75;margin-bottom:16px;max-width:56ch}
+/* Dos enlaces en fila: el caso del cliente y el perfil. Con flex-wrap
+   porque en movil no caben en una linea. */
+.founder-links{display:flex;flex-wrap:wrap;gap:12px 24px}
 .founder-link{
   display:inline-flex;align-items:center;gap:7px;
   font-size:14px;font-weight:600;color:var(--t2);
   border-bottom:1px solid currentColor;padding-bottom:2px;transition:color .2s;
 }
 .founder-link:hover{color:var(--t1)}
+/* Hueco para credenciales de verdad -- partner de Meta o de Make, titulacion.
+   Sellos en gris, sin caja de color: una credencial que necesita fondo
+   llamativo para notarse es que no vale mucho. Hoy no se usa: lo que hay son
+   cursos abiertos sin examen verificable, y en fila restan al lado de un
+   cliente real. */
+.founder-creds{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.founder-cred{
+  font-size:12px;color:var(--t3);
+  border:1px solid var(--borderS);border-radius:6px;padding:4px 10px;
+}
 @media(max-width:720px){
   .founder{grid-template-columns:1fr;gap:22px;padding:22px;text-align:center}
   .founder-foto{max-width:200px;margin:0 auto}
