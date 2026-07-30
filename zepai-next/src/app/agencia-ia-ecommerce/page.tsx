@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
 export const metadata: Metadata = {
   title: "IA para Tiendas Online | Atención y Recuperación de Carritos | Zepai",
   description: "Inteligencia artificial para e-commerce: resuelve dudas antes de la compra, responde el estado de los pedidos, gestiona devoluciones y recupera carritos abandonados.",
   alternates: { canonical: "/agencia-ia-ecommerce" },
-  openGraph: {
-    title: "IA para Tiendas Online | Atención y Recuperación de Carritos | Zepai",
-    description: "Inteligencia artificial para e-commerce: resuelve dudas antes de la compra, responde el estado de los pedidos, gestiona devoluciones y recupera carritos abandonados.",
-    url: "https://zepaiagency.com/agencia-ia-ecommerce",
-  },
-  twitter: { title: "IA para Tiendas Online | Atención y Recuperación de Carritos | Zepai", description: "Inteligencia artificial para e-commerce: resuelve dudas antes de la compra, responde el estado de los pedidos, gestiona devoluciones y recupera carritos abandonados." },
+  ...metaSocial(
+    "IA para Tiendas Online | Atención y Recuperación de Carritos | Zepai",
+    "Inteligencia artificial para e-commerce: resuelve dudas antes de la compra, responde el estado de los pedidos, gestiona devoluciones y recupera carritos abandonados.",
+    "/agencia-ia-ecommerce",
+  ),
 };
 
 const JSON_LD = [{"@context": "https://schema.org", "@type": "Service", "name": "Inteligencia artificial para tiendas online", "serviceType": "Inteligencia artificial para tiendas online", "description": "Agentes de IA para e-commerce: resolución de dudas previas a la compra, consulta del estado de pedidos, gestión de devoluciones y recuperación de carritos abandonados.", "url": "https://zepaiagency.com/agencia-ia-ecommerce", "provider": {"@id": "https://zepaiagency.com/#organization"}, "areaServed": {"@type": "Place", "name": "Worldwide"}, "audience": {"@type": "BusinessAudience", "audienceType": "Tiendas online y e-commerce"}, "availableLanguage": ["es", "en"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zepaiagency.com/"}, {"@type": "ListItem", "position": 2, "name": "E-Commerce", "item": "https://zepaiagency.com/agencia-ia-ecommerce"}]}];

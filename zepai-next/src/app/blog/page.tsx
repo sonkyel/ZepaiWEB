@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
 export const metadata: Metadata = {
   title: "Blog de Automatización e IA para Negocios | Zepai",
   description: "Artículos prácticos sobre automatización de procesos e inteligencia artificial aplicada a empresas: qué funciona, qué no y por dónde empezar.",
   alternates: { canonical: "/blog" },
-  openGraph: {
-    title: "Blog de Automatización e IA para Negocios | Zepai",
-    description: "Artículos prácticos sobre automatización de procesos e inteligencia artificial aplicada a empresas: qué funciona, qué no y por dónde empezar.",
-    url: "https://zepaiagency.com/blog",
-  },
-  twitter: { title: "Blog de Automatización e IA para Negocios | Zepai", description: "Artículos prácticos sobre automatización de procesos e inteligencia artificial aplicada a empresas: qué funciona, qué no y por dónde empezar." },
+  ...metaSocial(
+    "Blog de Automatización e IA para Negocios | Zepai",
+    "Artículos prácticos sobre automatización de procesos e inteligencia artificial aplicada a empresas: qué funciona, qué no y por dónde empezar.",
+    "/blog",
+  ),
 };
 
 const JSON_LD = [{"@context": "https://schema.org", "@type": "Blog", "name": "Blog de Automatización e IA para Negocios", "description": "Artículos sobre automatización de procesos e inteligencia artificial aplicada a empresas.", "url": "https://zepaiagency.com/blog", "inLanguage": "es", "publisher": {"@id": "https://zepaiagency.com/#organization"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zepaiagency.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zepaiagency.com/blog"}]}];

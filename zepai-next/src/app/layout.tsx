@@ -7,6 +7,7 @@ import { LangProvider } from "@/lib/i18n";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
+import { Consent } from "@/components/site/Consent";
 import { ORGANIZATION_LD, SITE } from "@/lib/site";
 
 // Satoshi (Fontshare, libre para uso comercial) autoalojada: una peticion
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>{children}</main>
           <Footer />
           <WhatsAppFloat />
+          <Consent />
         </LangProvider>
       </body>
     </html>

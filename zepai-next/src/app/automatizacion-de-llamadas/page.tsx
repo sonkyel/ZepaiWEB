@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
 export const metadata: Metadata = {
   title: "Automatización de Llamadas con IA | Agente de Voz 24/7 | Zepai",
   description: "Automatización de llamadas con IA: un agente de voz contesta el teléfono, toma reservas y citas, filtra la llamada y deriva a una persona cuando hace falta.",
   alternates: { canonical: "/automatizacion-de-llamadas" },
-  openGraph: {
-    title: "Automatización de Llamadas con IA | Agente de Voz 24/7 | Zepai",
-    description: "Automatización de llamadas con IA: un agente de voz contesta el teléfono, toma reservas y citas, filtra la llamada y deriva a una persona cuando hace falta.",
-    url: "https://zepaiagency.com/automatizacion-de-llamadas",
-  },
-  twitter: { title: "Automatización de Llamadas con IA | Agente de Voz 24/7 | Zepai", description: "Automatización de llamadas con IA: un agente de voz contesta el teléfono, toma reservas y citas, filtra la llamada y deriva a una persona cuando hace falta." },
+  ...metaSocial(
+    "Automatización de Llamadas con IA | Agente de Voz 24/7 | Zepai",
+    "Automatización de llamadas con IA: un agente de voz contesta el teléfono, toma reservas y citas, filtra la llamada y deriva a una persona cuando hace falta.",
+    "/automatizacion-de-llamadas",
+  ),
 };
 
 const JSON_LD = [{"@context": "https://schema.org", "@type": "Service", "name": "Automatización de llamadas con IA", "serviceType": "Automatización de llamadas con IA", "description": "Agente de voz con inteligencia artificial que atiende llamadas entrantes, gestiona reservas y citas, filtra y deriva llamadas y realiza llamadas de salida rutinarias.", "url": "https://zepaiagency.com/automatizacion-de-llamadas", "provider": {"@id": "https://zepaiagency.com/#organization"}, "areaServed": {"@type": "Place", "name": "Worldwide"}, "audience": {"@type": "BusinessAudience", "audienceType": "Empresas que reciben llamadas de clientes"}, "availableLanguage": ["es", "en"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zepaiagency.com/"}, {"@type": "ListItem", "position": 2, "name": "Llamadas con IA", "item": "https://zepaiagency.com/automatizacion-de-llamadas"}]}];

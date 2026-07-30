@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
 export const metadata: Metadata = {
   title: "Chatbot de IA para WhatsApp | Atiende y Vende 24/7 | Zepai",
   description: "Chatbot de inteligencia artificial para WhatsApp: responde en segundos, toma reservas y pedidos, cualifica clientes y deriva a una persona cuando hace falta. API oficial.",
   alternates: { canonical: "/chatbot-whatsapp" },
-  openGraph: {
-    title: "Chatbot de IA para WhatsApp | Atiende y Vende 24/7 | Zepai",
-    description: "Chatbot de inteligencia artificial para WhatsApp: responde en segundos, toma reservas y pedidos, cualifica clientes y deriva a una persona cuando hace falta. API oficial.",
-    url: "https://zepaiagency.com/chatbot-whatsapp",
-  },
-  twitter: { title: "Chatbot de IA para WhatsApp | Atiende y Vende 24/7 | Zepai", description: "Chatbot de inteligencia artificial para WhatsApp: responde en segundos, toma reservas y pedidos, cualifica clientes y deriva a una persona cuando hace falta. API oficial." },
+  ...metaSocial(
+    "Chatbot de IA para WhatsApp | Atiende y Vende 24/7 | Zepai",
+    "Chatbot de inteligencia artificial para WhatsApp: responde en segundos, toma reservas y pedidos, cualifica clientes y deriva a una persona cuando hace falta. API oficial.",
+    "/chatbot-whatsapp",
+  ),
 };
 
 const JSON_LD = [{"@context": "https://schema.org", "@type": "Service", "name": "Chatbot de IA para WhatsApp", "serviceType": "Chatbot de IA para WhatsApp", "description": "Chatbot de inteligencia artificial sobre la API oficial de WhatsApp Business que atiende consultas, toma reservas y pedidos y cualifica clientes.", "url": "https://zepaiagency.com/chatbot-whatsapp", "provider": {"@id": "https://zepaiagency.com/#organization"}, "areaServed": {"@type": "Place", "name": "Worldwide"}, "audience": {"@type": "BusinessAudience", "audienceType": "Empresas que atienden clientes por WhatsApp"}, "availableLanguage": ["es", "en"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zepaiagency.com/"}, {"@type": "ListItem", "position": 2, "name": "Chatbot de WhatsApp", "item": "https://zepaiagency.com/chatbot-whatsapp"}]}];

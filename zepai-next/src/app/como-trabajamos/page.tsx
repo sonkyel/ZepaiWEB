@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
 export const metadata: Metadata = {
   title: "Cómo Trabajamos | Nuestra Forma de Automatizar con IA | Zepai",
   description: "Seis creencias sobre cómo se automatiza un negocio de verdad: revisar el proceso antes que la tecnología, cerrar los límites antes de lanzar, la API oficial frente al atajo, y decirte cuándo no automatizar.",
   alternates: { canonical: "/como-trabajamos" },
-  openGraph: {
-    title: "Cómo Trabajamos | Nuestra Forma de Automatizar con IA | Zepai",
-    description: "Seis creencias sobre cómo se automatiza un negocio de verdad: revisar el proceso antes que la tecnología, cerrar los límites antes de lanzar, la API oficial frente al atajo, y decirte cuándo no automatizar.",
-    url: "https://zepaiagency.com/como-trabajamos",
-  },
-  twitter: { title: "Cómo Trabajamos | Nuestra Forma de Automatizar con IA | Zepai", description: "Seis creencias sobre cómo se automatiza un negocio de verdad: revisar el proceso antes que la tecnología, cerrar los límites antes de lanzar, la API oficial frente al atajo, y decirte cuándo no automatizar." },
+  ...metaSocial(
+    "Cómo Trabajamos | Nuestra Forma de Automatizar con IA | Zepai",
+    "Seis creencias sobre cómo se automatiza un negocio de verdad: revisar el proceso antes que la tecnología, cerrar los límites antes de lanzar, la API oficial frente al atajo, y decirte cuándo no automatizar.",
+    "/como-trabajamos",
+  ),
 };
 
 const JSON_LD = [{"@context": "https://schema.org", "@type": "AboutPage", "name": "Cómo trabajamos", "description": "Seis creencias sobre cómo se automatiza un negocio de verdad: revisar el proceso antes que la tecnología, cerrar los límites antes de lanzar, la API oficial frente al atajo, y decirte cuándo no automatizar.", "url": "https://zepaiagency.com/como-trabajamos", "inLanguage": "es", "isPartOf": {"@id": "https://zepaiagency.com/#organization"}, "about": {"@id": "https://zepaiagency.com/#organization"}, "mainEntity": {"@type": "ItemList", "numberOfItems": 6, "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Automatizar un proceso malo solo hace que el desorden vaya más rápido"}, {"@type": "ListItem", "position": 2, "name": "Lo que el agente no debe contestar se decide antes de lanzar"}, {"@type": "ListItem", "position": 3, "name": "El agente se queda lo repetitivo. El criterio sigue siendo de tu equipo"}, {"@type": "ListItem", "position": 4, "name": "Sobre la API oficial, no sobre un móvil con una app encima"}, {"@type": "ListItem", "position": 5, "name": "Te formamos para que no dependas de nosotros"}, {"@type": "ListItem", "position": 6, "name": "A veces la respuesta es que no automatices"}]}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zepaiagency.com/"}, {"@type": "ListItem", "position": 2, "name": "Cómo trabajamos", "item": "https://zepaiagency.com/como-trabajamos"}]}];

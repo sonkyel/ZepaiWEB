@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
 export const metadata: Metadata = {
   title: "Consultoría de IA para Empresas | Automatización de Procesos | Zepai",
   description: "Consultoría de IA para empresas: diagnosticamos tus procesos, priorizamos qué automatizar con inteligencia artificial y lo implementamos de principio a fin.",
   alternates: { canonical: "/consultoria-ia" },
-  openGraph: {
-    title: "Consultoría de IA para Empresas | Automatización de Procesos | Zepai",
-    description: "Consultoría de IA para empresas: diagnosticamos tus procesos, priorizamos qué automatizar con inteligencia artificial y lo implementamos de principio a fin.",
-    url: "https://zepaiagency.com/consultoria-ia",
-  },
-  twitter: { title: "Consultoría de IA para Empresas | Automatización de Procesos | Zepai", description: "Consultoría de IA para empresas: diagnosticamos tus procesos, priorizamos qué automatizar con inteligencia artificial y lo implementamos de principio a fin." },
+  ...metaSocial(
+    "Consultoría de IA para Empresas | Automatización de Procesos | Zepai",
+    "Consultoría de IA para empresas: diagnosticamos tus procesos, priorizamos qué automatizar con inteligencia artificial y lo implementamos de principio a fin.",
+    "/consultoria-ia",
+  ),
 };
 
 const JSON_LD = [{"@context": "https://schema.org", "@type": "Service", "name": "Consultoría de IA para empresas", "serviceType": "Consultoría de IA para empresas", "description": "Consultoría de inteligencia artificial: diagnóstico de procesos, priorización de oportunidades, prueba piloto e implementación de automatizaciones a medida.", "url": "https://zepaiagency.com/consultoria-ia", "provider": {"@id": "https://zepaiagency.com/#organization"}, "areaServed": {"@type": "Place", "name": "Worldwide"}, "audience": {"@type": "BusinessAudience", "audienceType": "Empresas de cualquier sector"}, "availableLanguage": ["es", "en"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zepaiagency.com/"}, {"@type": "ListItem", "position": 2, "name": "Consultoría de IA", "item": "https://zepaiagency.com/consultoria-ia"}]}];

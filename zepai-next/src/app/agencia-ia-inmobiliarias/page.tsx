@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
 export const metadata: Metadata = {
   title: "Chatbot de IA por WhatsApp para Inmobiliarias | Capta y Filtra Leads | Zepai",
   description: "Chatbot de IA por WhatsApp para inmobiliarias: responde en segundos, cualifica leads, envía fichas de inmuebles y agenda visitas automáticamente. Implementación a medida.",
   alternates: { canonical: "/agencia-ia-inmobiliarias" },
-  openGraph: {
-    title: "Chatbot de IA por WhatsApp para Inmobiliarias | Capta y Filtra Leads | Zepai",
-    description: "Chatbot de IA por WhatsApp para inmobiliarias: responde en segundos, cualifica leads, envía fichas de inmuebles y agenda visitas automáticamente. Implementación a medida.",
-    url: "https://zepaiagency.com/agencia-ia-inmobiliarias",
-  },
-  twitter: { title: "Chatbot de IA por WhatsApp para Inmobiliarias | Capta y Filtra Leads | Zepai", description: "Chatbot de IA por WhatsApp para inmobiliarias: responde en segundos, cualifica leads, envía fichas de inmuebles y agenda visitas automáticamente. Implementación a medida." },
+  ...metaSocial(
+    "Chatbot de IA por WhatsApp para Inmobiliarias | Capta y Filtra Leads | Zepai",
+    "Chatbot de IA por WhatsApp para inmobiliarias: responde en segundos, cualifica leads, envía fichas de inmuebles y agenda visitas automáticamente. Implementación a medida.",
+    "/agencia-ia-inmobiliarias",
+  ),
 };
 
 const JSON_LD = [{"@context": "https://schema.org", "@type": "Service", "name": "Chatbot de IA por WhatsApp para inmobiliarias", "serviceType": "Chatbot de IA por WhatsApp para inmobiliarias", "description": "Agente de inteligencia artificial en WhatsApp que responde, cualifica y agenda visitas para agencias inmobiliarias de forma automática.", "url": "https://zepaiagency.com/agencia-ia-inmobiliarias", "provider": {"@id": "https://zepaiagency.com/#organization"}, "areaServed": {"@type": "Place", "name": "Worldwide"}, "audience": {"@type": "BusinessAudience", "audienceType": "Agencias inmobiliarias y promotoras"}, "availableLanguage": ["es", "en"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zepaiagency.com/"}, {"@type": "ListItem", "position": 2, "name": "Inmobiliarias", "item": "https://zepaiagency.com/agencia-ia-inmobiliarias"}]}];

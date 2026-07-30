@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
 export const metadata: Metadata = {
   title: "Soluciones de Automatización con IA para Empresas | Zepai",
   description: "Todas las soluciones de inteligencia artificial de Zepai: consultoría, chatbot de WhatsApp, automatización de llamadas y de procesos, y soluciones por sector para restaurantes, inmobiliarias y e-commerce.",
   alternates: { canonical: "/soluciones" },
-  openGraph: {
-    title: "Soluciones de Automatización con IA para Empresas | Zepai",
-    description: "Todas las soluciones de inteligencia artificial de Zepai: consultoría, chatbot de WhatsApp, automatización de llamadas y de procesos, y soluciones por sector para restaurantes, inmobiliarias y e-commerce.",
-    url: "https://zepaiagency.com/soluciones",
-  },
-  twitter: { title: "Soluciones de Automatización con IA para Empresas | Zepai", description: "Todas las soluciones de inteligencia artificial de Zepai: consultoría, chatbot de WhatsApp, automatización de llamadas y de procesos, y soluciones por sector para restaurantes, inmobiliarias y e-commerce." },
+  ...metaSocial(
+    "Soluciones de Automatización con IA para Empresas | Zepai",
+    "Todas las soluciones de inteligencia artificial de Zepai: consultoría, chatbot de WhatsApp, automatización de llamadas y de procesos, y soluciones por sector para restaurantes, inmobiliarias y e-commerce.",
+    "/soluciones",
+  ),
 };
 
 const JSON_LD = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Soluciones de automatización con IA para empresas", "description": "Catálogo de soluciones de inteligencia artificial de Zepai Agency, por tipo de automatización y por sector.", "url": "https://zepaiagency.com/soluciones", "inLanguage": "es", "isPartOf": {"@id": "https://zepaiagency.com/#organization"}, "mainEntity": {"@type": "ItemList", "numberOfItems": 7, "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Consultoría de IA", "url": "https://zepaiagency.com/consultoria-ia"}, {"@type": "ListItem", "position": 2, "name": "Chatbot de WhatsApp", "url": "https://zepaiagency.com/chatbot-whatsapp"}, {"@type": "ListItem", "position": 3, "name": "Automatización de llamadas", "url": "https://zepaiagency.com/automatizacion-de-llamadas"}, {"@type": "ListItem", "position": 4, "name": "Automatizaciones con n8n y Make", "url": "https://zepaiagency.com/automatizaciones-n8n-make"}, {"@type": "ListItem", "position": 5, "name": "Restaurantes y cafeterías", "url": "https://zepaiagency.com/agencia-ia-restaurantes"}, {"@type": "ListItem", "position": 6, "name": "Inmobiliarias", "url": "https://zepaiagency.com/agencia-ia-inmobiliarias"}, {"@type": "ListItem", "position": 7, "name": "Tiendas online", "url": "https://zepaiagency.com/agencia-ia-ecommerce"}]}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zepaiagency.com/"}, {"@type": "ListItem", "position": 2, "name": "Soluciones", "item": "https://zepaiagency.com/soluciones"}]}];

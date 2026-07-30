@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
 export const metadata: Metadata = {
   title: "Asistente de Voz con IA para Restaurantes | Reservas 24/7 | Zepai",
   description: "Asistente de voz con IA para restaurantes: contesta el teléfono, toma reservas y responde dudas 24/7. Deja de perder mesas por llamadas sin atender. Implementación a medida.",
   alternates: { canonical: "/agencia-ia-restaurantes" },
-  openGraph: {
-    title: "Asistente de Voz con IA para Restaurantes | Reservas 24/7 | Zepai",
-    description: "Asistente de voz con IA para restaurantes: contesta el teléfono, toma reservas y responde dudas 24/7. Deja de perder mesas por llamadas sin atender. Implementación a medida.",
-    url: "https://zepaiagency.com/agencia-ia-restaurantes",
-  },
-  twitter: { title: "Asistente de Voz con IA para Restaurantes | Reservas 24/7 | Zepai", description: "Asistente de voz con IA para restaurantes: contesta el teléfono, toma reservas y responde dudas 24/7. Deja de perder mesas por llamadas sin atender. Implementación a medida." },
+  ...metaSocial(
+    "Asistente de Voz con IA para Restaurantes | Reservas 24/7 | Zepai",
+    "Asistente de voz con IA para restaurantes: contesta el teléfono, toma reservas y responde dudas 24/7. Deja de perder mesas por llamadas sin atender. Implementación a medida.",
+    "/agencia-ia-restaurantes",
+  ),
 };
 
 const JSON_LD = [{"@context": "https://schema.org", "@type": "Service", "name": "Asistente de voz con IA para restaurantes", "serviceType": "Asistente de voz con IA para restaurantes", "description": "Asistente de voz con inteligencia artificial que atiende llamadas, gestiona reservas y responde consultas de clientes en restaurantes, 24 horas al día.", "url": "https://zepaiagency.com/agencia-ia-restaurantes", "provider": {"@id": "https://zepaiagency.com/#organization"}, "areaServed": {"@type": "Place", "name": "Worldwide"}, "audience": {"@type": "BusinessAudience", "audienceType": "Restaurantes, bares y cafeterías"}, "availableLanguage": ["es", "en"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zepaiagency.com/"}, {"@type": "ListItem", "position": 2, "name": "Restaurantes", "item": "https://zepaiagency.com/agencia-ia-restaurantes"}]}];

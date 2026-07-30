@@ -110,3 +110,31 @@ export const ORGANIZATION_LD = {
     { "@type": "WebSite", name: SITE.name, url: SITE.url },
   ],
 };
+
+/**
+ * Metadatos sociales de una pagina.
+ *
+ * Next NO funde el openGraph de la pagina con el del layout: lo sustituye.
+ * Cualquier pagina que defina titulo propio pierde la imagen del layout, y
+ * asi estuvieron las 12 paginas sin og:image. Este ayudante devuelve el
+ * bloque completo para que no pueda volver a pasar.
+ */
+export function metaSocial(titulo: string, descripcion: string, ruta: string) {
+  return {
+    openGraph: {
+      title: titulo,
+      description: descripcion,
+      url: `${SITE.url}${ruta}`,
+      siteName: SITE.name,
+      locale: "es_ES",
+      type: "website" as const,
+      images: [SITE.ogImage],
+    },
+    twitter: {
+      card: "summary_large_image" as const,
+      title: titulo,
+      description: descripcion,
+      images: [SITE.ogImage],
+    },
+  };
+}

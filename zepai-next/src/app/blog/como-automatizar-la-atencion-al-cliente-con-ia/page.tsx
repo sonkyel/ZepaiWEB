@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
 export const metadata: Metadata = {
   title: "Cómo automatizar la atención al cliente con IA: por dónde empezar | Zepai",
   description: "Guía práctica para automatizar la atención al cliente con inteligencia artificial: por dónde empezar, qué no debe contestar la máquina y qué medir antes de lanzar.",
   alternates: { canonical: "/blog/como-automatizar-la-atencion-al-cliente-con-ia" },
-  openGraph: {
-    title: "Cómo automatizar la atención al cliente con IA: por dónde empezar | Zepai",
-    description: "Guía práctica para automatizar la atención al cliente con inteligencia artificial: por dónde empezar, qué no debe contestar la máquina y qué medir antes de lanzar.",
-    url: "https://zepaiagency.com/blog/como-automatizar-la-atencion-al-cliente-con-ia",
-  },
-  twitter: { title: "Cómo automatizar la atención al cliente con IA: por dónde empezar | Zepai", description: "Guía práctica para automatizar la atención al cliente con inteligencia artificial: por dónde empezar, qué no debe contestar la máquina y qué medir antes de lanzar." },
+  ...metaSocial(
+    "Cómo automatizar la atención al cliente con IA: por dónde empezar | Zepai",
+    "Guía práctica para automatizar la atención al cliente con inteligencia artificial: por dónde empezar, qué no debe contestar la máquina y qué medir antes de lanzar.",
+    "/blog/como-automatizar-la-atencion-al-cliente-con-ia",
+  ),
 };
 
 const JSON_LD = [{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Cómo automatizar la atención al cliente con IA: por dónde empezar", "description": "Guía práctica para automatizar la atención al cliente con inteligencia artificial: por dónde empezar, qué no debe contestar la máquina y qué medir antes de lanzar.", "url": "https://zepaiagency.com/blog/como-automatizar-la-atencion-al-cliente-con-ia", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://zepaiagency.com/blog/como-automatizar-la-atencion-al-cliente-con-ia"}, "inLanguage": "es", "datePublished": "2026-07-28", "dateModified": "2026-07-28", "image": "https://zepaiagency.com/og-image.png", "author": {"@id": "https://zepaiagency.com/#organization"}, "publisher": {"@id": "https://zepaiagency.com/#organization"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zepaiagency.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zepaiagency.com/blog"}, {"@type": "ListItem", "position": 3, "name": "Cómo automatizar la atención al cliente con IA: por dónde empezar", "item": "https://zepaiagency.com/blog/como-automatizar-la-atencion-al-cliente-con-ia"}]}];

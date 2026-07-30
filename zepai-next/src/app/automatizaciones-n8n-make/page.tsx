@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
 export const metadata: Metadata = {
   title: "Automatizaciones con n8n y Make | Procesos Internos con IA | Zepai",
   description: "Automatizaciones con n8n y Make: conectamos las herramientas que ya usas y automatizamos procesos internos completos, con IA donde aporta. Diseño, montaje y mantenimiento.",
   alternates: { canonical: "/automatizaciones-n8n-make" },
-  openGraph: {
-    title: "Automatizaciones con n8n y Make | Procesos Internos con IA | Zepai",
-    description: "Automatizaciones con n8n y Make: conectamos las herramientas que ya usas y automatizamos procesos internos completos, con IA donde aporta. Diseño, montaje y mantenimiento.",
-    url: "https://zepaiagency.com/automatizaciones-n8n-make",
-  },
-  twitter: { title: "Automatizaciones con n8n y Make | Procesos Internos con IA | Zepai", description: "Automatizaciones con n8n y Make: conectamos las herramientas que ya usas y automatizamos procesos internos completos, con IA donde aporta. Diseño, montaje y mantenimiento." },
+  ...metaSocial(
+    "Automatizaciones con n8n y Make | Procesos Internos con IA | Zepai",
+    "Automatizaciones con n8n y Make: conectamos las herramientas que ya usas y automatizamos procesos internos completos, con IA donde aporta. Diseño, montaje y mantenimiento.",
+    "/automatizaciones-n8n-make",
+  ),
 };
 
 const JSON_LD = [{"@context": "https://schema.org", "@type": "Service", "name": "Automatizaciones con n8n y Make", "serviceType": "Automatizaciones con n8n y Make", "description": "Diseño, implementación y mantenimiento de flujos de automatización con n8n y Make para procesos internos empresariales, con integración de modelos de IA.", "url": "https://zepaiagency.com/automatizaciones-n8n-make", "provider": {"@id": "https://zepaiagency.com/#organization"}, "areaServed": {"@type": "Place", "name": "Worldwide"}, "audience": {"@type": "BusinessAudience", "audienceType": "Empresas con procesos internos repetitivos"}, "availableLanguage": ["es", "en"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://zepaiagency.com/"}, {"@type": "ListItem", "position": 2, "name": "n8n y Make", "item": "https://zepaiagency.com/automatizaciones-n8n-make"}]}];

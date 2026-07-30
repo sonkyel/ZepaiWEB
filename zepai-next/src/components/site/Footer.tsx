@@ -90,6 +90,11 @@ export function Footer() {
               en="© 2026 Zepai Agency. All rights reserved."
             />
           </span>
+          {/* Una politica de cookies a la que solo se llega desde el aviso no
+              sirve de nada: hay que poder consultarla despues de decidir. */}
+          <Link className="f-copy" href="/politica-de-cookies">
+            <T es="Política de Cookies" en="Cookie Policy" />
+          </Link>
           <a className="f-copy" href={`mailto:${SITE.email}`}>
             {SITE.email}
           </a>
