@@ -82,7 +82,7 @@ input,select,textarea{font-family:inherit}
 .btn-p:hover{transform:translateY(-2px)}
 .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
 .reveal.v{opacity:1;transform:translateY(0);filter:blur(0)}
-.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
 
 /* ── PREMIUM EFFECTS ────────────────────────────── */
 

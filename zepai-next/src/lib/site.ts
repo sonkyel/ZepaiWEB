@@ -29,9 +29,10 @@ export const FOOTER_SERVICIOS = [
   { href: "/chatbot-whatsapp", es: "Chatbot de WhatsApp", en: "WhatsApp Chatbot" },
   { href: "/automatizacion-de-llamadas", es: "Llamadas con IA", en: "AI Calls" },
   { href: "/automatizaciones-n8n-make", es: "Automatizaciones n8n y Make", en: "n8n and Make automations" },
-  { href: "/#services", es: "Marketing Digital", en: "Digital Marketing" },
-  { href: "/#services", es: "Clipping de Contenido", en: "Content Clipping" },
-  { href: "/#services", es: "Diseño Web", en: "Web Design" },
+  { href: "/agentes-de-ia", es: "Agentes de IA", en: "AI Agents" },
+  { href: "/marketing-digital", es: "Marketing Digital", en: "Digital Marketing" },
+  { href: "/clipping-de-contenido", es: "Clipping de Contenido", en: "Content Clipping" },
+  { href: "/trafico-en-redes", es: "Tráfico en Redes", en: "Social Media Traffic" },
 ] as const;
 
 export const FOOTER_INDUSTRIAS = [
