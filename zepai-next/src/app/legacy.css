@@ -278,6 +278,7 @@ section + section{border-top:1px solid var(--borderS)}
   background:var(--bg2);border:1px solid var(--borderS);
   border-radius:var(--r);padding:28px 22px;
   transition:all .3s;cursor:default;position:relative;overflow:hidden;
+  text-align:center;
 }
 .srv-card::before{
   content:'';position:absolute;top:0;left:0;right:0;height:2px;
@@ -285,18 +286,16 @@ section + section{border-top:1px solid var(--borderS)}
 }
 .srv-card:hover{background:var(--bg3);border-color:var(--border-accent);transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.35)}
 .srv-card:hover::before{opacity:1}
-/* Miniatura de tarjeta. A sangre por arriba: una banda con aire alrededor
-   se lee como una pegatina pegada dentro de la tarjeta. El borde inferior
-   se funde con un degradado porque el fondo de la imagen (casi negro) y el
-   de la tarjeta (--bg2) no son el mismo. */
+/* Miniatura de tarjeta: el objeto recortado, sin caja.
+   La banda a sangre anterior dejaba ver el rectangulo de la imagen, porque
+   su fondo casi negro no es el de la tarjeta. Ahora el fondo del PNG es
+   transparente y la caja va ajustada al objeto, asi que queda centrado por
+   construccion y no hay recuadro que disimular. */
 .srv-foto{
-  display:block;width:calc(100% + 44px);margin:-28px -22px 18px;
-  height:118px;object-fit:cover;object-position:center 45%;
-  border-radius:var(--r) var(--r) 0 0;
-  -webkit-mask-image:linear-gradient(#000 62%,transparent 100%);
-  mask-image:linear-gradient(#000 62%,transparent 100%);
+  display:block;width:112px;height:112px;object-fit:contain;
+  margin:0 auto 18px;
 }
-@media(max-width:1100px){.srv-foto{height:132px}}
+@media(max-width:1100px){.srv-foto{width:124px;height:124px}}
 .srv-name{font-size:15px;font-weight:700;margin-bottom:8px;color:var(--t1)}
 .srv-desc{font-size:13px;color:var(--t3);line-height:1.6}
 
@@ -429,10 +428,8 @@ section + section{border-top:1px solid var(--borderS)}
   border:1px solid var(--borderS);background:rgba(255,255,255,.04);
   color:var(--t2);text-align:center;transition:all .2s;font-family:var(--font);
 }
-.time-btn:hover:not(.booked){border-color:var(--border-accent);background:rgba(255,255,255,.05)}
+.time-btn:hover{border-color:var(--border-accent);background:rgba(255,255,255,.05)}
 .time-btn.active{background:var(--blue);border-color:transparent;color:#fff}
-.time-btn.booked{opacity:.35;cursor:not-allowed;color:var(--t3)}
-.booked-tag{display:block;font-size:9px;font-weight:700;color:#EF4444;letter-spacing:.5px;margin-top:2px}
 @media(max-width:480px){.time-slots{grid-template-columns:repeat(2,1fr)}}
 .contact-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:start}
 .contact-info h2{font-size:34px;font-weight:900;letter-spacing:-.5px;margin-bottom:14px;line-height:1.2}
@@ -599,7 +596,7 @@ button:focus-visible,a:focus-visible{outline-offset:4px}
 
 /* ── CURSOR IMPROVEMENTS ─────────────────────────── */
 .lang-btn,.faq-q,.nav-logo,.hamburger{cursor:pointer}
-.ctab-btn,.date-btn,.time-btn:not(.booked){cursor:pointer}
+.ctab-btn,.date-btn,.time-btn{cursor:pointer}
 
 /* ── SMOOTH HOVER TRANSITIONS ────────────────────── */
 

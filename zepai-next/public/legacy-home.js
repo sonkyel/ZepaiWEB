@@ -238,6 +238,14 @@ const DAYS_EN  = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 const MONS_ES  = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
 const MONS_EN  = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
+/* toISOString() da la fecha en UTC: en Espana, de madrugada, eso es el dia
+   anterior, y el boton decia un dia y guardaba otro. */
+function isoLocal(d) {
+  return d.getFullYear() + '-' +
+         String(d.getMonth() + 1).padStart(2, '0') + '-' +
+         String(d.getDate()).padStart(2, '0');
+}
+
 function buildDatePicker() {
   const container = document.getElementById('datePicker');
   if (!container) return;
@@ -253,13 +261,13 @@ function buildDatePicker() {
     const dayLabel = (isEn ? DAYS_EN : DAYS_ES)[d.getDay()];
     const monLabel = (isEn ? MONS_EN : MONS_ES)[d.getMonth()];
     btn.innerHTML = `<span class="date-day">${dayLabel}</span><span class="date-num">${d.getDate()}</span><span class="date-month">${monLabel}</span>`;
-    const iso = d.toISOString().split('T')[0];
+    const iso = isoLocal(d);
     btn.dataset.iso = iso;
     btn.onclick = () => selectDate(iso, btn);
     container.appendChild(btn);
   }
   // Pre-select today and build slots
-  const iso0 = today.toISOString().split('T')[0];
+  const iso0 = isoLocal(today);
   document.getElementById('sdate').value = iso0;
   buildTimeSlots(iso0);
 }
@@ -268,29 +276,20 @@ function buildDatePicker() {
 const ALL_SLOTS_ES = ['9:00 AM','10:00 AM','11:00 AM','12:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM'];
 const ALL_SLOTS_EN = ['9:00 AM','10:00 AM','11:00 AM','12:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM'];
 
-function pseudoRand(seed, i) {
-  return ((seed * 1664525 + 1013904223 + i * 22695477) & 0x7fffffff) % 100;
-}
-
 function buildTimeSlots(dateStr) {
   const container = document.getElementById('timeSlots');
   if (!container) return;
-  const seed = parseInt(dateStr.replace(/-/g,''), 10) || 1;
-  const isEn  = currentLang === 'en';
-  const slots = ALL_SLOTS_ES;
+  /* Antes un tercio de las horas salia como "Ocupado" segun un numero
+     pseudoaleatorio. No hay agenda detras que consultar: era escasez
+     inventada. Se ofrecen todas y el horario se confirma por correo, que es
+     lo que ya promete el propio formulario. */
   container.innerHTML = '';
-  slots.forEach((slot, i) => {
-    const available = pseudoRand(seed, i) > 32; // ~68% available
+  ALL_SLOTS_ES.forEach(slot => {
     const btn = document.createElement('button');
     btn.type = 'button';
-    btn.className = 'time-btn' + (available ? '' : ' booked');
-    btn.disabled = !available;
-    if (!available) {
-      btn.innerHTML = slot + '<span class="booked-tag">' + (isEn?'Booked':'Ocupado') + '</span>';
-    } else {
-      btn.textContent = slot;
-      btn.onclick = () => selectTime(slot, btn);
-    }
+    btn.className = 'time-btn';
+    btn.textContent = slot;
+    btn.onclick = () => selectTime(slot, btn);
     container.appendChild(btn);
   });
 }
@@ -308,4 +307,17 @@ function selectTime(slot, btn) {
   document.getElementById('stime').value = slot;
   document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+}
+
+/* El selector no lo construia nadie: la web antigua lo lanzaba con un
+   DOMContentLoaded que se perdio al portar a Next, asi que los contenedores
+   quedaban vacios y no habia fechas ni horas que pulsar.
+
+   No vale con repetir aquel DOMContentLoaded: este fichero se carga despues
+   de montar la pagina, asi que ese evento ya ha pasado y el manejador no se
+   ejecutaria nunca. */
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', buildDatePicker);
+} else {
+  buildDatePicker();
 }
