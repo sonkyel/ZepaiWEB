@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   description:
     "Agencia y consultora de IA. Automatizamos los procesos de tu empresa con inteligencia artificial: atención al cliente, ventas, reservas, soporte y operaciones. Consultoría e implementación a medida.",
   robots: { index: true, follow: true },
-  icons: { icon: "/logo.png" },
+  icons: { icon: "/logo.png", apple: "/apple-touch-icon.png" },
   openGraph: {
     type: "website",
     siteName: SITE.name,
@@ -64,8 +64,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_LD) }}
         />
         <LangProvider>
+          {/* Sin esto, con teclado hay que recorrer toda la nav en cada
+              pagina antes de llegar al contenido. */}
+          <a className="saltar" href="#contenido">
+            Saltar al contenido
+          </a>
           <Nav />
-          <main>{children}</main>
+          <main id="contenido">{children}</main>
           <Footer />
           <WhatsAppFloat />
           <Consent />

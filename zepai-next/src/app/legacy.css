@@ -577,6 +577,15 @@ footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 
 /* Avatar canvas bg transparent */
 /* ══ ROBOTCANVAS RE-HABILITADO ══ */
 
+/* Enlace de salto: fuera de la vista hasta que el teclado lo enfoca */
+.saltar{
+  position:absolute;left:var(--sp-4);top:-100px;z-index:var(--z-toast);
+  background:var(--bg2);color:var(--t1);border:1px solid var(--border-accent);
+  border-radius:var(--r-sm);padding:10px 18px;font-size:var(--fs-2);font-weight:600;
+  transition:top .2s;
+}
+.saltar:focus{top:var(--sp-4)}
+
 /* ── FOCUS STATES (Accessibility) ───────────────── */
 :focus-visible{
   outline:2px solid #A855F7;
