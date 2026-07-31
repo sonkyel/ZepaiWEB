@@ -304,8 +304,7 @@
   position: relative;
 }
 #services::before,
-#results::before,
-#contact::before {
+#results::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -314,7 +313,19 @@
   opacity: 0.12;
 }
 #results::before { transform: scaleX(-1); }
-#contact::before { transform: scaleY(-1); }
+/* Contacto lleva la nebulosa en vez de la textura comun: es la ultima
+   seccion y el formulario va en su propio panel por encima. La imagen ya
+   viene atenuada del render (8,59 de contraste con blanco), asi que no
+   necesita bajar la opacidad ademas. */
+#contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: url("/fondos/nebulosa.webp") center / cover no-repeat;
+  opacity: 0.85;
+  z-index: 0;
+}
 #services > .container,
 #results > .container,
 #contact > .container {

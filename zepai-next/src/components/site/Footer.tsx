@@ -3,6 +3,7 @@ import { Mail, MessageCircle, Phone } from "lucide-react";
 import { T } from "@/lib/i18n";
 import {
   FOOTER_EMPRESA,
+  FOOTER_LEGAL,
   FOOTER_INDUSTRIAS,
   FOOTER_SERVICIOS,
   SITE,
@@ -90,11 +91,15 @@ export function Footer() {
               en="© 2026 Zepai Agency. All rights reserved."
             />
           </span>
-          {/* Una politica de cookies a la que solo se llega desde el aviso no
-              sirve de nada: hay que poder consultarla despues de decidir. */}
-          <Link className="f-copy" href="/politica-de-cookies">
-            <T es="Política de Cookies" en="Cookie Policy" />
-          </Link>
+          {/* Las legales tienen que alcanzarse desde cualquier pagina, no solo
+              desde el aviso de cookies. */}
+          <nav className="f-legal" aria-label="Enlaces legales">
+            {FOOTER_LEGAL.map((l) => (
+              <Link key={l.href} className="f-copy" href={l.href}>
+                <T es={l.es} en={l.en} />
+              </Link>
+            ))}
+          </nav>
           <a className="f-copy" href={`mailto:${SITE.email}`}>
             {SITE.email}
           </a>

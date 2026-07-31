@@ -178,9 +178,73 @@ function sendNotification(subject, body, formEl, btnEl, mailtoFallback, okMsg, i
   });
 }
 
+
+/* ══ VALIDACION ══════════════════════════════════════════════════════
+   El navegador ya exige los campos required, pero no comprueba que el
+   correo tenga sentido ni que se haya elegido hora. Y su globo nativo
+   desaparece al hacer scroll: el error se pinta junto al campo. */
+function marcarError(campo, mensaje) {
+  if (!campo) return;
+  campo.classList.add('campo-mal');
+  campo.setAttribute('aria-invalid', 'true');
+  let aviso = campo.parentElement.querySelector('.campo-aviso');
+  if (!aviso) {
+    aviso = document.createElement('p');
+    aviso.className = 'campo-aviso';
+    aviso.setAttribute('role', 'alert');
+    campo.parentElement.appendChild(aviso);
+  }
+  aviso.textContent = mensaje;
+}
+
+function limpiarErrores(form) {
+  form.querySelectorAll('.campo-mal').forEach(c => {
+    c.classList.remove('campo-mal');
+    c.removeAttribute('aria-invalid');
+  });
+  form.querySelectorAll('.campo-aviso').forEach(a => a.remove());
+}
+
+function correoValido(v) {
+  return /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(v.trim());
+}
+
+/* Devuelve true si todo esta bien; si no, marca el primer fallo y lo enfoca */
+function validar(form, campos, isEs) {
+  limpiarErrores(form);
+  let primero = null;
+  campos.forEach(([id, tipo, msgEs, msgEn]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const v = (el.type === 'checkbox') ? el.checked : el.value.trim();
+    let mal = false;
+    if (tipo === 'texto')    mal = !v || String(v).length < 2;
+    if (tipo === 'correo')   mal = !correoValido(String(v));
+    if (tipo === 'marcada')  mal = !v;
+    if (tipo === 'elegido')  mal = !v;
+    if (mal) {
+      marcarError(el, isEs ? msgEs : msgEn);
+      if (!primero) primero = el;
+    }
+  });
+  if (primero) {
+    primero.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    if (primero.type !== 'checkbox') primero.focus({ preventScroll: true });
+    return false;
+  }
+  return true;
+}
+
 /* ── SCHEDULE SUBMIT ── */
 function handleScheduleSubmit(e) {
   e.preventDefault();
+  const esEs = currentLang === 'es';
+  if (!validar(e.target, [
+      ['sname',  'texto',   'Dinos tu nombre.', 'Tell us your name.'],
+      ['semail', 'correo',  'Ese correo no parece válido.', 'That email does not look valid.'],
+      ['stime',  'elegido', 'Elige un horario de los de arriba.', 'Pick one of the time slots above.'],
+      ['sconsent', 'marcada', 'Necesitamos que aceptes la política de privacidad.', 'We need you to accept the privacy policy.'],
+    ], esEs)) return;
   const name  = document.getElementById('sname').value;
   const email = document.getElementById('semail').value;
   const phone = document.getElementById('sphone').value;
@@ -211,6 +275,12 @@ function handleScheduleSubmit(e) {
 /* ── FORM SUBMIT ── */
 function handleSubmit(e) {
   e.preventDefault();
+  const esEs2 = currentLang === 'es';
+  if (!validar(e.target, [
+      ['fname',  'texto',  'Dinos tu nombre.', 'Tell us your name.'],
+      ['femail', 'correo', 'Ese correo no parece válido.', 'That email does not look valid.'],
+      ['fconsent', 'marcada', 'Necesitamos que aceptes la política de privacidad.', 'We need you to accept the privacy policy.'],
+    ], esEs2)) return;
   const name    = document.getElementById('fname').value;
   const company = document.getElementById('fcompany').value;
   const email   = document.getElementById('femail').value;

@@ -49,6 +49,13 @@ export const FOOTER_EMPRESA = [
   { href: "/#contact", es: "Contacto", en: "Contact" },
 ] as const;
 
+/** Obligatorias por la LSSI: tienen que alcanzarse desde cualquier pagina. */
+export const FOOTER_LEGAL = [
+  { href: "/aviso-legal", es: "Aviso legal", en: "Legal notice" },
+  { href: "/politica-de-privacidad", es: "Privacidad", en: "Privacy" },
+  { href: "/politica-de-cookies", es: "Cookies", en: "Cookies" },
+] as const;
+
 /** Organization + WebSite. Se inyecta una sola vez, en el layout raiz. */
 export const ORGANIZATION_LD = {
   "@context": "https://schema.org",
