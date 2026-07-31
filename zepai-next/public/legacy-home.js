@@ -49,7 +49,10 @@ document.addEventListener('keydown', e => {
 function animateCounter(el) {
   const target = parseInt(el.dataset.target || 0);
   const suffix = el.dataset.suffix || '';
-  if (!target) return;
+  if (!target || el.dataset.contado) return;
+  el.dataset.contado = '1';
+  /* El HTML ya trae la cifra buena: la animacion la baja a cero y la sube.
+     Si este codigo no llega a ejecutarse, la cifra correcta se queda. */
   const duration = 1800;
   const step = target / (duration / 16);
   let current = 0;
@@ -67,9 +70,19 @@ const counterObs = new IntersectionObserver((entries) => {
       counterObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.3 });
+}, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
 const statsEl = document.querySelector('.stats-grid');
-if (statsEl) counterObs.observe(statsEl);
+if (statsEl) {
+  counterObs.observe(statsEl);
+  /* Red de seguridad: si al cabo de seis segundos el observador no ha
+     saltado -- pantalla muy alta, pestana en segundo plano, movimiento
+     reducido -- se deja de esperar. Las cifras ya son correctas. */
+  setTimeout(function () {
+    statsEl.querySelectorAll('.stat-num[data-target]').forEach(function (el) {
+      el.dataset.contado = '1';
+    });
+  }, 6000);
+}
 
 /* ══ NOTIFICACIONES POR CORREO (EmailJS) ══════════════════════════════
    Configurado: cada llamada agendada o cotización se envía directo a tu

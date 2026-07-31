@@ -417,3 +417,25 @@
   .galaxy-cta:active,
   .srv-card:active,
   .sp-card:active { transform: none; }}
+
+/* ── HERO EN PANTALLAS ESTRECHAS ─────────────────────────────
+   Al final del fichero: hay dos bloques de 900 px antes y, a
+   igual especificidad, manda el ultimo.
+   ───────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .galaxy-title {
+    font-size: clamp(25px, 7.4vw, 32px);
+    letter-spacing: -0.8px;
+    line-height: 1.14;
+  }
+  .galaxy-badge {
+    font-size: 10px;
+    letter-spacing: 0.6px;
+    padding: 6px 12px;
+  }
+  .galaxy-sub { font-size: 15px; line-height: 1.65; }
+  .galaxy-copy { padding: 16px 0 8px; }
+  /* La mascota se comia media pantalla en vertical */
+  .galaxy-mascot img { height: clamp(200px, 30vh, 280px); }
+  .galaxy-channel { font-size: 11px; padding: 5px 10px; }
+}
