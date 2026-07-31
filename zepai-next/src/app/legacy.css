@@ -255,7 +255,10 @@ body::after{
 section{padding:100px 0;position:relative}
 /* Los fondos de seccion van en ::before posicionado: sin esto se pintarian
    por encima del contenido, que no esta posicionado. */
-section > .container{position:relative;z-index:1}
+/* El hero se excluye: alli el orden de capas ya lo resuelve galaxy.css,
+   y este selector le ganaba en especificidad a .galaxy-grid, dejando el
+   titular por debajo del velo. */
+section:not(#hero) > .container{position:relative;z-index:1}
 /* La separacion la hace una linea, no un cambio de fondo */
 section + section{border-top:1px solid var(--borderS)}
 .sec-hdr{text-align:center;max-width:640px;margin:0 auto 60px}

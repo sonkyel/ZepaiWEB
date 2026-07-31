@@ -78,7 +78,7 @@
    detrás de las letras. Y de paso rompe la simetría central que
    la auditoría señala como el patrón más genérico.
    ───────────────────────────────────────────────────────── */
-.galaxy-grid {
+#hero .galaxy-grid {
   position: relative;
   z-index: 3;
   width: 100%;
