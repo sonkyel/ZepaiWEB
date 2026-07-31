@@ -268,7 +268,7 @@ section + section{border-top:1px solid var(--borderS)}
 
 /* ── SERVICES ───────────────────────────────────── */
 #services{background:var(--bg0)}
-.srv-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.srv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 /* Rejilla de industrias: reutiliza .srv-card, pero en 4 columnas y como enlace */
 .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .ind-card{display:flex;flex-direction:column}
@@ -508,7 +508,7 @@ footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 
 
 /* ── RESPONSIVE ─────────────────────────────────── */
 @media(max-width:1100px){
-  .srv-grid{grid-template-columns:repeat(3,1fr)}
+  .srv-grid{grid-template-columns:repeat(2,1fr)}
   .ind-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){
   .stats-grid{grid-template-columns:repeat(2,1fr)}
