@@ -5,7 +5,10 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 export const metadata: Metadata = {
   title: "Chatbot de IA por WhatsApp para Inmobiliarias | Capta y Filtra Leads | Zepai",
   description: "Chatbot de IA por WhatsApp para inmobiliarias: responde en segundos, cualifica leads, envía fichas de inmuebles y agenda visitas automáticamente. Implementación a medida.",
-  alternates: { canonical: "/agencia-ia-inmobiliarias" },
+  alternates: {
+    canonical: "/agencia-ia-inmobiliarias",
+    languages: { es: "/agencia-ia-inmobiliarias", en: "/en/agencia-ia-inmobiliarias" },
+  },
   ...metaSocial(
     "Chatbot de IA por WhatsApp para Inmobiliarias | Capta y Filtra Leads | Zepai",
     "Chatbot de IA por WhatsApp para inmobiliarias: responde en segundos, cualifica leads, envía fichas de inmuebles y agenda visitas automáticamente. Implementación a medida.",

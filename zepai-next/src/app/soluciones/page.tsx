@@ -5,7 +5,10 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 export const metadata: Metadata = {
   title: "Soluciones de Automatización con IA para Empresas | Zepai",
   description: "Todas las soluciones de inteligencia artificial de Zepai: consultoría, chatbot de WhatsApp, automatización de llamadas y de procesos, y soluciones por sector para restaurantes, inmobiliarias y e-commerce.",
-  alternates: { canonical: "/soluciones" },
+  alternates: {
+    canonical: "/soluciones",
+    languages: { es: "/soluciones", en: "/en/soluciones" },
+  },
   ...metaSocial(
     "Soluciones de Automatización con IA para Empresas | Zepai",
     "Todas las soluciones de inteligencia artificial de Zepai: consultoría, chatbot de WhatsApp, automatización de llamadas y de procesos, y soluciones por sector para restaurantes, inmobiliarias y e-commerce.",

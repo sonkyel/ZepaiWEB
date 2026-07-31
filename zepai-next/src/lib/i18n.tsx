@@ -13,6 +13,8 @@
  * castellano, que es el idioma objetivo.
  */
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   createContext,
   useCallback,
@@ -24,36 +26,30 @@ import {
 
 export type Lang = "es" | "en";
 
-const STORAGE_KEY = "zepai-lang";
-
 type Ctx = { lang: Lang; setLang: (l: Lang) => void };
 
 const LangContext = createContext<Ctx>({ lang: "es", setLang: () => {} });
 
 export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("es");
+  /* El idioma lo decide la URL: /en/... es ingles y el resto castellano.
+     Asi el HTML que se genera ya sale en el idioma correcto, que es lo que
+     lee Google. Antes se renderizaba siempre en espanol y el cambio ocurria
+     despues en el navegador, de modo que /en llegaba medio traducida. */
+  const ruta = usePathname() || "/";
+  const porRuta: Lang = ruta === "/en" || ruta.startsWith("/en/") ? "en" : "es";
+  const [lang, setLangState] = useState<Lang>(porRuta);
 
   useEffect(() => {
-    try {
-      const saved = window.localStorage.getItem(STORAGE_KEY);
-      if (saved === "en" || saved === "es") setLangState(saved);
-    } catch {
-      /* localStorage bloqueado: nos quedamos en espanol */
-    }
-  }, []);
+    setLangState(porRuta);
+  }, [porRuta]);
 
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
 
-  const setLang = useCallback((l: Lang) => {
-    setLangState(l);
-    try {
-      window.localStorage.setItem(STORAGE_KEY, l);
-    } catch {
-      /* sin persistencia, pero el cambio sigue funcionando en la sesion */
-    }
-  }, []);
+  /* Se conserva por compatibilidad con el codigo heredado, pero ya no es
+     la via normal: el idioma se cambia navegando. */
+  const setLang = useCallback((l: Lang) => setLangState(l), []);
 
   return (
     <LangContext.Provider value={{ lang, setLang }}>
@@ -78,24 +74,43 @@ export function useT() {
   return useCallback((es: string, en: string) => (lang === "en" ? en : es), [lang]);
 }
 
+/* Rutas que solo existen en castellano: son textos de la ley espanola. */
+const SOLO_ES = ["/aviso-legal", "/politica-de-privacidad", "/politica-de-cookies"];
+
+/** La pareja de la ruta actual en el otro idioma. */
+export function otroIdioma(ruta: string, destino: Lang) {
+  const limpia = ruta.replace(/\/$/, "") || "/";
+  const esIngles = limpia === "/en" || limpia.startsWith("/en/");
+  const base = esIngles ? limpia.slice(3) || "/" : limpia;
+  if (SOLO_ES.includes(base)) return destino === "en" ? "/en" : base;
+  if (destino === "en") return base === "/" ? "/en" : "/en" + base;
+  return base;
+}
+
 export function LangToggle({ className = "" }: { className?: string }) {
-  const { lang, setLang } = useLang();
+  const ruta = usePathname() || "/";
+  const enIngles = ruta === "/en" || ruta.startsWith("/en/");
   return (
     <div className={`lang-toggle ${className}`.trim()}>
-      <button
-        className={`lang-btn${lang === "es" ? " active" : ""}`}
-        onClick={() => setLang("es")}
-        aria-pressed={lang === "es"}
+      {/* Enlaces, no botones: antes el idioma cambiaba en memoria y la URL
+          seguia siendo la espanola, asi que la version inglesa no se podia
+          compartir ni indexar. */}
+      <Link
+        className={`lang-btn${!enIngles ? " active" : ""}`}
+        href={otroIdioma(ruta, "es")}
+        hrefLang="es"
+        aria-current={!enIngles ? "true" : undefined}
       >
         ES
-      </button>
-      <button
-        className={`lang-btn${lang === "en" ? " active" : ""}`}
-        onClick={() => setLang("en")}
-        aria-pressed={lang === "en"}
+      </Link>
+      <Link
+        className={`lang-btn${enIngles ? " active" : ""}`}
+        href={otroIdioma(ruta, "en")}
+        hrefLang="en"
+        aria-current={enIngles ? "true" : undefined}
       >
         EN
-      </button>
+      </Link>
     </div>
   );
 }

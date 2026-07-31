@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   description:
     "Agencia y consultora de IA. Automatizamos los procesos de tu empresa con inteligencia artificial: atención al cliente, ventas, reservas, soporte y operaciones. Consultoría e implementación a medida.",
   robots: { index: true, follow: true },
+  alternates: { canonical: "/", languages: { es: "/", en: "/en" } },
   icons: { icon: "/logo.png", apple: "/apple-touch-icon.png" },
   openGraph: {
     type: "website",

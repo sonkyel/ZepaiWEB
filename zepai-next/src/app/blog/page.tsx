@@ -5,7 +5,10 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 export const metadata: Metadata = {
   title: "Blog de Automatización e IA para Negocios | Zepai",
   description: "Artículos prácticos sobre automatización de procesos e inteligencia artificial aplicada a empresas: qué funciona, qué no y por dónde empezar.",
-  alternates: { canonical: "/blog" },
+  alternates: {
+    canonical: "/blog",
+    languages: { es: "/blog", en: "/en/blog" },
+  },
   ...metaSocial(
     "Blog de Automatización e IA para Negocios | Zepai",
     "Artículos prácticos sobre automatización de procesos e inteligencia artificial aplicada a empresas: qué funciona, qué no y por dónde empezar.",

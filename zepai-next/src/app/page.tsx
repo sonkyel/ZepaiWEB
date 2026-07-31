@@ -7,7 +7,10 @@ import { HeroSection } from "@/components/ui/galaxy-interactive-hero-section";
 export const metadata: Metadata = {
   title: "Agencia y Consultora de IA | Automatización de Procesos con IA para Empresas | Zepai",
   description: "Agencia y consultora de IA. Automatizamos los procesos de tu empresa con inteligencia artificial: atención al cliente, ventas, reservas, soporte y operaciones. Consultoría e implementación a medida.",
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: { es: "/", en: "/en" },
+  },
   ...metaSocial(
     "Agencia y Consultora de IA | Automatización de Procesos con IA para Empresas | Zepai",
     "Agencia y consultora de IA. Automatizamos los procesos de tu empresa con inteligencia artificial: atención al cliente, ventas, reservas, soporte y operaciones. Consultoría e implementación a medida.",

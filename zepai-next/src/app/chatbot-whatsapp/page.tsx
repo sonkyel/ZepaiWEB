@@ -5,7 +5,10 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 export const metadata: Metadata = {
   title: "Chatbot de IA para WhatsApp | Atiende y Vende 24/7 | Zepai",
   description: "Chatbot de inteligencia artificial para WhatsApp: responde en segundos, toma reservas y pedidos, cualifica clientes y deriva a una persona cuando hace falta. API oficial.",
-  alternates: { canonical: "/chatbot-whatsapp" },
+  alternates: {
+    canonical: "/chatbot-whatsapp",
+    languages: { es: "/chatbot-whatsapp", en: "/en/chatbot-whatsapp" },
+  },
   ...metaSocial(
     "Chatbot de IA para WhatsApp | Atiende y Vende 24/7 | Zepai",
     "Chatbot de inteligencia artificial para WhatsApp: responde en segundos, toma reservas y pedidos, cualifica clientes y deriva a una persona cuando hace falta. API oficial.",

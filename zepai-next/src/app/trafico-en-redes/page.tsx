@@ -5,7 +5,10 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 export const metadata: Metadata = {
   title: "Tráfico en Redes: Crecimiento de Audiencia | Zepai",
   description: "Crecimiento de audiencia en Instagram, TikTok y X con estrategia orgánica y campañas pagadas. Hoy lo hacemos para KiiChain, una plataforma blockchain.",
-  alternates: { canonical: "/trafico-en-redes" },
+  alternates: {
+    canonical: "/trafico-en-redes",
+    languages: { es: "/trafico-en-redes", en: "/en/trafico-en-redes" },
+  },
   ...metaSocial(
     "Tráfico en Redes: Crecimiento de Audiencia | Zepai",
     "Crecimiento de audiencia en Instagram, TikTok y X con estrategia orgánica y campañas pagadas. Hoy lo hacemos para KiiChain, una plataforma blockchain.",

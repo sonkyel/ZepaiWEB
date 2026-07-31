@@ -4,12 +4,8 @@
 
 /* Espejo del idioma que guarda el contexto de React, para los textos que
    este fichero genera en tiempo de ejecucion (fechas, horas, avisos). */
-var currentLang = (function () {
-  try { return localStorage.getItem('zepai-lang') || 'es'; } catch (e) { return 'es'; }
-})();
-window.addEventListener('storage', function (e) {
-  if (e.key === 'zepai-lang' && e.newValue) currentLang = e.newValue;
-});
+var currentLang = (location.pathname === '/en' ||
+                   location.pathname.indexOf('/en/') === 0) ? 'en' : 'es';
 
 /* ── SCROLL TO SECTION ── */
 function scrollToSection(id) {

@@ -5,7 +5,10 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 export const metadata: Metadata = {
   title: "Marketing Digital para Empresas | Zepai Agency",
   description: "Estrategia de contenido, email marketing y campañas pagadas con un objetivo medible: que los seguidores se conviertan en clientes que compran.",
-  alternates: { canonical: "/marketing-digital" },
+  alternates: {
+    canonical: "/marketing-digital",
+    languages: { es: "/marketing-digital", en: "/en/marketing-digital" },
+  },
   ...metaSocial(
     "Marketing Digital para Empresas | Zepai Agency",
     "Estrategia de contenido, email marketing y campañas pagadas con un objetivo medible: que los seguidores se conviertan en clientes que compran.",

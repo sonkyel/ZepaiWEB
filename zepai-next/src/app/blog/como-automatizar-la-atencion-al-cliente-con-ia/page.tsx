@@ -5,7 +5,10 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 export const metadata: Metadata = {
   title: "Cómo automatizar la atención al cliente con IA: por dónde empezar | Zepai",
   description: "Guía práctica para automatizar la atención al cliente con inteligencia artificial: por dónde empezar, qué no debe contestar la máquina y qué medir antes de lanzar.",
-  alternates: { canonical: "/blog/como-automatizar-la-atencion-al-cliente-con-ia" },
+  alternates: {
+    canonical: "/blog/como-automatizar-la-atencion-al-cliente-con-ia",
+    languages: { es: "/blog/como-automatizar-la-atencion-al-cliente-con-ia", en: "/en/blog/como-automatizar-la-atencion-al-cliente-con-ia" },
+  },
   ...metaSocial(
     "Cómo automatizar la atención al cliente con IA: por dónde empezar | Zepai",
     "Guía práctica para automatizar la atención al cliente con inteligencia artificial: por dónde empezar, qué no debe contestar la máquina y qué medir antes de lanzar.",

@@ -5,7 +5,10 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 export const metadata: Metadata = {
   title: "Clipping de Contenido para TikTok y Reels | Zepai",
   description: "Convertimos tus vídeos largos en clips cortos listos para TikTok, Reels y Shorts. Un directo o un pódcast dan para semanas de publicaciones.",
-  alternates: { canonical: "/clipping-de-contenido" },
+  alternates: {
+    canonical: "/clipping-de-contenido",
+    languages: { es: "/clipping-de-contenido", en: "/en/clipping-de-contenido" },
+  },
   ...metaSocial(
     "Clipping de Contenido para TikTok y Reels | Zepai",
     "Convertimos tus vídeos largos en clips cortos listos para TikTok, Reels y Shorts. Un directo o un pódcast dan para semanas de publicaciones.",

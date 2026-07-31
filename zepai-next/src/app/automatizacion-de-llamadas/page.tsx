@@ -5,7 +5,10 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 export const metadata: Metadata = {
   title: "Automatización de Llamadas con IA | Agente de Voz 24/7 | Zepai",
   description: "Automatización de llamadas con IA: un agente de voz contesta el teléfono, toma reservas y citas, filtra la llamada y deriva a una persona cuando hace falta.",
-  alternates: { canonical: "/automatizacion-de-llamadas" },
+  alternates: {
+    canonical: "/automatizacion-de-llamadas",
+    languages: { es: "/automatizacion-de-llamadas", en: "/en/automatizacion-de-llamadas" },
+  },
   ...metaSocial(
     "Automatización de Llamadas con IA | Agente de Voz 24/7 | Zepai",
     "Automatización de llamadas con IA: un agente de voz contesta el teléfono, toma reservas y citas, filtra la llamada y deriva a una persona cuando hace falta.",

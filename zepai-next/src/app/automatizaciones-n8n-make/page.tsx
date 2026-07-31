@@ -5,7 +5,10 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 export const metadata: Metadata = {
   title: "Automatizaciones con n8n y Make | Procesos Internos con IA | Zepai",
   description: "Automatizaciones con n8n y Make: conectamos las herramientas que ya usas y automatizamos procesos internos completos, con IA donde aporta. Diseño, montaje y mantenimiento.",
-  alternates: { canonical: "/automatizaciones-n8n-make" },
+  alternates: {
+    canonical: "/automatizaciones-n8n-make",
+    languages: { es: "/automatizaciones-n8n-make", en: "/en/automatizaciones-n8n-make" },
+  },
   ...metaSocial(
     "Automatizaciones con n8n y Make | Procesos Internos con IA | Zepai",
     "Automatizaciones con n8n y Make: conectamos las herramientas que ya usas y automatizamos procesos internos completos, con IA donde aporta. Diseño, montaje y mantenimiento.",
