@@ -51,7 +51,7 @@ const HTML = `<section class="sp-hero">
       <p>Última actualización: julio de 2026.</p>
 
       <h2 class="sp-h2">1. Quién trata tus datos</h2>
-      <p>El responsable del tratamiento es <strong>[PENDIENTE — razón social o nombre y apellidos]</strong>, con NIF <strong>[PENDIENTE]</strong> y domicilio en <strong>[PENDIENTE]</strong>, que opera bajo el nombre comercial Zepai Agency.</p>
+      <p>El responsable del tratamiento es <strong>Zepai Agency</strong>, con domicilio en España. La sociedad está en proceso de constitución: la razón social, el NIF y el domicilio completos se publicarán aquí y en el <a href="/aviso-legal">Aviso Legal</a> en cuanto se complete el trámite.</p>
       <p>Para cualquier asunto relacionado con tus datos: <a href="mailto:info@zepaiagency.com">info@zepaiagency.com</a>.</p>
 
       <h2 class="sp-h2">2. Qué datos recogemos</h2>

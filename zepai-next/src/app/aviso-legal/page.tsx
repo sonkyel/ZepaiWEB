@@ -53,14 +53,12 @@ const HTML = `<section class="sp-hero">
       <h2 class="sp-h2">1. Datos del prestador del servicio</h2>
       <p>En cumplimiento del artículo 10 de la Ley 34/2002 de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se hacen constar los siguientes datos:</p>
       <ul class="sp-list">
-        <li><strong>Titular:</strong> [PENDIENTE — razón social o nombre y apellidos]</li>
-        <li><strong>NIF / CIF:</strong> [PENDIENTE]</li>
-        <li><strong>Domicilio:</strong> [PENDIENTE]</li>
-        <li><strong>Correo electrónico:</strong> <a href="mailto:info@zepaiagency.com">info@zepaiagency.com</a></li>
-        <li><strong>Teléfono:</strong> <a href="tel:+34604140997">+34 604 14 09 97</a></li>
         <li><strong>Nombre comercial:</strong> Zepai Agency</li>
         <li><strong>Sitio web:</strong> zepaiagency.com</li>
+        <li><strong>Correo electrónico:</strong> <a href="mailto:info@zepaiagency.com">info@zepaiagency.com</a></li>
+        <li><strong>Teléfono:</strong> <a href="tel:+34604140997">+34 604 14 09 97</a></li>
       </ul>
+      <p>Zepai Agency se encuentra en proceso de constitución. En cuanto se complete, se publicarán en este mismo apartado la razón social, el NIF y el domicilio, como exige el artículo 10 de la LSSI-CE. Mientras tanto, los canales de contacto indicados arriba son los oficiales y están operativos.</p>
       <p>Actividad: agencia y consultora de inteligencia artificial. Diseño e implantación de agentes de IA para atención al cliente, automatización de procesos y servicios de marketing digital.</p>
 
       <h2 class="sp-h2">2. Condiciones de uso</h2>
