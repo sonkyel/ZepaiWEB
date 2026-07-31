@@ -46,7 +46,7 @@ export function Footer() {
               <div className="f-logo-badge">
                 <Link href="/">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/logo.png" alt="ZEPAI Agency" className="logo-footer" />
+                  <img src="/logo.png" alt="ZEPAI Agency" className="logo-footer" width={666} height={375} />
                 </Link>
               </div>
             </div>

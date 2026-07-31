@@ -31,7 +31,7 @@ export function Nav() {
         <div className="nav-in">
           <Link className="nav-logo" href="/" aria-label={t("Zepai Agency — Inicio", "Zepai Agency — Home")}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="ZEPAI Agency" className="logo-nav" />
+            <img src="/logo.png" alt="ZEPAI Agency" className="logo-nav" width={666} height={375} />
           </Link>
 
           <ul className="nav-links">
