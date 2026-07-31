@@ -54,8 +54,8 @@ function HeroAbajo() {
     <div className="galaxy-abajo">
       <p className="galaxy-sub">
         <T
-          es="Somos una agencia y consultora de inteligencia artificial: automatizamos la atención al cliente, las ventas y las reservas de tu empresa."
-          en="We are an artificial intelligence agency and consultancy: we automate your company's customer service, sales and bookings."
+          es="Automatizamos los procesos de tu empresa con inteligencia artificial: atención al cliente, ventas, reservas y las tareas que hoy os quitan horas."
+          en="We automate your company's processes with artificial intelligence: customer service, sales, bookings and the tasks that eat your hours today."
         />
       </p>
 

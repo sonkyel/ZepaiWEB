@@ -7,7 +7,7 @@ import { HeroSection } from "@/components/ui/galaxy-interactive-hero-section";
    si cambia el castellano, se vuelve a lanzar el guion y esta se rehace. */
 
 const TITULO = "AI Agency & Consultancy | Business Process Automation | Zepai";
-const DESC = "AI agency and consultancy. We automate your company's customer service, sales, bookings and operations with artificial intelligence.";
+const DESC = "We automate your company's processes with artificial intelligence: customer service, sales, bookings, support and operations. AI agency and consultancy.";
 
 export const metadata: Metadata = {
   title: TITULO,
