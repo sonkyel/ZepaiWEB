@@ -85,7 +85,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   align-items: center;
-  gap: 40px;
+  gap:var(--sp-6);
 }
 
 .galaxy-mascot {
@@ -125,11 +125,11 @@
 .galaxy-badge {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap:var(--sp-2);
   padding: 7px 15px;
-  margin-bottom: 22px;
-  border-radius: 100px;
-  font-size: 11px;
+  margin-bottom:var(--sp-4);
+  border-radius:var(--r-pill);
+  font-size:var(--fs-0);
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -153,12 +153,12 @@
 }
 
 .galaxy-title {
-  font-size: clamp(34px, 5vw, 68px);
+  font-size:var(--fs-7);
   font-weight: 900;
   line-height: 1.08;
   letter-spacing: -2px;
   color: #fff;
-  margin-bottom: 22px;
+  margin-bottom:var(--sp-4);
   text-shadow: 0 2px 26px rgba(0, 0, 0, 0.55);
 }
 /* Era #C4B5FD -> #8B5CF6 -> #6366F1: el tramo final caía a 4,8 sobre la base
@@ -169,7 +169,7 @@
 }
 
 .galaxy-sub {
-  font-size: 17px;
+  font-size:var(--fs-4);
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.92);
   max-width: 540px;
@@ -179,7 +179,7 @@
 .galaxy-actions {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap:var(--sp-4);
   flex-wrap: wrap;
 }
 /* El degradado arranca en #7C3AED y no en #8B5CF6: sobre el morado de marca
@@ -187,10 +187,10 @@
 .galaxy-cta {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap:var(--sp-2);
   padding: 15px 30px;
-  border-radius: 100px;
-  font-size: 15px;
+  border-radius:var(--r-pill);
+  font-size:var(--fs-3);
   font-weight: 700;
   color: #fff;
   background: var(--grad-btn);
@@ -203,7 +203,7 @@
   box-shadow: 0 10px 26px rgba(79, 70, 229, 0.40);
 }
 .galaxy-link {
-  font-size: 14px;
+  font-size:var(--fs-2);
   font-weight: 600;
   color: rgba(255, 255, 255, 0.94);
   border-bottom: 1px solid rgba(255, 255, 255, 0.42);
@@ -222,24 +222,24 @@
 }
 /* Estaba al 42%: daba 4,0 y ya fallaba sin escena de por medio. */
 .galaxy-trust-label {
-  font-size: 11px;
+  font-size:var(--fs-0);
   font-weight: 600;
   letter-spacing: 1.6px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 14px;
+  margin-bottom:var(--sp-3);
 }
 .galaxy-channels {
   display: flex;
   flex-wrap: wrap;
-  gap: 9px;
+  gap:var(--sp-2);
 }
 .galaxy-channel {
-  font-size: 13px;
+  font-size:var(--fs-2);
   font-weight: 500;
   color: rgba(255, 255, 255, 0.94);
   padding: 7px 14px;
-  border-radius: 100px;
+  border-radius:var(--r-pill);
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.14);
   backdrop-filter: blur(6px);
@@ -252,7 +252,7 @@
     padding-top: calc(var(--nav-h) + 24px);
     padding-bottom: 56px;
   }
-  .galaxy-grid { grid-template-columns: 1fr; gap: 8px; }
+  .galaxy-grid { grid-template-columns: 1fr; gap:var(--sp-2); }
   .galaxy-copy { max-width: 100%; padding: 24px 0; text-align: center; }
   .galaxy-sub { margin-left: auto; margin-right: auto; }
   .galaxy-actions, .galaxy-channels { justify-content: center; }
@@ -287,7 +287,7 @@
   align-items: center;
   justify-content: center;
 }
-.ctab-btn { gap: 8px; }
+.ctab-btn { gap:var(--sp-2); }
 .sched-check .ico { width: 13px; height: 13px; }
 /* El paso numerado del proceso: el icono va centrado dentro del círculo */
 .step-node .ico { width: 22px; height: 22px; }
@@ -404,13 +404,13 @@
 .srv-card,
 .sp-card,
 .test-card,
-.stat-card { border-radius: 18px; }
+.stat-card { border-radius:var(--r-lg); }
 .faq-item,
 .chat,
-.contact-form { border-radius: 20px; }
-.f-ci,.c-ico{ border-radius: 12px; }
+.contact-form { border-radius:var(--r-lg); }
+.f-ci,.c-ico{ border-radius:var(--r-md); }
 .date-btn,
-.time-btn { border-radius: 10px; }
+.time-btn { border-radius:var(--r-sm); }
 
 @media (prefers-reduced-motion: reduce) {
   .btn-p:active,
