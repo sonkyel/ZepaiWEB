@@ -22,9 +22,10 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { T } from "@/lib/i18n";
 
-function HeroContent() {
+/* La etiqueta y el titular. En movil, todo lo que va ANTES del robot. */
+function HeroArriba() {
   return (
-    <div className="galaxy-copy">
+    <div className="galaxy-arriba">
       <div className="galaxy-badge">
         <span className="galaxy-badge-dot" />
         <T es="Automatización de Procesos con IA" en="AI Process Automation" />
@@ -43,7 +44,14 @@ function HeroContent() {
           />
         </span>
       </h1>
+    </div>
+  );
+}
 
+/* Lo que en movil va DESPUES del robot. */
+function HeroAbajo() {
+  return (
+    <div className="galaxy-abajo">
       <p className="galaxy-sub">
         <T
           es="Somos una agencia y consultora de inteligencia artificial: automatizamos la atención al cliente, las ventas y las reservas de tu empresa."
@@ -154,10 +162,8 @@ export function HeroSection() {
 
       <div className="galaxy-scrim" aria-hidden="true" />
 
-      <div className="container galaxy-grid">
-        <div className="galaxy-inner" ref={contentRef}>
-          <HeroContent />
-        </div>
+      <div className="container galaxy-grid" ref={contentRef}>
+        <HeroArriba />
 
         <div className="galaxy-mascot" ref={robotRef}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -169,6 +175,8 @@ export function HeroSection() {
             decoding="async"
           />
         </div>
+
+        <HeroAbajo />
       </div>
     </section>
   );

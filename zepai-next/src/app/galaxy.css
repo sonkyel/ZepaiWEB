@@ -83,10 +83,18 @@
   z-index: 3;
   width: 100%;
   display: grid;
+  /* Areas para poder recolocar en movil sin tocar el orden del documento */
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  grid-template-areas:
+    "arriba mascota"
+    "abajo  mascota";
   align-items: center;
-  gap:var(--sp-6);
+  column-gap: var(--sp-6);
+  transition: opacity 0.15s linear;
 }
+.galaxy-arriba { grid-area: arriba; align-self: end; }
+.galaxy-abajo  { grid-area: abajo;  align-self: start; }
+.galaxy-mascot { grid-area: mascota; }
 
 .galaxy-mascot {
   display: flex;
@@ -110,16 +118,11 @@
 }
 
 /* ── Contenido ───────────────────────────────────────────── */
-.galaxy-inner {
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  transition: opacity 0.15s linear;
-}
-.galaxy-copy {
+/* La medida de lectura la marcan las dos piezas, no un contenedor comun */
+.galaxy-arriba,
+.galaxy-abajo {
   max-width: 620px;
   text-align: left;
-  padding: 48px 0;
 }
 
 .galaxy-badge {
@@ -253,7 +256,6 @@
     padding-bottom: 56px;
   }
   .galaxy-grid { grid-template-columns: 1fr; gap:var(--sp-2); }
-  .galaxy-copy { max-width: 100%; padding: 24px 0; text-align: center; }
   .galaxy-sub { margin-left: auto; margin-right: auto; }
   .galaxy-actions, .galaxy-channels { justify-content: center; }
   /* En móvil la escena de Spline no se descarga: la mascota es lo que
@@ -263,7 +265,6 @@
 @media (prefers-reduced-motion: reduce) {
   .galaxy-badge-dot,
   .galaxy-mascot img { animation: none !important; }
-  .galaxy-inner,
   .galaxy-mascot { transition: none !important; }}
 
 /* ── ICONOS ──────────────────────────────────────────────────
@@ -434,8 +435,32 @@
     padding: 6px 12px;
   }
   .galaxy-sub { font-size: 15px; line-height: 1.65; }
-  .galaxy-copy { padding: 16px 0 8px; }
   /* La mascota se comia media pantalla en vertical */
   .galaxy-mascot img { height: clamp(200px, 30vh, 280px); }
   .galaxy-channel { font-size: 11px; padding: 5px 10px; }
+}
+
+/* ── HERO EN VERTICAL ────────────────────────────────────────
+   Una columna, todo centrado y el robot justo debajo del
+   titular. Con una medida de 330 px, alinear a la izquierda
+   deja un borde derecho distinto en cada linea; centrado se
+   lee mejor y el personaje queda de protagonista.
+   ───────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  #hero .galaxy-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "arriba"
+      "mascota"
+      "abajo";
+    row-gap: var(--sp-3);
+    text-align: center;
+    justify-items: center;
+  }
+  .galaxy-arriba,
+  .galaxy-abajo { align-self: auto; width: 100%; }
+  .galaxy-sub { margin-left: auto; margin-right: auto; }
+  .galaxy-actions,
+  .galaxy-channels { justify-content: center; }
+  .galaxy-mascot { justify-content: center; }
 }
