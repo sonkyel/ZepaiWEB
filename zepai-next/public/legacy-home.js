@@ -81,9 +81,49 @@ if (statsEl) counterObs.observe(statsEl);
 const EMAILJS_PUBLIC_KEY  = 'GGgDb2RkPqUEnDFgt';
 const EMAILJS_SERVICE_ID  = 'service_jyombda';
 const EMAILJS_TEMPLATE_ID = 'template_e96cb38';
-const EMAILJS_READY = (typeof emailjs !== 'undefined') &&
+const EMAILJS_CONFIGURADO =
   EMAILJS_PUBLIC_KEY !== 'TU_PUBLIC_KEY' && EMAILJS_SERVICE_ID !== 'TU_SERVICE_ID' && EMAILJS_TEMPLATE_ID !== 'TU_TEMPLATE_ID';
-if (EMAILJS_READY) emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+let _emailjsIniciado = false;
+let _emailjsCargando = null;
+
+/* Devuelve una promesa que resuelve a true cuando EmailJS esta listo.
+
+   OJO: esto NO puede resolverse al cargar el fichero. El SDK se inyecta
+   cuando el visitante se acerca al formulario, y este script se carga
+   antes; comprobarlo una sola vez al principio dejaba el envio desactivado
+   para siempre. */
+function emailjsListo() {
+  if (!EMAILJS_CONFIGURADO) return Promise.resolve(false);
+  if (typeof emailjs !== 'undefined') {
+    if (!_emailjsIniciado) {
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+      _emailjsIniciado = true;
+    }
+    return Promise.resolve(true);
+  }
+  // Aun no ha llegado: se pide ahora mismo y se espera.
+  if (!_emailjsCargando) {
+    _emailjsCargando = new Promise(resolve => {
+      const sc = document.createElement('script');
+      sc.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+      sc.onload = () => resolve(true);
+      sc.onerror = () => resolve(false);
+      document.head.appendChild(sc);
+      setTimeout(() => resolve(typeof emailjs !== 'undefined'), 6000);
+    });
+  }
+  /* No se vuelve a llamar a emailjsListo() aqui: si el script falla,
+     _emailjsCargando ya esta puesto y entrariamos otra vez por esta misma
+     rama, en bucle. Se resuelve en el sitio. */
+  return _emailjsCargando.then(() => {
+    if (typeof emailjs === 'undefined') return false;
+    if (!_emailjsIniciado) {
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+      _emailjsIniciado = true;
+    }
+    return true;
+  });
+}
 
 function showToast(ok, title, msg) {
   const t = document.getElementById('formToast');
@@ -100,7 +140,8 @@ function showToast(ok, title, msg) {
 /* Envía la notificación: usa EmailJS si está configurado (llega directo a tu correo,
    sin depender del cliente de correo del visitante); si no, recurre a mailto: */
 function sendNotification(subject, body, formEl, btnEl, mailtoFallback, okMsg, isEs) {
-  if (EMAILJS_READY) {
+  emailjsListo().then(listo => {
+  if (listo) {
     const original = btnEl.innerHTML;
     btnEl.disabled = true;
     btnEl.style.opacity = '.6';
@@ -129,10 +170,12 @@ function sendNotification(subject, body, formEl, btnEl, mailtoFallback, okMsg, i
       btnEl.innerHTML = original;
     });
   } else {
+    /* Ultimo recurso, no el camino normal: solo si el SDK no se pudo cargar. */
     showToast(true, isEs ? 'Abriendo tu correo…' : 'Opening your email…',
       isEs ? 'Confirma el envío desde tu app de correo para que nos llegue.' : 'Please send it from your email app so it reaches us.');
     window.location.href = mailtoFallback;
   }
+  });
 }
 
 /* ── SCHEDULE SUBMIT ── */
