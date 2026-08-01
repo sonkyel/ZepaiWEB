@@ -43,9 +43,10 @@ export const FOOTER_INDUSTRIAS = [
 
 export const FOOTER_EMPRESA = [
   { href: "/", es: "Inicio", en: "Home" },
+  { href: "/#about", es: "Quiénes somos", en: "Who we are" },
   { href: "/como-trabajamos", es: "Cómo trabajamos", en: "How we work" },
   { href: "/blog", es: "Blog", en: "Blog" },
-  { href: "/#results", es: "Resultados y clientes", en: "Results and clients" },
+  { href: "/#results", es: "Resultados", en: "Results" },
   { href: "/#contact", es: "Contacto", en: "Contact" },
 ] as const;
 
@@ -90,20 +91,10 @@ export const ORGANIZATION_LD = {
         jobTitle: "Fundador",
         image: `${SITE.url}/equipo/fundador.webp`,
         worksFor: { "@id": `${SITE.url}/#organization` },
-        alumniOf: {
-          "@type": "CollegeOrUniversity",
-          name: "Universidad Europea de Madrid",
-        },
-        hasCredential: {
-          "@type": "EducationalOccupationalCredential",
-          credentialCategory: "degree",
-          name: "Grado en Business and Analytics",
-          educationalLevel: "Bachelor",
-          recognizedBy: {
-            "@type": "CollegeOrUniversity",
-            name: "Universidad Europea de Madrid",
-          },
-        },
+        // Sin alumniOf ni hasCredential: la titulacion ya no aparece en
+        // ninguna pagina, y Google pide que el marcado describa lo que el
+        // visitante ve. Una credencial solo en los datos estructurados es
+        // justo lo que penaliza.
       },
       sameAs: [SITE.instagram],
       contactPoint: {

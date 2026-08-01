@@ -4,8 +4,8 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 /* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
    si cambia el castellano, se vuelve a lanzar el guion y esta se rehace. */
 
-const TITULO = "Digital Marketing for Companies | Zepai";
-const DESC = "Content strategy, email marketing and paid campaigns with one measurable goal: turning followers into customers who buy.";
+const TITULO = "Digital marketing measured in customers, not followers | Zepai";
+const DESC = "Content, email and paid campaigns pulling in the same direction: turning discovery into purchase.";
 
 export const metadata: Metadata = {
   title: TITULO,

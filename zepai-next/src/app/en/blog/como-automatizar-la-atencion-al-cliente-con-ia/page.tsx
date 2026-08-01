@@ -4,8 +4,8 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 /* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
    si cambia el castellano, se vuelve a lanzar el guion y esta se rehace. */
 
-const TITULO = "How to Automate Customer Service with AI | Zepai";
-const DESC = "Where to start when automating customer service with artificial intelligence: which enquiries are worth it, what to leave to a person and how to measure it.";
+const TITULO = "How to automate customer service with AI: where to start | Zepai";
+const DESC = "";
 
 export const metadata: Metadata = {
   title: TITULO,

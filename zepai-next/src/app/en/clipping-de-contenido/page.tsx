@@ -4,8 +4,8 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 /* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
    si cambia el castellano, se vuelve a lanzar el guion y esta se rehace. */
 
-const TITULO = "Content Clipping for TikTok and Reels | Zepai";
-const DESC = "We turn your long videos into short clips ready for TikTok, Reels and Shorts. One livestream or podcast yields weeks of posts.";
+const TITULO = "One long video is twenty posts you are not using | Zepai";
+const DESC = "We take what you have already recorded — a livestream, a podcast, a training session — and turn it into short clips ready to publish.";
 
 export const metadata: Metadata = {
   title: TITULO,

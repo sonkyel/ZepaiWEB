@@ -4,8 +4,8 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 /* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
    si cambia el castellano, se vuelve a lanzar el guion y esta se rehace. */
 
-const TITULO = "AI Agents for Business | Chat and Voice 24/7 | Zepai";
-const DESC = "Artificial intelligence agents that serve your customers by chat and by phone around the clock, with a natural voice, handing over to a person when it matters.";
+const TITULO = "AI agents that serve your customers 24/7 | Zepai";
+const DESC = "Two shapes of the same job: one answers in writing, the other picks up the phone with a natural voice. Both use your real business information.";
 
 export const metadata: Metadata = {
   title: TITULO,

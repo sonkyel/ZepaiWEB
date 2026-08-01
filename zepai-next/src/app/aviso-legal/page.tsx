@@ -67,7 +67,7 @@ const HTML = `<section class="sp-hero">
 
       <h2 class="sp-h2">3. Propiedad intelectual e industrial</h2>
       <p>Los textos, el diseño, el código, las ilustraciones y la marca Zepai Agency son titularidad del prestador o se usan con autorización. No se permite su reproducción, distribución ni transformación sin permiso escrito, salvo el uso privado.</p>
-      <p>Las marcas de terceros que aparecen citadas —WhatsApp, Instagram, Meta, TikTok, Make, n8n y cualesquiera otras— pertenecen a sus respectivos titulares y se mencionan únicamente a efectos identificativos y descriptivos. Su mención no implica asociación, patrocinio ni certificación por parte de esas empresas.</p>
+      <p>Las marcas de terceros que aparecen citadas —WhatsApp, Instagram, Meta, TikTok, Make, n8n y cualesquiera otras— pertenecen a sus respectivos titulares y se mencionan únicamente a efectos identificativos y descriptivos. Salvo la condición de Official Meta Partner, que Meta Platforms nos ha reconocido expresamente, la mención de cualquier otra marca no implica asociación, patrocinio ni certificación por parte de esas empresas.</p>
 
       <h2 class="sp-h2">4. Enlaces a otros sitios</h2>
       <p>Esta web enlaza a sitios de terceros, como el de nuestros clientes o nuestro perfil de Instagram. No respondemos de sus contenidos ni de sus políticas de privacidad: al seguir esos enlaces sales de nuestro ámbito de responsabilidad.</p>

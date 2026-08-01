@@ -404,7 +404,6 @@
    más suave en los contenedores. */
 .srv-card,
 .sp-card,
-.test-card,
 .stat-card { border-radius:var(--r-lg); }
 .faq-item,
 .chat,

@@ -30,8 +30,11 @@ URL = "https://zepaiagency.com"
 # componente React, no en el HTML heredado.
 HOME = dict(
     titulo="AI Agency & Consultancy | Business Process Automation | Zepai",
-    desc=("AI agency and consultancy. We automate your company's customer service, "
-          "sales, bookings and operations with artificial intelligence."),
+    # Ojo: esto es la fuente de la verdad de /en. Si se corrige a mano en
+    # src/app/en/page.tsx, el siguiente lanzamiento del guion lo revierte.
+    desc=("We automate your company's processes with artificial intelligence: "
+          "customer service, sales, bookings, support and operations. "
+          "AI agency and consultancy."),
 )
 
 SALTAR = {"en", "politica-de-cookies", "aviso-legal", "politica-de-privacidad"}

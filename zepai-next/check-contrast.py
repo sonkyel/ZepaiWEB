@@ -77,12 +77,18 @@ TEXTOS_HERO = [
 TEXTOS_SECCION = [
     ("#results .sec-title", "#FFFFFF", 1.00, True),
     ("#results .sec-sub", "#FFFFFF", 0.78, False),
-    ("#results .stat-num", "#C4B5FD", 1.00, True),
+    ("#results .stat-num", "#A855F7", 1.00, True),   # --cyan
     ("#results .stat-lbl", "#FFFFFF", 0.74, False),
-    ("#results .test-quote", "#FFFFFF", 0.86, False),
-    ("#results .t-name", "#FFFFFF", 1.00, False),
-    ("#results .t-role", "#FFFFFF", 0.68, False),
-    ("#results .kii-tag", "#DDD1FF", 1.00, False),
+    # Quienes somos. La tarjeta del fundador va sobre --bg1 (#0E0C16), que es
+    # mas oscuro que el fondo de seccion que se usa aqui: medir sobre el fondo
+    # de seccion es el caso peor, asi que vale para las dos.
+    ("#about .sec-title", "#FFFFFF", 1.00, True),
+    ("#about .sec-sub", "#FFFFFF", 0.56, False),
+    ("#about .founder-name", "#FFFFFF", 1.00, False),
+    ("#about .founder-role", "#C084FC", 1.00, False),  # --purple
+    ("#about .founder-cred", "#FFFFFF", 0.56, False),
+    ("#about .founder-cred--verif", "#FFFFFF", 0.78, False),
+    ("#about .founder-link", "#FFFFFF", 0.78, False),
     ("#contact .section-label", "#DDD1FF", 1.00, False),
     ("#contact h2", "#FFFFFF", 1.00, True),
     ("#contact p", "#FFFFFF", 0.80, False),

@@ -149,35 +149,6 @@ body::after{
 @media(max-width:900px){#contact .sec-robot{display:none}}
 @media(max-width:600px){.sec-robot{display:none}}
 
-/* ── LIVE / KIICHAIN CARD ── */
-#results .test-card.live{
-  border-color:var(--border-accent);
-  background:linear-gradient(135deg,#100821 60%,#061530);
-  grid-column:1/-1;
-}
-.live-badge{
-  display:inline-flex;align-items:center;gap:var(--sp-2);
-  background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);
-  color:#EF4444;font-size:var(--fs-0);font-weight:800;
-  padding:5px 13px;border-radius:var(--r-pill);margin-bottom:var(--sp-3);
-  letter-spacing:1.2px;text-transform:uppercase;
-}
-.live-dot{width:7px;height:7px;background:#EF4444;border-radius:50%;animation:pdot 1.1s infinite;flex-shrink:0}
-.kii-link{
-  display:inline-flex;align-items:center;gap:var(--sp-2);
-  color:var(--cyan);font-size:var(--fs-2);font-weight:600;
-  border-bottom:1px solid currentColor;padding-bottom:2px;
-  transition:opacity .2s;
-}
-.kii-link:hover{opacity:.75}
-.test-card.live .test-quote{font-style:normal;font-size:var(--fs-3);line-height:1.7}
-.kii-meta{display:flex;align-items:center;gap:var(--sp-4);margin-top:6px;flex-wrap:wrap}
-.kii-tag{
-  font-size:var(--fs-0);font-weight:600;color:var(--t3);
-  background:rgba(255,255,255,.05);border:1px solid var(--borderS);
-  padding:3px 10px;border-radius:var(--r-pill);
-}
-
 /* ── NAV ────────────────────────────────────────── */
 /* Por ID, no por elemento: la miga de pan de las subpaginas tambien es un
    <nav> y heredaba position:fixed, asi que aparecia clavada en la esquina
@@ -241,7 +212,6 @@ body::after{
 }
 /* Hero Avatar (central 3D robot — between title and subtitle) */
 
-@keyframes pdot{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(239,68,68,.5)}50%{opacity:.7;box-shadow:0 0 0 7px rgba(239,68,68,0)}}
 
 /* Hero Visual */
 
@@ -264,8 +234,9 @@ section + section{border-top:1px solid var(--borderS)}
 .sec-hdr{text-align:center;max-width:640px;margin:0 auto 60px}
 .sec-title{font-size:var(--fs-6);font-weight:900;line-height:1.15;letter-spacing:-1px;margin-bottom:var(--sp-3)}
 .sec-sub{font-size:var(--fs-3);color:var(--t3);line-height:1.75}
-/* Subtitulo interno de la seccion fusionada Resultados + Testimonios */
-.sec-sub-title{font-size:var(--fs-5);font-weight:800;letter-spacing:-.6px;text-align:center;margin:64px 0 32px;color:var(--t1)}
+/* Ancla de #testimonials. La seccion ya no existe y ninguna pagina enlaza
+   ahi; se conserva porque la URL con ancla circula fuera desde antes y sin
+   el ancla el salto se pierde al principio de la pagina. */
 .test-anchor{position:relative;top:-100px;height:0;visibility:hidden}
 
 /* ── SERVICES ───────────────────────────────────── */
@@ -352,33 +323,10 @@ section + section{border-top:1px solid var(--borderS)}
 }
 .stat-lbl{font-size:var(--fs-2);color:var(--t3);font-weight:500}
 
-/* ── TESTIMONIALS ───────────────────────────────── */
-#testimonials{background:var(--bg1)}
-.test-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-4)}
-.test-card{
-  background:var(--bg2);border:1px solid var(--borderS);
-  border-radius:var(--r-md);padding:30px;transition:all .3s;
-  position:relative;overflow:hidden;
-}
-.test-card::before{
-  content:'"';position:absolute;top:12px;right:20px;
-  font-size:80px;color:rgba(255,255,255,.05);font-weight:900;line-height:1;
-}
-.test-card:hover{border-color:var(--border);transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.4)}
-
-.test-quote{font-size:var(--fs-3);color:var(--t2);line-height:1.75;margin-bottom:var(--sp-4);font-style:italic}
-
-.test-author{
-  display:flex;align-items:center;gap:var(--sp-3);
-  padding-top:18px;border-top:1px solid var(--borderS);
-}
-.tav{
-  width:44px;height:44px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:var(--fs-3);font-weight:800;color:var(--t1);flex-shrink:0;
-}
-.t-name{font-size:var(--fs-2);font-weight:700}
-.t-role{font-size:var(--fs-1);color:var(--t3);margin-top:2px}
+/* Las cifras eran la mitad de arriba de una seccion que tambien llevaba
+   testimonios. Sin ellos, el margen inferior de .stats-grid dejaba un hueco
+   colgando. */
+#results .stats-grid{margin-bottom:0}
 
 /* ── FAQ ────────────────────────────────────────── */
 #faq{background:var(--bg0)}
@@ -530,7 +478,6 @@ footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 
   .ind-grid{grid-template-columns:1fr 1fr}
   .steps-wrap{grid-template-columns:1fr;gap:var(--sp-6)}
   .steps-wrap::before{display:none}
-  .test-grid{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .footer-bot{flex-direction:column;text-align:center}
@@ -557,8 +504,6 @@ footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 
   /* Casco/avatar más pequeño */
     /* FAQ preguntas texto más pequeño */
   .faq-q{font-size:var(--fs-2);padding:16px 18px}
-  /* Testimonios: quote más pequeño */
-  .test-quote{font-size:var(--fs-2)}
   /* Stat numbers más pequeños */
     /* Chips de contacto */
   .ctab-header{flex-direction:column}
@@ -814,7 +759,9 @@ button:focus-visible,a:focus-visible{outline-offset:4px}
   aspect-ratio:4/5;object-fit:cover;
 }
 .founder-name{font-size:var(--fs-5);font-weight:800;color:var(--t1);margin:0 0 4px;line-height:1.15}
-.founder-role{font-size:var(--fs-2);color:var(--cyan);font-weight:600;margin-bottom:var(--sp-3)}
+/* --purple y no --cyan: en texto pequeno el violeta de marca se queda en
+   4,3:1 sobre el fondo de seccion y no llega a AA. */
+.founder-role{font-size:var(--fs-2);color:var(--purple);font-weight:600;margin-bottom:var(--sp-3)}
 /* Dos enlaces en fila: el caso del cliente y el perfil. Con flex-wrap
    porque en movil no caben en una linea. */
 .founder-links{display:flex;flex-wrap:wrap;gap:var(--sp-3) var(--sp-5);margin-top:20px}
@@ -824,21 +771,40 @@ button:focus-visible,a:focus-visible{outline-offset:4px}
   border-bottom:1px solid currentColor;padding-bottom:2px;transition:color .2s;
 }
 .founder-link:hover{color:var(--t1)}
-/* Hueco para credenciales de verdad -- partner de Meta o de Make, titulacion.
-   Sellos en gris, sin caja de color: una credencial que necesita fondo
-   llamativo para notarse es que no vale mucho. Hoy no se usa: lo que hay son
-   cursos abiertos sin examen verificable, y en fila restan al lado de un
-   cliente real. */
+/* Credenciales. Sellos en gris, sin caja de color: una credencial que
+   necesita fondo llamativo para notarse es que no vale mucho. Solo entra
+   aqui lo que otra organizacion avala y se puede comprobar -- no cursos
+   abiertos sin examen. */
 .founder-creds{display:flex;flex-wrap:wrap;gap:var(--sp-2);margin:14px 0 0}
+/* Sin display:flex y con max-width: la credencial del grado es larga, y en
+   flex una caja no encoge por debajo de su contenido -- la pildora se salia
+   del movil y arrastraba toda la pagina a lo ancho. En linea, el texto
+   simplemente parte. */
 .founder-cred{
-  font-size:var(--fs-1);color:var(--t3);
+  font-size:var(--fs-1);color:var(--t3);max-width:100%;
   border:1px solid var(--borderS);border-radius:var(--r-sm);padding:4px 10px;
 }
+/* La verificada se distingue por el icono y por un texto algo mas claro,
+   no por un color de marca: el sello no debe pesar mas que el nombre.
+   Aqui si cabe el flex: el texto es corto y no puede desbordar. */
+.founder-cred--verif{
+  display:inline-flex;align-items:center;gap:6px;
+  color:var(--t2);border-color:var(--border);
+}
+.founder-cred--verif .ico{color:var(--cyan);flex-shrink:0}
 @media(max-width:720px){
   .founder{grid-template-columns:1fr;gap:var(--sp-4);padding:22px;text-align:center}
   .founder-foto{max-width:200px;margin:0 auto}
   .founder-txt p{margin-left:auto;margin-right:auto}
+  .founder-creds{justify-content:center}
   .founder-link{justify-content:center}}
+
+/* ── QUIÉNES SOMOS (home) ────────────────────────────────────
+   Reutiliza el bloque del fundador de /como-trabajamos. Alli cuelga de un
+   texto y necesita separacion propia; aqui va en su seccion, debajo de una
+   cabecera que ya deja 60px, y el margen de 72 sobraba. */
+#about{background:var(--bg0)}
+#about .founder{margin-top:0}
 
 /* ── MANIFIESTO "CÓMO TRABAJAMOS" ────────────────────────────
    Formato editorial: numero grande + etiqueta + titular + parrafo.
