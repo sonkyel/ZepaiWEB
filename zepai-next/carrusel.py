@@ -136,10 +136,15 @@ def pieza(img, nombre, alto_obj=360, pos=("derecha", "abajo")):
     for n in candidatas:
         # Primero las piezas propias del carrusel, sin optimizar y con la
         # extension que traiga el generador; despues, las que ya usa la web.
-        for ruta in ([os.path.join(PIEZAS, n + e)
-                      for e in (".png", ".jpg", ".jpeg", ".webp")] +
-                     [os.path.join(BASE, "public", c, n + ".webp")
-                      for c in ("tarjetas", "hero", "paginas", "pasos")]):
+        # Se busca en piezas/ y en cada subcarpeta: hay una por carrusel para
+        # que dejar 28 imagenes no sea un monton indistinguible.
+        propias = [os.path.join(d, n + e)
+                   for d in ([PIEZAS] + sorted(
+                       os.path.join(PIEZAS, x) for x in os.listdir(PIEZAS)
+                       if os.path.isdir(os.path.join(PIEZAS, x))))
+                   for e in (".png", ".jpg", ".jpeg", ".webp")]
+        for ruta in propias + [os.path.join(BASE, "public", c, n + ".webp")
+                               for c in ("tarjetas", "hero", "paginas", "pasos")]:
             if os.path.exists(ruta):
                 break
         else:
