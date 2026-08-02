@@ -31,6 +31,9 @@ from PIL import Image, ImageDraw, ImageFont
 BASE = os.path.dirname(os.path.abspath(__file__))
 FUENTES = os.path.join(BASE, "_fuentes", "tipografia")
 SALIDA = os.path.join(BASE, "_fuentes", "carruseles")
+# Ilustraciones propias de los carruseles. Van fuera de public/ a proposito:
+# ahi solo entra lo optimizado que sirve la web, y estas pesan 1 MB.
+PIEZAS = os.path.join(SALIDA, "piezas")
 
 # 4:5 es el formato que Instagram muestra mas grande en el feed
 ANCHO, ALTO = 1080, 1350
@@ -94,6 +97,31 @@ def fondo(indice):
     return img
 
 
+def sin_caja(p):
+    """Funde el fondo negro de la ilustracion con el de la diapositiva.
+
+    Las ilustraciones de la web se generaron sobre "deep near-black", no sobre
+    transparencia. Pegadas tal cual sobre el fondo de la diapositiva, ese
+    negro no es exactamente el mismo negro y se ve el rectangulo. Aqui la
+    opacidad sale de la luminancia: lo negro desaparece y el objeto se queda.
+
+    No es un recorte -- un recorte de verdad deja bordes duros y aureolas, que
+    es lo que paso con el robot. Esto es una fusion, y con objetos brillantes
+    sobre negro funciona mejor que cualquier umbral.
+    """
+    import numpy as np
+
+    a = np.asarray(p).astype(np.float32)
+    if a[..., 3].min() < 250:      # ya venia con transparencia: no se toca
+        return p
+    lum = a[..., :3].max(axis=2)   # el maximo, no la media: conserva el violeta
+    # Rampa suave: por debajo de 18 es fondo, por encima de 46 es objeto.
+    alfa = np.clip((lum - 18.0) / 28.0, 0.0, 1.0)
+    fuera = a.copy()
+    fuera[..., 3] = alfa * 255.0
+    return Image.fromarray(fuera.astype("uint8"), "RGBA")
+
+
 def pieza(img, nombre, alto_obj=360, pos=("derecha", "abajo")):
     """Pega la ilustracion y devuelve el rectangulo que ocupa.
 
@@ -101,13 +129,27 @@ def pieza(img, nombre, alto_obj=360, pos=("derecha", "abajo")):
     primera version se componia el texto y luego se pegaba la pieza encima,
     y en dos portadas la ilustracion tapaba el subtitulo entero.
     """
-    for carpeta in ("tarjetas", "hero", "paginas", "pasos"):
-        ruta = os.path.join(BASE, "public", carpeta, nombre + ".webp")
-        if os.path.exists(ruta):
-            break
+    # "nueva | respaldo": se usa la primera que exista. Asi el carrusel sigue
+    # publicable mientras se generan las ilustraciones propias, y se actualiza
+    # solo en cuanto cada una aparece en la carpeta.
+    candidatas = [n.strip() for n in nombre.split("|") if n.strip()]
+    for n in candidatas:
+        # Primero las piezas propias del carrusel, sin optimizar y con la
+        # extension que traiga el generador; despues, las que ya usa la web.
+        for ruta in ([os.path.join(PIEZAS, n + e)
+                      for e in (".png", ".jpg", ".jpeg", ".webp")] +
+                     [os.path.join(BASE, "public", c, n + ".webp")
+                      for c in ("tarjetas", "hero", "paginas", "pasos")]):
+            if os.path.exists(ruta):
+                break
+        else:
+            continue
+        break
     else:
+        print("  falta la pieza: %s" % nombre)
         return img, None
     p = Image.open(ruta).convert("RGBA")
+    p = sin_caja(p)
     escala = alto_obj / float(p.size[1])
     p = p.resize((int(p.size[0] * escala), alto_obj), Image.LANCZOS)
     x = ANCHO - p.size[0] - MARGEN + 30 if pos[0] == "derecha" else MARGEN - 30

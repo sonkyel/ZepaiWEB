@@ -6,27 +6,27 @@ Si te ves en tres, hablamos.
 ---
 Contestas lo mismo treinta veces al día
 Horario, precio, dónde estáis, si queda sitio. No es que tu equipo trabaje mal: es que está haciendo de máquina de repetir en vez de atender a quien de verdad va a comprar.
-@pieza: srv-agentes
+@pieza: se-repetir | srv-agentes
 ---
 Los mensajes de la noche los ves por la mañana
 Y por la mañana ese cliente ya ha reservado en otro sitio. La gente pregunta cuando puede, no cuando tú abres: por la noche, el domingo, desde el sofá. Y ahí no hay nadie al otro lado.
-@pieza: llamadas
+@pieza: se-fuera-horario | llamadas
 ---
 El teléfono suena mientras atiendes a alguien delante
 Pierdes las dos cosas: no coges la llamada y quien está en el mostrador ve que le atiendes a medias.
-@pieza: ind-restaurantes
+@pieza: se-telefono-suena | ind-restaurantes
 ---
 Copias datos de un sitio a otro a mano
 Del formulario a la hoja de cálculo, de la hoja al correo. Cada copia es tiempo y es un error esperando a pasar. Eso no necesita inteligencia artificial: necesita una conexión bien hecha.
-@pieza: n8n-make
+@pieza: se-copiar-datos | n8n-make
 ---
 Nadie sabe de dónde vienen los clientes
 Si no puedes decir qué canal te trae a la gente que compra, cualquier decisión sobre dónde invertir es una apuesta.
-@pieza: srv-marketing
+@pieza: se-sin-medir | srv-marketing
 ---
 Solo una persona sabe hacer algo
 Y cuando esa persona se va de vacaciones, el proceso se para. Eso no es un problema de personal, es un proceso que vive en una cabeza y no en ningún sitio más.
-@pieza: como-trabajamos
+@pieza: se-una-persona | como-trabajamos
 ---
 @etiqueta: Zepai Agency
 ¿Te has visto en tres o más?

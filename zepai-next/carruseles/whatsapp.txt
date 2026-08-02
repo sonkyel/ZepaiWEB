@@ -6,23 +6,23 @@ Cinco cosas que se descubren tarde y caras.
 ---
 Hay dos formas de montarlo, y solo una aguanta
 Se puede conectar un teléfono con una aplicación intermedia: sale más barato y funciona… hasta que WhatsApp bloquea el número o entran veinte conversaciones a la vez. La otra es la API oficial. Pregunta siempre cuál te están vendiendo.
-@pieza: chatbot
+@pieza: wa-dos-caminos | chatbot
 ---
 El número que uses se queda ahí
 Un número dado de alta en la API oficial no se saca luego a un móvil normal para seguir usándolo como antes. Se decide al principio, con calma, no el día del lanzamiento.
-@pieza: srv-agentes
+@pieza: wa-numero-anclado | srv-agentes
 ---
 Tú no escribes primero cuando quieras
 Si el cliente no te ha escrito en las últimas 24 horas, WhatsApp solo deja contactarle con plantillas aprobadas por Meta. Quien te promete campañas masivas de WhatsApp sin contarte esto te está vendiendo un problema.
-@pieza: marketing-digital
+@pieza: wa-ventana-24h | marketing-digital
 ---
 Lo que el bot no debe contestar se decide antes de lanzar
 La pregunta que importa no es qué puede responder, sino qué no debe responder nunca. Reclamaciones, incidencias con dinero y cualquier cosa rara: a una persona. Esa frontera se cierra antes de que hable con tu primer cliente.
-@pieza: agentes-de-ia
+@pieza: wa-limites | agentes-de-ia
 ---
 Un bot que no sabe pasar la conversación a alguien es un muro
 Lo que más enfada a un cliente no es hablar con una máquina: es hablar con una máquina que no le deja salir. La salida a una persona tiene que estar siempre a un mensaje de distancia.
-@pieza: chatbot
+@pieza: wa-muro | chatbot
 ---
 @etiqueta: Zepai Agency
 ¿Tienes WhatsApp echando humo todo el día?

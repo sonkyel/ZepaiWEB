@@ -6,27 +6,27 @@ Incluida una que nos deja sin proyecto.
 ---
 Automatizar un proceso malo solo hace que el desorden vaya más rápido
 Antes de montar nada revisamos si el proceso tiene sentido tal y como está. Muchas veces el cuello de botella no está donde parece, y la mejor automatización posible resulta ser eliminar un paso en lugar de programarlo.
-@pieza: srv-agentes
+@pieza: cr-proceso-malo | srv-agentes
 ---
 Lo que el agente no debe contestar se decide antes de lanzar
 La pregunta que importa no es qué puede hacer un agente, sino qué no debe hacer nunca. Reclamaciones, incidencias con dinero de por medio y cualquier cosa rara: a una persona, siempre. Esa frontera se cierra antes de que hable con tu primer cliente.
-@pieza: ind-restaurantes
+@pieza: cr-frontera | ind-restaurantes
 ---
 El agente se queda lo repetitivo. El criterio sigue siendo de tu equipo
 Un agente bien montado no sustituye a nadie: le quita de encima las treinta veces al día que hay que repetir el horario. Quien te venda que la IA reemplaza a tu equipo de atención te está vendiendo una demo, no un sistema.
-@pieza: srv-trafico
+@pieza: cr-criterio | srv-trafico
 ---
 Sobre la API oficial, no sobre un móvil con una app encima
 Se puede montar un chatbot conectando un teléfono por una aplicación intermedia. Sale más barato y funciona… hasta que WhatsApp bloquea el número o entran veinte conversaciones a la vez.
-@pieza: ind-blockchain
+@pieza: cr-cimientos | ind-blockchain
 ---
 Te formamos para que no dependas de nosotros
 Al terminar, tu equipo sabe operar y ajustar lo que hemos montado. No escondemos la configuración ni dejamos nudos que solo sepamos deshacer nosotros.
-@pieza: srv-marketing
+@pieza: cr-formacion | srv-marketing
 ---
 A veces la respuesta es que no automatices
 Hay veces en que ya existe una herramienta hecha que resuelve el noventa por ciento, y veces en que el proceso todavía no está lo bastante asentado. Preferimos decírtelo en la primera llamada antes que cobrarte por descubrirlo tres meses después.
-@pieza: srv-agentes
+@pieza: cr-decir-que-no | srv-agentes
 ---
 @etiqueta: Zepai Agency
 ¿Tienes un proceso que se repite todos los días?

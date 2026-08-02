@@ -6,27 +6,27 @@ Y las respuestas, sin rodeos.
 ---
 ¿Y si el agente le responde mal a un cliente?
 Es la duda más razonable de todas, y se resuelve antes de lanzar. Definimos contigo qué puede responder y qué no. Reclamaciones, incidencias con dinero de por medio y casos raros: a una persona, siempre. Puedes leer las conversaciones cuando quieras.
-@pieza: srv-agentes
+@pieza: pr-responde-mal | srv-agentes
 ---
 ¿Cuánto cuesta?
 No tenemos precio de catálogo, y desconfía de quien te lo dé antes de escucharte. Depende de qué canales cubras, de cuántas conversaciones entren y de con qué sistemas haya que conectar. Lo miramos en la llamada y te mandamos un precio cerrado.
-@pieza: consultoria
+@pieza: pr-precio | consultoria
 ---
 ¿Cuánto tarda?
 Entre cinco y siete días laborables en la mayoría de los casos: llamada de diagnóstico, configuración, entrenamiento y conexión a tus canales. Si tu caso va a tardar más, te lo decimos antes de empezar, no a mitad.
-@pieza: implementacion
+@pieza: pr-plazo | implementacion
 ---
 ¿Necesito saber de tecnología?
 No. La parte técnica es nuestra. Tú aportas cómo funciona tu negocio y qué se responde a cada cosa. Al terminar formamos a tu equipo, porque lo que no sabes tocar acabas dependiendo de otros para tocarlo.
-@pieza: n8n-make
+@pieza: pr-sin-tecnico | n8n-make
 ---
 ¿Qué pasa con los datos de mis clientes?
 Se guarda lo necesario para atender la conversación, viaja cifrado y no se vende ni se cede a terceros para marketing. Si quieres que borremos algo, se borra. Está escrito en la política de privacidad, no solo dicho aquí.
-@pieza: soluciones
+@pieza: pr-datos | soluciones
 ---
 ¿Funciona para mi tipo de negocio?
 Si recibes consultas repetidas, sí. Restaurantes, inmobiliarias, tiendas online, clínicas, salones. Pero si al mirarlo vemos que no te compensa, te lo decimos en la primera llamada.
-@pieza: ind-restaurantes
+@pieza: pr-sectores | ind-restaurantes
 ---
 @etiqueta: Zepai Agency
 ¿Te queda alguna que no esté aquí?
