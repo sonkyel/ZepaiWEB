@@ -800,11 +800,11 @@ button:focus-visible,a:focus-visible{outline-offset:4px}
   .founder-link{justify-content:center}}
 
 /* ── QUIÉNES SOMOS (home) ────────────────────────────────────
-   Reutiliza el bloque del fundador de /como-trabajamos. Alli cuelga de un
-   texto y necesita separacion propia; aqui va en su seccion, debajo de una
-   cabecera que ya deja 60px, y el margen de 72 sobraba. */
+   Solo cabecera: la ficha del fundador vive en /como-trabajamos y aqui era
+   una copia. Sin contenido debajo, los 60px de .sec-hdr dejaban un hueco
+   colgando antes del borde de la seccion. */
 #about{background:var(--bg0)}
-#about .founder{margin-top:0}
+#about .sec-hdr{margin-bottom:0}
 
 /* ── MANIFIESTO "CÓMO TRABAJAMOS" ────────────────────────────
    Formato editorial: numero grande + etiqueta + titular + parrafo.
