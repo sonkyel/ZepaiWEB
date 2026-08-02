@@ -114,7 +114,15 @@ def sin_caja(p):
     a = np.asarray(p).astype(np.float32)
     if a[..., 3].min() < 250:      # ya venia con transparencia: no se toca
         return p
-    lum = a[..., :3].max(axis=2)   # el maximo, no la media: conserva el violeta
+    # El fondo no siempre sale negro puro: de 28 ilustraciones, una vino con
+    # un velo violeta (15,2,38). Se mide en las esquinas y se descuenta, asi
+    # que la rampa mide brillo del objeto y no del fondo que traiga.
+    e = max(8, min(a.shape[0], a.shape[1]) // 40)
+    esquinas = np.concatenate([a[:e, :e, :3].reshape(-1, 3), a[:e, -e:, :3].reshape(-1, 3),
+                               a[-e:, :e, :3].reshape(-1, 3), a[-e:, -e:, :3].reshape(-1, 3)])
+    base = np.median(esquinas, axis=0)
+    lum = np.clip(a[..., :3] - base, 0, None).max(axis=2)  # el maximo, no la
+    # media: asi el violeta puro no se queda a medio camino de transparente.
     # Rampa suave: por debajo de 18 es fondo, por encima de 46 es objeto.
     alfa = np.clip((lum - 18.0) / 28.0, 0.0, 1.0)
     fuera = a.copy()
@@ -155,8 +163,22 @@ def pieza(img, nombre, alto_obj=360, pos=("derecha", "abajo")):
         return img, None
     p = Image.open(ruta).convert("RGBA")
     p = sin_caja(p)
-    escala = alto_obj / float(p.size[1])
-    p = p.resize((int(p.size[0] * escala), alto_obj), Image.LANCZOS)
+    # Al contenido. Las ilustraciones vienen en cuadrados de 1024 con el
+    # objeto ocupando poco mas de la mitad: escaladas por el alto del lienzo,
+    # el objeto salia diminuto y con aire muerto alrededor.
+    caja_util = p.split()[3].point(lambda v: 255 if v > 12 else 0).getbbox()
+    if caja_util:
+        p = p.crop(caja_util)
+    # Se escala por AREA, no por altura. Escalando por altura, una pieza
+    # vertical (el movil encadenado, 0,54 de aspecto) quedaba en 162 px de
+    # ancho y otra apaisada (la balanza, 2,03) en 608: la misma serie con la
+    # mitad de las ilustraciones enanas. Por area todas pesan lo mismo.
+    an, al = p.size
+    escala = ((alto_obj * alto_obj * 1.2) / float(an * al)) ** 0.5
+    # Topes: que una pieza muy alta no suba hasta el texto, y que una muy
+    # apaisada no cruce la diapositiva de lado a lado.
+    escala = min(escala, (alto_obj * 1.3) / al, (ANCHO - MARGEN * 2) / float(an))
+    p = p.resize((max(1, int(an * escala)), max(1, int(al * escala))), Image.LANCZOS)
     x = ANCHO - p.size[0] - MARGEN + 30 if pos[0] == "derecha" else MARGEN - 30
     y = ALTO - p.size[1] - MARGEN - 40
     x, y = max(0, x), max(0, y)
