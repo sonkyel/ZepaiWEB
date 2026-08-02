@@ -1,0 +1,31 @@
+---
+@etiqueta: Agentes de llamada
+Un agente que coge el teléfono a las tres de la mañana
+Cómo funciona de verdad, sin humo.
+@pieza: llamadas
+---
+Habla, no lee un menú
+No es «pulse 1 para reservas». Es una voz que escucha la frase entera, entiende lo que le piden y responde. Si el cliente cambia de idea a mitad, no hay que volver al principio.
+@pieza: llamadas
+---
+Coge todas las llamadas a la vez
+Un teléfono da señal de comunicando cuando ya estás hablando con alguien. Un agente atiende veinte llamadas al mismo tiempo sin que ninguna espere, que es justo lo que pasa a la hora punta.
+@pieza: agentes-de-ia
+---
+Deja la conversación escrita
+Cada llamada queda transcrita y resumida donde tú la leas. Ya no dependes de que alguien apuntara bien un nombre en un papel a las once de la noche.
+@pieza: soluciones
+---
+Sabe cuándo no es su turno
+Un cliente enfadado, una reclamación, algo con dinero de por medio: pasa la llamada a una persona. Eso se decide contigo antes de encenderlo, no sobre la marcha.
+@pieza: srv-agentes
+---
+Lo que no hace
+No convence a nadie que no quería comprar, no arregla un mal servicio y no sustituye a tu equipo. Le quita de encima lo repetitivo para que atiendan lo que sí necesita a una persona.
+@pieza: como-trabajamos
+---
+@etiqueta: Zepai Agency
+¿Cuántas llamadas se te caen a la semana?
+Si no lo sabes, esa ya es la respuesta. Cuéntanoslo y lo miramos.
+@pieza: robot-v2
+---

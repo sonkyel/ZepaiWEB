@@ -95,19 +95,26 @@ def fondo(indice):
 
 
 def pieza(img, nombre, alto_obj=360, pos=("derecha", "abajo")):
+    """Pega la ilustracion y devuelve el rectangulo que ocupa.
+
+    Devuelve el rectangulo porque el texto tiene que saber donde esta: en la
+    primera version se componia el texto y luego se pegaba la pieza encima,
+    y en dos portadas la ilustracion tapaba el subtitulo entero.
+    """
     for carpeta in ("tarjetas", "hero", "paginas", "pasos"):
         ruta = os.path.join(BASE, "public", carpeta, nombre + ".webp")
         if os.path.exists(ruta):
             break
     else:
-        return img
+        return img, None
     p = Image.open(ruta).convert("RGBA")
     escala = alto_obj / float(p.size[1])
     p = p.resize((int(p.size[0] * escala), alto_obj), Image.LANCZOS)
     x = ANCHO - p.size[0] - MARGEN + 30 if pos[0] == "derecha" else MARGEN - 30
     y = ALTO - p.size[1] - MARGEN - 40
-    img.paste(p, (max(0, x), max(0, y)), p)
-    return img
+    x, y = max(0, x), max(0, y)
+    img.paste(p, (x, y), p)
+    return img, (x, y, p.size[0], p.size[1])
 
 
 def marca(img, d, indice, total):
@@ -122,8 +129,14 @@ def marca(img, d, indice, total):
 
 def portada(datos, total):
     img = fondo(0)
+    # La pieza va primero: el texto necesita saber que hueco le queda.
+    img, caja = pieza(img, datos.get("pieza", "robot-v2"), alto_obj=520)
     d = ImageDraw.Draw(img)
     ancho = ANCHO - MARGEN * 2
+    # Borde izquierdo de la ilustracion, con aire. Por debajo de esa altura el
+    # texto no puede ocupar la anchura entera.
+    tope_x = (caja[0] - 26) if caja else ANCHO
+    tope_y = caja[1] if caja else ALTO
 
     etiqueta = fuente(700, 28)
     d.text((MARGEN, MARGEN + 10), datos.get("etiqueta", "").upper(), font=etiqueta, fill=VIOLETA_CLARO)
@@ -135,19 +148,24 @@ def portada(datos, total):
         y += salto
 
     if datos.get("cuerpo"):
-        f2, l2, s2 = encaja(d, datos["cuerpo"], 500, 40, ancho - 120, 240)
         y += 30
+        # Si el cuerpo empieza ya a la altura de la ilustracion, se compone en
+        # la columna que queda libre a su izquierda.
+        libre = (tope_x - MARGEN) if y + 40 > tope_y else (ancho - 120)
+        f2, l2, s2 = encaja(d, datos["cuerpo"], 500, 40, max(320, libre),
+                            ALTO - MARGEN - 90 - y)
         for l in l2:
             d.text((MARGEN, y), l, font=f2, fill=(255, 255, 255, 190))
             y += s2
 
-    img = pieza(img, datos.get("pieza", "robot-v2"), alto_obj=520)
     marca(img, ImageDraw.Draw(img), 0, total)
     return img
 
 
 def diapositiva(datos, indice, total):
     img = fondo(indice)
+    if datos.get("pieza"):
+        img, _ = pieza(img, datos["pieza"], alto_obj=300)
     d = ImageDraw.Draw(img)
     ancho = ANCHO - MARGEN * 2
 
@@ -167,8 +185,6 @@ def diapositiva(datos, indice, total):
             d.text((MARGEN, y), l, font=f2, fill=(255, 255, 255, 195))
             y += s2
 
-    if datos.get("pieza"):
-        img = pieza(img, datos["pieza"], alto_obj=300)
     marca(img, ImageDraw.Draw(img), indice, total)
     return img
 
