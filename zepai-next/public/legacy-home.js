@@ -372,7 +372,11 @@ function buildDatePicker() {
   const container = document.getElementById('datePicker');
   if (!container) return;
   const today = new Date();
-  const isEn  = currentLang === 'en';
+  /* El idioma se lee AHORA, no al cargar el fichero. Al cambiar de idioma se
+     cambia de ruta y React vuelve a montar la pagina, pero este guion no se
+     ejecuta otra vez: con la variable de arriba, las fechas se quedaban en el
+     idioma de la primera visita. */
+  const isEn = location.pathname === '/en' || location.pathname.indexOf('/en/') === 0;
   container.innerHTML = '';
   for (let i = 0; i < 5; i++) {
     const d = new Date(today);
@@ -443,3 +447,12 @@ if (document.readyState === 'loading') {
 } else {
   buildDatePicker();
 }
+
+/* Y se deja a mano para que React pueda volver a pedirlo.
+   Este fichero se ejecuta UNA sola vez por visita: Next no reevalua un
+   <Script> con el mismo src. Al navegar a otra pagina y volver al inicio, o
+   al cambiar de idioma, React repinta el HTML heredado y se lleva por
+   delante los botones que este guion habia creado -- y como no vuelve a
+   ejecutarse, la agenda se quedaba con el texto de respaldo puesto.
+   LegacyEnhancer llama a esto despues de cada montaje. */
+window.zepaiAgenda = buildDatePicker;

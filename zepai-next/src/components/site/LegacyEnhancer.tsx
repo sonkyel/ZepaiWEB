@@ -37,6 +37,12 @@ import { useLang } from "@/lib/i18n";
 /** Se revela un poco antes de que el bloque toque el borde inferior. */
 const ANTICIPO = 0.08;
 
+declare global {
+  interface Window {
+    zepaiAgenda?: () => void;
+  }
+}
+
 export function LegacyEnhancer() {
   const { lang } = useLang();
 
@@ -45,6 +51,38 @@ export function LegacyEnhancer() {
       const txt = el.dataset[lang];
       if (txt !== undefined) el.textContent = txt;
     });
+  }, [lang]);
+
+  /**
+   * Reconstruye el selector de fecha.
+   *
+   * legacy-home.js se ejecuta UNA vez por visita -- Next no reevalua un
+   * <Script> con el mismo src -- pero este HTML se repinta cada vez que se
+   * monta la pagina: al volver al inicio desde otra pagina, o al cambiar de
+   * idioma. El repintado se lleva los botones que el guion habia creado y
+   * nadie los volvia a poner, asi que la agenda se quedaba con el texto de
+   * respaldo y no se podia reservar.
+   *
+   * Se reintenta porque el guion carga con lazyOnload y puede llegar despues
+   * que este efecto.
+   */
+  useEffect(() => {
+    if (!document.getElementById("datePicker")) return;
+    let intentos = 0;
+    let temporizador = 0;
+
+    const intentar = () => {
+      const hecho = document.querySelector("#datePicker .date-btn");
+      if (hecho) return;
+      if (window.zepaiAgenda) {
+        window.zepaiAgenda();
+        return;
+      }
+      if (++intentos < 40) temporizador = window.setTimeout(intentar, 150);
+    };
+
+    intentar();
+    return () => clearTimeout(temporizador);
   }, [lang]);
 
   useEffect(() => {

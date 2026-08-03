@@ -40,7 +40,18 @@ export function HomeScripts() {
           strategy="afterInteractive"
         />
       )}
-      <Script src="/legacy-home.js" strategy="lazyOnload" />
+      {/* afterInteractive, no lazyOnload.
+
+          lazyOnload espera al evento load de la ventana. Si el visitante
+          entra por otra pagina y llega al inicio navegando, ese evento ya
+          paso hace rato y este <Script> se monta despues: medido con el
+          guion de prueba, a los 11 segundos seguia sin cargarse y la agenda
+          se quedaba sin fechas.
+
+          Son 18 KB y de aqui salen el formulario, la agenda y el acordeon
+          del FAQ. No es decoracion que pueda esperar a que el navegador este
+          ocioso: es la mitad de lo que un visitante puede querer pulsar. */}
+      <Script src="/legacy-home.js" strategy="afterInteractive" />
     </>
   );
 }
