@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Crecimiento de audiencia en Instagram, TikTok y X con estrategia orgánica y campañas pagadas. Hoy lo hacemos para KiiChain, una plataforma blockchain.",
   alternates: {
     canonical: "/trafico-en-redes",
-    languages: { es: "/trafico-en-redes", en: "/en/trafico-en-redes" },
+    languages: { es: "/trafico-en-redes", en: "/en/trafico-en-redes", "x-default": "/trafico-en-redes" },
   },
   ...metaSocial(
     "Tráfico en Redes: Crecimiento de Audiencia | Zepai",

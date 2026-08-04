@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Automatización de llamadas con IA: un agente de voz contesta el teléfono, toma reservas y citas, filtra la llamada y deriva a una persona cuando hace falta.",
   alternates: {
     canonical: "/automatizacion-de-llamadas",
-    languages: { es: "/automatizacion-de-llamadas", en: "/en/automatizacion-de-llamadas" },
+    languages: { es: "/automatizacion-de-llamadas", en: "/en/automatizacion-de-llamadas", "x-default": "/automatizacion-de-llamadas" },
   },
   ...metaSocial(
     "Automatización de Llamadas con IA | Agente de Voz 24/7 | Zepai",

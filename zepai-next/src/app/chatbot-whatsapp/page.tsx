@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Chatbot de inteligencia artificial para WhatsApp: responde en segundos, toma reservas y pedidos, cualifica clientes y deriva a una persona cuando hace falta. API oficial.",
   alternates: {
     canonical: "/chatbot-whatsapp",
-    languages: { es: "/chatbot-whatsapp", en: "/en/chatbot-whatsapp" },
+    languages: { es: "/chatbot-whatsapp", en: "/en/chatbot-whatsapp", "x-default": "/chatbot-whatsapp" },
   },
   ...metaSocial(
     "Chatbot de IA para WhatsApp | Atiende y Vende 24/7 | Zepai",

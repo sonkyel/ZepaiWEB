@@ -608,6 +608,9 @@ button:focus-visible,a:focus-visible{outline-offset:4px}
   mask-image:radial-gradient(ellipse 78% 78% at 50% 50%,#000 58%,transparent 100%);
 }
 .sp-h1{font-size:var(--fs-7);font-weight:900;line-height:1.12;letter-spacing:-1.5px;margin-bottom:var(--sp-4);color:var(--t1)}
+/* Fecha y firma del articulo. Discretas: informan de que esto no lleva tres
+   anos ahi, sin competir con el titular. */
+.sp-meta{font-size:var(--fs-1);color:var(--t3);margin:calc(var(--sp-4) * -1) 0 var(--sp-4)}
 .sp-lead{font-size:var(--fs-4);line-height:1.75;color:var(--t2);max-width:var(--medida);margin-bottom:var(--sp-5)}
 .sp-body{padding:8px 0 64px}
 .sp-body p{font-size:var(--fs-3);line-height:1.85;color:var(--t2);margin-bottom:var(--sp-4);max-width:var(--medida)}

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Todas las soluciones de inteligencia artificial de Zepai: consultoría, chatbot de WhatsApp, automatización de llamadas y de procesos, y soluciones por sector para restaurantes, inmobiliarias y e-commerce.",
   alternates: {
     canonical: "/soluciones",
-    languages: { es: "/soluciones", en: "/en/soluciones" },
+    languages: { es: "/soluciones", en: "/en/soluciones", "x-default": "/soluciones" },
   },
   ...metaSocial(
     "Soluciones de Automatización con IA para Empresas | Zepai",

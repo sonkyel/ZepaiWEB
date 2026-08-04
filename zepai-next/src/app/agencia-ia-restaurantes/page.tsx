@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Asistente de voz con IA para restaurantes: contesta el teléfono, toma reservas y responde dudas 24/7. Deja de perder mesas por llamadas sin atender. Implementación a medida.",
   alternates: {
     canonical: "/agencia-ia-restaurantes",
-    languages: { es: "/agencia-ia-restaurantes", en: "/en/agencia-ia-restaurantes" },
+    languages: { es: "/agencia-ia-restaurantes", en: "/en/agencia-ia-restaurantes", "x-default": "/agencia-ia-restaurantes" },
   },
   ...metaSocial(
     "Asistente de Voz con IA para Restaurantes | Reservas 24/7 | Zepai",

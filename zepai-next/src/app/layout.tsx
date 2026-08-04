@@ -32,12 +32,19 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title:
-    "Agencia y Consultora de IA | Automatización de Procesos con IA para Empresas | Zepai",
+  // 55 caracteres. El anterior tenia 84 y Google lo cortaba por la mitad:
+  // en el buscador se leia "...Automatizacion de Procesos con IA para..." y
+  // la marca, que es lo unico que no puede faltar, se perdia.
+  title: "Automatización de Procesos con IA para Empresas | Zepai",
   description:
     "Agencia y consultora de IA. Automatizamos los procesos de tu empresa con inteligencia artificial: atención al cliente, ventas, reservas, soporte y operaciones. Consultoría e implementación a medida.",
   robots: { index: true, follow: true },
-  alternates: { canonical: "/", languages: { es: "/", en: "/en" } },
+  // x-default: le dice a Google que servir a quien no encaje en ningun
+  // idioma declarado. Sin el, elige por su cuenta.
+  alternates: {
+    canonical: "/",
+    languages: { es: "/", en: "/en", "x-default": "/" },
+  },
   icons: { icon: "/logo.png", apple: "/apple-touch-icon.png" },
   openGraph: {
     type: "website",

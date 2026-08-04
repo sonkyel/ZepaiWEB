@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Artículos prácticos sobre automatización de procesos e inteligencia artificial aplicada a empresas: qué funciona, qué no y por dónde empezar.",
   alternates: {
     canonical: "/blog",
-    languages: { es: "/blog", en: "/en/blog" },
+    languages: { es: "/blog", en: "/en/blog", "x-default": "/blog" },
   },
   ...metaSocial(
     "Blog de Automatización e IA para Negocios | Zepai",

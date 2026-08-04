@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Chatbot de IA por WhatsApp para inmobiliarias: responde en segundos, cualifica leads, envía fichas de inmuebles y agenda visitas automáticamente. Implementación a medida.",
   alternates: {
     canonical: "/agencia-ia-inmobiliarias",
-    languages: { es: "/agencia-ia-inmobiliarias", en: "/en/agencia-ia-inmobiliarias" },
+    languages: { es: "/agencia-ia-inmobiliarias", en: "/en/agencia-ia-inmobiliarias", "x-default": "/agencia-ia-inmobiliarias" },
   },
   ...metaSocial(
     "Chatbot de IA por WhatsApp para Inmobiliarias | Capta y Filtra Leads | Zepai",

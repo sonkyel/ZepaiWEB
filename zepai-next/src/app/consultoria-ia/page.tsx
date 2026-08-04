@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Consultoría de IA para empresas: diagnosticamos tus procesos, priorizamos qué automatizar con inteligencia artificial y lo implementamos de principio a fin.",
   alternates: {
     canonical: "/consultoria-ia",
-    languages: { es: "/consultoria-ia", en: "/en/consultoria-ia" },
+    languages: { es: "/consultoria-ia", en: "/en/consultoria-ia", "x-default": "/consultoria-ia" },
   },
   ...metaSocial(
     "Consultoría de IA para Empresas | Automatización de Procesos | Zepai",

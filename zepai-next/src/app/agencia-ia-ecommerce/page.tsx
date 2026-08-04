@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Inteligencia artificial para e-commerce: resuelve dudas antes de la compra, responde el estado de los pedidos, gestiona devoluciones y recupera carritos abandonados.",
   alternates: {
     canonical: "/agencia-ia-ecommerce",
-    languages: { es: "/agencia-ia-ecommerce", en: "/en/agencia-ia-ecommerce" },
+    languages: { es: "/agencia-ia-ecommerce", en: "/en/agencia-ia-ecommerce", "x-default": "/agencia-ia-ecommerce" },
   },
   ...metaSocial(
     "IA para Tiendas Online | Atención y Recuperación de Carritos | Zepai",

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Convertimos tus vídeos largos en clips cortos listos para TikTok, Reels y Shorts. Un directo o un pódcast dan para semanas de publicaciones.",
   alternates: {
     canonical: "/clipping-de-contenido",
-    languages: { es: "/clipping-de-contenido", en: "/en/clipping-de-contenido" },
+    languages: { es: "/clipping-de-contenido", en: "/en/clipping-de-contenido", "x-default": "/clipping-de-contenido" },
   },
   ...metaSocial(
     "Clipping de Contenido para TikTok y Reels | Zepai",

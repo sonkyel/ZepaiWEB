@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Agentes de inteligencia artificial que atienden a tus clientes por chat y por teléfono las 24 horas, con voz natural y derivando a una persona cuando toca.",
   alternates: {
     canonical: "/agentes-de-ia",
-    languages: { es: "/agentes-de-ia", en: "/en/agentes-de-ia" },
+    languages: { es: "/agentes-de-ia", en: "/en/agentes-de-ia", "x-default": "/agentes-de-ia" },
   },
   ...metaSocial(
     "Agentes de IA para Empresas | Chat y Voz 24/7 | Zepai",

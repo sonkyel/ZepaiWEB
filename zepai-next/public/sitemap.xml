@@ -2,211 +2,211 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://zepaiagency.com/</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.com/soluciones</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://zepaiagency.com/consultoria-ia</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://zepaiagency.com/chatbot-whatsapp</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://zepaiagency.com/automatizacion-de-llamadas</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://zepaiagency.com/como-trabajamos</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://zepaiagency.com/automatizaciones-n8n-make</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://zepaiagency.com/agencia-ia-restaurantes</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/agencia-ia-ecommerce</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zepaiagency.com/agencia-ia-inmobiliarias</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.com/agencia-ia-ecommerce</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/agencia-ia-restaurantes</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://zepaiagency.com/blog</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://zepaiagency.com/blog/como-automatizar-la-atencion-al-cliente-con-ia</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://zepaiagency.com/politica-de-cookies</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
   </url>
   <url>
     <loc>https://zepaiagency.com/agentes-de-ia</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.com/marketing-digital</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/automatizacion-de-llamadas</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.com/clipping-de-contenido</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://zepaiagency.com/trafico-en-redes</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/automatizaciones-n8n-make</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zepaiagency.com/aviso-legal</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://zepaiagency.com/blog</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zepaiagency.com/chatbot-whatsapp</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zepaiagency.com/clipping-de-contenido</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zepaiagency.com/como-trabajamos</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zepaiagency.com/consultoria-ia</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zepaiagency.com/en</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zepaiagency.com/marketing-digital</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zepaiagency.com/politica-de-cookies</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://zepaiagency.com/politica-de-privacidad</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/soluciones</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zepaiagency.com/trafico-en-redes</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zepaiagency.com/blog/como-automatizar-la-atencion-al-cliente-con-ia</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zepaiagency.com/en/agencia-ia-ecommerce</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en/agencia-ia-ecommerce</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/en/agencia-ia-inmobiliarias</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en/agencia-ia-inmobiliarias</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/en/agencia-ia-restaurantes</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en/agencia-ia-restaurantes</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/en/agentes-de-ia</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en/agentes-de-ia</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/en/automatizacion-de-llamadas</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en/automatizacion-de-llamadas</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/en/automatizaciones-n8n-make</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en/automatizaciones-n8n-make</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/en/blog</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en/blog</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/en/chatbot-whatsapp</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en/blog/como-automatizar-la-atencion-al-cliente-con-ia</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/en/clipping-de-contenido</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en/chatbot-whatsapp</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/en/como-trabajamos</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en/clipping-de-contenido</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/en/consultoria-ia</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en/como-trabajamos</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/en/marketing-digital</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en/consultoria-ia</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/en/soluciones</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en/marketing-digital</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/en/trafico-en-redes</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://zepaiagency.comsrc/app/en/soluciones</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://zepaiagency.comsrc/app/en/trafico-en-redes</loc>
-    <lastmod>2026-07-29</lastmod>
+    <loc>https://zepaiagency.com/en/blog/como-automatizar-la-atencion-al-cliente-con-ia</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

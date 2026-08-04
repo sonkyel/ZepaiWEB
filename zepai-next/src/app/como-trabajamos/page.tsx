@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Seis creencias sobre cómo se automatiza un negocio de verdad: revisar el proceso antes que la tecnología, cerrar los límites antes de lanzar, la API oficial frente al atajo, y decirte cuándo no automatizar.",
   alternates: {
     canonical: "/como-trabajamos",
-    languages: { es: "/como-trabajamos", en: "/en/como-trabajamos" },
+    languages: { es: "/como-trabajamos", en: "/en/como-trabajamos", "x-default": "/como-trabajamos" },
   },
   ...metaSocial(
     "Cómo Trabajamos | Nuestra Forma de Automatizar con IA | Zepai",

@@ -11,8 +11,8 @@ queda atras. Dos copias escritas a mano se desincronizan siempre.
 
 Que hace con cada pagina:
   - El texto visible pasa a ser el de data-en.
-  - Los atributos se conservan pero invertidos (data-es="ingles"), para que
-    el conmutador siga funcionando dentro de la pagina inglesa.
+  - Los atributos se conservan TAL CUAL: data-es sigue siendo el castellano.
+    Invertirlos rompia la pagina inglesa; el porque esta en a_ingles().
   - El titulo y la descripcion salen del <h1> y del subtitulo en ingles.
   - El canonical apunta a /en/..., y se declara hreflang en las dos
     direcciones.
@@ -41,13 +41,23 @@ SALTAR = {"en", "politica-de-cookies", "aviso-legal", "politica-de-privacidad"}
 
 
 def a_ingles(html):
-    """Cambia el texto visible por el ingles e invierte los atributos."""
-    def swap(m):
-        etiqueta, es, en, cuerpo, cierre = m.groups()
-        # El texto visible pasa a ingles; los atributos se invierten para que
-        # el conmutador siga sirviendo dentro de esta pagina.
-        return '%sdata-es="%s" data-en="%s"%s>%s%s' % (etiqueta, en, es, "", en, cierre)
+    """Pone el texto visible en ingles. Los atributos NO se tocan.
 
+    Antes se invertian -- data-es pasaba a contener el ingles -- porque el
+    conmutador de idioma intercambiaba los textos dentro de la misma pagina y
+    hacia falta que siguiera funcionando en la inglesa.
+
+    Eso dejo de ser cierto cuando el conmutador paso a ser dos enlaces a
+    /es y /en, y la inversion se quedo haciendo dano en silencio:
+    LegacyEnhancer escribe el.textContent = el.dataset[lang], y en /en el
+    idioma es "en", asi que leia el data-en invertido... que contenia el
+    castellano. Resultado: /en llegaba en ingles y React la volvia a poner en
+    espanol al hidratar.
+
+    Es el peor de los dos mundos. Google indexaba una version en ingles que
+    ninguna persona llegaba a ver -- que es la definicion de contenido
+    encubierto, y eso Google lo penaliza.
+    """
     # <tag ... data-es="A" data-en="B" ...>texto</tag>
     patron = re.compile(
         r'(<(?:span|p|h1|h2|h3|h4|div|a|li|button)\b[^>]*?)'
@@ -56,7 +66,7 @@ def a_ingles(html):
 
     def rep(m):
         antes, es, en, despues, _texto, cierre = m.groups()
-        return '%sdata-es="%s" data-en="%s"%s>%s%s' % (antes, en, es, despues, en, cierre)
+        return '%sdata-es="%s" data-en="%s"%s>%s%s' % (antes, es, en, despues, en, cierre)
 
     return patron.sub(rep, html)
 
@@ -110,7 +120,7 @@ export const metadata: Metadata = {
   description: DESC,
   alternates: {
     canonical: %s,
-    languages: { es: %s, en: %s },
+    languages: { es: %s, en: %s, "x-default": %s },
   },
   openGraph: {
     title: TITULO,
@@ -134,7 +144,7 @@ export default function Page() {
   );
 }
 ''' % (json.dumps(titulo, ensure_ascii=False), json.dumps(desc, ensure_ascii=False),
-       json.dumps(destino_ruta), json.dumps(canonico_es), json.dumps(destino_ruta),
+       json.dumps(destino_ruta), json.dumps(canonico_es), json.dumps(destino_ruta), json.dumps(canonico_es),
        URL, json.dumps(destino_ruta), URL, URL,
        json.dumps(ingles, ensure_ascii=False))
 
