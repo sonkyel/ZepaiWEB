@@ -29,13 +29,36 @@ URL = "https://zepaiagency.com"
 # La home lleva titulo y descripcion escritos a mano: su titular esta en un
 # componente React, no en el HTML heredado.
 HOME = dict(
-    titulo="AI Agency & Consultancy | Business Process Automation | Zepai",
+    titulo="AI Agency for Business Process Automation | Zepai",
     # Ojo: esto es la fuente de la verdad de /en. Si se corrige a mano en
     # src/app/en/page.tsx, el siguiente lanzamiento del guion lo revierte.
     desc=("We automate your company's processes with artificial intelligence: "
           "customer service, sales, bookings, support and operations. "
           "AI agency and consultancy."),
 )
+
+# Titulos de buscador para las paginas inglesas cuyo <h1> pasa de 60
+# caracteres con el sufijo de marca. El titular de la pagina se queda como
+# esta: es lo que lee la persona, y tiene voz. Esto es solo lo que sale en
+# Google, donde por encima de 60 se corta a la mitad.
+DESC_EN = {}
+
+TITULOS_EN = {
+    "como-trabajamos": "How we work: six beliefs about automation | Zepai",
+    "trafico-en-redes": "Social media growth that brings buyers | Zepai",
+    "marketing-digital": "Digital marketing measured in customers | Zepai",
+    "blog/como-automatizar-la-atencion-al-cliente-con-ia":
+        "How to automate customer service with AI | Zepai",
+}
+
+# Los articulos del blog traen su propio titulo de buscador, ya medido por
+# debajo de 60 caracteres. Derivarlo del <h1> lo pasaba de largo: el titular
+# de un articulo es una frase, no una etiqueta.
+_arts = os.path.join(BASE, "_fuentes", "blog", "articulos.json")
+if os.path.exists(_arts):
+    for _a in json.load(io.open(_arts, encoding="utf-8")):
+        TITULOS_EN["blog/" + _a["slug"]] = _a["titulo_en"]
+        DESC_EN["blog/" + _a["slug"]] = _a["desc_en"]
 
 SALTAR = {"en", "politica-de-cookies", "aviso-legal", "politica-de-privacidad"}
 
@@ -60,7 +83,7 @@ def a_ingles(html):
     """
     # <tag ... data-es="A" data-en="B" ...>texto</tag>
     patron = re.compile(
-        r'(<(?:span|p|h1|h2|h3|h4|div|a|li|button)\b[^>]*?)'
+        r'(<(?:span|p|h1|h2|h3|h4|div|a|li|button|time)\b[^>]*?)'
         r'data-es="([^"]*)"\s+data-en="([^"]*)"'
         r'([^>]*)>([^<]*)(</)', re.S)
 
@@ -98,8 +121,13 @@ def generar(ruta):
     if ruta:
         h1_es, h1_en = extrae(html, "sp-h1")
         lead_es, lead_en = extrae(html, "sp-lead")
-        titulo = "%s | Zepai" % (h1_en or ruta.replace("-", " ").title())
-        desc = (lead_en or "")[:160]
+        titulo = TITULOS_EN.get(
+            ruta, "%s | Zepai" % (h1_en or ruta.replace("-", " ").title()))
+        desc = DESC_EN.get(ruta) or (lead_en or "")
+        if len(desc) > 155:
+            # Cortar por palabra, no a hachazos: un "automatiza" a
+            # medias en el buscador se lee como una web descuidada.
+            desc = desc[:155].rsplit(" ", 1)[0].rstrip(",;:") + "…"
     else:
         titulo, desc = HOME["titulo"], HOME["desc"]
 

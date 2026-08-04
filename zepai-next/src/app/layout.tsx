@@ -13,9 +13,13 @@ import { ORGANIZATION_LD, SITE } from "@/lib/site";
 // Satoshi (Fontshare, libre para uso comercial) autoalojada: una peticion
 // externa menos y sin salto de texto. Sustituye a Nunito, que se descargaba
 // y no se usaba en ninguna parte.
+// Satoshi solo se usa en titulares, y ningun titular baja de 700: los pesos
+// declarados en el CSS son 700, 800 y 900. El fichero de 500 se precargaba en
+// cada visita -- 25 KB, uno de los cuatro preloads que compiten con la imagen
+// del hero -- y no pintaba un solo glifo. Comprobado ademas por captura: la
+// web se ve identica pixel a pixel sin el.
 const satoshi = localFont({
   src: [
-    { path: "./fonts/Satoshi-500.woff2", weight: "500", style: "normal" },
     { path: "./fonts/Satoshi-700.woff2", weight: "700", style: "normal" },
     { path: "./fonts/Satoshi-900.woff2", weight: "900", style: "normal" },
   ],
@@ -23,9 +27,11 @@ const satoshi = localFont({
   display: "swap",
 });
 
+// Sin lista de pesos: Inter se sirve como fuente variable, asi que los siete
+// pesos apuntaban al MISMO fichero. Declararlos no descargaba nada de mas,
+// pero generaba 49 reglas @font-face en vez de 7.
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-inter",
   display: "swap",
 });
@@ -37,7 +43,7 @@ export const metadata: Metadata = {
   // la marca, que es lo unico que no puede faltar, se perdia.
   title: "Automatización de Procesos con IA para Empresas | Zepai",
   description:
-    "Agencia y consultora de IA. Automatizamos los procesos de tu empresa con inteligencia artificial: atención al cliente, ventas, reservas, soporte y operaciones. Consultoría e implementación a medida.",
+    "Automatizamos los procesos de tu empresa con IA: atención al cliente, ventas, reservas y soporte. Consultoría e implementación a medida.",
   robots: { index: true, follow: true },
   // x-default: le dice a Google que servir a quien no encaje en ningun
   // idioma declarado. Sin el, elige por su cuenta.

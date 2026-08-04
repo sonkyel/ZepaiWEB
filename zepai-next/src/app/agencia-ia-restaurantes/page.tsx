@@ -3,15 +3,15 @@ import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
 export const metadata: Metadata = {
-  title: "Asistente de Voz con IA para Restaurantes | Reservas 24/7 | Zepai",
-  description: "Asistente de voz con IA para restaurantes: contesta el teléfono, toma reservas y responde dudas 24/7. Deja de perder mesas por llamadas sin atender. Implementación a medida.",
+  title: "Asistente de Voz con IA para Restaurantes | Zepai",
+  description: "Asistente de voz e IA para restaurantes: reservas, disponibilidad y recordatorios sin dejar de atender a quien tienes delante.",
   alternates: {
     canonical: "/agencia-ia-restaurantes",
     languages: { es: "/agencia-ia-restaurantes", en: "/en/agencia-ia-restaurantes", "x-default": "/agencia-ia-restaurantes" },
   },
   ...metaSocial(
-    "Asistente de Voz con IA para Restaurantes | Reservas 24/7 | Zepai",
-    "Asistente de voz con IA para restaurantes: contesta el teléfono, toma reservas y responde dudas 24/7. Deja de perder mesas por llamadas sin atender. Implementación a medida.",
+    "Asistente de Voz con IA para Restaurantes | Zepai",
+    "Asistente de voz e IA para restaurantes: reservas, disponibilidad y recordatorios sin dejar de atender a quien tienes delante.",
     "/agencia-ia-restaurantes",
   ),
 };

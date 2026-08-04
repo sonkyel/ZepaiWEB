@@ -3,15 +3,15 @@ import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
 export const metadata: Metadata = {
-  title: "IA para Tiendas Online | Atención y Recuperación de Carritos | Zepai",
-  description: "Inteligencia artificial para e-commerce: resuelve dudas antes de la compra, responde el estado de los pedidos, gestiona devoluciones y recupera carritos abandonados.",
+  title: "IA para Tiendas Online: Recupera Carritos | Zepai",
+  description: "IA para tiendas online: recuperación de carritos, seguimiento de pedidos y respuestas a dudas antes de comprar, en tus canales.",
   alternates: {
     canonical: "/agencia-ia-ecommerce",
     languages: { es: "/agencia-ia-ecommerce", en: "/en/agencia-ia-ecommerce", "x-default": "/agencia-ia-ecommerce" },
   },
   ...metaSocial(
-    "IA para Tiendas Online | Atención y Recuperación de Carritos | Zepai",
-    "Inteligencia artificial para e-commerce: resuelve dudas antes de la compra, responde el estado de los pedidos, gestiona devoluciones y recupera carritos abandonados.",
+    "IA para Tiendas Online: Recupera Carritos | Zepai",
+    "IA para tiendas online: recuperación de carritos, seguimiento de pedidos y respuestas a dudas antes de comprar, en tus canales.",
     "/agencia-ia-ecommerce",
   ),
 };

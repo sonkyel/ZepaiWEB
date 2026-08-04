@@ -4,7 +4,7 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 /* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
    si cambia el castellano, se vuelve a lanzar el guion y esta se rehace. */
 
-const TITULO = "AI Agency & Consultancy | Business Process Automation | Zepai";
+const TITULO = "AI Agency for Business Process Automation | Zepai";
 const DESC = "We automate your company's processes with artificial intelligence: customer service, sales, bookings, support and operations. AI agency and consultancy.";
 
 export const metadata: Metadata = {

@@ -4,7 +4,7 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 /* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
    si cambia el castellano, se vuelve a lanzar el guion y esta se rehace. */
 
-const TITULO = "First we decide what. Then we build it. Then we leave it running. | Zepai";
+const TITULO = "How we work: six beliefs about automation | Zepai";
 const DESC = "Six beliefs about how a business actually gets automated — and how it does not.";
 
 export const metadata: Metadata = {

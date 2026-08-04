@@ -3,14 +3,14 @@ import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
 export const metadata: Metadata = {
-  title: "Consultoría de IA para Empresas | Automatización de Procesos | Zepai",
+  title: "Consultoría de IA para Empresas | Zepai",
   description: "Consultoría de IA para empresas: diagnosticamos tus procesos, priorizamos qué automatizar con inteligencia artificial y lo implementamos de principio a fin.",
   alternates: {
     canonical: "/consultoria-ia",
     languages: { es: "/consultoria-ia", en: "/en/consultoria-ia", "x-default": "/consultoria-ia" },
   },
   ...metaSocial(
-    "Consultoría de IA para Empresas | Automatización de Procesos | Zepai",
+    "Consultoría de IA para Empresas | Zepai",
     "Consultoría de IA para empresas: diagnosticamos tus procesos, priorizamos qué automatizar con inteligencia artificial y lo implementamos de principio a fin.",
     "/consultoria-ia",
   ),

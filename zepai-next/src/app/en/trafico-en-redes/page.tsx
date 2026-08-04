@@ -4,7 +4,7 @@ import { LegacyContent } from "@/components/site/LegacyContent";
 /* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
    si cambia el castellano, se vuelve a lanzar el guion y esta se rehace. */
 
-const TITULO = "Growing on social media with the people who will actually buy | Zepai";
+const TITULO = "Social media growth that brings buyers | Zepai";
 const DESC = "Organic strategy and paid campaigns so your audience grows in the right direction. It is what we do today for KiiChain on X.";
 
 export const metadata: Metadata = {
