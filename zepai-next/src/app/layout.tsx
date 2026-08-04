@@ -51,7 +51,11 @@ export const metadata: Metadata = {
     canonical: "/",
     languages: { es: "/", en: "/en", "x-default": "/" },
   },
-  icons: { icon: "/logo.png", apple: "/apple-touch-icon.png" },
+  // Sin icon: lo pone src/app/favicon.ico por convencion de fichero, y ahi
+  // esta la marca en seis tamanos. Declarar ademas /logo.png metia un
+  // segundo <link rel=icon> con el logotipo entero, de 666x375: el navegador
+  // podia elegir ese y aplastarlo en un cuadrado de 16 px.
+  icons: { apple: "/apple-touch-icon.png" },
   openGraph: {
     type: "website",
     siteName: SITE.name,
