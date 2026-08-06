@@ -166,12 +166,23 @@ export function HeroSection() {
         <HeroArriba />
 
         <div className="galaxy-mascot" ref={robotRef}>
+          {/* Este es el elemento LCP de la portada, no el fondo. Le faltaba
+              fetchPriority: el navegador se traia primero el hero.webp
+              decorativo y el robot llegaba tarde (LCP 3,6 s en movil).
+
+              El srcset esta calculado sobre los anchos CSS reales de
+              galaxy.css -- 110 px en movil, 134 hasta 900, 220 en escritorio --
+              multiplicados por la densidad de pantalla. En movil basta la
+              variante de 300. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/hero/robot-v2.webp"
+            srcSet="/hero/robot-v2-300.webp 300w, /hero/robot-v2.webp 400w"
+            sizes="(max-width: 560px) 110px, (max-width: 900px) 134px, 220px"
             alt="Agente de IA de Zepai"
             width={400}
             height={1018}
+            fetchPriority="high"
             decoding="async"
           />
         </div>

@@ -75,10 +75,13 @@ input,select,textarea{font-family:inherit}
 /* ── UTILITIES ──────────────────────────────────── */
 .container{max-width:1200px;margin:0 auto;padding:0 24px;min-width:0}
 .gt{color:var(--cyan);-webkit-text-fill-color:var(--cyan)}
+/* --purple y no --cyan, por lo mismo que .founder-role: el violeta de marca
+   sobre el propio --cyan-glow se queda en 4,0:1 y esto es texto pequeno.
+   Lo canto PageSpeed, no la vista: la pastilla "se ve bien". */
 .section-label{
   display:inline-flex;align-items:center;gap:var(--sp-2);
   background:var(--cyan-glow);border:1px solid var(--border-accent);
-  color:var(--cyan);font-size:var(--fs-0);font-weight:600;
+  color:var(--purple);font-size:var(--fs-0);font-weight:600;
   letter-spacing:1.5px;text-transform:uppercase;
   padding:6px 14px;border-radius:var(--r-pill);margin-bottom:var(--sp-4);
 }
@@ -260,8 +263,11 @@ section + section{border-top:1px solid var(--borderS)}
 /* Rejilla de industrias: reutiliza .srv-card, pero en 4 columnas y como enlace */
 .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-4)}
 .ind-card{display:flex;flex-direction:column}
-.ind-more{margin-top:auto;padding-top:14px;font-size:var(--fs-2);font-weight:700;color:#4F46E5;transition:color .25s}
-.ind-card:hover .ind-more{color:#8B5CF6}
+/* El indigo #4F46E5 sobre --bg2 daba 2,9:1 -- el peor contraste de la web, y
+   en la llamada a la accion de cada tarjeta de sector. El #8B5CF6 del hover
+   tampoco llegaba (4,4). Ahora 7,0 en reposo y 13,6 al pasar por encima. */
+.ind-more{margin-top:auto;padding-top:14px;font-size:var(--fs-2);font-weight:700;color:var(--purple);transition:color .25s}
+.ind-card:hover .ind-more{color:#E9D5FF}
 .srv-card{
   background:var(--bg2);border:1px solid var(--borderS);
   border-radius:var(--r-md);padding:28px 22px;
@@ -310,10 +316,10 @@ section + section{border-top:1px solid var(--borderS)}
 .step-desc{font-size:var(--fs-2);color:var(--t3);line-height:1.65}
 .how-more{text-align:center;margin-top:44px}
 .how-more a{
-  display:inline-flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-3);font-weight:700;color:#4F46E5;
+  display:inline-flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-3);font-weight:700;color:var(--purple);
   border-bottom:1px solid currentColor;padding-bottom:3px;transition:color .25s,border-color .25s;
 }
-.how-more a:hover{color:#8B5CF6;border-color:#8B5CF6}
+.how-more a:hover{color:#E9D5FF;border-color:#E9D5FF}
 .step-num{
   position:absolute;top:-6px;right:calc(50% - 58px);
   width:22px;height:22px;background:var(--cyan);
@@ -425,7 +431,7 @@ section + section{border-top:1px solid var(--borderS)}
 .privacy-modal .pm-date{font-size:var(--fs-1);color:var(--t3);margin-bottom:var(--sp-4)}
 .privacy-modal h4{font-size:var(--fs-2);font-weight:700;color:var(--t1);margin:18px 0 6px}
 .privacy-modal p{font-size:var(--fs-2);line-height:1.75;color:var(--t2)}
-.privacy-modal a.pm-mail{color:#8B5CF6;text-decoration:underline}
+.privacy-modal a.pm-mail{color:var(--purple);text-decoration:underline}
 .privacy-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:rgba(255,255,255,.04);cursor:pointer;font-size:var(--fs-2);line-height:1;color:var(--t3);display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
 .privacy-close:hover{background:rgba(255,255,255,.10);color:var(--t1)}
 @media(max-width:560px){.privacy-modal{padding:26px;border-radius:var(--r-md)}.privacy-modal h3{font-size:var(--fs-4)}}
@@ -462,7 +468,7 @@ footer{background:var(--bg0);border-top:1px solid var(--borderS);padding:56px 0 
 .f-logo{display:flex;align-items:center;gap:var(--sp-3);margin-bottom:var(--sp-3)}
 .f-tag{font-size:var(--fs-2);color:var(--t3);line-height:1.65;max-width:270px;margin-bottom:var(--sp-4)}
 
-.fcol h4{font-size:var(--fs-0);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--t1);margin-bottom:var(--sp-3)}
+.fcol h3{font-size:var(--fs-0);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--t1);margin-bottom:var(--sp-3)}
 .fcol ul{list-style:none;display:flex;flex-direction:column;gap:var(--sp-2)}
 .fcol ul li a{font-size:var(--fs-2);color:var(--t3);transition:color .2s;cursor:pointer}
 .fcol ul li a:hover{color:var(--cyan)}
@@ -639,7 +645,7 @@ button:focus-visible,a:focus-visible{outline-offset:4px}
 .sp-related h2{font-size:var(--fs-3);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--t3);margin-bottom:var(--sp-4)}
 .sp-related ul{list-style:none;display:flex;flex-wrap:wrap;gap:var(--sp-3)}
 .sp-related a{
-  display:inline-flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-2);font-weight:600;color:#4F46E5;
+  display:inline-flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-2);font-weight:600;color:var(--purple);
   border:1px solid var(--border);border-radius:var(--r-pill);padding:9px 18px;transition:all .25s;
 }
 .sp-related a:hover{background:var(--cyan-glow);border-color:var(--cyan)}
@@ -844,7 +850,7 @@ button:focus-visible,a:focus-visible{outline-offset:4px}
 }
 .belief-tag{
   font-size:var(--fs-0);font-weight:700;letter-spacing:1.8px;text-transform:uppercase;
-  color:#8B5CF6;margin-bottom:var(--sp-3);
+  color:var(--purple);margin-bottom:var(--sp-3);
 }
 .belief-h{
   font-size:var(--fs-5);font-weight:800;letter-spacing:-.7px;line-height:1.25;

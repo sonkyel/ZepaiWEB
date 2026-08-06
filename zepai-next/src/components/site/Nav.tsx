@@ -31,7 +31,11 @@ export function Nav() {
         <div className="nav-in">
           <Link className="nav-logo" href="/" aria-label={t("Zepai Agency — Inicio", "Zepai Agency — Home")}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="ZEPAI Agency" className="logo-nav" width={666} height={375} />
+            {/* .webp de 400x225 y no el .png de 666x375: se ve a 178x100 como
+                mucho, y el PNG pesaba 50 KB en la nav de las 47 paginas.
+                logo.png sigue existiendo porque es el que declara el JSON-LD
+                como logo de la organizacion. */}
+            <img src="/logo.webp" alt="ZEPAI Agency" className="logo-nav" width={400} height={225} />
           </Link>
 
           <ul className="nav-links">

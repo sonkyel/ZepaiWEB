@@ -21,9 +21,13 @@ function Col({
 }) {
   return (
     <div className="fcol">
-      <h4>
+      {/* h3 y no h4: el ultimo encabezado antes del pie es el <h2> de una
+          seccion, asi que un h4 aqui se salta el nivel 3 y rompe el orden
+          que usan los lectores de pantalla para navegar. El aspecto no
+          cambia: .fcol h3 lleva el mismo estilo. */}
+      <h3>
         <T es={es} en={en} />
-      </h4>
+      </h3>
       <ul>
         {items.map((i) => (
           <li key={i.href + i.es}>
@@ -47,7 +51,7 @@ export function Footer() {
               <div className="f-logo-badge">
                 <Link href="/">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/logo.png" alt="ZEPAI Agency" className="logo-footer" width={666} height={375} />
+                  <img src="/logo.webp" alt="ZEPAI Agency" className="logo-footer" width={400} height={225} loading="lazy" decoding="async" />
                 </Link>
               </div>
             </div>
