@@ -1,37 +1,44 @@
+/* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
+   si cambia el castellano, se vuelve a lanzar el guion y esta se rehace.
+   Los imports y el componente son los del fichero espanol, copiados tal
+   cual: asi /en monta exactamente los mismos componentes que /. */
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
-/* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
-   si cambia el castellano, se vuelve a lanzar el guion y esta se rehace. */
-
-const TITULO = "AI WhatsApp Chatbot for Real Estate Agencies | Zepai";
-const DESC = "Replies to every lead in seconds, qualifies them with the right questions and books the viewing straight into the agent's calendar.";
-
 export const metadata: Metadata = {
-  title: TITULO,
-  description: DESC,
+  title: "AI WhatsApp Chatbot for Real Estate Agencies | Zepai",
+  description: "Replies to every lead in seconds, qualifies them with the right questions and books the viewing straight into the agent's calendar.",
   alternates: {
     canonical: "/en/agencia-ia-inmobiliarias",
     languages: { es: "/agencia-ia-inmobiliarias", en: "/en/agencia-ia-inmobiliarias", "x-default": "/agencia-ia-inmobiliarias" },
   },
-  openGraph: {
-    title: TITULO,
-    description: DESC,
-    url: "https://zepaiagency.com" + "/en/agencia-ia-inmobiliarias",
-    siteName: "Zepai Agency",
-    locale: "en_US",
-    type: "website",
-    images: ["https://zepaiagency.com/og-image.png"],
-  },
-  twitter: { card: "summary_large_image", title: TITULO, description: DESC, images: ["https://zepaiagency.com/og-image.png"] },
+  ...metaSocial("AI WhatsApp Chatbot for Real Estate Agencies | Zepai", "Replies to every lead in seconds, qualifies them with the right questions and books the viewing straight into the agent's calendar.", "/en/agencia-ia-inmobiliarias", "en_US"),
 };
 
+const JSON_LD = [{"@context": "https://schema.org", "@type": "Service", "name": "WhatsApp AI chatbot for real estate", "serviceType": "WhatsApp AI chatbot for real estate", "description": "Artificial intelligence agent on WhatsApp that replies, qualifies leads and books viewings for real estate agencies automatically.", "url": "https://zepaiagency.com/en/agencia-ia-inmobiliarias", "provider": {"@id": "https://zepaiagency.com/#organization"}, "areaServed": {"@type": "Place", "name": "Worldwide"}, "audience": {"@type": "BusinessAudience", "audienceType": "Real estate agencies and property developers"}, "availableLanguage": ["es", "en"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zepaiagency.com/en"}, {"@type": "ListItem", "position": 2, "name": "Real Estate", "item": "https://zepaiagency.com/en/agencia-ia-inmobiliarias"}]}];
+
 const HTML = "<section class=\"sp-hero\">\n    <div class=\"container\">\n      <div class=\"sp-hero-in\">\n      <div class=\"sp-hero-txt\">\n      <nav class=\"sp-crumbs\" aria-label=\"Breadcrumb\">\n        <a href=\"/\" class=\"i18n\" data-es=\"Inicio\" data-en=\"Home\">Home</a>\n        <span> / </span>\n        <span class=\"i18n\" data-es=\"Inmobiliarias\" data-en=\"Real Estate\">Real Estate</span>\n      </nav>\n      <h1 class=\"sp-h1 i18n\" data-es=\"Chatbot de IA por WhatsApp para Inmobiliarias\" data-en=\"AI WhatsApp Chatbot for Real Estate Agencies\">AI WhatsApp Chatbot for Real Estate Agencies</h1>\n      <p class=\"sp-lead i18n\" data-es=\"Responde en segundos a cada interesado, lo cualifica con las preguntas correctas y deja la visita agendada en el calendario del agente.\" data-en=\"Replies to every lead in seconds, qualifies them with the right questions and books the viewing straight into the agent's calendar.\">Replies to every lead in seconds, qualifies them with the right questions and books the viewing straight into the agent's calendar.</p>\n      <a class=\"btn-p\" href=\"/#contact\">\n        <span class=\"i18n\" data-es=\"Hablar con un especialista\" data-en=\"Talk to a specialist\">Talk to a specialist</span>\n        <span>&rarr;</span>\n      </a>\n      </div>\n    <div class=\"sp-hero-art\">\n      <img src=\"/paginas/inmobiliarias.webp\" width=\"900\" height=\"672\" alt=\"Robot de IA con las llaves de una vivienda\" loading=\"eager\" decoding=\"async\">\n    </div>\n      </div>\n    </div>\n  </section>\n\n  <section class=\"sp-body\">\n    <div class=\"container\">\n      <p class=\"i18n\" data-es=\"En el sector inmobiliario la velocidad de respuesta lo decide casi todo. Quien pregunta por un piso un domingo por la tarde suele estar preguntando por otros cuatro a la vez, y se queda con la agencia que le contesta primero. Un chatbot de IA en WhatsApp responde en segundos, cualquier día y a cualquier hora.\" data-en=\"In real estate, response speed decides almost everything. Someone asking about a flat on a Sunday afternoon is usually asking about four others at the same time, and goes with the agency that replies first. An AI chatbot on WhatsApp replies in seconds, any day, at any hour.\">In real estate, response speed decides almost everything. Someone asking about a flat on a Sunday afternoon is usually asking about four others at the same time, and goes with the agency that replies first. An AI chatbot on WhatsApp replies in seconds, any day, at any hour.</p>\n\n      <p class=\"i18n\" data-es=\"Pero contestar rápido no basta. El problema real de un equipo comercial no es la falta de contactos, es el tiempo que se va en contactos que nunca iban a comprar. Por eso el agente no solo responde: pregunta, filtra y ordena.\" data-en=\"But replying fast is not enough. A sales team's real problem is not a lack of contacts, it is the time lost on contacts who were never going to buy. That is why the agent does not just reply: it asks, filters and sorts.\">But replying fast is not enough. A sales team's real problem is not a lack of contacts, it is the time lost on contacts who were never going to buy. That is why the agent does not just reply: it asks, filters and sorts.</p>\n\n      <h2 class=\"sp-h2 i18n\" data-es=\"Qué hace el agente por WhatsApp\" data-en=\"What the WhatsApp agent does\">What the WhatsApp agent does</h2>\n      <ul class=\"sp-list\">\n        <li class=\"i18n\" data-es=\"Contesta al instante a cada consulta que llega desde tu web, tus portales o tus anuncios, incluido fin de semana.\" data-en=\"Instantly answers every enquiry coming from your website, portals or ads, weekends included.\">Instantly answers every enquiry coming from your website, portals or ads, weekends included.</li>\n        <li class=\"i18n\" data-es=\"Cualifica al interesado con las preguntas que haría tu mejor comercial: presupuesto, zona, plazos, si necesita hipoteca y si tiene que vender antes.\" data-en=\"Qualifies the lead with the questions your best agent would ask: budget, area, timing, whether they need a mortgage and whether they must sell first.\">Qualifies the lead with the questions your best agent would ask: budget, area, timing, whether they need a mortgage and whether they must sell first.</li>\n        <li class=\"i18n\" data-es=\"Envía fichas, fotos y ubicación de los inmuebles que encajan con lo que ha pedido, sin que nadie tenga que buscarlas.\" data-en=\"Sends listings, photos and locations of the properties that match what they asked for, without anyone having to look them up.\">Sends listings, photos and locations of the properties that match what they asked for, without anyone having to look them up.</li>\n        <li class=\"i18n\" data-es=\"Agenda la visita directamente en la agenda del agente que corresponda y confirma el día antes para reducir plantones.\" data-en=\"Books the viewing straight into the right agent's calendar and confirms the day before to cut down no-shows.\">Books the viewing straight into the right agent's calendar and confirms the day before to cut down no-shows.</li>\n        <li class=\"i18n\" data-es=\"Reactiva contactos antiguos: vuelve a escribir a quien preguntó hace meses cuando entra un inmueble que encaja con su búsqueda.\" data-en=\"Reactivates old contacts: messages people who enquired months ago when a property matching their search comes in.\">Reactivates old contacts: messages people who enquired months ago when a property matching their search comes in.</li>\n      </ul>\n\n      <h2 class=\"sp-h2 i18n\" data-es=\"Lo que cambia para tu equipo\" data-en=\"What changes for your team\">What changes for your team</h2>\n      <p class=\"i18n\" data-es=\"Tus agentes dejan de dedicar la mañana a repetir el mismo mensaje treinta veces. Cuando abren el móvil, encuentran contactos ya filtrados, con su presupuesto y su zona anotados, y visitas ya puestas en el calendario. El trabajo comercial vuelve a ser lo que debería: enseñar inmuebles y cerrar operaciones.\" data-en=\"Your agents stop spending the morning repeating the same message thirty times. When they open their phone, they find pre-filtered contacts, with budget and area already noted, and viewings already on the calendar. Sales work goes back to what it should be: showing properties and closing deals.\">Your agents stop spending the morning repeating the same message thirty times. When they open their phone, they find pre-filtered contacts, with budget and area already noted, and viewings already on the calendar. Sales work goes back to what it should be: showing properties and closing deals.</p>\n\n    <section class=\"sp-cta reveal\">\n      <h2 class=\"i18n\" data-es=\"Pon a tu agencia a responder en segundos\" data-en=\"Get your agency replying in seconds\">Get your agency replying in seconds</h2>\n      <p class=\"i18n\" data-es=\"Te montamos el agente de WhatsApp con tu cartera de inmuebles y tus criterios de cualificación.\" data-en=\"We set up the WhatsApp agent with your property portfolio and your qualification criteria.\">We set up the WhatsApp agent with your property portfolio and your qualification criteria.</p>\n      <a class=\"btn-p\" href=\"/#contact\">\n        <span class=\"i18n\" data-es=\"Pedir cotización gratis\" data-en=\"Get a free quote\">Get a free quote</span>\n        <span>&rarr;</span>\n      </a>\n    </section>\n\n  <section class=\"sp-related\">\n      <h2 class=\"i18n\" data-es=\"Sigue explorando\" data-en=\"Keep exploring\">Keep exploring</h2>\n      <ul>\n        <li><a href=\"/como-trabajamos\" class=\"i18n\" data-es=\"Cómo trabajamos\" data-en=\"How we work\">How we work</a></li>\n        <li><a href=\"/soluciones\" class=\"i18n\" data-es=\"Todas las soluciones\" data-en=\"All solutions\">All solutions</a></li>\n        <li><a href=\"/consultoria-ia\" class=\"i18n\" data-es=\"Consultoría de IA para empresas\" data-en=\"AI consulting for companies\">AI consulting for companies</a></li>\n        <li><a href=\"/chatbot-whatsapp\" class=\"i18n\" data-es=\"Chatbot de IA para WhatsApp\" data-en=\"AI chatbot for WhatsApp\">AI chatbot for WhatsApp</a></li>\n        <li><a href=\"/automatizacion-de-llamadas\" class=\"i18n\" data-es=\"Automatización de llamadas con IA\" data-en=\"AI call automation\">AI call automation</a></li>\n        <li><a href=\"/automatizaciones-n8n-make\" class=\"i18n\" data-es=\"Automatizaciones con n8n y Make\" data-en=\"Automations with n8n and Make\">Automations with n8n and Make</a></li>\n        <li><a href=\"/agencia-ia-restaurantes\" class=\"i18n\" data-es=\"Asistente de voz IA para restaurantes\" data-en=\"AI voice assistant for restaurants\">AI voice assistant for restaurants</a></li>\n        <li><a href=\"/agencia-ia-ecommerce\" class=\"i18n\" data-es=\"IA para tiendas online\" data-en=\"AI for online stores\">AI for online stores</a></li>\n        <li><a href=\"/blog\" class=\"i18n\" data-es=\"Blog de automatización e IA\" data-en=\"AI and automation blog\">AI and automation blog</a></li>\n        <li><a href=\"/\" class=\"i18n\" data-es=\"Inicio\" data-en=\"Home\">Home</a></li>\n      </ul>\n    </section>\n    </div>\n  </section>";
+
+function Contenido() {
+  return (
+    <>
+      {JSON_LD.map((ld, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+        />
+      ))}
+      <LegacyContent html={HTML} />
+    </>
+  );
+}
 
 export default function Page() {
   return (
     <div lang="en">
-      <LegacyContent html={HTML} />
+      <Contenido />
     </div>
   );
 }

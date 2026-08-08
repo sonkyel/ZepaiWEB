@@ -118,14 +118,22 @@ export const ORGANIZATION_LD = {
  * asi estuvieron las 12 paginas sin og:image. Este ayudante devuelve el
  * bloque completo para que no pueda volver a pasar.
  */
-export function metaSocial(titulo: string, descripcion: string, ruta: string) {
+/* El cuarto argumento existe para /en: sin el, las paginas inglesas
+   anunciaban locale es_ES en Open Graph. Por defecto sigue siendo espanol,
+   asi que las 21 paginas castellanas no cambian. */
+export function metaSocial(
+  titulo: string,
+  descripcion: string,
+  ruta: string,
+  locale: "es_ES" | "en_US" = "es_ES",
+) {
   return {
     openGraph: {
       title: titulo,
       description: descripcion,
       url: `${SITE.url}${ruta}`,
       siteName: SITE.name,
-      locale: "es_ES",
+      locale,
       type: "website" as const,
       images: [SITE.ogImage],
     },

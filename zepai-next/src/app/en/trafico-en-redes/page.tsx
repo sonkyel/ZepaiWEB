@@ -1,37 +1,44 @@
+/* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
+   si cambia el castellano, se vuelve a lanzar el guion y esta se rehace.
+   Los imports y el componente son los del fichero espanol, copiados tal
+   cual: asi /en monta exactamente los mismos componentes que /. */
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
-/* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
-   si cambia el castellano, se vuelve a lanzar el guion y esta se rehace. */
-
-const TITULO = "Social media growth that brings buyers | Zepai";
-const DESC = "Organic strategy and paid campaigns so your audience grows in the right direction. It is what we do today for KiiChain on X.";
-
 export const metadata: Metadata = {
-  title: TITULO,
-  description: DESC,
+  title: "Social media growth that brings buyers | Zepai",
+  description: "Organic strategy and paid campaigns so your audience grows in the right direction. It is what we do today for KiiChain on X.",
   alternates: {
     canonical: "/en/trafico-en-redes",
     languages: { es: "/trafico-en-redes", en: "/en/trafico-en-redes", "x-default": "/trafico-en-redes" },
   },
-  openGraph: {
-    title: TITULO,
-    description: DESC,
-    url: "https://zepaiagency.com" + "/en/trafico-en-redes",
-    siteName: "Zepai Agency",
-    locale: "en_US",
-    type: "website",
-    images: ["https://zepaiagency.com/og-image.png"],
-  },
-  twitter: { card: "summary_large_image", title: TITULO, description: DESC, images: ["https://zepaiagency.com/og-image.png"] },
+  ...metaSocial("Social media growth that brings buyers | Zepai", "Organic strategy and paid campaigns so your audience grows in the right direction. It is what we do today for KiiChain on X.", "/en/trafico-en-redes", "en_US"),
 };
 
+const JSON_LD = [{"@context": "https://schema.org", "@type": "Service", "name": "Social media audience growth", "serviceType": "Social media audience growth", "description": "Organic and paid social media audience growth strategy for business.", "url": "https://zepaiagency.com/en/trafico-en-redes", "provider": {"@id": "https://zepaiagency.com/#organization"}, "areaServed": {"@type": "Place", "name": "Worldwide"}, "audience": {"@type": "BusinessAudience", "audienceType": "Businesses looking to grow on social media"}, "availableLanguage": ["es", "en"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zepaiagency.com/en"}, {"@type": "ListItem", "position": 2, "name": "Social Media Traffic", "item": "https://zepaiagency.com/en/trafico-en-redes"}]}];
+
 const HTML = "<section class=\"sp-hero\">\n    <div class=\"container\">\n      <div class=\"sp-hero-in\">\n      <div class=\"sp-hero-txt\">\n      <nav class=\"sp-crumbs\" aria-label=\"Breadcrumb\">\n        <a href=\"/\" class=\"i18n\" data-es=\"Inicio\" data-en=\"Home\">Home</a>\n        <span> / </span>\n        <span class=\"i18n\" data-es=\"Tráfico en Redes\" data-en=\"Social Media Traffic\">Social Media Traffic</span>\n      </nav>\n      <h1 class=\"sp-h1 i18n\" data-es=\"Crecer en redes con la gente que sí te va a comprar\" data-en=\"Growing on social media with the people who will actually buy\">Growing on social media with the people who will actually buy</h1>\n      <p class=\"sp-lead i18n\" data-es=\"Estrategia orgánica y campañas pagadas para que tu audiencia crezca por el sitio correcto. Es lo que hacemos hoy para KiiChain en X.\" data-en=\"Organic strategy and paid campaigns so your audience grows in the right direction. It is what we do today for KiiChain on X.\">Organic strategy and paid campaigns so your audience grows in the right direction. It is what we do today for KiiChain on X.</p>\n      <a class=\"btn-p\" href=\"/#contact\">\n        <span class=\"i18n\" data-es=\"Hablar con un especialista\" data-en=\"Talk to a specialist\">Talk to a specialist</span>\n        <span>&rarr;</span>\n      </a>\n      </div>\n    <div class=\"sp-hero-art\">\n      <img src=\"/paginas/trafico-en-redes.webp\" width=\"900\" height=\"672\" alt=\"Robot de IA rodeado de interacciones de redes sociales\" loading=\"eager\" decoding=\"async\">\n    </div>\n    </div>\n    </div>\n  </section>\n\n  <section class=\"sp-body\">\n    <div class=\"container\">\n      <p class=\"i18n\" data-es=\"Una cuenta grande no vale por sí sola. Lo que decide si las redes aportan algo a tu negocio es si la gente que te sigue es la que puede comprarte, y si lo que publicas les da una razón para dar el siguiente paso.\" data-en=\"A big account is not worth much on its own. What decides whether social media does anything for your business is whether the people following you are the ones who can buy, and whether what you post gives them a reason to take the next step.\">A big account is not worth much on its own. What decides whether social media does anything for your business is whether the people following you are the ones who can buy, and whether what you post gives them a reason to take the next step.</p>\n      <p class=\"i18n\" data-es=\"Trabajamos las dos vías: la orgánica, que es lenta pero se queda, y la pagada, que acelera lo que ya has visto funcionar.\" data-en=\"We work both routes: organic, which is slow but sticks, and paid, which accelerates what you have already seen work.\">We work both routes: organic, which is slow but sticks, and paid, which accelerates what you have already seen work.</p>\n      <h2 class=\"sp-h2 i18n\" data-es=\"Dónde trabajamos\" data-en=\"Where we work\">Where we work</h2>\n      <ul class=\"sp-list\">\n        <li class=\"i18n\" data-es=\"Instagram y TikTok, donde el contenido corto es el que mueve la audiencia.\" data-en=\"Instagram and TikTok, where short content is what moves the audience.\">Instagram and TikTok, where short content is what moves the audience.</li>\n        <li class=\"i18n\" data-es=\"X, para sectores donde la conversación pública pesa. Es lo que hacemos con KiiChain, una plataforma blockchain.\" data-en=\"X, for sectors where public conversation matters. That is what we do with KiiChain, a blockchain platform.\">X, for sectors where public conversation matters. That is what we do with KiiChain, a blockchain platform.</li>\n        <li class=\"i18n\" data-es=\"Facebook, cuando tu cliente está ahí y no en otro sitio: no todos los negocios necesitan estar en todas partes.\" data-en=\"Facebook, when that is where your customer actually is: not every business needs to be everywhere.\">Facebook, when that is where your customer actually is: not every business needs to be everywhere.</li>\n        <li class=\"i18n\" data-es=\"Campañas pagadas en la red que ya te esté dando señales, para no repartir presupuesto entre cuatro sitios a la vez.\" data-en=\"Paid campaigns on whichever network is already showing signs, instead of splitting budget four ways.\">Paid campaigns on whichever network is already showing signs, instead of splitting budget four ways.</li>\n      </ul>\n      <h2 class=\"sp-h2 i18n\" data-es=\"Cómo trabajaríamos contigo\" data-en=\"How we would work with you\">How we would work with you</h2>\n      <div class=\"sp-cards\">\n        <div class=\"sp-card\">\n          <h3 class=\"sp-h3 i18n\" data-es=\"1. Miramos qué tienes ya\" data-en=\"1. We look at what you already have\">1. We look at what you already have</h3>\n          <p class=\"i18n\" data-es=\"Qué cuentas hay, qué publicaciones funcionaron y de dónde viene la gente que ya te sigue. Casi siempre hay algo que ya funciona y no se está aprovechando.\" data-en=\"Which accounts exist, which posts worked, and where your current followers came from. There is almost always something already working that is not being used.\">Which accounts exist, which posts worked, and where your current followers came from. There is almost always something already working that is not being used.</p>\n        </div>\n        <div class=\"sp-card\">\n          <h3 class=\"sp-h3 i18n\" data-es=\"2. Elegimos una red\" data-en=\"2. We pick one network\">2. We pick one network</h3>\n          <p class=\"i18n\" data-es=\"Empezamos por la que mejor encaje con tu negocio. Estar en cinco a la vez desde el principio es la forma más rápida de no destacar en ninguna.\" data-en=\"We start with the one that fits your business best. Being on five at once from the start is the fastest way to stand out on none.\">We start with the one that fits your business best. Being on five at once from the start is the fastest way to stand out on none.</p>\n        </div>\n        <div class=\"sp-card\">\n          <h3 class=\"sp-h3 i18n\" data-es=\"3. Publicamos con constancia\" data-en=\"3. We publish consistently\">3. We publish consistently</h3>\n          <p class=\"i18n\" data-es=\"Un ritmo sostenible durante el tiempo suficiente para saber si funciona. Lo orgánico no da respuestas en dos semanas.\" data-en=\"A sustainable pace kept long enough to know whether it works. Organic does not give you answers in two weeks.\">A sustainable pace kept long enough to know whether it works. Organic does not give you answers in two weeks.</p>\n        </div>\n        <div class=\"sp-card\">\n          <h3 class=\"sp-h3 i18n\" data-es=\"4. Metemos presupuesto donde ya rinde\" data-en=\"4. We put budget where it already performs\">4. We put budget where it already performs</h3>\n          <p class=\"i18n\" data-es=\"Cuando una publicación o un formato demuestra que atrae a la gente correcta, ahí es donde tiene sentido pagar por alcance.\" data-en=\"When a post or a format proves it attracts the right people, that is where paying for reach makes sense.\">When a post or a format proves it attracts the right people, that is where paying for reach makes sense.</p>\n        </div>\n      </div>\n      <section class=\"sp-cta reveal\">\n        <h2 class=\"i18n\" data-es=\"¿En qué red están tus clientes?\" data-en=\"Which network are your customers on?\">Which network are your customers on?</h2>\n        <p class=\"i18n\" data-es=\"Cuéntanos a qué te dedicas y qué cuentas tienes abiertas, y te decimos por dónde empezaríamos.\" data-en=\"Tell us what you do and which accounts you have, and we will tell you where we would start.\">Tell us what you do and which accounts you have, and we will tell you where we would start.</p>\n        <a class=\"btn-p\" href=\"/#contact\">\n          <span class=\"i18n\" data-es=\"Pedir cotización gratis\" data-en=\"Get a free quote\">Get a free quote</span>\n          <span>&rarr;</span>\n        </a>\n      </section>\n      <section class=\"sp-related\">\n        <h2 class=\"i18n\" data-es=\"Sigue explorando\" data-en=\"Keep exploring\">Keep exploring</h2>\n        <ul>\n        <li><a href=\"/como-trabajamos\" class=\"i18n\" data-es=\"Cómo trabajamos\" data-en=\"How we work\">How we work</a></li>\n        <li><a href=\"/soluciones\" class=\"i18n\" data-es=\"Todas las soluciones\" data-en=\"All solutions\">All solutions</a></li>\n        <li><a href=\"/marketing-digital\" class=\"i18n\" data-es=\"Marketing digital para empresas\" data-en=\"Digital marketing for companies\">Digital marketing for companies</a></li>\n        <li><a href=\"/clipping-de-contenido\" class=\"i18n\" data-es=\"Clipping de contenido\" data-en=\"Content clipping\">Content clipping</a></li>\n        <li><a href=\"/#about\" class=\"i18n\" data-es=\"Quiénes somos\" data-en=\"Who we are\">Who we are</a></li>\n        </ul>\n      </section>\n    </div>\n  </section>";
+
+function Contenido() {
+  return (
+    <>
+      {JSON_LD.map((ld, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+        />
+      ))}
+      <LegacyContent html={HTML} />
+    </>
+  );
+}
 
 export default function Page() {
   return (
     <div lang="en">
-      <LegacyContent html={HTML} />
+      <Contenido />
     </div>
   );
 }

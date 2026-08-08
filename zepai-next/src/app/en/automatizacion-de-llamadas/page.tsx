@@ -1,37 +1,44 @@
+/* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
+   si cambia el castellano, se vuelve a lanzar el guion y esta se rehace.
+   Los imports y el componente son los del fichero espanol, copiados tal
+   cual: asi /en monta exactamente los mismos componentes que /. */
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
-/* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
-   si cambia el castellano, se vuelve a lanzar el guion y esta se rehace. */
-
-const TITULO = "AI Call Automation | Zepai";
-const DESC = "A voice agent that answers every call, holds a real conversation and puts the appointment straight in your calendar.";
-
 export const metadata: Metadata = {
-  title: TITULO,
-  description: DESC,
+  title: "AI Call Automation | Zepai",
+  description: "A voice agent that answers every call, holds a real conversation and puts the appointment straight in your calendar.",
   alternates: {
     canonical: "/en/automatizacion-de-llamadas",
     languages: { es: "/automatizacion-de-llamadas", en: "/en/automatizacion-de-llamadas", "x-default": "/automatizacion-de-llamadas" },
   },
-  openGraph: {
-    title: TITULO,
-    description: DESC,
-    url: "https://zepaiagency.com" + "/en/automatizacion-de-llamadas",
-    siteName: "Zepai Agency",
-    locale: "en_US",
-    type: "website",
-    images: ["https://zepaiagency.com/og-image.png"],
-  },
-  twitter: { card: "summary_large_image", title: TITULO, description: DESC, images: ["https://zepaiagency.com/og-image.png"] },
+  ...metaSocial("AI Call Automation | Zepai", "A voice agent that answers every call, holds a real conversation and puts the appointment straight in your calendar.", "/en/automatizacion-de-llamadas", "en_US"),
 };
 
+const JSON_LD = [{"@context": "https://schema.org", "@type": "Service", "name": "AI call automation", "serviceType": "AI call automation", "description": "Artificial intelligence voice agent that answers incoming calls, manages bookings and appointments, screens and routes calls, and makes routine outbound calls.", "url": "https://zepaiagency.com/en/automatizacion-de-llamadas", "provider": {"@id": "https://zepaiagency.com/#organization"}, "areaServed": {"@type": "Place", "name": "Worldwide"}, "audience": {"@type": "BusinessAudience", "audienceType": "Businesses that receive customer calls"}, "availableLanguage": ["es", "en"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zepaiagency.com/en"}, {"@type": "ListItem", "position": 2, "name": "AI Calls", "item": "https://zepaiagency.com/en/automatizacion-de-llamadas"}]}];
+
 const HTML = "<section class=\"sp-hero\">\n    <div class=\"container\">\n      <div class=\"sp-hero-in\">\n      <div class=\"sp-hero-txt\">\n      <nav class=\"sp-crumbs\" aria-label=\"Breadcrumb\">\n        <a href=\"/\" class=\"i18n\" data-es=\"Inicio\" data-en=\"Home\">Home</a>\n        <span> / </span>\n        <span class=\"i18n\" data-es=\"Llamadas con IA\" data-en=\"AI Calls\">AI Calls</span>\n      </nav>\n      <h1 class=\"sp-h1 i18n\" data-es=\"Automatización de Llamadas con IA\" data-en=\"AI Call Automation\">AI Call Automation</h1>\n      <p class=\"sp-lead i18n\" data-es=\"Un agente de voz que contesta todas las llamadas, mantiene una conversación real y deja la cita en tu agenda.\" data-en=\"A voice agent that answers every call, holds a real conversation and puts the appointment straight in your calendar.\">A voice agent that answers every call, holds a real conversation and puts the appointment straight in your calendar.</p>\n      <a class=\"btn-p\" href=\"/#contact\">\n        <span class=\"i18n\" data-es=\"Hablar con un especialista\" data-en=\"Talk to a specialist\">Talk to a specialist</span>\n        <span>&rarr;</span>\n      </a>\n      </div>\n    <div class=\"sp-hero-art\">\n      <img src=\"/paginas/llamadas.webp\" width=\"900\" height=\"672\" alt=\"Agente de voz con IA atendiendo una llamada\" loading=\"eager\" decoding=\"async\">\n    </div>\n      </div>\n    </div>\n  </section>\n\n  <section class=\"sp-body\">\n    <div class=\"container\">\n      <p class=\"i18n\" data-es=\"El teléfono sigue siendo el canal donde más negocio se pierde en silencio. Una llamada que nadie coge no deja rastro: no hay mensaje, no hay correo, no hay forma de recuperarla. Simplemente ese cliente llama al siguiente de la lista.\" data-en=\"The phone is still the channel where most business is lost silently. A call nobody answers leaves no trace: no message, no email, no way to recover it. That customer simply calls the next one on the list.\">The phone is still the channel where most business is lost silently. A call nobody answers leaves no trace: no message, no email, no way to recover it. That customer simply calls the next one on the list.</p>\n      <p class=\"i18n\" data-es=\"Un agente de voz con inteligencia artificial contesta todas las llamadas, mantiene una conversación real —no un menú de &quot;pulse 1&quot;— y resuelve o deriva según lo que le pidan. Habla con naturalidad, entiende a quien llama aunque haya ruido de fondo, y no pone a nadie en espera.\" data-en=\"An AI voice agent answers every call, holds a real conversation — not a &quot;press 1&quot; menu — and either resolves or routes the request. It speaks naturally, understands the caller even with background noise, and never puts anyone on hold.\">An AI voice agent answers every call, holds a real conversation — not a &quot;press 1&quot; menu — and either resolves or routes the request. It speaks naturally, understands the caller even with background noise, and never puts anyone on hold.</p>\n      <h2 class=\"sp-h2 i18n\" data-es=\"Para qué se usa\" data-en=\"What it is used for\">What it is used for</h2>\n      <ul class=\"sp-list\">\n        <li class=\"i18n\" data-es=\"Atender las llamadas que hoy se quedan sin coger: hora punta, fuera de horario, festivos y fines de semana.\" data-en=\"Answering the calls that go unanswered today: peak hours, after hours, holidays and weekends.\">Answering the calls that go unanswered today: peak hours, after hours, holidays and weekends.</li>\n        <li class=\"i18n\" data-es=\"Tomar reservas y citas por teléfono y dejarlas en la agenda, sin que nadie tenga que apuntarlas a mano.\" data-en=\"Taking bookings and appointments by phone and putting them straight in the calendar, with nobody writing them down by hand.\">Taking bookings and appointments by phone and putting them straight in the calendar, with nobody writing them down by hand.</li>\n        <li class=\"i18n\" data-es=\"Filtrar y clasificar la llamada antes de pasarla, para que llegue a la persona correcta con el contexto ya resumido.\" data-en=\"Screening and classifying the call before transferring it, so it reaches the right person with the context already summarised.\">Screening and classifying the call before transferring it, so it reaches the right person with the context already summarised.</li>\n        <li class=\"i18n\" data-es=\"Hacer llamadas de salida rutinarias: confirmar una cita el día antes, recordar una recogida, avisar de un pedido listo.\" data-en=\"Making routine outbound calls: confirming an appointment the day before, reminding about a pickup, notifying that an order is ready.\">Making routine outbound calls: confirming an appointment the day before, reminding about a pickup, notifying that an order is ready.</li>\n        <li class=\"i18n\" data-es=\"Dejar transcrito y resumido lo que se habló, para que puedas revisarlo después sin escuchar la grabación entera.\" data-en=\"Leaving a transcript and summary of what was said, so you can review it later without listening to the whole recording.\">Leaving a transcript and summary of what was said, so you can review it later without listening to the whole recording.</li>\n      </ul>\n      <h2 class=\"sp-h2 i18n\" data-es=\"Dónde marca más diferencia\" data-en=\"Where it makes the biggest difference\">Where it makes the biggest difference</h2>\n      <p class=\"i18n\" data-es=\"En cualquier negocio donde el teléfono y la agenda van juntos: restaurantes, clínicas, talleres, peluquerías, asesorías, servicios a domicilio. Son negocios donde quien atiende el teléfono está haciendo a la vez otra cosa — cocinar, atender en mostrador, conducir — y cada llamada perdida es una cita que no entra.\" data-en=\"In any business where the phone and the calendar go together: restaurants, clinics, workshops, hair salons, professional services, home services. These are businesses where whoever answers the phone is doing something else at the same time — cooking, serving at the counter, driving — and every missed call is an appointment that never happens.\">In any business where the phone and the calendar go together: restaurants, clinics, workshops, hair salons, professional services, home services. These are businesses where whoever answers the phone is doing something else at the same time — cooking, serving at the counter, driving — and every missed call is an appointment that never happens.</p>\n      <p class=\"i18n\" data-es=\"El agente no sustituye a tu equipo: se queda con lo repetitivo y deja que las personas atiendan lo que de verdad requiere criterio.\" data-en=\"The agent does not replace your team: it takes the repetitive part and lets people handle what genuinely requires judgement.\">The agent does not replace your team: it takes the repetitive part and lets people handle what genuinely requires judgement.</p>\n      <section class=\"sp-cta reveal\">\n        <h2 class=\"i18n\" data-es=\"¿Cuántas llamadas se te escapan cada semana?\" data-en=\"How many calls are you missing every week?\">How many calls are you missing every week?</h2>\n        <p class=\"i18n\" data-es=\"Cuéntanos cómo funciona tu operativa y te decimos qué parte del teléfono se puede automatizar sin perder calidad.\" data-en=\"Tell us how your operation works and we will tell you which part of the phone can be automated without losing quality.\">Tell us how your operation works and we will tell you which part of the phone can be automated without losing quality.</p>\n        <a class=\"btn-p\" href=\"/#contact\">\n          <span class=\"i18n\" data-es=\"Pedir cotización gratis\" data-en=\"Get a free quote\">Get a free quote</span>\n          <span>&rarr;</span>\n        </a>\n      </section>\n      <section class=\"sp-related\">\n        <h2 class=\"i18n\" data-es=\"Sigue explorando\" data-en=\"Keep exploring\">Keep exploring</h2>\n        <ul>\n        <li><a href=\"/como-trabajamos\" class=\"i18n\" data-es=\"Cómo trabajamos\" data-en=\"How we work\">How we work</a></li>\n        <li><a href=\"/soluciones\" class=\"i18n\" data-es=\"Todas las soluciones\" data-en=\"All solutions\">All solutions</a></li>\n        <li><a href=\"/consultoria-ia\" class=\"i18n\" data-es=\"Consultoría de IA para empresas\" data-en=\"AI consulting for companies\">AI consulting for companies</a></li>\n        <li><a href=\"/chatbot-whatsapp\" class=\"i18n\" data-es=\"Chatbot de IA para WhatsApp\" data-en=\"AI chatbot for WhatsApp\">AI chatbot for WhatsApp</a></li>\n        <li><a href=\"/automatizaciones-n8n-make\" class=\"i18n\" data-es=\"Automatizaciones con n8n y Make\" data-en=\"Automations with n8n and Make\">Automations with n8n and Make</a></li>\n        <li><a href=\"/agencia-ia-restaurantes\" class=\"i18n\" data-es=\"Asistente de voz IA para restaurantes\" data-en=\"AI voice assistant for restaurants\">AI voice assistant for restaurants</a></li>\n        <li><a href=\"/agencia-ia-inmobiliarias\" class=\"i18n\" data-es=\"Chatbot de WhatsApp para inmobiliarias\" data-en=\"WhatsApp chatbot for real estate\">WhatsApp chatbot for real estate</a></li>\n        <li><a href=\"/agencia-ia-ecommerce\" class=\"i18n\" data-es=\"IA para tiendas online\" data-en=\"AI for online stores\">AI for online stores</a></li>\n        <li><a href=\"/blog\" class=\"i18n\" data-es=\"Blog de automatización e IA\" data-en=\"AI and automation blog\">AI and automation blog</a></li>\n        </ul>\n      </section>\n\n    </div>\n  </section>";
+
+function Contenido() {
+  return (
+    <>
+      {JSON_LD.map((ld, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+        />
+      ))}
+      <LegacyContent html={HTML} />
+    </>
+  );
+}
 
 export default function Page() {
   return (
     <div lang="en">
-      <LegacyContent html={HTML} />
+      <Contenido />
     </div>
   );
 }

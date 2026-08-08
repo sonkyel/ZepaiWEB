@@ -76,14 +76,23 @@ function HeroAbajo() {
             en="Integrates into the channels you already use"
           />
         </div>
+        {/* Cuatro son nombres de marca y no se traducen; los otros dos si.
+            Estaban sueltos en castellano y no se notaba porque /en no
+            llegaba a montar el hero: en cuanto volvio, la pagina inglesa
+            enseñaba "Tu sitio web" y "Telefono". */}
         <div className="galaxy-channels">
-          {["WhatsApp", "Instagram", "Messenger", "Tu sitio web", "Teléfono", "Email"].map(
-            (c) => (
-              <span className="galaxy-channel" key={c}>
-                {c}
-              </span>
-            ),
-          )}
+          {[
+            { es: "WhatsApp", en: "WhatsApp" },
+            { es: "Instagram", en: "Instagram" },
+            { es: "Messenger", en: "Messenger" },
+            { es: "Tu sitio web", en: "Your website" },
+            { es: "Teléfono", en: "Phone" },
+            { es: "Email", en: "Email" },
+          ].map((c) => (
+            <span className="galaxy-channel" key={c.es}>
+              <T es={c.es} en={c.en} />
+            </span>
+          ))}
         </div>
       </div>
     </div>

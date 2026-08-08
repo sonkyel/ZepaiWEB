@@ -1,37 +1,44 @@
+/* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
+   si cambia el castellano, se vuelve a lanzar el guion y esta se rehace.
+   Los imports y el componente son los del fichero espanol, copiados tal
+   cual: asi /en monta exactamente los mismos componentes que /. */
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
-/* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
-   si cambia el castellano, se vuelve a lanzar el guion y esta se rehace. */
-
-const TITULO = "Artificial Intelligence for Online Stores | Zepai";
-const DESC = "Your store sells around the clock. Let it serve around the clock too: before the purchase, during and after.";
-
 export const metadata: Metadata = {
-  title: TITULO,
-  description: DESC,
+  title: "Artificial Intelligence for Online Stores | Zepai",
+  description: "Your store sells around the clock. Let it serve around the clock too: before the purchase, during and after.",
   alternates: {
     canonical: "/en/agencia-ia-ecommerce",
     languages: { es: "/agencia-ia-ecommerce", en: "/en/agencia-ia-ecommerce", "x-default": "/agencia-ia-ecommerce" },
   },
-  openGraph: {
-    title: TITULO,
-    description: DESC,
-    url: "https://zepaiagency.com" + "/en/agencia-ia-ecommerce",
-    siteName: "Zepai Agency",
-    locale: "en_US",
-    type: "website",
-    images: ["https://zepaiagency.com/og-image.png"],
-  },
-  twitter: { card: "summary_large_image", title: TITULO, description: DESC, images: ["https://zepaiagency.com/og-image.png"] },
+  ...metaSocial("Artificial Intelligence for Online Stores | Zepai", "Your store sells around the clock. Let it serve around the clock too: before the purchase, during and after.", "/en/agencia-ia-ecommerce", "en_US"),
 };
 
+const JSON_LD = [{"@context": "https://schema.org", "@type": "Service", "name": "Artificial intelligence for online shops", "serviceType": "Artificial intelligence for online shops", "description": "AI agents for e-commerce: pre-purchase questions, order status checks, returns handling and abandoned cart recovery.", "url": "https://zepaiagency.com/en/agencia-ia-ecommerce", "provider": {"@id": "https://zepaiagency.com/#organization"}, "areaServed": {"@type": "Place", "name": "Worldwide"}, "audience": {"@type": "BusinessAudience", "audienceType": "Online shops and e-commerce"}, "availableLanguage": ["es", "en"]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zepaiagency.com/en"}, {"@type": "ListItem", "position": 2, "name": "E-Commerce", "item": "https://zepaiagency.com/en/agencia-ia-ecommerce"}]}];
+
 const HTML = "<section class=\"sp-hero\">\n    <div class=\"container\">\n      <div class=\"sp-hero-in\">\n      <div class=\"sp-hero-txt\">\n      <nav class=\"sp-crumbs\" aria-label=\"Breadcrumb\">\n        <a href=\"/\" class=\"i18n\" data-es=\"Inicio\" data-en=\"Home\">Home</a>\n        <span> / </span>\n        <span class=\"i18n\" data-es=\"E-Commerce\" data-en=\"E-Commerce\">E-Commerce</span>\n      </nav>\n      <h1 class=\"sp-h1 i18n\" data-es=\"Inteligencia Artificial para Tiendas Online\" data-en=\"Artificial Intelligence for Online Stores\">Artificial Intelligence for Online Stores</h1>\n      <p class=\"sp-lead i18n\" data-es=\"Tu tienda vende a todas horas. Que también atienda a todas horas: antes de la compra, durante y después.\" data-en=\"Your store sells around the clock. Let it serve around the clock too: before the purchase, during and after.\">Your store sells around the clock. Let it serve around the clock too: before the purchase, during and after.</p>\n      <a class=\"btn-p\" href=\"/#contact\">\n        <span class=\"i18n\" data-es=\"Hablar con un especialista\" data-en=\"Talk to a specialist\">Talk to a specialist</span>\n        <span>&rarr;</span>\n      </a>\n      </div>\n    <div class=\"sp-hero-art\">\n      <img src=\"/paginas/ecommerce.webp\" width=\"900\" height=\"672\" alt=\"Robot de IA gestionando los pedidos de una tienda online\" loading=\"eager\" decoding=\"async\">\n    </div>\n      </div>\n    </div>\n  </section>\n\n  <section class=\"sp-body\">\n    <div class=\"container\">\n      <p class=\"i18n\" data-es=\"Una tienda online está abierta a todas horas, pero la atención al cliente no. Esa diferencia cuesta dinero de dos formas: la gente que tiene una duda antes de comprar y no obtiene respuesta se va, y la que ya compró y pregunta por su pedido acaba escribiendo tres veces por tres canales distintos.\" data-en=\"An online store is open around the clock, but customer service is not. That gap costs money twice over: people with a question before buying who get no answer simply leave, and people who already bought end up asking about their order three times across three channels.\">An online store is open around the clock, but customer service is not. That gap costs money twice over: people with a question before buying who get no answer simply leave, and people who already bought end up asking about their order three times across three channels.</p>\n      <p class=\"i18n\" data-es=\"La inteligencia artificial cubre justo ese hueco: responde antes de la compra, acompaña durante, y se ocupa del después sin que nadie tenga que estar pendiente.\" data-en=\"Artificial intelligence covers exactly that gap: it answers before the purchase, assists during it, and handles the aftermath without anyone having to keep watch.\">Artificial intelligence covers exactly that gap: it answers before the purchase, assists during it, and handles the aftermath without anyone having to keep watch.</p>\n      <h2 class=\"sp-h2 i18n\" data-es=\"Antes de la compra\" data-en=\"Before the purchase\">Before the purchase</h2>\n      <ul class=\"sp-list\">\n        <li class=\"i18n\" data-es=\"Resuelve las dudas que frenan el pedido: tallas, materiales, compatibilidad, plazos de envío, gastos y devoluciones.\" data-en=\"Resolves the doubts that stall an order: sizes, materials, compatibility, delivery times, shipping costs and returns.\">Resolves the doubts that stall an order: sizes, materials, compatibility, delivery times, shipping costs and returns.</li>\n        <li class=\"i18n\" data-es=\"Recomienda productos según lo que la persona está buscando, en vez de dejarla sola con el buscador.\" data-en=\"Recommends products based on what the person is actually looking for, instead of leaving them alone with the search box.\">Recommends products based on what the person is actually looking for, instead of leaving them alone with the search box.</li>\n      </ul>\n      <h2 class=\"sp-h2 i18n\" data-es=\"Después de la compra\" data-en=\"After the purchase\">After the purchase</h2>\n      <ul class=\"sp-list\">\n        <li class=\"i18n\" data-es=\"Responde el &quot;¿dónde está mi pedido?&quot; consultando el estado real, que es la consulta más repetida de cualquier tienda.\" data-en=\"Answers the &quot;where is my order?&quot; by checking the real status — the single most repeated query in any store.\">Answers the &quot;where is my order?&quot; by checking the real status — the single most repeated query in any store.</li>\n        <li class=\"i18n\" data-es=\"Gestiona cambios y devoluciones guiando paso a paso, sin que el cliente tenga que buscar el formulario.\" data-en=\"Handles exchanges and returns with step-by-step guidance, so the customer never has to hunt for the form.\">Handles exchanges and returns with step-by-step guidance, so the customer never has to hunt for the form.</li>\n        <li class=\"i18n\" data-es=\"Recupera carritos abandonados escribiendo en el momento adecuado y por el canal donde esa persona sí lee.\" data-en=\"Recovers abandoned carts by reaching out at the right moment, through the channel that person actually reads.\">Recovers abandoned carts by reaching out at the right moment, through the channel that person actually reads.</li>\n      </ul>\n      <h2 class=\"sp-h2 i18n\" data-es=\"Se conecta con lo que ya tienes\" data-en=\"It connects to what you already have\">It connects to what you already have</h2>\n      <p class=\"i18n\" data-es=\"No hace falta cambiar de plataforma. El agente se integra con tu tienda y con tu sistema de pedidos para consultar datos reales — stock, estado del envío, historial del cliente — en lugar de dar respuestas genéricas. Si además vendes por WhatsApp o Instagram, la misma lógica atiende esos canales.\" data-en=\"There is no need to switch platforms. The agent integrates with your store and your order system to pull real data — stock, shipping status, customer history — instead of giving generic answers. And if you also sell through WhatsApp or Instagram, the same logic serves those channels.\">There is no need to switch platforms. The agent integrates with your store and your order system to pull real data — stock, shipping status, customer history — instead of giving generic answers. And if you also sell through WhatsApp or Instagram, the same logic serves those channels.</p>\n      <section class=\"sp-cta reveal\">\n        <h2 class=\"i18n\" data-es=\"Que tu tienda atienda tan bien como vende\" data-en=\"Make your store serve as well as it sells\">Make your store serve as well as it sells</h2>\n        <p class=\"i18n\" data-es=\"Cuéntanos con qué plataforma trabajas y qué consultas te llegan más, y te decimos qué se puede automatizar.\" data-en=\"Tell us which platform you use and which queries you get most, and we will tell you what can be automated.\">Tell us which platform you use and which queries you get most, and we will tell you what can be automated.</p>\n        <a class=\"btn-p\" href=\"/#contact\">\n          <span class=\"i18n\" data-es=\"Pedir cotización gratis\" data-en=\"Get a free quote\">Get a free quote</span>\n          <span>&rarr;</span>\n        </a>\n      </section>\n      <section class=\"sp-related\">\n        <h2 class=\"i18n\" data-es=\"Sigue explorando\" data-en=\"Keep exploring\">Keep exploring</h2>\n        <ul>\n        <li><a href=\"/como-trabajamos\" class=\"i18n\" data-es=\"Cómo trabajamos\" data-en=\"How we work\">How we work</a></li>\n        <li><a href=\"/soluciones\" class=\"i18n\" data-es=\"Todas las soluciones\" data-en=\"All solutions\">All solutions</a></li>\n        <li><a href=\"/consultoria-ia\" class=\"i18n\" data-es=\"Consultoría de IA para empresas\" data-en=\"AI consulting for companies\">AI consulting for companies</a></li>\n        <li><a href=\"/chatbot-whatsapp\" class=\"i18n\" data-es=\"Chatbot de IA para WhatsApp\" data-en=\"AI chatbot for WhatsApp\">AI chatbot for WhatsApp</a></li>\n        <li><a href=\"/automatizacion-de-llamadas\" class=\"i18n\" data-es=\"Automatización de llamadas con IA\" data-en=\"AI call automation\">AI call automation</a></li>\n        <li><a href=\"/automatizaciones-n8n-make\" class=\"i18n\" data-es=\"Automatizaciones con n8n y Make\" data-en=\"Automations with n8n and Make\">Automations with n8n and Make</a></li>\n        <li><a href=\"/agencia-ia-restaurantes\" class=\"i18n\" data-es=\"Asistente de voz IA para restaurantes\" data-en=\"AI voice assistant for restaurants\">AI voice assistant for restaurants</a></li>\n        <li><a href=\"/agencia-ia-inmobiliarias\" class=\"i18n\" data-es=\"Chatbot de WhatsApp para inmobiliarias\" data-en=\"WhatsApp chatbot for real estate\">WhatsApp chatbot for real estate</a></li>\n        <li><a href=\"/blog\" class=\"i18n\" data-es=\"Blog de automatización e IA\" data-en=\"AI and automation blog\">AI and automation blog</a></li>\n        </ul>\n      </section>\n\n    </div>\n  </section>";
+
+function Contenido() {
+  return (
+    <>
+      {JSON_LD.map((ld, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+        />
+      ))}
+      <LegacyContent html={HTML} />
+    </>
+  );
+}
 
 export default function Page() {
   return (
     <div lang="en">
-      <LegacyContent html={HTML} />
+      <Contenido />
     </div>
   );
 }

@@ -1,37 +1,44 @@
+/* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
+   si cambia el castellano, se vuelve a lanzar el guion y esta se rehace.
+   Los imports y el componente son los del fichero espanol, copiados tal
+   cual: asi /en monta exactamente los mismos componentes que /. */
 import type { Metadata } from "next";
+import { metaSocial } from "@/lib/site";
 import { LegacyContent } from "@/components/site/LegacyContent";
 
-/* GENERADO por generar-en.py desde la pagina en espanol. No editar a mano:
-   si cambia el castellano, se vuelve a lanzar el guion y esta se rehace. */
-
-const TITULO = "How to automate customer service with AI | Zepai";
-const DESC = "Customer service is usually the first process a company automates, and for good reason: it is repetitive, measurable, and customers notice the improvement…";
-
 export const metadata: Metadata = {
-  title: TITULO,
-  description: DESC,
+  title: "How to automate customer service with AI | Zepai",
+  description: "Customer service is usually the first process a company automates, and for good reason: it is repetitive, measurable, and customers notice the improvement…",
   alternates: {
     canonical: "/en/blog/como-automatizar-la-atencion-al-cliente-con-ia",
     languages: { es: "/blog/como-automatizar-la-atencion-al-cliente-con-ia", en: "/en/blog/como-automatizar-la-atencion-al-cliente-con-ia", "x-default": "/blog/como-automatizar-la-atencion-al-cliente-con-ia" },
   },
-  openGraph: {
-    title: TITULO,
-    description: DESC,
-    url: "https://zepaiagency.com" + "/en/blog/como-automatizar-la-atencion-al-cliente-con-ia",
-    siteName: "Zepai Agency",
-    locale: "en_US",
-    type: "website",
-    images: ["https://zepaiagency.com/og-image.png"],
-  },
-  twitter: { card: "summary_large_image", title: TITULO, description: DESC, images: ["https://zepaiagency.com/og-image.png"] },
+  ...metaSocial("How to automate customer service with AI | Zepai", "Customer service is usually the first process a company automates, and for good reason: it is repetitive, measurable, and customers notice the improvement…", "/en/blog/como-automatizar-la-atencion-al-cliente-con-ia", "en_US"),
 };
 
+const JSON_LD = [{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to automate customer service with AI: where to start", "description": "Where to start automating customer service, what a machine should never answer, and what to measure before launching.", "url": "https://zepaiagency.com/en/blog/como-automatizar-la-atencion-al-cliente-con-ia", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://zepaiagency.com/en/blog/como-automatizar-la-atencion-al-cliente-con-ia"}, "inLanguage": "en", "datePublished": "2026-07-28", "dateModified": "2026-07-28", "image": "https://zepaiagency.com/og-image.png", "author": {"@id": "https://zepaiagency.com/#fundador"}, "publisher": {"@id": "https://zepaiagency.com/#organization"}}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://zepaiagency.com/en"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://zepaiagency.com/en/blog"}, {"@type": "ListItem", "position": 3, "name": "How to automate customer service with AI: where to start", "item": "https://zepaiagency.com/en/blog/como-automatizar-la-atencion-al-cliente-con-ia"}]}];
+
 const HTML = "<section class=\"sp-hero\">\n    <div class=\"container\">\n      <div class=\"sp-hero-txt\" style=\"max-width:760px\">\n      <nav class=\"sp-crumbs\" aria-label=\"Breadcrumb\">\n        <a href=\"/\" class=\"i18n\" data-es=\"Inicio\" data-en=\"Home\">Home</a>\n        <span> / </span>\n        <a href=\"/blog\" class=\"i18n\" data-es=\"Blog\" data-en=\"Blog\">Blog</a>\n        <span> / </span>\n        <span class=\"i18n\" data-es=\"Atención al cliente con IA\" data-en=\"AI customer service\">AI customer service</span>\n      </nav>\n      <h1 class=\"sp-h1 i18n\" data-es=\"Cómo automatizar la atención al cliente con IA: por dónde empezar\" data-en=\"How to automate customer service with AI: where to start\">How to automate customer service with AI: where to start</h1>\n      <p class=\"sp-lead i18n\" data-es=\"La atención al cliente suele ser el primer proceso que una empresa automatiza, y por buenas razones: es repetitivo, medible y el cliente nota la mejora de inmediato. Empieza por lo aburrido — revisa las consultas de los últimos tres meses y cuenta cuántas se responden siempre igual. En la mayoría de negocios, entre el 60 % y el 80 % de los mensajes son un puñado de preguntas repetidas: horarios, estado de un pedido, precios, devoluciones. Ese es el terreno donde la IA rinde bien desde el primer día.\" data-en=\"Customer service is usually the first process a company automates, and for good reason: it is repetitive, measurable, and customers notice the improvement immediately. Start with the boring part — review the last three months of enquiries and count how many are always answered the same way. In most businesses, 60 % to 80 % of messages are a handful of repeated questions: opening hours, order status, prices, returns. That is where AI performs well from day one.\">Customer service is usually the first process a company automates, and for good reason: it is repetitive, measurable, and customers notice the improvement immediately. Start with the boring part — review the last three months of enquiries and count how many are always answered the same way. In most businesses, 60 % to 80 % of messages are a handful of repeated questions: opening hours, order status, prices, returns. That is where AI performs well from day one.</p>\n      <p class=\"sp-meta\">\n        <time datetime=\"2026-07-28\" class=\"i18n\" data-es=\"28 de julio de 2026\" data-en=\"28 July 2026\">28 July 2026</time>\n        <span aria-hidden=\"true\"> · </span>\n        <span class=\"i18n\" data-es=\"Por Zecuenin Soto\" data-en=\"By Zecuenin Soto\">By Zecuenin Soto</span>\n      </p>\n      </div>\n    </div>\n  </section>\n\n  <section class=\"sp-body\">\n    <div class=\"container\">\n      <p class=\"i18n\" data-es=\"Lo segundo es decidir qué NO debe contestar la máquina. Reclamaciones, incidencias con dinero de por medio y clientes enfadados deben llegar a una persona, siempre, y cuanto antes mejor. Un buen asistente no es el que responde a todo: es el que sabe reconocer cuándo tiene que pasar el caso. Define esa frontera antes de lanzar, no después de la primera queja.\" data-en=\"The second step is deciding what the machine must NOT answer. Complaints, money-related incidents and angry customers should always reach a person, and the sooner the better. A good assistant is not the one that answers everything: it is the one that knows when to hand the case over. Define that boundary before launch, not after the first complaint.\">The second step is deciding what the machine must NOT answer. Complaints, money-related incidents and angry customers should always reach a person, and the sooner the better. A good assistant is not the one that answers everything: it is the one that knows when to hand the case over. Define that boundary before launch, not after the first complaint.</p>\n      <p class=\"i18n\" data-es=\"Y por último, mide. Antes de automatizar, anota cuánto tardáis de media en contestar y cuántos mensajes atendéis al día. Si no tienes ese número de partida, dentro de tres meses no sabrás si la automatización ha servido de algo. Es el error más común y el más fácil de evitar.\" data-en=\"And finally, measure. Before automating, write down your average reply time and how many messages you handle per day. Without that baseline, in three months you will not know whether the automation achieved anything. It is the most common mistake and the easiest one to avoid.\">And finally, measure. Before automating, write down your average reply time and how many messages you handle per day. Without that baseline, in three months you will not know whether the automation achieved anything. It is the most common mistake and the easiest one to avoid.</p>\n\n      <section class=\"sp-cta reveal\">\n        <h2 class=\"i18n\" data-es=\"¿Quieres aplicarlo en tu empresa?\" data-en=\"Want to apply this in your company?\">Want to apply this in your company?</h2>\n        <p class=\"i18n\" data-es=\"Te ayudamos a identificar qué proceso automatizar primero y a montarlo de principio a fin.\" data-en=\"We help you identify which process to automate first and build it end to end.\">We help you identify which process to automate first and build it end to end.</p>\n        <a class=\"btn-p\" href=\"/#contact\">\n          <span class=\"i18n\" data-es=\"Pedir cotización gratis\" data-en=\"Get a free quote\">Get a free quote</span>\n          <span>&rarr;</span>\n        </a>\n      </section>\n      <section class=\"sp-related\">\n        <h2 class=\"i18n\" data-es=\"Sigue explorando\" data-en=\"Keep exploring\">Keep exploring</h2>\n        <ul>\n        <li><a href=\"/como-trabajamos\" class=\"i18n\" data-es=\"Cómo trabajamos\" data-en=\"How we work\">How we work</a></li>\n        <li><a href=\"/soluciones\" class=\"i18n\" data-es=\"Todas las soluciones\" data-en=\"All solutions\">All solutions</a></li>\n          <li><a href=\"/chatbot-whatsapp\" class=\"i18n\" data-es=\"Chatbot de IA para WhatsApp\" data-en=\"AI chatbot for WhatsApp\">AI chatbot for WhatsApp</a></li>\n          <li><a href=\"/automatizacion-de-llamadas\" class=\"i18n\" data-es=\"Automatización de llamadas con IA\" data-en=\"AI call automation\">AI call automation</a></li>\n          <li><a href=\"/consultoria-ia\" class=\"i18n\" data-es=\"Consultoría de IA para empresas\" data-en=\"AI consulting for companies\">AI consulting for companies</a></li>\n          <li><a href=\"/blog\" class=\"i18n\" data-es=\"Volver al blog\" data-en=\"Back to the blog\">Back to the blog</a></li>\n        </ul>\n      </section>\n    </div>\n  </section>";
+
+function Contenido() {
+  return (
+    <>
+      {JSON_LD.map((ld, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+        />
+      ))}
+      <LegacyContent html={HTML} />
+    </>
+  );
+}
 
 export default function Page() {
   return (
     <div lang="en">
-      <LegacyContent html={HTML} />
+      <Contenido />
     </div>
   );
 }
